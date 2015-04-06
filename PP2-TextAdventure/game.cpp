@@ -1,6 +1,6 @@
 #include "game.h"
 
-int run(STATE initial_state)
+int run(int initial_state)
 {
 	while (state != EXIT) {
 		update();

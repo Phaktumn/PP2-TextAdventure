@@ -1,9 +1,8 @@
 #include "linked_list.h"
 #include "game.h"
+#include <SFML\Graphics.hpp>
 
 using namespace std;
-
-// ESTOU SÓ A INVESTIGAR ATM!
 
 int main()
 {
