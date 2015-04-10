@@ -6,7 +6,22 @@ typedef enum STATE
 	RUNNING, PAUSED, EXIT
 } STATE;
 
-STATE state;
-void update();
-void draw();
-int run(STATE initial_state);
+class Game
+{
+public:
+	Game();
+	~Game();
+
+	void update();
+	void draw();
+	int run(STATE initial_state);
+
+private:
+	STATE state;
+
+};
+
+
+
+
+

@@ -1,6 +1,14 @@
-#include "game.h"
+#include "Game.h"
 
-int run(STATE initial_state)
+Game::Game()
+{
+}
+
+Game::~Game()
+{
+}
+
+int Game::run(STATE initial_state)
 {
 	while (state != EXIT) {
 		update();
@@ -10,12 +18,12 @@ int run(STATE initial_state)
 	return 1;
 }
 
-void update()
+void Game::update()
 {
 
 }
 
-void draw()
+void Game::draw()
 {
 
 }

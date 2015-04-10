@@ -78,12 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DialogueTree.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="linked_list.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DialogueTree.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="linked_list.h" />
