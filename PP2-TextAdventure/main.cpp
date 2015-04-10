@@ -1,6 +1,10 @@
 #include "linked_list.h"
 #include "game.h"
+<<<<<<< HEAD
 #include "DialogueTree.h"
+=======
+#include <SFML\Graphics.hpp>
+>>>>>>> origin/master
 
 /*
 	Ideia:
@@ -8,8 +12,11 @@
 		Game contêm um gestor de "Screens", para podermos saltar de menus para in-game e afins;
 		A classe Screen base pode ser derivada, pelo podemos criar GameScreen, MenuScreen, etc;
 
+<<<<<<< HEAD
 */
 
+=======
+>>>>>>> origin/master
 int main()
 {
 	Game game;

@@ -1,11 +1,12 @@
 #define GAME_RUN(state) run(state);
 #define GAME_STOP state = RUNNING;
 
-typedef enum STATE
+enum GAME_STATE
 {
 	RUNNING, PAUSED, EXIT
-} STATE;
+};
 
+<<<<<<< HEAD
 class Game
 {
 public:
@@ -25,3 +26,9 @@ private:
 
 
 
+=======
+int state;
+void update();
+void draw();
+int run(int initial_state);
+>>>>>>> origin/master
