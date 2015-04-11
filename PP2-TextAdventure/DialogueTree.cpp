@@ -13,7 +13,8 @@ DialogueTree::~DialogueTree()
 
 DialogueNode* DialogueTree::getNode(int i)
 {
-	return dialogueNodes[i];
+	//return dialogueNodes[i];
+	return nullptr;
 }
 
 void DialogueTree::addOption(const std::string &text, DialogueNode* parentNode, DialogueNode* destinationNode)
@@ -22,7 +23,7 @@ void DialogueTree::addOption(const std::string &text, DialogueNode* parentNode, 
 	dialogueOption->nextNode = destinationNode;
 	dialogueOption->text = text;
 
-	parentNode->dialogueOptions.push_back(dialogueOption);
+	//parentNode->dialogueOptions.push_back(dialogueOption);
 }
 
 void DialogueTree::addNode(const std::string &text)
@@ -34,5 +35,5 @@ void DialogueTree::addNode(const std::string &text)
 		firstNode = dialogueNode;
 	}
 
-	dialogueNodes.push_back(dialogueNode);
+	//dialogueNodes.push_back(dialogueNode);
 }

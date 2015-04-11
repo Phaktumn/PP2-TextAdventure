@@ -1,12 +1,14 @@
 #define GAME_RUN(state) run(state);
 #define GAME_STOP state = RUNNING;
 
+#include "Log.h"
+#include <SFML/Graphics.hpp>
+
 enum GAME_STATE
 {
-	RUNNING, PAUSED, EXIT
+	MAIN_MENU, IN_GAME_WORLD, IN_GAME_BATTLE
 };
 
-<<<<<<< HEAD
 class Game
 {
 public:
@@ -15,20 +17,10 @@ public:
 
 	void update();
 	void draw();
-	int run(STATE initial_state);
+	int run();
 
 private:
-	STATE state;
-
+	GAME_STATE state;
+	sf::RenderWindow* window;
+	Log* gameLog;
 };
-
-
-
-
-
-=======
-int state;
-void update();
-void draw();
-int run(int initial_state);
->>>>>>> origin/master

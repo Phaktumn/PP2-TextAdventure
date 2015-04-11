@@ -5,7 +5,7 @@
 typedef struct DialogueNode
 {
 	std::string text;
-	std::vector<DialogueOption*> dialogueOptions;
+	//std::vector<int, DialogueOption*> dialogueOptions;
 } DialogueNode;
 
 typedef struct DialogueOption
@@ -26,6 +26,6 @@ public:
 
 private:
 	DialogueNode* firstNode;
-	std::vector<DialogueNode*> dialogueNodes;
+	//std::vector<DialogueNode*> dialogueNodes;
 };
 
