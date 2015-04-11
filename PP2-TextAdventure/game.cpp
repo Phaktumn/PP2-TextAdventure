@@ -18,10 +18,10 @@ int Game::run()
 
 	while (window->isOpen()) {
 		window->clear(sf::Color(0, 0, 0));
-		
+
 		update();
 		draw();
-		
+
 		window->display();
 
 		sf::Event event;
@@ -30,7 +30,6 @@ int Game::run()
 				window->close();
 		}
 	}
-
 	return 1;
 }
 

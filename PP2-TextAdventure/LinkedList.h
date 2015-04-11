@@ -39,7 +39,8 @@ void LinkedList<type>::add(type value)
 		head->value = value;
 		head->next = nullptr;
 	}
-	else {
+	else 
+	{
 		Node* previousPtr = head;
 		Node* ptr = head;
 
