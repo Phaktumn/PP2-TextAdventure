@@ -1,7 +1,6 @@
-#define GAME_RUN(state) run(state);
-#define GAME_STOP state = RUNNING;
-
 #include <SFML/Graphics.hpp>
+#include "StateManager.h"
+#include "GameState.h"
 
 class Game
 {
@@ -15,4 +14,5 @@ public:
 
 private:
 	sf::RenderWindow* window;
+	StateManager stateManager;
 };

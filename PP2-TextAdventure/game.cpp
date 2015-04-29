@@ -12,8 +12,12 @@ Game::~Game()
 
 int Game::run()
 {
-	window = new sf::RenderWindow(sf::VideoMode(1280, 720), "Text Adventure");
+	window = new sf::RenderWindow(sf::VideoMode(960, 540), "Text Adventure", sf::Style::Titlebar);
 	window->setFramerateLimit(120);
+
+	stateManager.addState("GameState", new GameState());
+	stateManager.loadState("GameState");
+	stateManager.changeState("GameState");
 
 	while (window->isOpen()) {
 		window->clear(sf::Color(0, 0, 0));
@@ -34,10 +38,10 @@ int Game::run()
 
 void Game::update()
 {
-
+	stateManager.update();
 }
 
 void Game::draw()
 {
-
+	stateManager.draw(window);
 }
