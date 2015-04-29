@@ -21,6 +21,6 @@ public:
 
 private:
 	State *currentState;
-	LinkedList<State*> states;
+	std::map<std::string, State*> states;
 };
 

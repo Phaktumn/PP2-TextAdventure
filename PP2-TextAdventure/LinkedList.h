@@ -25,6 +25,7 @@ public:
 template <class type>
 LinkedList<type>::LinkedList() : head(nullptr), count(0)
 {
+
 }
 
 template <class type>

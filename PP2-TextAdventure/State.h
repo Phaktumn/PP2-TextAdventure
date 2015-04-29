@@ -5,15 +5,8 @@
 class State
 {
 public:
-	State();
-	~State();
-
-	void load();
-	void update();
-	void draw(sf::RenderWindow *window);
-	std::string getName();
-
-protected:
-	std::string name;
+	virtual void load() = 0;
+	virtual void update() = 0;
+	virtual void draw(sf::RenderWindow *window) = 0;
 };
 
