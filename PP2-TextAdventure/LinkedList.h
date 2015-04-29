@@ -19,6 +19,7 @@ public:
 	void add(type value);
 	type get(int index);
 	void removeAt(int index);
+	void remove(type object)
 };
 
 template <class type>
@@ -74,5 +75,34 @@ type LinkedList<type>::get(int index)
 template <class type>
 void LinkedList<type>::removeAt(int index)
 {
+	int i = 0;
+	Node* ptr = head;
 
+	while (i < index - 1)
+	{
+		ptr = ptr->next;
+		i++;
+	}
+	ptr->next = ptr->next->next;
+	Node* removed = ptr->next;
+	count--;
+	delete(removed)
+
+}
+
+template <class type>
+void LinkedList<type>::remove(type object)
+{
+	Node* ptr = head;
+	while (ptr->next != nullptr)
+	{
+		if (object == ptr->next->value)
+		{
+			Node* toRemove = ptr->next;
+			ptr->next = ptr->next->next;
+			delete(toRemove);
+			count--;
+			delete(toRemove);
+		}
+	}
 }
