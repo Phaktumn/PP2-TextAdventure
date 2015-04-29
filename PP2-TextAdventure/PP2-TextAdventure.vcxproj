@@ -84,17 +84,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DialogueTree.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DialogueTree.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Log.h" />
     <ClInclude Include="Screen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

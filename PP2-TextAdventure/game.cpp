@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() : gameLog(new Log())
+Game::Game()
 {
 
 }
@@ -14,7 +14,6 @@ int Game::run()
 {
 	window = new sf::RenderWindow(sf::VideoMode(1280, 720), "Text Adventure");
 	window->setFramerateLimit(120);
-	state = MAIN_MENU;
 
 	while (window->isOpen()) {
 		window->clear(sf::Color(0, 0, 0));
