@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "StateManager.h"
 #include "GameState.h"
+#include "InputBox.h"
 
 class Game
 {
