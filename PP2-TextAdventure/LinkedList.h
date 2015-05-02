@@ -19,7 +19,7 @@ public:
 	void add(type value);
 	type get(int index);
 	void removeAt(int index);
-	void remove(type object)
+	void remove(type object);
 };
 
 template <class type>
