@@ -6,6 +6,10 @@
 class Game
 {
 public:
+	const int WINDOW_WIDTH = 960;
+	const int WINDOW_HEIGHT = 540;
+	const char* SEPARATOR = "+----------------------------------------------+";
+
 	Game();
 	~Game();
 

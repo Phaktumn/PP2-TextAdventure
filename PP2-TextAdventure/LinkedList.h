@@ -20,6 +20,7 @@ public:
 	type get(int index);
 	void removeAt(int index);
 	void remove(type object);
+	int getLength();
 };
 
 template <class type>
@@ -31,6 +32,12 @@ LinkedList<type>::LinkedList() : head(nullptr), count(0)
 template <class type>
 LinkedList<type>::~LinkedList()
 {
+}
+
+template <class type>
+LinkedList<type>::getLength()
+{
+	return count;
 }
 
 template <class type>

@@ -10,12 +10,14 @@ public:
 
 	void update(sf::Event* windowEvent);
 	void display(sf::RenderWindow* window);
+	sf::String lastCommand();
 
 private:
-	LinkedList<sf::String> log;
+	LinkedList<const sf::String*> log;
 	sf::Font font;
 	sf::Text text;
 	sf::String string;
 	float x, y;
+	bool modified, sent;
 };
 

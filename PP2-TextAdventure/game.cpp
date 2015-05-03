@@ -9,7 +9,7 @@ Game::~Game() {
 }
 
 int Game::run() {
-	window = new sf::RenderWindow(sf::VideoMode(960, 540), "Text Adventure", sf::Style::Titlebar);
+	window = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Text Adventure", sf::Style::Titlebar);
 	window->setFramerateLimit(120);
 
 	stateManager.addState("GameState", new GameState());
@@ -17,13 +17,12 @@ int Game::run() {
 	stateManager.changeState("GameState");
 
 	sf::Font font;
-	font.loadFromFile("Munro.ttf");
+	if (!font.loadFromFile("Munro.ttf")) {
+		printf("Font failed to load.");
+		return 0;
+	}
 
-	std::string s;
-	sf::Text text;
-	text.setFont(font);
-	text.setCharacterSize(24);
-	text.setColor(sf::Color::White);
+	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 
 	while (window->isOpen()) {
 		sf::Event event;
@@ -32,15 +31,7 @@ int Game::run() {
 				window->close();
 			}
 
-			if (event.type == sf::Event::TextEntered) {
-				if (event.KeyPressed == sf::Keyboard::BackSpace && s.size() != 0) {
-					s.pop_back();
-				}
-				else if (event.text.unicode < 128) {
-					s += static_cast<char>(event.text.unicode);
-					text.setString(s);
-				}
-			}
+			inputBox.update(&event);
 		}
 
 		window->clear(sf::Color(0, 0, 0));
@@ -48,7 +39,7 @@ int Game::run() {
 		update();
 		draw();
 
-		window->draw(text);
+		inputBox.display(window);
 		window->display();
 	}
 
