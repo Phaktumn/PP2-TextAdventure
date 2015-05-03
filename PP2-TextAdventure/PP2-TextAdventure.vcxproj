@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Actors.cpp" />
     <ClCompile Include="Attribute.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -93,6 +94,7 @@
     <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ability.h" />
     <ClInclude Include="Actors.h" />
     <ClInclude Include="Attribute.h" />
     <ClInclude Include="Game.h" />

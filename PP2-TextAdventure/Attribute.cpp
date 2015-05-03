@@ -2,9 +2,10 @@
 #include <SFML/Graphics.hpp>
 
 
-Attribute::Attribute(sf::String Name)
+Attribute::Attribute(sf::String _name, int _value)
 {
-	Name = name;
+	name = _name;
+	value = _value;
 }
 
 

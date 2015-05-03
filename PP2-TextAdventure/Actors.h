@@ -7,19 +7,21 @@
 #include <SFML/Graphics.hpp>
 #include "Attribute.h"
 #include "LinkedList.h"
+#include "Ability.h"
 
 #pragma once
-class Actors
+class Actor
 {
 private:
 	bool alive;
 	float hp;
 	float mana;
 	LinkedList<Attribute> attributes;
+	LinkedList<Ability> abilities;
 
 public:
-	Actors();
-	~Actors();
+	Actor(Attribute _attribures[], Ability _abilities[]);
+	~Actor();
 
 	void load();
 	void update();
