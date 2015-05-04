@@ -27,14 +27,16 @@ void InputBox::update(sf::Event* windowEvent) {
 			modified = true;
 		} else if (windowEvent->text.unicode == 13) {
 			sent = true;
-			string.clear();
-			string += "> ";
 		}
 	}
 
 	if (sent) {
+		printf("%s", string.getData());
 		log.add(&sf::String(string));
+		printf("%s", log.get(log.getLength() - 1));
 		sent = false;
+		string.clear();
+		string += "> ";
 	}
 
 	text.setString(string);
