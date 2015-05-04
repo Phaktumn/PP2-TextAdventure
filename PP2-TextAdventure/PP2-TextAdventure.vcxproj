@@ -85,26 +85,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
-    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Actors.cpp" />
     <ClCompile Include="Attribute.cpp" />
-    <ClCompile Include="DamageAbility.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="InputBox.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="OptionsMenu.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ability.h" />
-    <ClInclude Include="Actor.h" />
+    <ClInclude Include="Actors.h" />
     <ClInclude Include="Attribute.h" />
-    <ClInclude Include="DamageAbility.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="InputBox.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="OptionsMenu.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
   </ItemGroup>
