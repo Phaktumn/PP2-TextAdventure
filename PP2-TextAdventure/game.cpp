@@ -12,15 +12,15 @@ int Game::run() {
 	window = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Text Adventure", sf::Style::Titlebar);
 	window->setFramerateLimit(120);
 
-	stateManager.addState("GameState", new GameState());
-	stateManager.loadState("GameState");
-	stateManager.changeState("GameState");
-
 	sf::Font font;
 	if (!font.loadFromFile("Munro.ttf")) {
 		printf("Font failed to load.");
 		return 0;
 	}
+
+	stateManager.addState("GameState", new GameState(&font));
+	stateManager.loadState("GameState");
+	stateManager.changeState("GameState");
 
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 

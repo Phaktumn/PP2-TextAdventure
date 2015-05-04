@@ -8,7 +8,7 @@ typedef enum Quality
 InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color color) : x(x), y(y) {
 	text.setFont(*font);
 	text.setCharacterSize(fontSize);
-	text.setColor(sf::Color::Magenta);
+	text.setColor(color);
 	text.setPosition(x, y);
 	string += "> ";
 }

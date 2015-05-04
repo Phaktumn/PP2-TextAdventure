@@ -5,7 +5,6 @@ Player::Player(Attribute attributes[], Ability abilities[], int hp, int mana) : 
 
 }
 
-
 Player::~Player()
 {
 

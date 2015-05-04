@@ -1,11 +1,12 @@
 #pragma once
 #include "State.h"
+#include "game.h"
 #include <string>
 
 class GameState : public State
 {
 public:
-	GameState();
+	GameState(sf::Font* font);
 	~GameState();
 
 	void load();
@@ -13,6 +14,6 @@ public:
 	void draw(sf::RenderWindow *window);
 
 private:
-
+	sf::Font* font;
 };
 
