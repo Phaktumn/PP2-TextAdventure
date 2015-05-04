@@ -1,0 +1,66 @@
+HEAD:
+
+Greathelm *
+Iron-Helm *
+Spiritforged Helmet **
+Necropolis Helm **
+Crown of Forgotten Kings **
+Titan's Outlook ***
+Helm of purified Thoughts ***
+Skeleton Lord's Cranium ***
+Aegis Faceguard ****
+Greathelm of Wrath ****
+Goswhit (Arthur)*****
+Helmet of Darkness (Hades)*****
+
+FEET:
+
+Tyrant's Greaves *
+Stonestep Boots *
+Lucidity Shoes **
+Wraithplate Treads **
+Blackrock Greaves ***
+Mosscrusher Sabatons ***
+Warboots of Cruelty ****
+Treads of the Defiler ****
+Shoes of Vidar (Norse)*****
+
+HANDS:
+
+Steel Gaunlets *
+Amberplate Grips *
+Bonefist Gaunlets **
+Demolisher's Grips **
+Necropolis Gloves **
+Plate Claws of theDragon ***
+Destroyer Gaunlets ***
+Ice-Encrusted Gloves ****
+Onslaught Gauntlets ****
+Midas Touch *****
+
+CHEST:
+
+Ravager's Armor *
+Steel Chestplate *
+Cobalt Chespiece *
+Ornamented Chestguard **
+Sunblessed Battleplate **
+Battlechest of the Twilight ***
+Breastplate of Valor ***
+Dragonstorm Breastplate ***
+Frost Wyrm Ribcage ****
+Gladiator's Plate Chestpiece ****
+Hide of Nemean Lion (Hercules) *****
+
+
+LEGS:
+
+Plate Legguards *
+Steel Leggings *
+Tempered Leggings **
+Ornamented Leggings **
+JUsticar Greaves ***
+Warload's Iron-Legplates ***
+Legguards of Endless Rage ****
+Gladiator's Legguards ****
+Thor's Legplates *****
