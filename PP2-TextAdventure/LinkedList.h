@@ -35,7 +35,7 @@ LinkedList<type>::~LinkedList()
 }
 
 template <class type>
-LinkedList<type>::getLength()
+int LinkedList<type>::getLength()
 {
 	return count;
 }

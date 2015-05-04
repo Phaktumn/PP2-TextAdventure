@@ -1,9 +1,14 @@
 #include "InputBox.h"
 
+typedef enum Quality
+{
+	COMMON, UNCOMMON, RARE, EPIC, LEGENDARY
+} Quality;
+
 InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color color) : x(x), y(y) {
 	text.setFont(*font);
 	text.setCharacterSize(fontSize);
-	text.setColor(color);
+	text.setColor(sf::Color::Magenta);
 	text.setPosition(x, y);
 	string += "> ";
 }

@@ -1,14 +1,21 @@
+#pragma once
 #include <SFML\Graphics.hpp>
 
-#pragma once
 class Ability
 {
+public:
+	Ability(const sf::String &name, int cost);
+	~Ability();
+
+	sf::String getName() { return name; }
+
+	typedef enum Resource {
+		MANA, RAGE
+	} Resource;
+
 private:
 	sf::String name;
-	int value;
-
-public:
-	Ability(sf::String _name, int value);
-	~Ability();
+	int cost;
+	Resource resource;
 };
 

@@ -14,17 +14,19 @@ class Actor
 {
 private:
 	bool alive;
-	float hp;
-	float mana;
+	int hp;
+	int mana;
 	LinkedList<Attribute> attributes;
 	LinkedList<Ability> abilities;
 
 public:
-	Actor(Attribute _attribures[], Ability _abilities[]);
+	Actor(Attribute _attribures[], Ability _abilities[], int hp, int mana);
 	~Actor();
 
 	void load();
 	void update();
 	void draw();
+
+	bool takeDamage(int damage);
 };
 

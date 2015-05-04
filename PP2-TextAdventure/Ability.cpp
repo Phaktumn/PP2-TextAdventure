@@ -1,11 +1,9 @@
 #include "Ability.h"
 #include <SFML\Graphics.hpp>
 
-
-Ability::Ability(sf::String _name, int _value)
+Ability::Ability(const sf::String &name, int cost) : name(name), cost(cost)
 {
-	name = _name;
-	value = _value;
+
 }
 
 
