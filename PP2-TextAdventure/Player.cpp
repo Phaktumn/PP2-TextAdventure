@@ -1,7 +1,6 @@
 #include "Player.h"
 
-
-Player::Player(Attribute attributes[], Ability abilities[], int HP, int Mana) : Actor(attributes, abilities, HP, Mana)
+Player::Player(Attribute attributes[], Ability abilities[], int hp, int mana) : Actor(attributes, abilities, hp, mana)
 {
 
 }
