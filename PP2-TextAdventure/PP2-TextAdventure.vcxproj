@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Attribute.cpp" />
     <ClCompile Include="DamageAbility.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -95,10 +96,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StateManager.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Actor.h" />
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="Attribute.h" />
     <ClInclude Include="DamageAbility.h" />
     <ClInclude Include="Game.h" />
@@ -109,6 +112,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Munro.ttf" />
