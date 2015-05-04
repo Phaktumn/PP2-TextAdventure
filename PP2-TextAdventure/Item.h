@@ -6,13 +6,14 @@ class Item
 private:
 	sf::Color Quality;
 	sf::String name;
-	float weaponDamage;
-	float bonusStrength;
-	float bonusIntelect;
-	float bonusArmor;
+	int weaponDamage;
+	int bonusStrength;
+	int bonusIntelect;
+	int bonusArmor;
+	int atuamae;
 
 public:
-	Item();
+	Item(sf::Color quality, sf::String name, int bonusStrength, int bonusIntelect);
 	~Item();
 
 	sf::String getName() { return name; }
