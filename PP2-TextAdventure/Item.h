@@ -25,7 +25,7 @@ public:
 	Item(sf::Color quality, sf::String name, Type type, int bonusStrength, int bonusIntelect);
 	~Item();
 
-	sf::String getName() { return name; }
+	std::string getName() { return name.toAnsiString(); }
 };
 
 

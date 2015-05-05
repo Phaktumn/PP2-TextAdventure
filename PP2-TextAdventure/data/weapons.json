@@ -1,7 +1,9 @@
 [
   {
+  	"Name": "Weapon de Teste",
     "Damage": 100,
     "Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
-    "Name": "Weapon de Teste"
+  	"BaseStrength": 100,
+  	"BaseIntellect": 100
   }
 ]

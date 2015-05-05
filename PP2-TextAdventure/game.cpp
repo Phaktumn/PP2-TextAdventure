@@ -22,8 +22,7 @@ int Game::run() {
 	stateManager.loadState("GameState");
 	stateManager.changeState("GameState");
 
-	Utilities::loadItem("data/teste.json");
-
+	GameManager::loadItems("data");
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 
 	while (window->isOpen()) {
