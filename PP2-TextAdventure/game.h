@@ -4,6 +4,7 @@
 #include "GameState.h"
 #include "InputBox.h"
 #include "Globals.h"
+#include "Utilities.h"
 
 class Game
 {
