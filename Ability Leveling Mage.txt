@@ -6,5 +6,5 @@
 15 - Omniscience (restores 30% of total mana + 10% on the next 2 turns)
 19 - Energy Blast (Spends 40% of present mana, does 100% of that amount as damage)
 23 - Frost Beam (130% magic power as damage, has a 20% chance to cast Frozen Tomb on target)
-27 - Sonic repulsion field  (evades next attack)
+27 - Sonic repulsion field  (evades next attack, cannot be used twice in a row)
 30 - Phoebus Catastrophe (300% magic power as damage , if it doesnt kill the enemy, the user takes 30% of that damage to himself)
