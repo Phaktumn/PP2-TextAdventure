@@ -1,4 +1,5 @@
 #include "GameManager.h"
+#include "Globals.h"
 
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 
@@ -23,12 +24,16 @@ void GameManager::loadItems(const std::string &filePath)
 
 			std::string name = armorObj["Name"].as<std::string>();
 			std::string description = armorObj["Description"].as<std::string>();
+			int typeInt = armorObj["Type"].as<int>();
 			int baseStr = armorObj["BaseStrength"].as<int>();
 			int baseInt = armorObj["BaseIntellect"].as<int>();
 			int baseArmor = armorObj["BaseArmor"].as<int>();
 
-			itemDatabase.emplace(name, std::shared_ptr<Item>(new Armor(sf::Color::Red, sf::String(name), baseStr, baseInt, baseArmor)));
+			Item::Type type = static_cast<Item::Type>(typeInt);
+
+			itemDatabase.emplace(name, std::shared_ptr<Item>(new Armor(sf::Color::Red, sf::String(name), type, baseStr, baseInt, baseArmor)));
 		}
+		
 		catch (const jsoncons::json_exception& e) {
 			std::cerr << e.what() << std::endl;
 		}
@@ -41,11 +46,14 @@ void GameManager::loadItems(const std::string &filePath)
 
 			std::string name = weaponObj["Name"].as<std::string>();
 			std::string description = weaponObj["Description"].as<std::string>();
+			int Type = weaponObj["Type"].as<int>();
 			int damage = weaponObj["Damage"].as<int>();
 			int baseStr = weaponObj["BaseStrength"].as<int>();
 			int baseInt = weaponObj["BaseIntellect"].as<int>();
 
-			itemDatabase.emplace(name, std::shared_ptr<Item>(new Weapon(sf::Color::Red, sf::String(name), baseStr, baseInt, damage)));
+			Item::Type type = static_cast<Item::Type>(Type);
+
+			itemDatabase.emplace(name, std::shared_ptr<Item>(new Weapon(sf::Color::Red, sf::String(name), type, baseStr, baseInt, damage)));
 		}
 		catch (const jsoncons::json_exception& e) {
 			std::cerr << e.what() << std::endl;

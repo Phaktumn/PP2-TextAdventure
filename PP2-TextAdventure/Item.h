@@ -6,10 +6,10 @@ class Item
 private:
 	sf::Color Quality;
 	sf::String name;
+	int bonusArmor;
 	int weaponDamage;
 	int bonusStrength;
 	int bonusIntelect;
-	int bonusArmor;
 
 public:
 	enum Type

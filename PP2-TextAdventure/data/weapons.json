@@ -3,6 +3,7 @@
   	"Name": "Weapon de Teste",
     "Damage": 100,
     "Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Type": 5,
   	"BaseStrength": 100,
   	"BaseIntellect": 100
   }

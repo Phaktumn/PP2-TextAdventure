@@ -2,6 +2,7 @@
   {
   	"Name": "Armor de Teste",
     "Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Type": 1,
   	"BaseStrength": 100,
   	"BaseIntellect": 100,
   	"BaseArmor": 100
