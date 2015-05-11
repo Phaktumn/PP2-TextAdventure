@@ -25,21 +25,11 @@ public:
 		feet,
 	};
 
-	static sf::Color getQuality(const std::string &name) {
-		return quality[name];
-	}
-
-	static void loadProperties() {
-		quality.emplace("Legendary", sf::Color::Color(185, 33, 33, 255));
-		quality.emplace("Epic", sf::Color::Color(237, 14, 181, 255));
-		quality.emplace("Rare", sf::Color::Color(205, 00, 255, 255));
-		quality.emplace("Uncommon", sf::Color::Color(71, 63, 232, 255));
-		quality.emplace("Common", sf::Color::Color(162, 220, 220, 255));
-	}
-
 	Type type;
 	Item(sf::Color quality, sf::String name, Type type, int bonusStrength, int bonusIntelect);
 	~Item();
+	static sf::Color getQuality(const std::string &name);
+	static void loadProperties();
 	void draw(sf::RenderWindow* window, sf::Font* font);
 
 	std::string getName() { return name.toAnsiString(); }

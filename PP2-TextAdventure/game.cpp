@@ -39,7 +39,7 @@ int Game::run() {
 
 		window->clear(sf::Color(0, 0, 0));
 
-		GameManager::getItem("Black COCK")->draw(window, &font);
+		GameManager::getItem("Armor de Teste")->draw(window, &font);
 
 		update();
 		draw();
