@@ -6,7 +6,7 @@ class Weapon : public Item
 private:
 	int weaponDamage;
 public:
-	Weapon(sf::Color quality, sf::String name, Type weaponType, int bonusStrength, int bonusIntelect, int weaponDamage);
+	Weapon(sf::String quality, sf::String name, Type weaponType, int bonusStrength, int bonusIntelect, int weaponDamage);
 	~Weapon();
 };
 
