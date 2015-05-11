@@ -5,11 +5,16 @@ std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 
 GameManager::GameManager()
 {
+	
 }
 
 
 GameManager::~GameManager()
 {
+}
+
+void GameManager::loadGlobals() {
+	Item::loadProperties();
 }
 
 void GameManager::loadItems(const std::string &filePath)

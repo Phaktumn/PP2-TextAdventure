@@ -14,6 +14,7 @@ public:
 	GameManager();
 	~GameManager();
 
+	static void loadGlobals();
 	static void loadItems(const std::string &filePath);
 	static Item* getItem(const std::string &itemName);
 

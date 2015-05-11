@@ -10,7 +10,7 @@ Item::Item(sf::Color _quality, sf::String _name, Type _type, int _bonusStrength,
 	type = type;
 }
 
-
 Item::~Item()
 {
+
 }
