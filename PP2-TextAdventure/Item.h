@@ -10,6 +10,7 @@ private:
 	int weaponDamage;
 	int bonusStrength;
 	int bonusIntelect;
+	sf::Text text;
 
 	static std::map<std::string, sf::Color> quality;
 
@@ -39,6 +40,7 @@ public:
 	Type type;
 	Item(sf::Color quality, sf::String name, Type type, int bonusStrength, int bonusIntelect);
 	~Item();
+	void draw(sf::RenderWindow* window, sf::Font* font);
 
 	std::string getName() { return name.toAnsiString(); }
 };

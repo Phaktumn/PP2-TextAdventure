@@ -1,4 +1,6 @@
 #include "Game.h"
+#include "Item.h"
+#include "GameManager.h"
 
 Game::Game() {
 
@@ -36,6 +38,8 @@ int Game::run() {
 		}
 
 		window->clear(sf::Color(0, 0, 0));
+
+		GameManager::getItem("Black COCK")->draw(window, &font);
 
 		update();
 		draw();

@@ -14,3 +14,13 @@ Item::~Item()
 {
 
 }
+
+void Item::draw(sf::RenderWindow* window, sf::Font* font)
+{
+	text.setString(name);
+	text.setFont(*font);
+	text.setCharacterSize(22);
+	text.setColor(Quality);
+	text.setPosition(100, 100);
+	window->draw(text);
+}

@@ -6,4 +6,3 @@
 extern int WINDOW_WIDTH;
 extern int WINDOW_HEIGHT;
 extern sf::String SEPARATOR;
-extern LinkedList<Item> Items;
