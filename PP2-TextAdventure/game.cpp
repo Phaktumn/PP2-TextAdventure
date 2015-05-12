@@ -20,13 +20,13 @@ int Game::run() {
 		return 0;
 	}
 
-	stateManager.addState("GameState", new GameState(&font));
-	stateManager.loadState("GameState");
-	stateManager.changeState("GameState");
-
 	GameManager::loadItems("data");
 	GameManager::loadGlobals();
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
+
+	stateManager.addState("GameState", new GameState(&font));
+	stateManager.loadState("GameState");
+	stateManager.changeState("GameState");
 
 	while (window->isOpen()) {
 		sf::Event event;
@@ -39,8 +39,6 @@ int Game::run() {
 		}
 
 		window->clear(sf::Color(0, 0, 0));
-
-		GameManager::getItem("Armor de Teste")->draw(window, &font);
 
 		update();
 		draw();

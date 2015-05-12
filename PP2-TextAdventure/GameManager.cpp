@@ -2,6 +2,7 @@
 #include "Globals.h"
 
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
+std::map<std::string, sf::Text> drawnText;
 
 GameManager::GameManager()
 {

@@ -2,6 +2,7 @@
 #include <string>
 #include "Item.h"
 #include <jsoncons\json.hpp>
+#include <SFML/Graphics.hpp>
 #include <map>
 #include "LinkedList.h"
 #include "Armor.h"

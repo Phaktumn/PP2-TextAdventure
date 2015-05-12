@@ -9,7 +9,7 @@ GameState::~GameState() {
 }
 
 void GameState::load() {
-	
+	drawText(200, 200, "Armor de Teste", font, sf::Color::Red, 24);
 }
 
 void GameState::update() {
@@ -17,6 +17,8 @@ void GameState::update() {
 }
 
 void GameState::draw(sf::RenderWindow* window) {
+	State::draw(window);
+
 	sf::String hello(SEPARATOR);
 	
 	sf::Text text;
