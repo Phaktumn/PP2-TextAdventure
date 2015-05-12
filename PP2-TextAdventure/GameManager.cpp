@@ -16,6 +16,7 @@ GameManager::~GameManager()
 
 void GameManager::loadGlobals() {
 	Item::loadProperties();
+
 }
 
 void GameManager::loadItems(const std::string &filePath)

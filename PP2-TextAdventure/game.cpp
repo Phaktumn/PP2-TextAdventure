@@ -40,16 +40,6 @@ int Game::run() {
 
 		window->clear(sf::Color(0, 0, 0));
 
-<<<<<<< HEAD
-=======
-		GameManager::getItem("Armor de Teste")->draw(window, &font, 100, 100);
-		GameManager::getItem("Weapon de Teste")->draw(window, &font, 100, 125);
-		GameManager::getItem("Holy Cleaver")->draw(window, &font, 100, 150);
-		GameManager::getItem("Black Cleaver")->draw(window, &font, 100, 175);
-		GameManager::getItem("Redemption")->draw(window, &font, 100, 200);
-		GameManager::getItem("Your MOM tho!")->draw(window, &font, 100, 225);
-
->>>>>>> origin/master
 		update();
 		draw();
 

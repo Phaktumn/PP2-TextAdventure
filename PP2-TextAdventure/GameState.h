@@ -2,6 +2,7 @@
 #include "State.h"
 #include "game.h"
 #include <string>
+#include "Globals.h"
 
 class GameState : public State
 {
