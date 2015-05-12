@@ -13,6 +13,7 @@
 class Actor
 {
 private:
+	std::string name;
 	bool alive;
 	int hp;
 	int mana;
@@ -20,12 +21,13 @@ private:
 	LinkedList<Ability> abilities;
 
 public:
-	Actor(Attribute _attribures[], Ability _abilities[], int hp, int mana);
+	Actor(std::string, Attribute _attributes[], Ability _abilities[], int hp, int mana);
 	~Actor();
 
 	void load();
 	void update();
 	void draw();
+	std::string getActorName();
 
 	bool takeDamage(int damage);
 };

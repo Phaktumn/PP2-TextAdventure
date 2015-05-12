@@ -8,6 +8,7 @@
 #include "Armor.h"
 #include "Weapon.h"
 #include <memory>
+#include "Actor.h"
 
 class GameManager
 {
@@ -17,9 +18,12 @@ public:
 
 	static void loadGlobals();
 	static void loadItems(const std::string &filePath);
+	static void loadMobs(const std::string &filePath);
 	static Item* getItem(const std::string &itemName);
 
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
+	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
+	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
 };
 
