@@ -30,7 +30,7 @@ public:
 
 	static sf::Color getQuality(const std::string &name);
 	static void loadProperties();
-	void draw(sf::RenderWindow* window, sf::Font* font);
+	void draw(sf::RenderWindow* window, sf::Font* font, int x, int y);
 
 	std::string getName() { return name.toAnsiString(); }
 };

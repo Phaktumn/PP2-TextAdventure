@@ -1,11 +1,47 @@
 [
   {
-  	"Name": "Weapon de Teste",
-	"Quality": "Legendary",
-    	"Damage": 100,
-    	"Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Name": "Weapon de Teste", 
+	"Quality": "Epic",
+	"Damage": 100,
+	"Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
 	"Type": 5,
-  	"BaseStrength": 100,
-  	"BaseIntellect": 100
+	"BaseStrength": 100,
+	"BaseIntellect": 100	
+  },
+  {
+	"Name": "Holy Cleaver",
+	"Quality": "Rare",
+	"Damage": 110,
+    	"Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Type": 1,
+  	"BaseStrength": 110,
+  	"BaseIntellect": 10
+  },
+  {
+	"Name": "Black Cleaver",
+	"Quality": "Uncommon",
+	"Damage": 110,
+    	"Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Type": 1,
+  	"BaseStrength": 110,
+  	"BaseIntellect": 10
+  },
+  {
+	"Name": "Redemption",
+	"Quality": "Rare",
+	"Damage": 110,
+    	"Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Type": 1,
+  	"BaseStrength": 110,
+  	"BaseIntellect": 10
+  },
+  {
+	"Name": "Your MOM tho!",
+	"Quality": "Legendary",
+	"Damage": 110,
+    	"Description": "Blablabla blablablalb IPPASDFASODFAOSDFOADF",
+	"Type": 1,
+  	"BaseStrength": 110,
+  	"BaseIntellect": 10
   }
 ]
