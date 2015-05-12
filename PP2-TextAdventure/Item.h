@@ -11,7 +11,7 @@ private:
 	int bonusIntelect;
 	sf::Text text;
 	sf::String Quality;
-	static std::map<std::string, sf::Color> Item::quality;
+	static std::map<std::string, sf::Color> quality;
 
 public:
 	enum Type
@@ -28,8 +28,8 @@ public:
 	Item(sf::String quality, sf::String name, Type type, int bonusStrength, int bonusIntelect);
 	~Item();
 
-	static void loadProperties();
 	static sf::Color getQuality(const std::string &name);
+	static void loadProperties();
 	void draw(sf::RenderWindow* window, sf::Font* font);
 
 	std::string getName() { return name.toAnsiString(); }

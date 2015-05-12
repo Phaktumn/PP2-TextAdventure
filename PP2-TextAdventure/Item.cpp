@@ -1,5 +1,6 @@
 #include "Item.h"
 
+std::map<std::string, sf::Color> Item::quality;
 
 Item::Item(sf::String _quality, sf::String _name, Type _type, int _bonusStrength, int _bonusIntelect)
 {

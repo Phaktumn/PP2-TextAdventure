@@ -25,6 +25,7 @@ int Game::run() {
 	stateManager.changeState("GameState");
 
 	GameManager::loadItems("data");
+	GameManager::loadGlobals();
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 
 	while (window->isOpen()) {
