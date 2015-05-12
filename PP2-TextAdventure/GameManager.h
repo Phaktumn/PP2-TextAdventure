@@ -19,7 +19,7 @@ public:
 	static void loadGlobals();
 	static void loadItems(const std::string &filePath);
 	static void loadMobs(const std::string &filePath);
-	static Item* getItem(const std::string &itemName);
+	static Item* getItem(const std::string &name);
 
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;

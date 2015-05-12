@@ -47,6 +47,7 @@ void GameManager::loadItems(const std::string &filePath)
 		}
 	}
 
+	int _i = 0;
 	// Load weapons
 	for (size_t i = 0; i < weaponFile.size(); i++) {
 		try {
@@ -72,7 +73,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 void GameManager::loadMobs(const std::string &filePath){
 
-	jsoncons::json mobFile = jsoncons::json::parse_file(filePath + "/armors.json");
+	jsoncons::json mobFile = jsoncons::json::parse_file(filePath + "/Mobs.json");
 
 	//load mobs as Actors
 	for (size_t i = 0; i < mobFile.size(); i++){
