@@ -29,12 +29,12 @@ void Item::loadProperties(){
 	quality.emplace("Common", sf::Color::Color(162, 220, 220, 255));
 }
 
-void Item::draw(sf::RenderWindow* window, sf::Font* font)
+void Item::draw(sf::RenderWindow* window, sf::Font* font, int x, int y)
 {
 	text.setString(name);
 	text.setFont(*font);
 	text.setCharacterSize(22);
 	text.setColor(getQuality(Quality));
-	text.setPosition(100, 100);
+	text.setPosition(x, y);
 	window->draw(text);
 }
