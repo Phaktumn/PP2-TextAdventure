@@ -3,11 +3,12 @@
 #include "game.h"
 #include <string>
 #include "Globals.h"
+#include "InputBox.h"
 
 class GameState : public State
 {
 public:
-	GameState(sf::Font* font);
+	GameState(sf::Font* font, InputBox* inputBox, StateManager* stateManager);
 	~GameState();
 
 	void load() override;
@@ -16,5 +17,8 @@ public:
 
 private:
 	sf::Font* font;
+	InputBox* inputBox;
+	StateManager* stateManager;
+	bool input = false;
 };
 

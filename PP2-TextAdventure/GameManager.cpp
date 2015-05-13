@@ -3,6 +3,7 @@
 
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
+std::map<std::string, std::shared_ptr<DamageAbility>> GameManager::damageAbilitiesDatabase;
 
 GameManager::GameManager()
 {
@@ -75,7 +76,7 @@ void GameManager::loadMobs(const std::string &filePath){
 
 	jsoncons::json mobFile = jsoncons::json::parse_file(filePath + "/Mobs.json");
 
-	//load mobs as Actors
+	//load mobs
 	for (size_t i = 0; i < mobFile.size(); i++){
 		try{
 			jsoncons::json &mobObj = mobFile[i];
@@ -93,6 +94,14 @@ void GameManager::loadMobs(const std::string &filePath){
 			std::cerr << e.what() << std::endl;
 		}
 	}
+}
+
+void GameManager::addDamageAbility(DamageAbility *ability){
+	damageAbilitiesDatabase.emplace(ability->getName(), std::shared_ptr<DamageAbility>(ability));
+}
+
+DamageAbility* GameManager::getDamageAbility(const std::string &name){
+	return damageAbilitiesDatabase[name].get();
 }
 
 Item* GameManager::getItem(const std::string &itemName)

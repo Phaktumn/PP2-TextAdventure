@@ -2,6 +2,7 @@
 #include "Item.h"
 #include "GameManager.h"
 #include "TitleMenuState.h"
+#include "BattleState.h"
 
 Game::Game() {
 
@@ -26,10 +27,12 @@ int Game::run() {
 	
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 
-	stateManager.addState("GameState", new GameState(&font));
+	stateManager.addState("GameState", new GameState(&font, &inputBox, &stateManager));
 	stateManager.addState("TitleMenuState", new TitleMenuState(&font, &stateManager));
+	stateManager.addState("BattleState", new BattleState(&font));
 	stateManager.loadState("TitleMenuState");
 	stateManager.loadState("GameState");
+	stateManager.loadState("BattleState");
 	stateManager.changeState("TitleMenuState");
 
 	while (window->isOpen()) {
