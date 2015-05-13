@@ -6,18 +6,22 @@
 class Ability
 {
 public:
-	Ability(const sf::String &name, int cost);
+	typedef enum Resource {
+		NORESOURCE,
+		MANA,
+		RAGE
+	} Resource;
+
+	Ability(const sf::String &name, Resource resource, int cost);
 	~Ability();
 
 	sf::String getName() { return name; }
-
-	typedef enum Resource {
-		MANA, RAGE
-	} Resource;
+	int getCost() { return cost; }
 
 private:
 	sf::String name;
 	int cost;
+protected:
 	Resource resource;
 };
 

@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Header Abilities">
+      <UniqueIdentifier>{bbdd92e2-6cc3-42fd-8d50-b5f29e1a01e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Source Abilities">
+      <UniqueIdentifier>{69ad91f7-8db8-44dc-bbb0-f2317e73ade0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="TitleMenuState.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoAtack.cpp">
+      <Filter>Source Files\Source Abilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,10 +134,16 @@
     <ClInclude Include="TitleMenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AutoAtack.h">
+      <Filter>Header Files\Header Abilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Munro.ttf">
       <Filter>Resource Files</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
