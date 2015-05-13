@@ -1,0 +1,6 @@
+*bold*, ~italic~, _underlined_
+unicode: αινσϊηΖζήπλ
+#red red, #green green, #blue blue
+#ff6600 sexy #33ff99 hex #9933ff code #ff33cc support!
+#ffff33 ~*_EVERYTHING AT ONCE :D_*~
+#white Escaping format characters is supported: \~\*\#\_\
