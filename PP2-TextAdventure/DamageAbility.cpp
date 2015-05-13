@@ -12,6 +12,10 @@ DamageAbility::~DamageAbility()
 
 }
 
+/// <summary>
+/// Deals damage to the target Actor.
+/// </summary>
+/// <param name="target">Pointer to the target actor.</param>
 void DamageAbility::dealDamage(Actor* target) {
 	target->takeDamage(damage * multiplier);
 }

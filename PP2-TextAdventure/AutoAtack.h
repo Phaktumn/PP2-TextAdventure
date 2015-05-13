@@ -1,6 +1,8 @@
 #pragma once
 #include "Ability.h"
-class AutoAtack : public Ability
+#include "DamageAbility.h"
+
+class AutoAtack : public DamageAbility
 {
 public:
 	AutoAtack(const sf::String _name, Resource _resource, int cost);

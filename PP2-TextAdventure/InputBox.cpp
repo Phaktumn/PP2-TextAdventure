@@ -8,6 +8,7 @@ InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color col
 	string += "> ";
 }
 
+
 InputBox::~InputBox() {
 
 }

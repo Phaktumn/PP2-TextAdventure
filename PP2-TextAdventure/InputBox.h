@@ -7,6 +7,7 @@ class InputBox
 public:
 	InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color color);
 	~InputBox();
+	
 
 	void update(sf::Event* windowEvent);
 	void display(sf::RenderWindow* window);
