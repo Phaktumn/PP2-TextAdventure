@@ -1,39 +1,43 @@
 Legs:
 
-Golden Scale Leggings*
-Brain-Splattered Leggings *
-Bael'dun Chain Leggings*
-Legwraps of the Slain*
-Legwraps of the Slain**
-Heros´s Leggings **
-Knight-Captain's Chain Leggings**
-Beastmaster's Pants**
-Earthfury Legguards**
-Bloodstained Legplates**
-Sunfury Legguards***
-Greaves of Shackled Souls***
-Cataclysm Legguards***
-Beastsoul Legguards***
-Titan-Forged Chain Leggings of Triumph***
-Ethereal Crystal-Leaf Legguards****
-Iron Dragoon's Pantaloons****
-Crystal-Leaf Legguards****
-Axeclaw Legguards****
-Shadow-Binder's Kilt****
-Sunspring Legguards****
+Fancy Pants*
+Kilt of the Atal'ai Prophet *
+Bloodvine Leggings*
+Nemesis Leggings*
+
+Doomcaller's Trousers**
+Leggings of Faith**
+Battlecast Pants**
+Leggings of the Malefic**
+Trousers of the Arakkoa**
+Skirt of the Old Kingdom**
+
+Pants of the Soothing Touch***
+Gul'dan's Leggings of Triumph***
+Leggings of Woven Death***
+Ameth'Aran Leggings***
+Flamesear Leggings***
+
+Dragonwing Leggings****
+Emberfire Pants****
+Gartic's Resplendent Leggings****
+Soul Breath Leggings****
+Time Traveler's Leggings****	
+Lavaquake Legwraps****
+
+Braveheart Kilts*****
+Iskandar PAnts of Conquer*****
 
 
 
 
+Chest:
 
-
-
-
-Armor:
 Wild Gladiator's Silk Robe*
 Deathrattle Attack Robe*
 Shock Pulse Lightning Robes*
 Akolik's Acid-Soaked Robes*
+
 Sumptuous protection Robes**
 Sunscryer Robe of light**
 Ravendown Robe of protection**
@@ -41,9 +45,11 @@ Robes of Nova Power**
 Amaranthine Robe**
 Heartlander's Robe**
 Slavebreaker Robes**
+
 Zandalari Robes of the Final Rite***
 Guardian Serpent Raiment***
 Cloudscorcher Robe***
+
 Heroic Burning Robes of the Golden Lotus****
 Bubblebrew Robe****
 Motherseed Robe****
@@ -52,67 +58,85 @@ Altair's Robes of swiftness*****
 Merlin's Robe *****
 Aladin Robe *****
 Mantle of Arthur *****
+
 Robe of the Fire-rat*****
 
 
 
 Feet:
+
 Imperial Red Boots*
 Warlock Slippers*
 Boots of Pure Thought*
 Frostfire Sandals*
 Boots of Foretelling*
+
 Slippers of the High Priestess**
 Boots of the Malefic**
 Grom'gar Wolfskin Slippers**
 Orunai Sandals**
 Sandals of Hooded Nightmares**
+
 Mindbender Treads***
 Sandals of the Shadow***
 Boots of the Blowing Wind***
 Frostwolf Wind-Talker Treads***
+
 Sandals of Arcane Fury****
 Skydancer Boots****
 Silentflame Sandals****
 Mar'li's Bloodstained Sandals****
+
 winged sandals of Hermes *****
+Caligae*****
 
 Hands:
+
 Hands of Consequences*
 Gloves of Compassion*
-	
 Bonecaster's Gloves*
-Replica Deathmist Wraps*
-	
+Replica Deathmist Wraps*	
 Bloodtinged Gloves*
+
 Red Hands of the Thunderlord**
 Lava Burn Gloves**
 Light Blessed Mittens**
 Moonshroud Gloves **
+
 Looming Shadow Wraps***
 God-Grinding Grips***
 Mnemiopsis Gloves***
 Deathsilk Gloves***
 Shadowflame Handwraps***
 Exceptional Windcrystal Wraps***
+
 Fusespark Gloves****
 Lifedrainer's Sordid Grip****
 
 
+Head:
+Demon Prince's Ascendant Crown*
+Crown of the Fire Festival*
+Vishas' Hood*
+Crown of Caer Darrow*
+Hood of the Royal Wizard*
 
+Soulcatcher Halo**
+Emerald Crown of Destruction**
+Spellweaver's Turban**
+Deathmist Mask**
+Cap of the Scarlet Servant**
+Mag'hari Ritualist's Horns**
 
+Hood of the Third Eye***
+Titan-Forged Hood of Dominance***
+Gul'dan's Hood of Conquest***
+Sharkshield Cover***
 
-missin head  
-missin head  
-missin head  
-missin head  
-missin head  
- 
+Power Generator Hood****
+Soulgaze Cowl****
+Hood of the Faceless Shroud****
+Fallout Filter****
+winged helmet of hermes*****
 
-
-
-
-
-
-winged helmet of hermes 
  
