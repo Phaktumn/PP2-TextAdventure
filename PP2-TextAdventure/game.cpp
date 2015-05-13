@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Item.h"
 #include "GameManager.h"
+#include "TitleMenuState.h"
 
 Game::Game() {
 
@@ -22,11 +23,14 @@ int Game::run() {
 
 	GameManager::loadItems("data");
 	GameManager::loadGlobals();
+	
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 
 	stateManager.addState("GameState", new GameState(&font));
+	stateManager.addState("TitleMenuState", new TitleMenuState(&font, &stateManager));
+	stateManager.loadState("TitleMenuState");
 	stateManager.loadState("GameState");
-	stateManager.changeState("GameState");
+	stateManager.changeState("TitleMenuState");
 
 	while (window->isOpen()) {
 		sf::Event event;
@@ -35,7 +39,7 @@ int Game::run() {
 				window->close();
 			}
 
-			inputBox.update(&event);
+			if (activeInput) inputBox.update(&event);
 		}
 
 		window->clear(sf::Color(0, 0, 0));
@@ -43,7 +47,8 @@ int Game::run() {
 		update();
 		draw();
 
-		inputBox.display(window);
+		if(activeInput) inputBox.display(window);
+		
 		window->display();
 	}
 

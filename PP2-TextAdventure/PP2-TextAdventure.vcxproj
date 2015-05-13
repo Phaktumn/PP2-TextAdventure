@@ -100,6 +100,7 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="TitleMenuState.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="TitleMenuState.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>

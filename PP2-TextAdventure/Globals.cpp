@@ -5,6 +5,7 @@
 int WINDOW_WIDTH = 960;
 int WINDOW_HEIGHT = 540;
 sf::String SEPARATOR(" + ----------------------------------------------------------------------------------------------------- +");
+bool activeInput = false;
 
 //just a fcking test
 std::map<int, sf::String> options;

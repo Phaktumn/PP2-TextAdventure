@@ -9,11 +9,6 @@ GameState::~GameState() {
 }
 
 void GameState::load() {
-	//teste------------------------------------------------------------------------------------------------------------------------
-	addOptions(0, "Start");
-	addOptions(1, "Exit");
-	//teste------------------------------------------------------------------------------------------------------------------------
-
 	drawText(50, 25, "Welcome friend, your journey starts here!!", font, sf::Color::Red, 22);
 	drawText(50, 50, "lets se...and if i say that this is not Complete yet.", font, sf::Color::Red, 22);
 	drawText(50, 75, "DEVELOPING GG", font, sf::Color::Red, 22);

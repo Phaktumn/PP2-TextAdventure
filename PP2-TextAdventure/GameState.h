@@ -10,9 +10,9 @@ public:
 	GameState(sf::Font* font);
 	~GameState();
 
-	void load();
-	void update();
-	void draw(sf::RenderWindow *window);
+	void load() override;
+	void update() override;
+	void draw(sf::RenderWindow *window) override;
 
 private:
 	sf::Font* font;

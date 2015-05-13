@@ -7,6 +7,7 @@ extern int WINDOW_WIDTH;
 extern int WINDOW_HEIGHT;
 extern sf::String SEPARATOR;
 extern std::map<int, sf::String> options;
+extern bool activeInput;
 
 //just a fcking test
 extern void addOptions(int i, sf::String asset);
