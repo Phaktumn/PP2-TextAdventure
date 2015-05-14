@@ -96,12 +96,12 @@ void GameManager::loadMobs(const std::string &filePath){
 	}
 }
 
-void GameManager::addDamageAbility(DamageAbility *ability){
-	damageAbilitiesDatabase.emplace(ability->getName(), std::shared_ptr<DamageAbility>(ability));
+void GameManager::loadAbility(Ability* ability){
+	abilityDatabase.emplace(ability->getName(), ability);
 }
 
-DamageAbility* GameManager::getDamageAbility(const std::string &name){
-	return damageAbilitiesDatabase[name].get();
+Ability* GameManager::getAbility(const std::string &name){
+	return abilityDatabase[name].get();
 }
 
 Item* GameManager::getItem(const std::string &itemName)

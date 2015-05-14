@@ -114,6 +114,12 @@
     <ClCompile Include="BattleState.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilityAbility.cpp">
+      <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -175,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="BattleState.h">
       <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityAbility.h">
+      <Filter>Header Files\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
