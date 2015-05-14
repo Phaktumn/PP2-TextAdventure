@@ -44,5 +44,6 @@ void InputBox::display(sf::RenderWindow* window) {
 }
 
 sf::String InputBox::lastCommand() {
-	return *log.get(log.getLength() - 1);
+	if (!log.checkIfEmpty()) return *log.get(log.getLength() - 1);
+	else return "";
 }

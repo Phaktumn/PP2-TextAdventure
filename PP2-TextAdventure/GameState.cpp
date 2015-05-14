@@ -13,12 +13,10 @@ void GameState::load() {
 }
 
 void GameState::update() {
-
 	input = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Return);
-	if (input){
-		if (inputBox->lastCommand() == "1")
-			stateManager->changeState("BattleState");
-	}
+
+	if (inputBox->lastCommand() == "1")
+		stateManager->changeState("BattleState");
 }
 
 void GameState::draw(sf::RenderWindow* window) {

@@ -21,6 +21,7 @@ public:
 	void removeAt(int index);
 	void remove(type object);
 	int getLength();
+	bool checkIfEmpty();
 };
 
 template <class type>
@@ -38,6 +39,14 @@ template <class type>
 int LinkedList<type>::getLength()
 {
 	return count;
+}
+
+template <class type>
+bool LinkedList<type>::checkIfEmpty()
+{
+	Node* ptr = head;
+	if (ptr != nullptr) return false;
+	else return true;
 }
 
 template <class type>
@@ -72,12 +81,13 @@ type LinkedList<type>::get(int index)
 	int i = 0;
 	Node* ptr = head;
 
-	while (i < index) {
-		ptr = ptr->next;
-		i++;
+	if (ptr != nullptr){
+		while (i < index) {
+			ptr = ptr->next;
+			i++;
+		}
+		return ptr->value;
 	}
-
-	return ptr->value;
 }
 
 template <class type>
