@@ -103,6 +103,7 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="StunAbility.cpp" />
     <ClCompile Include="TitleMenuState.cpp" />
     <ClCompile Include="UtilityAbility.cpp" />
     <ClCompile Include="Weapon.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="StunAbility.h" />
     <ClInclude Include="TitleMenuState.h" />
     <ClInclude Include="UtilityAbility.h" />
     <ClInclude Include="Weapon.h" />
