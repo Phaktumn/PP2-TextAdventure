@@ -2,6 +2,7 @@
 
 #pragma once
 #include <SFML\Graphics.hpp>
+#include "BattleManager.h"
 
 class Ability
 {
@@ -17,6 +18,7 @@ public:
 
 	sf::String getName() { return name; }
 	int getCost() { return cost; }
+	virtual void onBattleEvent(BattleManager* battleManager) = 0;
 
 private:
 	sf::String name;

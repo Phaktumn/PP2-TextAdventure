@@ -78,9 +78,6 @@
     <ClCompile Include="Attribute.cpp">
       <Filter>Source Files\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="DamageAbility.cpp">
-      <Filter>Source Files\Abilities</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
@@ -117,12 +114,6 @@
     <ClCompile Include="BattleManager.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="UtilityAbility.cpp">
-      <Filter>Source Files\Abilities</Filter>
-    </ClCompile>
-    <ClCompile Include="StunAbility.cpp">
-      <Filter>Source Files\Abilities</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -148,9 +139,6 @@
     </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="DamageAbility.h">
-      <Filter>Header Files\Abilities</Filter>
     </ClInclude>
     <ClInclude Include="Ability.h">
       <Filter>Header Files\Abilities</Filter>
@@ -185,14 +173,8 @@
     <ClInclude Include="BattleState.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="UtilityAbility.h">
-      <Filter>Header Files\Abilities</Filter>
-    </ClInclude>
     <ClInclude Include="BattleManager.h">
       <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="StunAbility.h">
-      <Filter>Header Files\Abilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

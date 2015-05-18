@@ -1,5 +1,4 @@
-#include "UtilityAbility.h"
-#include "DamageAbility.h"
+
 #include "Player.h"
 
 #pragma once
@@ -8,10 +7,11 @@ class BattleManager
 public:
     BattleManager();
 	~BattleManager();
-	static void applyBuff(UtilityAbility* utility, Player* player);
-	static void applyDamage(DamageAbility* damageAbility, Player* player);
+	static void applyBuff();
+	static void applyDamage(int damage);
 
 private:
-
+	bool canAttack();
+	int calculateDamage();
 };
 

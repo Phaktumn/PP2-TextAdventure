@@ -11,3 +11,7 @@ AutoAtack::~AutoAtack()
 {
 
 }
+
+void AutoAtack::onBattleEvent(BattleManager* battleManager){
+	battleManager->applyDamage();
+}
