@@ -1,0 +1,19 @@
+#include "BattleManager.h"
+
+
+BattleManager::BattleManager()
+{ }
+
+
+BattleManager::~BattleManager()
+{ }
+
+void BattleManager::applyBuff(UtilityAbility* utility, Player* player)
+{
+
+}
+
+void BattleManager::applyDamage(DamageAbility* damageAbility, Player* player)
+{
+	damageAbility->dealDamage(player);
+}

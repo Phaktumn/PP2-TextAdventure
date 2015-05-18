@@ -1,0 +1,110 @@
+[
+  {
+  	"Name": "GreatHelm",
+	  "Quality": "Common",
+  	"Description": "Actually, is not that great.",
+	  "Type": 1,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 10
+  },
+  {
+  	"Name": "Iron-Helm",
+	  "Quality": "Common",
+  	"Description": "Of high quality, but lacking style.",
+	  "Type": 1,
+  	"BaseStrength": 2,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 11
+  },
+  {
+  	"Name": "Spiritforged Helmet",
+	  "Quality": "Uncommon",
+  	"Description": "Blessed by spirits of the forest. So they say...",
+	  "Type": 1,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 25
+  },
+  {
+  	"Name": "Necropolis Helm",
+	  "Quality": "Uncommon",
+  	"Description": "Minions, servants, soldiers of the cold dark, obey my call!",
+	  "Type": 1,
+  	"BaseStrength": 14,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 28
+  },
+  {
+  	"Name": "Crown of Forgotten Kings",
+	  "Quality": "Uncommon",
+  	"Description": "The roar of a thousand drums, echo through this land!",
+	  "Type": 1,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 34
+  },
+  {
+  	"Name": "Titan's Outlook",
+	  "Quality": "Rare",
+  	"Description": "Oh Lord Prometheus, it's a fire!",
+	  "Type": 1,
+  	"BaseStrength": 40,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 45
+  },
+  {
+  	"Name": "Helm of purified Thoughts",
+	  "Quality": "Rare",
+  	"Description": "The real ornament of woman is her character, her purity.",
+	  "Type": 1,
+  	"BaseStrength": 42,
+  	"BaseIntellect": 5,
+  	"BaseArmor": 50
+  },
+  {
+  	"Name": "Skeleton Lord's Cranium",
+	  "Quality": "Rare",
+  	"Description": "I am the bone of my sword!",
+	  "Type": 1,
+  	"BaseStrength": 48,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 55
+  },
+  {
+  	"Name": "Aegis Faceguard",
+	  "Quality": "Epic",
+  	"Description": "It is not possible either to trick or escape the mind of Zeus.",
+	  "Type": 1,
+  	"BaseStrength": 60,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 70
+  },
+  {
+  	"Name": "Greathelm of Wrath",
+	  "Quality": "Epic",
+  	"Description": "Throw away thy rod, throw away thy wrath; O my God, take the gentle path.",
+	  "Type": 1,
+  	"BaseStrength": 62,
+  	"BaseIntellect": -5,
+  	"BaseArmor": 80
+  },
+  {
+  	"Name": "Goswhit",
+	  "Quality": "Legendary",
+  	"Description": "One day, a King will come, and the Sword will rise... again.",
+	  "Type": 1,
+  	"BaseStrength": 90,
+  	"BaseIntellect": 20,
+  	"BaseArmor": 95
+  },
+  {
+  	"Name": "Helmet of Darkness",
+	  "Quality": "Legendary",
+  	"Description": "Now i know there is beauty in Darkness.",
+	  "Type": 1,
+  	"BaseStrength": 100,
+  	"BaseIntellect": 0,
+  	"BaseArmor": 95
+  }
+]
