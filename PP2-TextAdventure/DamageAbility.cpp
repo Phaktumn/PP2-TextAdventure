@@ -19,3 +19,7 @@ DamageAbility::~DamageAbility()
 void DamageAbility::dealDamage(Actor* target) {
 	target->takeDamage(damage * multiplier);
 }
+
+void DamageAbility::onBattleEvent(BattleState* battleState){
+
+}

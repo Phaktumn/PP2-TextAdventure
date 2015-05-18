@@ -91,7 +91,6 @@
     <ClCompile Include="AutoAtack.cpp" />
     <ClCompile Include="BattleManager.cpp" />
     <ClCompile Include="BattleState.cpp" />
-    <ClCompile Include="DamageAbility.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Globals.cpp" />
@@ -103,9 +102,7 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="StunAbility.cpp" />
     <ClCompile Include="TitleMenuState.cpp" />
-    <ClCompile Include="UtilityAbility.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +113,6 @@
     <ClInclude Include="AutoAtack.h" />
     <ClInclude Include="BattleManager.h" />
     <ClInclude Include="BattleState.h" />
-    <ClInclude Include="DamageAbility.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Globals.h" />
@@ -128,9 +124,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="StunAbility.h" />
     <ClInclude Include="TitleMenuState.h" />
-    <ClInclude Include="UtilityAbility.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>

@@ -8,12 +8,27 @@ BattleManager::BattleManager()
 BattleManager::~BattleManager()
 { }
 
-void BattleManager::applyBuff(UtilityAbility* utility, Player* player)
+void BattleManager::applyBuff(){
+
+}
+
+void BattleManager::applyDamage(int damage)
 {
 
 }
 
-void BattleManager::applyDamage(DamageAbility* damageAbility, Player* player)
+//helpers
+//-----------------------------------------------------------------------------------
+bool BattleManager::canAttack()
 {
-	damageAbility->dealDamage(player);
+	
 }
+
+//calculos
+int BattleManager::calculateDamage()
+{
+
+}
+
+
+

@@ -17,4 +17,8 @@ float UtilityAbility::getReduction(){
 	return damageReduction;
 }
 
+void UtilityAbility::onBattleEvent(BattleState* battleState){
+
+}
+
 

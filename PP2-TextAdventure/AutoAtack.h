@@ -7,5 +7,7 @@ class AutoAtack : public DamageAbility
 public:
 	AutoAtack(const sf::String _name, Resource _resource, int cost);
 	~AutoAtack();
+
+	void onBattleEvent(BattleManager* battleManager) override;
 };
 

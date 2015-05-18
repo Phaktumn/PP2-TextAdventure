@@ -45,3 +45,5 @@ void BattleState::draw(sf::RenderWindow* window)
 	text.setPosition(0, WINDOW_HEIGHT - 50);
 	window->draw(text);
 }
+
+

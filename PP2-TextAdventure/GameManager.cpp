@@ -3,7 +3,6 @@
 
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
-std::map<std::string, std::shared_ptr<DamageAbility>> GameManager::damageAbilitiesDatabase;
 
 GameManager::GameManager()
 {
@@ -70,38 +69,6 @@ void GameManager::loadItems(const std::string &filePath)
 			std::cerr << e.what() << std::endl;
 		}
 	}
-}
-
-void GameManager::loadMobs(const std::string &filePath){
-
-	jsoncons::json mobFile = jsoncons::json::parse_file(filePath + "/Mobs.json");
-
-	//load mobs
-	for (size_t i = 0; i < mobFile.size(); i++){
-		try{
-			jsoncons::json &mobObj = mobFile[i];
-
-			std::string name = mobObj["Name"].as<std::string>();
-			int Hp = mobObj["Hp"].as<int>();
-			int Mana = mobObj["Mana"].as<int>();
-
-			//hmm uma database de abilities sempre que crias uma basicamente GameManager::habilitiesDatabase.emplace(stuff here)
-			//depois um get GameManager::getAbilitie(std::string name);
-			//para adicionar aqui i dunno!
-			//mobsDatabase.emplace(name, std::shared_ptr<Actor>(new Actor()));
-		}
-		catch(const jsoncons::json_exception& e){
-			std::cerr << e.what() << std::endl;
-		}
-	}
-}
-
-void GameManager::loadAbility(Ability* ability){
-	abilityDatabase.emplace(ability->getName(), ability);
-}
-
-Ability* GameManager::getAbility(const std::string &name){
-	return abilityDatabase[name].get();
 }
 
 Item* GameManager::getItem(const std::string &itemName)

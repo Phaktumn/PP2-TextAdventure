@@ -1,6 +1,7 @@
 #pragma once
 #include "Ability.h"
 #include "Actor.h"
+#include "BattleState.h"
 
 class DamageAbility : public Ability
 {
@@ -13,6 +14,7 @@ public:
 	int getDamage() { return damage; }
 	float getMultiplier() { return multiplier; }
 	void setMultiplier(float value) { multiplier = value; }
+	void onBattleEvent(BattleState* battleState) override;
 
 private:
 	int damage;

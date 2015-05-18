@@ -12,3 +12,7 @@ StunAbility::~StunAbility()
 {
 
 }
+
+void StunAbility::onBattleEvent(BattleState* battleState){
+
+}
