@@ -3,7 +3,6 @@
 
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
-std::map<std::string, std::shared_ptr<DamageAbility>> GameManager::damageAbilitiesDatabase;
 
 GameManager::GameManager()
 {
@@ -94,14 +93,6 @@ void GameManager::loadMobs(const std::string &filePath){
 			std::cerr << e.what() << std::endl;
 		}
 	}
-}
-
-void GameManager::loadAbility(Ability* ability){
-	abilityDatabase.emplace(ability->getName(), ability);
-}
-
-Ability* GameManager::getAbility(const std::string &name){
-	return abilityDatabase[name].get();
 }
 
 Item* GameManager::getItem(const std::string &itemName)

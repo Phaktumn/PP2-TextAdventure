@@ -29,6 +29,5 @@ private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
 	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
-	static std::map<std::string, std::shared_ptr<Ability>> abilityDatabase;
 };
 

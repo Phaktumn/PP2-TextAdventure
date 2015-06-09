@@ -13,7 +13,7 @@ void BattleManager::applyBuff(UtilityAbility* utility, Player* player)
 
 }
 
-void BattleManager::applyDamage(DamageAbility* damageAbility, Player* player)
+void BattleManager::applyDamage(DamageAbility* damageAbility, Actor* target)
 {
-	damageAbility->dealDamage(player);
+	target->takeDamage(damageAbility->getFullDamage());
 }

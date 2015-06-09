@@ -1,7 +1,7 @@
 #include "Actor.h"
 #include <SFML/Graphics.hpp>
 
-Actor::Actor(std::string name, Attribute _attributes[], Ability _abilities[], int hp, int mana)
+Actor::Actor(std::string name, Attribute _attributes[], Ability _abilities[], int hp, int mana, int baseArmor)
 {
 	int length = sizeof(_attributes)/sizeof(*_attributes);
 	for (int i = 0; i < length; i++){
@@ -16,6 +16,7 @@ Actor::Actor(std::string name, Attribute _attributes[], Ability _abilities[], in
 	}
 
 	alive = true;
+	stunned = false;
 }
 
 Actor::~Actor()
@@ -30,7 +31,14 @@ void Actor::load()
 
 void Actor::update()
 {
+	if (stunned == true)
+	{
 
+	}
+	else
+	{
+
+	}
 }
 
 void Actor::draw()
@@ -41,6 +49,17 @@ void Actor::draw()
 std::string Actor::getActorName()
 {
 	return name;
+}
+
+int Actor::getArmor()
+{
+	return armor;
+}
+
+void Actor::setState()
+{
+	if (stunned == false) stunned == true;
+	else stunned = false;
 }
 
 bool Actor::takeDamage(int damage) {

@@ -9,7 +9,7 @@ public:
     BattleManager();
 	~BattleManager();
 	static void applyBuff(UtilityAbility* utility, Player* player);
-	static void applyDamage(DamageAbility* damageAbility, Player* player);
+	static void applyDamage(DamageAbility* damageAbility, Actor* target);
 
 private:
 
