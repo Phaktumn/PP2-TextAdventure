@@ -27,9 +27,13 @@ int Game::run() {
 	
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
 
-	stateManager.addState("GameState", new GameState(&font, &inputBox, &stateManager));
-	stateManager.addState("TitleMenuState", new TitleMenuState(&font, &stateManager));
-	stateManager.addState("BattleState", new BattleState(&font));
+	GameState gameState(font, inputBox, stateManager);
+	TitleMenuState titleMenuState(font, stateManager);
+	BattleState battleState(font);
+
+	stateManager.addState("GameState", &gameState);
+	stateManager.addState("TitleMenuState", &titleMenuState);
+	stateManager.addState("BattleState", &battleState);
 	stateManager.loadState("TitleMenuState");
 	stateManager.loadState("GameState");
 	stateManager.loadState("BattleState");

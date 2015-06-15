@@ -1,25 +1,24 @@
 #include "State.h"
 
-void State::drawText(float x, float y, const std::string &string, sf::Font *font, sf::Color color, int size)
+void State::drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window)
 {
-	sf::Text text;
 	text.setPosition(x, y);
 	text.setCharacterSize(size);
-	text.setFont(*font);
-	text.setColor(color);
-	text.setString(string);
-
-	drawnText.emplace(string, text);
+		
+	window->draw(text);
 }
 
-void State::draw(sf::RenderWindow *window)
-{
-	for (it_type iterator = drawnText.begin(); iterator != drawnText.end(); iterator++) {
-		window->draw(iterator->second);
-	}
+void State::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window) {
+	sf::Text _text;
+	_text.setPosition(x, y);
+	_text.setString(text);
+	_text.setFont(font);
+	_text.setCharacterSize(size);
+
+	window->draw(_text);
 }
 
-void State::removeText(const std::string &string)
+void State::draw(sf::RenderWindow* window)
 {
-	drawnText.erase(string);
+	
 }

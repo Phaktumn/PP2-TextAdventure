@@ -17,10 +17,10 @@ public:
 	void changeState(const string &name);
 	void loadState(const string &name);
 	void update();
-	void draw(RenderWindow *window);
+	void draw(RenderWindow* window);
 
 private:
-	State *currentState;
+	State* currentState;
 	std::map<std::string, State*> states;
 };
 

@@ -27,9 +27,9 @@ void InputBox::update(sf::Event* windowEvent) {
 	}
 
 	if (sent) {
-		printf("%s", string.getData());
+		//std::printf("%s", string.getData());
 		log.add(&sf::String(string));
-		printf("%s", log.get(log.getLength() - 1));
+		//std::printf("%s", log.get(log.getLength() - 1));
 		sent = false;
 		string.clear();
 		string += "> ";

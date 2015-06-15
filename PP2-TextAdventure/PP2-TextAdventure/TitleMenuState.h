@@ -6,23 +6,23 @@
 class TitleMenuState : public State
 {
 public:
-	explicit TitleMenuState(sf::Font* font, StateManager* stateManager);
+	explicit TitleMenuState(sf::Font& font, StateManager& stateManager);
 	~TitleMenuState();
 
 	void load() override;
 	void update() override;
-	void draw(sf::RenderWindow *window) override;
+	void draw(sf::RenderWindow* window) override;
 
 private:
 	const unsigned int MENU_OPTIONS_COUNT = 4;
 	
-	StateManager* stateManager;
+	StateManager& stateManager;
 
 	class Option
 	{
 	public:
 		sf::Text properties;
-		Option(const std::string text, float x, float y, sf::Color color, unsigned int charSize, sf::Font *font);
+		Option(const std::string text, float x, float y, sf::Color color, unsigned int charSize, sf::Font& font);
 		~Option();
 	};
 

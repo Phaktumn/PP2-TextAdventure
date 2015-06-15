@@ -5,9 +5,9 @@
 //	window->draw(iterator->second);
 //}
 
-TitleMenuState::Option::Option(const std::string text, float x, float y, sf::Color color, unsigned charSize, sf::Font* font)
+TitleMenuState::Option::Option(const std::string text, float x, float y, sf::Color color, unsigned charSize, sf::Font& font)
 {
-	properties.setFont(*font);
+	properties.setFont(font);
 	properties.setString(text);
 	properties.setPosition(x, y);
 	properties.setColor(color);
@@ -18,7 +18,7 @@ TitleMenuState::Option::~Option()
 {
 }
 
-TitleMenuState::TitleMenuState(sf::Font* font, StateManager* stateManager) : stateManager(stateManager)
+TitleMenuState::TitleMenuState(sf::Font& font, StateManager& stateManager) : stateManager(stateManager)
 {
 	std::string strings[] = {
 		"Play",
@@ -32,7 +32,7 @@ TitleMenuState::TitleMenuState(sf::Font* font, StateManager* stateManager) : sta
 		menuOptions[i] = std::make_shared<Option>(strings[i], x, y + i * menuPadding + gameTitlePadding, unselectedColor, menuFontSize, font);
 	}
 
-	gameTitle.setFont(*font);
+	gameTitle.setFont(font);
 	gameTitle.setCharacterSize(gameTitleFontSize);
 	gameTitle.setColor(sf::Color::White);
 	gameTitle.setPosition(x, y);
@@ -73,7 +73,7 @@ void TitleMenuState::update()
 		{
 			case 0:
 				activeInput = true;
-				stateManager->changeState("GameState");
+				stateManager.changeState("GameState");
 				break;
 
 			default:

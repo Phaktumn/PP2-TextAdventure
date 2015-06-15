@@ -42,6 +42,6 @@ void StateManager::update() {
 	currentState->update();
 }
 
-void StateManager::draw(RenderWindow *window) {
+void StateManager::draw(RenderWindow* window) {
 	currentState->draw(window);
 }

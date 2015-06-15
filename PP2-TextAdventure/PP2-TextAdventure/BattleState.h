@@ -5,7 +5,7 @@
 class BattleState : public State
 {
 public:
-	BattleState(sf::Font* font);
+	BattleState(sf::Font& font);
 	~BattleState();
 
 	void load() override;
@@ -13,6 +13,6 @@ public:
 	void draw(sf::RenderWindow *window) override;
 
 private:
-	sf::Font* font;
+	sf::Font font;
 };
 

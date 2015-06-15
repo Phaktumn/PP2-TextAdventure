@@ -100,6 +100,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RichText.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RichText.hpp" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="GameManager.h" />
@@ -132,9 +134,6 @@
     <ClInclude Include="TitleMenuState.h" />
     <ClInclude Include="UtilityAbility.h" />
     <ClInclude Include="Weapon.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="Munro.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

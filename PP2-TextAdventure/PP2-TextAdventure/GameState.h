@@ -8,17 +8,17 @@
 class GameState : public State
 {
 public:
-	GameState(sf::Font* font, InputBox* inputBox, StateManager* stateManager);
+	GameState(sf::Font& font, InputBox& inputBox, StateManager& stateManager);
 	~GameState();
 
 	void load() override;
 	void update() override;
-	void draw(sf::RenderWindow *window) override;
+	void draw(sf::RenderWindow* window) override;
 
 private:
-	sf::Font* font;
-	InputBox* inputBox;
-	StateManager* stateManager;
+	sf::Font font;
+	InputBox& inputBox;
+	StateManager& stateManager;
 	bool input = false;
 };
 
