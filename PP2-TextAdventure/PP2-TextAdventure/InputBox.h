@@ -13,7 +13,7 @@ public:
 	sf::String lastCommand();
 
 private:
-	LinkedList<const sf::String*> log;
+	LinkedList<std::string> log;
 	sf::Font font;
 	sf::Text text;
 	sf::String string;

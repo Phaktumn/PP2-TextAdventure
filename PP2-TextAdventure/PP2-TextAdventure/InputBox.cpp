@@ -1,4 +1,5 @@
 #include "InputBox.h"
+#include <iostream>
 
 InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color color) : x(x), y(y) {
 	text.setFont(*font);
@@ -27,9 +28,9 @@ void InputBox::update(sf::Event* windowEvent) {
 	}
 
 	if (sent) {
-		//std::printf("%s", string.getData());
-		log.add(&sf::String(string));
-		//std::printf("%s", log.get(log.getLength() - 1));
+		std::cout << string.toAnsiString();
+		log.add(string.toAnsiString());
+		std::cout << log.get(log.getLength() - 1);
 		sent = false;
 		string.clear();
 		string += "> ";
@@ -44,6 +45,6 @@ void InputBox::display(sf::RenderWindow* window) {
 }
 
 sf::String InputBox::lastCommand() {
-	if (!log.checkIfEmpty()) return *log.get(log.getLength() - 1);
+	if (!log.checkIfEmpty()) return log.get(log.getLength() - 1);
 	else return "";
 }
