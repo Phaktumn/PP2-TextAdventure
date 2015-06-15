@@ -9,9 +9,9 @@ public:
     BattleManager();
 	~BattleManager();
 	static void applyBuff(UtilityAbility* utility, Player* player);
-	static void applyDamage(DamageAbility* damageAbility, Actor* target);
+	static void applyDamage(Actor* caster, DamageAbility* damageAbility, Actor* target);
 
 private:
-
+	static int calculateDamage(int targetArmor,int abilityDamage);
 };
 

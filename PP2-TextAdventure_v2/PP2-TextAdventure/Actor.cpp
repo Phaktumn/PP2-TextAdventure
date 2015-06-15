@@ -69,3 +69,10 @@ bool Actor::takeDamage(int damage) {
 	return hp <= 0;
 }
 
+Attribute Actor::getAttribute(sf::String name){
+	for (int i = 0; i < attributes.getLength(); i++){
+		if (attributes.get(i).getName() == name)
+			return attributes.get(i);
+	}
+}
+

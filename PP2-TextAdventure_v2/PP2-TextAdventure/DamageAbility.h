@@ -5,10 +5,18 @@
 class DamageAbility : public Ability
 {
 public:
-	DamageAbility(const sf::String &name, Resource resource, int cost, int damage, float multiplier = 1);
+	enum attribute
+	{
+		strength,
+		intellect,
+	};
+
+	attribute attributeMultiplyer;
+
+	DamageAbility(const sf::String &name, Resource resource, int cost, int damage,attribute multiplierAttribute, float multiplier = 1);
 	~DamageAbility();
 	
-	int getFullDamage();
+	int getFullDamage(Actor* caster);
 
 	int getDamage() { return damage; }
 	float getMultiplier() { return multiplier; }

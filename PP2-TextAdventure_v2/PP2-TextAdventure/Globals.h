@@ -5,6 +5,7 @@
 
 extern int WINDOW_WIDTH;
 extern int WINDOW_HEIGHT;
+extern int MAX_ARMOR;
 extern sf::String SEPARATOR;
 extern std::map<int, sf::String> options;
 extern bool activeInput;

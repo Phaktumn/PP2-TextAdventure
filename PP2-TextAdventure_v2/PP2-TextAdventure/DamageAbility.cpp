@@ -1,10 +1,10 @@
 #include "DamageAbility.h"
 
 
-DamageAbility::DamageAbility(const sf::String &name, Resource _resource,int cost, int damage, float multiplier) 
+DamageAbility::DamageAbility(const sf::String &name, Resource _resource, int cost, int damage, attribute _attribute__Mult, float multiplier)
 	: Ability(name, _resource, cost), damage(damage), multiplier(multiplier)
 {
-
+	attributeMultiplyer = _attribute__Mult;
 }
 
 DamageAbility::~DamageAbility()
@@ -16,6 +16,23 @@ DamageAbility::~DamageAbility()
 /// Deals damage to the target Actor.
 /// </summary>
 /// <param name="target">Pointer to the target actor.</param>
-int DamageAbility::getFullDamage() {
-	return damage * multiplier;
+int DamageAbility::getFullDamage(Actor* caster){
+
+	int multiplierDMG = 0;
+	int casterPower = caster->getAttribute("Strength").getValue();
+	int casterIntellect = caster->getAttribute("Intellect").getValue();
+
+	switch (attributeMultiplyer)
+	{
+	case DamageAbility::strength:
+		multiplierDMG = casterIntellect * multiplier;
+		break;
+	case DamageAbility::intellect:
+		multiplierDMG = casterPower * multiplier;
+		break;
+	default: 
+		break;
+	}
+
+	return damage + multiplierDMG;
 }

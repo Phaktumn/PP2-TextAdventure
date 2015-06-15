@@ -33,6 +33,8 @@ public:
 	void draw();
 	std::string getActorName();
 
+	Attribute getAttribute(sf::String name);
+
 	int getArmor();
 
 	void setState();

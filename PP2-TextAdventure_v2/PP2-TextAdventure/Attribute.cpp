@@ -13,3 +13,11 @@ Attribute::~Attribute()
 {
 
 }
+
+sf::String Attribute::getName(){
+	return name;
+}
+
+int Attribute::getValue(){
+	return value;
+}
