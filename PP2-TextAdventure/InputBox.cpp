@@ -1,5 +1,6 @@
 #include "InputBox.h"
 #include <iostream>
+#define NULL_STRING ""
 
 InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color color) : x(x), y(y) {
 	text.setFont(*font);
@@ -46,5 +47,5 @@ void InputBox::display(sf::RenderWindow* window) {
 
 sf::String InputBox::lastCommand() {
 	if (!log.checkIfEmpty()) return log.get(log.getLength() - 1);
-	else return "";
+	else return NULL_STRING;
 }

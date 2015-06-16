@@ -1,7 +1,7 @@
 #include "Actor.h"
 #include <SFML/Graphics.hpp>
 
-Actor::Actor(std::string name, Attribute _attributes[], Ability _abilities[], int hp, int mana, int baseArmor)
+Actor::Actor(std::string name, Attribute _attributes[], Ability _abilities[], int hp, int mana)
 {
 	int length = sizeof(_attributes)/sizeof(*_attributes);
 	for (int i = 0; i < length; i++){
@@ -49,11 +49,6 @@ void Actor::draw()
 std::string Actor::getActorName()
 {
 	return name;
-}
-
-int Actor::getArmor()
-{
-	return armor;
 }
 
 void Actor::setState()

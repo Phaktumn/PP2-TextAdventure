@@ -26,7 +26,7 @@ int BattleManager::calculateDamage(int tagetArmor, int abilityDamage){
 
 void BattleManager::applyDamage(Actor* caster, DamageAbility* damageAbility, Actor* target)
 {
-	int targetArmor = target->getArmor();
+	int targetArmor = target->getAttribute("Armor").getValue();
 
 	//full damage da ability tendo em conta as stats do player
 	int abilityDamage = damageAbility->getFullDamage(caster);

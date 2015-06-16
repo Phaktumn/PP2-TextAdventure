@@ -3,6 +3,7 @@
 
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
+std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
 
 GameManager::GameManager()
 {
@@ -16,7 +17,6 @@ GameManager::~GameManager()
 
 void GameManager::loadGlobals() {
 	Item::loadProperties();
-
 }
 
 void GameManager::loadItems(const std::string &filePath)
@@ -71,6 +71,8 @@ void GameManager::loadItems(const std::string &filePath)
 	}
 }
 
+
+
 void GameManager::loadMobs(const std::string &filePath){
 
 	jsoncons::json mobFile = jsoncons::json::parse_file(filePath + "/Mobs.json");
@@ -95,7 +97,17 @@ void GameManager::loadMobs(const std::string &filePath){
 	}
 }
 
-Item* GameManager::getItem(const std::string &itemName)
-{
+void GameManager::initializeAttributes(int Strength, int intellect, int armor){
+	attributesDatabase.emplace("Strenght", std::shared_ptr<Attribute>(new Attribute("Strenght", Strength)));
+	attributesDatabase.emplace("Intellect", std::shared_ptr<Attribute>(new Attribute("Intellect", intellect)));
+	attributesDatabase.emplace("Armor", std::shared_ptr<Attribute>(new Attribute("Armor", armor)));
+}
+
+Item* GameManager::getItem(const std::string &itemName){
 	return itemDatabase[itemName].get();
 }
+
+Attribute* GameManager::getAttribute(const std::string &attributeName){
+	return attributesDatabase[attributeName].get();
+}
+

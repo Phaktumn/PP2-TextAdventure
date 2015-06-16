@@ -23,7 +23,9 @@ public:
 	static void loadMobs(const std::string &filePath);
 	static Item* getItem(const std::string &name);
 	static Ability* getAbility(const std::string &name);
+	static Attribute* getAttribute(const std::string &name);
 	static void loadAbility(Ability* ability);
+	static void initializeAttributes(int strength, int intellect, int armor);
 
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
