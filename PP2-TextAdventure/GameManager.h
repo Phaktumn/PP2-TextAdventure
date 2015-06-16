@@ -25,7 +25,7 @@ public:
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
 	static void loadAbility(Ability* ability);
-	static void initializeAttributes(int strength, int intellect, int armor);
+	static void initializeAttributes();
 
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;

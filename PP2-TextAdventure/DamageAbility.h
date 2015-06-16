@@ -1,6 +1,7 @@
 #pragma once
 #include "Ability.h"
 #include "Actor.h"
+#include "Globals.h"
 
 class DamageAbility : public Ability
 {

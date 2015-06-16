@@ -71,9 +71,9 @@ void TitleMenuState::update()
 	{
 		switch (selectedOption)
 		{
-			case 0:
-				activeInput = true;
-				stateManager.changeState("GameState");
+		case 0:  
+			activeInput = true;
+            stateManager.changeState("GameState"); 
 				break;
 
 			default:
