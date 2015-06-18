@@ -12,9 +12,13 @@ InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color col
 	string += "> ";
 }
 
-
 InputBox::~InputBox() {
 
+}
+
+void InputBox::addListener(std::function<void(std::string)> function)
+{
+	listeners.push_back(function);
 }
 
 void InputBox::handleInput()
@@ -24,6 +28,10 @@ void InputBox::handleInput()
 		std::cout << log.back() << std::endl;
 		sent = false;
 		
+		for (size_t i = 0; i < listeners.size(); i++) {
+			listeners[i](string);
+		}
+
 		string.clear();
 		string += "> ";
 	}

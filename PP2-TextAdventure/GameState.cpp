@@ -12,11 +12,12 @@ GameState::~GameState() {
 void GameState::processCommands(const std::string& command)
 {
 	if (command == "> 1")
-		world.moveTo("Kingdom of Balls");
+		world.moveTo(GameManager::getLocationName(1));
 }
 
 void GameState::load() {
-	
+	inputBox.addListener(&processCommands);
+
 	sfe::RichText titleFont(font);
 	titleFont.setCharacterSize(BIG_CHARACTER_SIZE);
 
@@ -24,50 +25,25 @@ void GameState::load() {
 	descriptionFont.setCharacterSize(NORMAL_CHARACTER_SIZE);
 
 	world.addLocation(GameManager::getLocationName(0), "Descrição Local 1");
+	
 	world.addLocation(GameManager::getLocationName(1) , "Descrição Local 2", 
 		titleFont << sf::Color::Cyan << GameManager::getLocationName(1),
 		descriptionFont << "1 This jungle is made out of monkeys and seriously, like, everyone here is"
 			<< sf::Color::Red << " BATSHIT " << sf::Color::White << "insane. \nMan, fuck me."	
 	);	
+	
 	world.addLocation(GameManager::getLocationName(2), "Descrição Local 3");
 	world.addLocation(GameManager::getLocationName(3), "Descrição Local 4");
 	world.addLocation(GameManager::getLocationName(4), "Descrição Local 5");
 	world.addLocation(GameManager::getLocationName(5), "dasldasd");
 
-<<<<<<< HEAD
-		titleFont << sf::Color::Cyan << "Monkey Jungle",
-		descriptionFont << "This jungle is made out of monkeys and seriously, like, everyone here is"
-			<< sf::Color::Red << " BATSHIT " << sf::Color::White << "insane. \nMan, fuck me."
-	
-	);
-	
-	world.addLocation("Shit", "Descrição Local 3");
-	world.addLocation("Banana", "Descrição Local 4");
-	world.addLocation("Lol", "Descrição Local 5");
-	world.addLocation("Mehehehe", "dasldasd");
-
-	world.connect("Kingdom of Balls", "Monkey Jungle", 10, true);
-	world.connect("Kingdom of Balls", "Shit", 20);
-	world.connect("Kingdom of Balls", "Banana", 50);
-	world.connect("Kingdom of Balls", "Lol", 102);
-=======
-	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(1), 10);
-	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(2), 20);
-	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(3), 50);
-	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(4), 102);
->>>>>>> d282538592857fef15b2c8788654c1744b010d0d
-
 	world.debugPrintConnections(GameManager::getLocationName(0));
 	
-	world.moveTo(GameManager::getLocationName(5));
+	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(1), 10, true);
 }
 
 void GameState::update() {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d282538592857fef15b2c8788654c1744b010d0d
 }
 
 void GameState::draw(sf::RenderWindow* window)
