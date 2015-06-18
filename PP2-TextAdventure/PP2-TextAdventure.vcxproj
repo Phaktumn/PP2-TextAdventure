@@ -108,6 +108,7 @@
     <ClCompile Include="TitleMenuState.cpp" />
     <ClCompile Include="UtilityAbility.cpp" />
     <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ability.h" />
@@ -134,6 +135,7 @@
     <ClInclude Include="TitleMenuState.h" />
     <ClInclude Include="UtilityAbility.h" />
     <ClInclude Include="Weapon.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -24,7 +24,7 @@ private:
 	bool stunned;
 
 public:
-	Actor(std::string, Attribute _attributes[], Ability _abilities[], int hp, int mana);
+	Actor(std::string name, Attribute _attributes[], Ability _abilities[], int hp, int mana);
 	~Actor();
 
 	void load();

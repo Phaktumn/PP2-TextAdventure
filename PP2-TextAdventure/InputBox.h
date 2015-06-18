@@ -10,10 +10,10 @@ public:
 
 	void update(sf::Event* windowEvent);
 	void display(sf::RenderWindow* window);
-	sf::String lastCommand();
+	std::string lastCommand();
 
 private:
-	LinkedList<std::string> log;
+	std::vector<std::string> log;
 	sf::Font font;
 	sf::Text text;
 	sf::String string;

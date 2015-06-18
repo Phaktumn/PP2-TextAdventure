@@ -94,6 +94,9 @@
     <ClCompile Include="RichText.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -167,6 +170,9 @@
     </ClInclude>
     <ClInclude Include="StateManager.h">
       <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

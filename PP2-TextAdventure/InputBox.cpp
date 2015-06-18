@@ -29,9 +29,8 @@ void InputBox::update(sf::Event* windowEvent) {
 	}
 
 	if (sent) {
-		std::cout << string.toAnsiString();
-		log.add(string.toAnsiString());
-		std::cout << log.get(log.getLength() - 1);
+		log.push_back(string);
+		std::cout << log.back() << std::endl;
 		sent = false;
 		string.clear();
 		string += "> ";
@@ -45,7 +44,9 @@ void InputBox::display(sf::RenderWindow* window) {
 	window->draw(text);
 }
 
-sf::String InputBox::lastCommand() {
-	if (!log.checkIfEmpty()) return log.get(log.getLength() - 1);
-	else return NULL_STRING;
+std::string InputBox::lastCommand() {
+	if (!log.empty())
+		return log.back();
+	else
+		return "-1";
 }

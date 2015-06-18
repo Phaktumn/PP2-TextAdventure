@@ -1,4 +1,5 @@
 #pragma once
+
 template <class type> 
 class LinkedList
 {
@@ -7,7 +8,7 @@ private:
 	{
 		type value;
 		Node* next;
-	} Node;
+	};
 
 	Node* head;
 	int count;

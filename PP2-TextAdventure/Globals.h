@@ -3,8 +3,17 @@
 #include "LinkedList.h"
 #include "Item.h"
 
-extern int WINDOW_WIDTH;
-extern int WINDOW_HEIGHT;
+#define WINDOW_WIDTH 960
+#define WINDOW_HEIGHT 540
+
+#define LOCATION_DESCRIPTION_POSITION_X 15
+#define LOCATION_DESCRIPTION_POSITION_Y 70
+#define LOCATION_NAME_POSITION_X 15
+#define LOCATION_NAME_POSITION_Y 30
+
+#define BIG_CHARACTER_SIZE 26
+#define NORMAL_CHARACTER_SIZE 22
+
 extern sf::String SEPARATOR;
 extern std::map<int, sf::String> options;
 extern bool activeInput;

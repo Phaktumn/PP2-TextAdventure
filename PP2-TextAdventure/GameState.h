@@ -4,6 +4,7 @@
 #include <string>
 #include "Globals.h"
 #include "InputBox.h"
+#include "World.h"
 
 class GameState : public State
 {
@@ -17,8 +18,11 @@ public:
 
 private:
 	sf::Font font;
+
 	InputBox& inputBox;
 	StateManager& stateManager;
 	bool input = false;
+
+	World world;
 };
 
