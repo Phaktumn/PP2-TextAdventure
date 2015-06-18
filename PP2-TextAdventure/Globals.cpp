@@ -7,8 +7,13 @@ bool activeInput = false;
 int MAX_ARMOR = 100;
 
 sf::String STRENGTH("Strength");
+sf::String BONUS_STRENGTH("Bonus Strength");
+
 sf::String INTELLECT("Intellect");
+sf::String BONUS_INTELLECT("Bonus Intellect");
+
 sf::String ARMOR("Armor");
+sf::String BONUS_ARMOR("Bonus Armor");
 
 //just a fcking test
 std::map<int, sf::String> options;

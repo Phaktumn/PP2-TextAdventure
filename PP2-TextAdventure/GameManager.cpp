@@ -98,13 +98,19 @@ void GameManager::loadMobs(const std::string &filePath){
 }
 
 void GameManager::initializeAttributes(){
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1, std::shared_ptr<Attribute>(new Attribute(STRENGTH, WARRIOR_BASE_STRENGTH)));
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET2, std::shared_ptr<Attribute>(new Attribute(INTELLECT, WARRIOR_BASE_INTELLECT)));
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET3, std::shared_ptr<Attribute>(new Attribute(ARMOR, WARRIOR_BASE_ARMOR)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_1, std::shared_ptr<Attribute>(new Attribute(STRENGTH, WARRIOR_BASE_STRENGTH)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_STRENGTH, WARRIOR_BONUS_STRENGTH)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET2_1, std::shared_ptr<Attribute>(new Attribute(INTELLECT, WARRIOR_BASE_INTELLECT)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_INTELLECT, WARRIOR_BONUS_INTELLECT)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET3_1, std::shared_ptr<Attribute>(new Attribute(ARMOR, WARRIOR_BASE_ARMOR)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_ARMOR, WARRIOR_BONUS_ARMOR)));
 
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET1, std::shared_ptr<Attribute>(new Attribute(STRENGTH, MAGE_BASE_STRENGTH)));
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET2, std::shared_ptr<Attribute>(new Attribute(INTELLECT, MAGE_BASE_INTELLECT)));
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET3, std::shared_ptr<Attribute>(new Attribute(ARMOR, MAGE_BASE_ARMOR)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET1_1, std::shared_ptr<Attribute>(new Attribute(STRENGTH, MAGE_BASE_STRENGTH)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_STRENGTH, MAGE_BONUS_STRENGTH)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET2_1, std::shared_ptr<Attribute>(new Attribute(INTELLECT, MAGE_BASE_INTELLECT)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET2_2, std::shared_ptr<Attribute>(new Attribute(BONUS_INTELLECT, MAGE_BONUS_INTELLECT)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET3_1, std::shared_ptr<Attribute>(new Attribute(ARMOR, MAGE_BASE_ARMOR)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET3_2, std::shared_ptr<Attribute>(new Attribute(BONUS_ARMOR, MAGE_BONUS_ARMOR)));
 }
 
 Item* GameManager::getItem(const std::string &itemName){

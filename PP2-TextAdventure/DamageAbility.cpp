@@ -19,8 +19,8 @@ DamageAbility::~DamageAbility()
 int DamageAbility::getFullDamage(Actor* caster){
 
 	int multiplierDMG = 0;
-	int casterPower = caster->getAttribute(STRENGTH).getValue();
-	int casterIntellect = caster->getAttribute(INTELLECT).getValue();
+	int casterPower = caster->getAttribute(STRENGTH).getValue() + caster->getAttribute(BONUS_STRENGTH).getValue();
+	int casterIntellect = caster->getAttribute(INTELLECT).getValue() + caster->getAttribute(BONUS_INTELLECT).getValue();
 
 	switch (attributeMultiplyer)
 	{

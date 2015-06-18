@@ -9,9 +9,7 @@ BattleManager::~BattleManager()
 { }
 
 void BattleManager::applyBuff(UtilityAbility* utility, Player* player)
-{
-
-}
+{ }
 
 /*
 calcular o damage em relacao ao armor!
@@ -26,7 +24,7 @@ int BattleManager::calculateDamage(int tagetArmor, int abilityDamage){
 
 void BattleManager::applyDamage(Actor* caster, DamageAbility* damageAbility, Actor* target)
 {
-	int targetArmor = target->getAttribute(ARMOR).getValue();
+	int targetArmor = target->getAttribute(ARMOR).getValue() + target->getAttribute(BONUS_ARMOR).getValue();
 
 	//full damage da ability tendo em conta as stats do player
 	int abilityDamage = damageAbility->getFullDamage(caster);
