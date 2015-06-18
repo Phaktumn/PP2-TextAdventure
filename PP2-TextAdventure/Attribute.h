@@ -8,8 +8,11 @@ class Attribute
 public:
 	Attribute(sf::String name, int value);
 	~Attribute();
-	sf::String getName();
-	int getValue();
+
+	sf::String getName(){ return name; }
+	int getValue(){ return value; }
+
+	void changeValue(int value);
 
 private:
 	sf::String name;

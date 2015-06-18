@@ -2,11 +2,14 @@
 #include "Item.h"
 #include "Weapon.h"
 #include "Armor.h" 
+#include "Actor.h"
+#include "Player.h"
 
 #pragma once
 class Inventory
 {
 private:
+	LinkedList<Item> bag;
 	Item* chest;
 	Item* head;
 	Item* hands;
@@ -19,6 +22,6 @@ public:
 	~Inventory();
 
 	void equipWeapon(Weapon* weapon);
-	void equipArmor(Armor* armor, Item::Type type);
+	void equipArmor(Armor* armor, Item::Type type, Player* player); 
 };
 

@@ -53,7 +53,7 @@ std::string Actor::getActorName()
 
 void Actor::setState()
 {
-	if (stunned == false) stunned == true;
+	if (!stunned) stunned = true;
 	else stunned = false;
 }
 

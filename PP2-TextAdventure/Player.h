@@ -1,4 +1,5 @@
 #include "Actor.h"
+#include "Globals.h"
 
 #pragma once
 class Player : public Actor
@@ -8,5 +9,9 @@ private:
 public:
 	Player(std::string name, Attribute attributes[], Ability abilities[], int hp, int mana);
 	~Player();
+
+	void addBonusArmor(int Bonus_Armor);
+	void addBonusDamage(int Bonus_Damage);
+	void addBonusIntellect(int Bonus_Intellect);
 };
 
