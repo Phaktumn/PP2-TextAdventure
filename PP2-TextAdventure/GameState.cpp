@@ -20,7 +20,7 @@ void GameState::load() {
 	world.addLocation(GameManager::getLocationName(0), "Descrição Local 1");
 	world.addLocation(GameManager::getLocationName(1) , "Descrição Local 2", 
 		titleFont << sf::Color::Cyan << GameManager::getLocationName(1),
-		descriptionFont << "This jungle is made out of monkeys and seriously, like, everyone here is"
+		descriptionFont << "1 This jungle is made out of monkeys and seriously, like, everyone here is"
 			<< sf::Color::Red << " BATSHIT " << sf::Color::White << "insane. \nMan, fuck me."	
 	);	
 	world.addLocation(GameManager::getLocationName(2), "Descrição Local 3");
@@ -36,7 +36,6 @@ void GameState::load() {
 	world.debugPrintConnections(GameManager::getLocationName(0));
 	
 	world.moveTo(GameManager::getLocationName(5));
-	world.moveTo(GameManager::getLocationName(1));
 }
 
 void GameState::update() {
@@ -51,6 +50,10 @@ void GameState::draw(sf::RenderWindow* window)
 
 	drawText(0, 0, SEPARATOR, font, 24, window);
 	drawText(0, 300, SEPARATOR, font, 24, window);
+	for (int i = 0; i < world.getConnections().size(); i++)
+	{	
+		drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i+1) << ") " << world.getConnections()[i]->getName(), 24, window);
+	}
 
 
 	drawText(0, WINDOW_HEIGHT - 50, SEPARATOR, font, 24, window);

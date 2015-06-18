@@ -82,9 +82,9 @@ void World::Location::draw(sf::RenderWindow* window)
 	window->draw(_displayDescription);
 }
 
-std::map<int, World::Location*> World::getConnections(std::map<int, World::Location*> path_locations)
+std::map<int, World::Location*> World::getConnections()
 {
-	Location* loc = getCurrentLocation();
+	Location* loc = currentLocation;
 	path__locations.clear();
 	int i = 0, std_map__counter = 0;
 	while (true)
@@ -97,5 +97,5 @@ std::map<int, World::Location*> World::getConnections(std::map<int, World::Locat
 		}
 		i++;
 	}
-	return path_locations;
+	return path__locations;
 }

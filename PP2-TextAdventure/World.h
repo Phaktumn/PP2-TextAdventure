@@ -23,11 +23,9 @@ public:
 	void connect(const std::string& start, const std::string& dest, int distance);
 	Location* getLocation(const std::string& name);
 	void debugPrintConnections(const std::string& name);
-	std::map<int, Location*> getConnections(std::map<int, Location*> pathLocations);
+	std::map<int, Location*> getConnections();
 
 	std::map<int, Location*> path__locations;
-
-	Location* getCurrentLocation(){ return currentLocation; }
 
 private:
 	class Location
