@@ -28,4 +28,5 @@ void BattleState::draw(sf::RenderWindow* window)
 	drawText(0, 0, SEPARATOR, font, 24, window);
 	drawText(0, 300, SEPARATOR, font, 24, window);
 	drawText(0, WINDOW_HEIGHT - 50, SEPARATOR, font, 24, window);
+	drawText(15, 15, "HI GUYS BATTLE STATE",font, 24, window);
 }

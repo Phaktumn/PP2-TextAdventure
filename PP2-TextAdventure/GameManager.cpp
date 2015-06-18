@@ -4,12 +4,12 @@
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
 std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
+std::map<int, std::string> GameManager::locationDatabase;
 
 GameManager::GameManager()
 {
 	
 }
-
 
 GameManager::~GameManager()
 {
@@ -71,8 +71,6 @@ void GameManager::loadItems(const std::string &filePath)
 	}
 }
 
-
-
 void GameManager::loadMobs(const std::string &filePath){
 
 	jsoncons::json mobFile = jsoncons::json::parse_file(filePath + "/Mobs.json");
@@ -90,6 +88,26 @@ void GameManager::loadMobs(const std::string &filePath){
 			//depois um get GameManager::getAbilitie(std::string name);
 			//para adicionar aqui i dunno!
 			//mobsDatabase.emplace(name, std::shared_ptr<Actor>(new Actor()));
+		}
+		catch(const jsoncons::json_exception& e){
+			std::cerr << e.what() << std::endl;
+		}
+	}
+}
+
+void GameManager::loadLocations(const std::string &filePath)
+{
+	jsoncons::json locationFile = jsoncons::json::parse_file(filePath + "/locations.json");
+
+	//load locations
+	for (size_t i = 0; i < locationFile.size(); i++)
+	{
+		try{
+			jsoncons::json &locationObj = locationFile[i];
+
+			std::string name = locationObj["Name"].as<std::string>();
+
+			locationDatabase.emplace(i, name);
 		}
 		catch(const jsoncons::json_exception& e){
 			std::cerr << e.what() << std::endl;
@@ -119,5 +137,18 @@ Item* GameManager::getItem(const std::string &itemName){
 
 Attribute* GameManager::getAttribute(const std::string &attributeName){
 	return attributesDatabase[attributeName].get();
+}
+
+std::string GameManager::getLocationName(unsigned int location){
+	int i = 0;
+	while (true)
+	{
+		if (locationDatabase[i] == ""){
+			break;
+		}
+		i++;
+	}
+	if (location > i) return "out of range";
+	else return locationDatabase[location];
 }
 

@@ -19,6 +19,8 @@ public:
 private:
 	sf::Font font;
 
+	std::map<int, sf::String> options;
+
 	InputBox& inputBox;
 	StateManager& stateManager;
 	bool input = false;

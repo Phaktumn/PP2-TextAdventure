@@ -81,3 +81,21 @@ void World::Location::draw(sf::RenderWindow* window)
 	window->draw(_displayName);
 	window->draw(_displayDescription);
 }
+
+std::map<int, World::Location*> World::getConnections(std::map<int, World::Location*> path_locations)
+{
+	Location* loc = getCurrentLocation();
+	path__locations.clear();
+	int i = 0, std_map__counter = 0;
+	while (true)
+	{
+		if (GameManager::getLocationName(i) == "") break;
+		if (loc->hasPath(getLocation(GameManager::getLocationName(i))))
+		{
+			path__locations.emplace(std_map__counter, getLocation(GameManager::getLocationName(i)));
+			std_map__counter++;
+		}
+		i++;
+	}
+	return path_locations;
+}

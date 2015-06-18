@@ -11,6 +11,7 @@
 #include "Actor.h"
 #include "Ability.h"
 #include "DamageAbility.h"
+#include "World.h"
 
 class GameManager
 {
@@ -21,9 +22,13 @@ public:
 	static void loadGlobals();
 	static void loadItems(const std::string &filePath);
 	static void loadMobs(const std::string &filePath);
+	static void loadLocations(const std::string &filePath);
+
 	static Item* getItem(const std::string &name);
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
+	static std::string getLocationName(unsigned int location);
+
 	static void loadAbility(Ability* ability);
 	static void initializeAttributes();
 
@@ -31,5 +36,6 @@ private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
 	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
+	static std::map<int, std::string> locationDatabase;
 };
 

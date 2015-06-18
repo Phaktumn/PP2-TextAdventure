@@ -23,6 +23,7 @@ int Game::run() {
 	}
 
 	GameManager::loadItems("data");
+	GameManager::loadLocations("data");
 	GameManager::loadGlobals();
 	
 	InputBox inputBox(5, WINDOW_HEIGHT - 20 - 5, &font, 20, sf::Color::White);
@@ -34,9 +35,11 @@ int Game::run() {
 	stateManager.addState("GameState", &gameState);
 	stateManager.addState("TitleMenuState", &titleMenuState);
 	stateManager.addState("BattleState", &battleState);
+
 	stateManager.loadState("TitleMenuState");
 	stateManager.loadState("GameState");
 	stateManager.loadState("BattleState");
+
 	stateManager.changeState("TitleMenuState");
 
 	while (window->isOpen()) {
