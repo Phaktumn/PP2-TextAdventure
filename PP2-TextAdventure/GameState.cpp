@@ -6,7 +6,13 @@ GameState::GameState(sf::Font& font, InputBox& inputBox, StateManager& stateMana
 }
 
 GameState::~GameState() {
+	
+}
 
+void GameState::processCommands(const std::string& command)
+{
+	if (command == "> 1")
+		world.moveTo("Kingdom of Balls");
 }
 
 void GameState::load() {
@@ -26,13 +32,12 @@ void GameState::load() {
 	
 	);
 	
-	
 	world.addLocation("Shit", "Descrição Local 3");
 	world.addLocation("Banana", "Descrição Local 4");
 	world.addLocation("Lol", "Descrição Local 5");
 	world.addLocation("Mehehehe", "dasldasd");
 
-	world.connect("Kingdom of Balls", "Monkey Jungle", 10);
+	world.connect("Kingdom of Balls", "Monkey Jungle", 10, true);
 	world.connect("Kingdom of Balls", "Shit", 20);
 	world.connect("Kingdom of Balls", "Banana", 50);
 	world.connect("Kingdom of Balls", "Lol", 102);
@@ -44,8 +49,7 @@ void GameState::load() {
 }
 
 void GameState::update() {
-	if (inputBox.lastCommand() == "1")
-		stateManager.changeState("BattleState");
+
 }
 
 void GameState::draw(sf::RenderWindow* window)

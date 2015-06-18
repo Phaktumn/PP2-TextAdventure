@@ -38,7 +38,7 @@ void World::addLocation(const std::string& name, const std::string& description,
 	locations.push_back(std::shared_ptr<Location>(loc));
 }
 
-void World::connect(const std::string& start, const std::string& dest, int distance)
+void World::connect(const std::string& start, const std::string& dest, int distance, bool twoWay)
 {
 	Location* startLoc = getLocation(start);
 	Location* destLoc = getLocation(dest);
@@ -55,6 +55,11 @@ void World::connect(const std::string& start, const std::string& dest, int dista
 
 	Path path = Path{ distance, destLoc };
 	startLoc->addConnection(path);
+
+	if (!twoWay) return;
+
+	path = Path{ distance, startLoc };
+	destLoc->addConnection(path);
 }
 
 World::Location* World::getLocation(const std::string& name)

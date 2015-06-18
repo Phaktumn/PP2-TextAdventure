@@ -11,6 +11,7 @@ public:
 	void update(sf::Event* windowEvent);
 	void display(sf::RenderWindow* window);
 	std::string lastCommand();
+	void handleInput();
 
 private:
 	std::vector<std::string> log;
@@ -19,5 +20,7 @@ private:
 	sf::String string;
 	float x, y;
 	bool modified, sent;
+
+	typedef void(*InputHandler)(const std::string& command);
 };
 

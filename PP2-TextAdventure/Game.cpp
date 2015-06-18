@@ -55,7 +55,6 @@ int Game::run() {
 		draw();
 
 		if(activeInput) inputBox.display(window);
-		
 		window->display();
 	}
 

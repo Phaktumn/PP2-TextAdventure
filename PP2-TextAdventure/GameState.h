@@ -23,6 +23,8 @@ private:
 	StateManager& stateManager;
 	bool input = false;
 
+	void processCommands(const std::string& command);
+
 	World world;
 };
 

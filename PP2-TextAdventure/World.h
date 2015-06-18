@@ -19,7 +19,7 @@ public:
 
 	void addLocation(const std::string& name, const std::string& description);
 	void addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription);
-	void connect(const std::string& start, const std::string& dest, int distance);
+	void connect(const std::string& start, const std::string& dest, int distance, bool twoWay = false);
 	Location* getLocation(const std::string& name);
 	void debugPrintConnections(const std::string& name);
 

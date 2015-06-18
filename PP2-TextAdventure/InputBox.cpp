@@ -1,5 +1,7 @@
 #include "InputBox.h"
 #include <iostream>
+#include <functional>
+
 #define NULL_STRING ""
 
 InputBox::InputBox(float x, float y, sf::Font* font, int fontSize, sf::Color color) : x(x), y(y) {
@@ -15,6 +17,18 @@ InputBox::~InputBox() {
 
 }
 
+void InputBox::handleInput()
+{
+	if (sent) {
+		log.push_back(string);
+		std::cout << log.back() << std::endl;
+		sent = false;
+		
+		string.clear();
+		string += "> ";
+	}
+}
+
 void InputBox::update(sf::Event* windowEvent) {	
 	if (windowEvent->type == sf::Event::TextEntered) {
 		if (windowEvent->text.unicode == '\b' && string.getSize() >= 3) {
@@ -28,13 +42,7 @@ void InputBox::update(sf::Event* windowEvent) {
 		}
 	}
 
-	if (sent) {
-		log.push_back(string);
-		std::cout << log.back() << std::endl;
-		sent = false;
-		string.clear();
-		string += "> ";
-	}
+	handleInput();
 
 	text.setString(string);
 	modified = false;
