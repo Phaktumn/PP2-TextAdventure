@@ -21,7 +21,7 @@ public:
 	Inventory();
 	~Inventory();
 
-	void equipWeapon(Weapon* weapon);
+	void equipWeapon(Weapon* weapon, Player* player);
 	void equipArmor(Armor* armor, Item::Type type, Player* player); 
 };
 

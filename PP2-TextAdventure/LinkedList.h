@@ -106,7 +106,6 @@ void LinkedList<type>::removeAt(int index)
 	Node* removed = ptr->next;
 	count--;
 	delete(removed)
-
 }
 
 template <class type>

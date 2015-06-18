@@ -11,7 +11,12 @@ public:
 	~Player();
 
 	void addBonusArmor(int Bonus_Armor);
+	void removeBonusArmor(int value);
+
 	void addBonusDamage(int Bonus_Damage);
+	void removeBonusDamage(int value);
+
 	void addBonusIntellect(int Bonus_Intellect);
+	void removeBonusIntellect(int value);
 };
 

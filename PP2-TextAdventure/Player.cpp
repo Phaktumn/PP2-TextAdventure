@@ -10,18 +10,35 @@ Player::~Player()
 {
 
 }
+/*
+	Increase bonusArmor
+	Decrease bonusArmor
 
-void Player::addBonusArmor(int Bonus_Armor)
-{
+	Increase bonusDamage
+	Decrease bonusDamage
+
+	Increase bonusIntellect
+	Decrease bonusIntellect
+*/
+void Player::addBonusArmor(int Bonus_Armor){
 	Actor::getAttribute(BONUS_ARMOR).changeValue(Bonus_Armor);
 }
-
-void Player::addBonusDamage(int Bonus_Strength)
-{
-	Actor::getAttribute(BONUS_STRENGTH).changeValue(Bonus_Strength);
+void Player::removeBonusArmor(int value){
+	Actor::getAttribute(BONUS_ARMOR).changeValue(-value);
 }
 
-void Player::addBonusIntellect(int Bonus_Intellect)
-{
+
+void Player::addBonusDamage(int Bonus_Strength){
+	Actor::getAttribute(BONUS_STRENGTH).changeValue(Bonus_Strength);
+}
+void Player::removeBonusDamage(int value){
+	Actor::getAttribute(BONUS_STRENGTH).changeValue(-value);
+}
+
+
+void Player::addBonusIntellect(int Bonus_Intellect){
 	Actor::getAttribute(BONUS_ARMOR).changeValue(Bonus_Intellect);
+}
+void Player::removeBonusIntellect(int value){
+	Actor::getAttribute(BONUS_INTELLECT).changeValue(-value);
 }
