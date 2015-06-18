@@ -15,7 +15,6 @@
 #define NORMAL_CHARACTER_SIZE 22
 
 extern sf::String SEPARATOR;
-extern std::map<int, sf::String> options;
 extern bool activeInput;
 
 extern sf::String STRENGTH;
@@ -66,7 +65,4 @@ MAGE
 #define ATTRIBUTES_DATABASE__MAGE_ASSET3_1 "MageArmor"
 #define ATTRIBUTES_DATABASE__MAGE_ASSET3_2 "MageSBonusArmor"
 
-//just a fcking test
-extern void addOptions(int i, sf::String asset);
-extern sf::String getOption(int i);
-//just a fcking test
+extern std::map<int, sf::String> World_Locations_Names;

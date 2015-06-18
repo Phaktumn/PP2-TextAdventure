@@ -16,7 +16,6 @@ void GameState::processCommands(const std::string& command)
 }
 
 void GameState::load() {
-	world.addLocation("Kingdom of Balls", "Descrição Local 1");
 	
 	sfe::RichText titleFont(font);
 	titleFont.setCharacterSize(BIG_CHARACTER_SIZE);
@@ -24,8 +23,18 @@ void GameState::load() {
 	sfe::RichText descriptionFont(font);
 	descriptionFont.setCharacterSize(NORMAL_CHARACTER_SIZE);
 
-	world.addLocation("Monkey Jungle", "Descrição Local 2", 
+	world.addLocation(GameManager::getLocationName(0), "Descrição Local 1");
+	world.addLocation(GameManager::getLocationName(1) , "Descrição Local 2", 
+		titleFont << sf::Color::Cyan << GameManager::getLocationName(1),
+		descriptionFont << "1 This jungle is made out of monkeys and seriously, like, everyone here is"
+			<< sf::Color::Red << " BATSHIT " << sf::Color::White << "insane. \nMan, fuck me."	
+	);	
+	world.addLocation(GameManager::getLocationName(2), "Descrição Local 3");
+	world.addLocation(GameManager::getLocationName(3), "Descrição Local 4");
+	world.addLocation(GameManager::getLocationName(4), "Descrição Local 5");
+	world.addLocation(GameManager::getLocationName(5), "dasldasd");
 
+<<<<<<< HEAD
 		titleFont << sf::Color::Cyan << "Monkey Jungle",
 		descriptionFont << "This jungle is made out of monkeys and seriously, like, everyone here is"
 			<< sf::Color::Red << " BATSHIT " << sf::Color::White << "insane. \nMan, fuck me."
@@ -41,15 +50,24 @@ void GameState::load() {
 	world.connect("Kingdom of Balls", "Shit", 20);
 	world.connect("Kingdom of Balls", "Banana", 50);
 	world.connect("Kingdom of Balls", "Lol", 102);
+=======
+	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(1), 10);
+	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(2), 20);
+	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(3), 50);
+	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(4), 102);
+>>>>>>> d282538592857fef15b2c8788654c1744b010d0d
 
-	world.debugPrintConnections("Kingdom of Balls");
+	world.debugPrintConnections(GameManager::getLocationName(0));
 	
-	world.moveTo("Mehehehe");
-	world.moveTo("Monkey Jungle");
+	world.moveTo(GameManager::getLocationName(5));
 }
 
 void GameState::update() {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d282538592857fef15b2c8788654c1744b010d0d
 }
 
 void GameState::draw(sf::RenderWindow* window)
@@ -59,6 +77,12 @@ void GameState::draw(sf::RenderWindow* window)
 
 	drawText(0, 0, SEPARATOR, font, 24, window);
 	drawText(0, 300, SEPARATOR, font, 24, window);
+	for (int i = 0; i < world.getConnections().size(); i++)
+	{	
+		drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i+1) << ") " << world.getConnections()[i]->getName(), 24, window);
+	}
+
+
 	drawText(0, WINDOW_HEIGHT - 50, SEPARATOR, font, 24, window);
 
 	/*drawText(LOCATION_DESCRIPTION_POSITION_X, LOCATION_DESCRIPTION_POSITION_Y, sfe::RichText(font) 
