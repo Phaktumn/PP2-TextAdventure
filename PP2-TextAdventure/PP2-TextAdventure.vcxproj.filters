@@ -22,6 +22,9 @@
     <Filter Include="States">
       <UniqueIdentifier>{4d186efb-f335-4694-a25f-2d0d6977779e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Locations">
+      <UniqueIdentifier>{7dbd1c6b-728b-474a-88eb-0853c2869fb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability.cpp">
@@ -96,6 +99,9 @@
     </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Locations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
+      <Filter>Locations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

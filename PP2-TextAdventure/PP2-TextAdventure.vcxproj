@@ -98,6 +98,7 @@
     <ClCompile Include="InputBox.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Location.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RichText.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="Location.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RichText.hpp" />
     <ClInclude Include="State.h" />
