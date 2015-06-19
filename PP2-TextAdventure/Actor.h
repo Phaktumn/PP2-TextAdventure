@@ -32,6 +32,9 @@ public:
 	void draw();
 	std::string getActorName();
 
+	void useAbility(unsigned int input);
+	LinkedList<Ability> getAbilities(){ return abilities; }
+
 	Attribute getAttribute(sf::String name);
 
 	void setState();

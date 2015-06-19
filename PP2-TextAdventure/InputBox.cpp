@@ -16,7 +16,7 @@ InputBox::~InputBox() {
 
 }
 
-void InputBox::addListener(std::function<void(std::string)> function)
+void InputBox::addListener(const std::function<void(std::string)> function)
 {
 	listeners.push_back(function);
 }
