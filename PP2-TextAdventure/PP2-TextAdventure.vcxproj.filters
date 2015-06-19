@@ -103,6 +103,9 @@
     <ClCompile Include="Location.cpp">
       <Filter>Locations</Filter>
     </ClCompile>
+    <ClCompile Include="LocationsManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -182,6 +185,9 @@
     </ClInclude>
     <ClInclude Include="Location.h">
       <Filter>Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="LocationsManager.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

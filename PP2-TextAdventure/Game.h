@@ -5,6 +5,7 @@
 #include "InputBox.h"
 #include "Globals.h"
 #include "GameManager.h"
+#include "LocationsManager.h"
 
 class Game
 {
