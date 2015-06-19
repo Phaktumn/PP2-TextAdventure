@@ -43,7 +43,6 @@ void GameState::load() {
 	world.connect(GameManager::getLocationName(0), GameManager::getLocationName(4), 123, true);
 	world.connect(GameManager::getLocationName(1), GameManager::getLocationName(2), 43, true);
 	world.connect(GameManager::getLocationName(1), GameManager::getLocationName(5), 11, true);
-
 }
 
 void GameState::update() {
@@ -81,7 +80,6 @@ void GameState::draw(sf::RenderWindow* window)
 	{	
 		drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i+1) << ") " << world.getConnections()[i]->getName(), 24, window);
 	}
-
 
 	drawText(0, WINDOW_HEIGHT - 50, SEPARATOR, font, 24, window);
 

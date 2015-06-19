@@ -19,7 +19,7 @@ InputBox::~InputBox() {
 void InputBox::addListener(const std::function<void(std::string)> function)
 {
 	listeners.push_back(function);
-}
+} 
 
 void InputBox::handleInput()
 {
