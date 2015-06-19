@@ -82,7 +82,7 @@ void World::debugPrintConnections(const std::string& name)
 
 void World::Location::draw(sf::RenderWindow* window)
 {
-	if (!hasDisplay) return;
+ 	if (!hasDisplay) return;
 	window->draw(_displayName);
 	window->draw(_displayDescription);
 }

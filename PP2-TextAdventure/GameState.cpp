@@ -29,7 +29,8 @@ void GameState::load() {
 		titleFont << sf::Color::Cyan << GameManager::getLocationName(1),
 		descriptionFont << "1 This jungle is made out of monkeys and seriously, like, everyone here is"
 			<< sf::Color::Red << " BATSHIT " << sf::Color::White << "insane. \nMan, fuck me."	
-	);		
+	);
+
 	world.addLocation(GameManager::getLocationName(2), "Descrição Local 3");
 	world.addLocation(GameManager::getLocationName(3), "Descrição Local 4");
 	world.addLocation(GameManager::getLocationName(4), "Descrição Local 5");

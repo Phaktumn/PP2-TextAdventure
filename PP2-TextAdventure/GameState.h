@@ -5,6 +5,7 @@
 #include "Globals.h"
 #include "InputBox.h"
 #include "World.h"
+#include "LocationsManager.h"
 
 class GameState : public State
 {
@@ -28,5 +29,7 @@ private:
 	void processCommands(const std::string& command);
 
 	World world;
+
+	LocationsManager locationsManager;
 };
 
