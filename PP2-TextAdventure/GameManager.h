@@ -27,15 +27,19 @@ public:
 	static Item* getItem(const std::string &name);
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
+
 	static std::string getLocationName(unsigned int location);
+	static std::string getLocationDescription(unsigned int location);
 
 	static void loadAbility(Ability* ability);
 	static void initializeAttributes();
+
+	static std::map<int, std::string> locationDatabase;
 
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
 	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
-	static std::map<int, std::string> locationDatabase;
+	static std::map<int, std::string> locationsDescriptions;
 };
 

@@ -29,7 +29,5 @@ private:
 	void processCommands(const std::string& command);
 
 	World world;
-
-	LocationsManager locationsManager;
 };
 

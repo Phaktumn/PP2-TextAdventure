@@ -36,6 +36,27 @@ void World::addLocation(const std::string& name, const std::string& description,
 	Location* loc = new Location(name, description, displayName, displayDescription);
 	
 	locations.push_back(std::shared_ptr<Location>(loc));
+	/*
+		LOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOL
+
+		apaguei o meu codigo 1000000000000000000000000000000000000 VEZES
+
+		porque faltava isto aqui! quero Matarte!
+
+		XD
+		XD
+		XD
+		XD
+		XD
+		XD
+		XD
+		XD
+		KIDDIN OR NOT! BRAH!
+		:3
+	*/
+	if (locations.size() == 1){
+		currentLocation = locations[0].get();
+	}
 }
 
 void World::connect(const std::string& start, const std::string& dest, int distance, bool twoWay)

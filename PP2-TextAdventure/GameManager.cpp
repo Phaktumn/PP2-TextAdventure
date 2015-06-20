@@ -4,7 +4,9 @@
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
 std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
+
 std::map<int, std::string> GameManager::locationDatabase;
+std::map<int, std::string> GameManager::locationsDescriptions;
 
 GameManager::GameManager()
 {
@@ -106,8 +108,10 @@ void GameManager::loadLocations(const std::string &filePath)
 			jsoncons::json &locationObj = locationFile[i];
 
 			std::string name = locationObj["Name"].as<std::string>();
+			std::string description = locationObj["Description"].as<std::string>();
 
 			locationDatabase.emplace(i, name);
+			locationsDescriptions.emplace(i, description);
 		}
 		catch(const jsoncons::json_exception& e){
 			std::cerr << e.what() << std::endl;
@@ -150,5 +154,10 @@ std::string GameManager::getLocationName(unsigned int location){
 	}
 	if (location > i) return "out of range";
 	else return locationDatabase[location];
+}
+
+std::string GameManager::getLocationDescription(unsigned int location){
+	if (location >= locationsDescriptions.size()) return "out of range";
+	return locationsDescriptions[location];
 }
 

@@ -6,8 +6,9 @@
 class LocationsManager
 {
 public:
-	LocationsManager(World* World, sf::Font font);
-	~LocationsManager();
+
+	LocationsManager(World* world, sf::Font& font);
+
 
 	void load();
 
@@ -15,7 +16,7 @@ private:
 	void AddLocations();
 	void AddConnections();
 
-	sf::Font font;
+	sf::Font& font;
 
 	World* world;
 };
