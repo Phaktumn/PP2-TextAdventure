@@ -94,6 +94,7 @@
     <ClCompile Include="DamageAbility.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateMenu.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="InputBox.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="DamageAbility.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateMenu.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="InputBox.h" />
     <ClInclude Include="Inventory.h" />

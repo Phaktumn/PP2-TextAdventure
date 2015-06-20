@@ -6,6 +6,7 @@
 #include "InputBox.h"
 #include "World.h"
 #include "LocationsManager.h"
+#include "GameStateMenu.h"
 
 class GameState : public State
 {
@@ -27,6 +28,8 @@ private:
 	bool input = false;
 
 	void processCommands(const std::string& command);
+
+	GameStateMenu* Menu;
 
 	World world;
 };
