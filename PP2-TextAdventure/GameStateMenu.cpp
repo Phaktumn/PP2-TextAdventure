@@ -20,7 +20,16 @@ void GameStateMenu::drawText(float x, float y, const std::string& text, sf::Font
 
 	window->draw(_text);
 }
-void GameStateMenu::update(InputBox& inputBox, World world)
+
+void GameStateMenu::drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window)
+{
+	text.setPosition(x, y);
+	text.setCharacterSize(size);
+
+	window->draw(text);
+}
+
+void GameStateMenu::update(InputBox& inputBox, World* world)
 {
 	if (inputBox.lastCommand() == "> Paths")
 		auxOptions = false;
@@ -30,7 +39,7 @@ void GameStateMenu::update(InputBox& inputBox, World world)
 }
 
 
-void GameStateMenu::draw(sf::RenderWindow* window, World world)
+void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 {
 	if (auxOptions)
 	{
@@ -40,9 +49,9 @@ void GameStateMenu::draw(sf::RenderWindow* window, World world)
 	}
 	if (auxOptions == false)
 	{
-		for (int i = 0; i < world.getConnections().size(); i++)
+		for (int i = 0; i < world->getConnections().size(); i++)
 		{
-			drawText(15, 325 + i * 25, world.getConnections()[i]->getName(), font, 24, window);
+			drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i + 1) << ") " << world->getConnections()[i]->getName(), 24, window);
 		}
 		drawText(15, 400, "> Back", font, 24, window);
 	}

@@ -2,7 +2,7 @@
 
 GameState::GameState(sf::Font& font, InputBox& inputBox, StateManager& stateManager) : font(font), inputBox(inputBox), stateManager(stateManager)
 {
-	Menu = new GameStateMenu(font, inputBox);
+	menu = new GameStateMenu(font, inputBox);
 }
 
 GameState::~GameState() {
@@ -17,7 +17,7 @@ void GameState::processCommands(const std::string& command)
 
 void GameState::load() {
 	//inputBox.addListener(&GameState::processCommands);
-
+	
 	/*
 		its working now bitchas!!!
 	*/
@@ -29,7 +29,7 @@ void GameState::load() {
 void GameState::update() {
 
 
-	Menu->update(inputBox, world);
+	menu->update(inputBox, &world);
 	/*
 		world.getConnections functions
 			->gives all possible pathes from the position the player is
@@ -46,23 +46,25 @@ void GameState::update() {
 		world.moveTo(world.getConnections()[1]->getName());
 			->moves the player to the first locations connected!
 	*/
-	if (inputBox.lastCommand() == "> 1")
+
+	/*if (inputBox.lastCommand() == "> 1")
 		world.moveTo(world.getConnections()[0]->getName());
 	if (inputBox.lastCommand() == "> 2")
-		world.moveTo(world.getConnections()[1]->getName());
+		world.moveTo(world.getConnections()[1]->getName());*/
 }
 
 void GameState::draw(sf::RenderWindow* window)
 {
 	State::draw(window);
 	world.draw(window);
-	Menu->draw(window, world);
 
 	drawText(0, 0, SEPARATOR, font, 24, window);
 	drawText(0, 300, SEPARATOR, font, 24, window);
-	for (int i = 0; i < world.getConnections().size(); i++){	
-		drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i+1) << ") " << world.getConnections()[i]->getName(), 24, window);
-	}
+
+	menu->draw(window, &world);
+	//for (int i = 0; i < world.getConnections().size(); i++){	
+	//	drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i+1) << ") " << world.getConnections()[i]->getName(), 24, window);
+	//}
 
 	drawText(0, WINDOW_HEIGHT - 50, SEPARATOR, font, 24, window);
 
