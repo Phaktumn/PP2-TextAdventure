@@ -19,7 +19,7 @@ public:
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 
-	bool auxOptions;
+	bool auxPaths, auxInv;
 
 private:
 	sf::Font font;
