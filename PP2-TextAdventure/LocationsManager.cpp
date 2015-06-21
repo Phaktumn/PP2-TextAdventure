@@ -28,7 +28,7 @@ void LocationsManager::AddConnections(){
 	world->connect(GameManager::getLocationName(0), GameManager::getLocationName(2), 43, false);
 	world->connect(GameManager::getLocationName(0), GameManager::getLocationName(3), 14, false);
 
-	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(2), 43, true);
+	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(2), 43, false);
 	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(3), 11, true);
 }
 

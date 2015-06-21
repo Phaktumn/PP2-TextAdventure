@@ -3,6 +3,7 @@
 
 void World::draw(sf::RenderWindow* window)
 {
+	std::cout << currentLocation->getName();
 	currentLocation->draw(window);
 }
 
@@ -18,7 +19,6 @@ void World::moveTo(const std::string& name)
 
 	currentLocation = loc;
 	std::cout << "Moved to " << loc->getName() << "." << std::endl;
-	//TODO: Find all possible paths and show them.
 }
 
 void World::addLocation(const std::string& name, const std::string& description)
@@ -36,24 +36,7 @@ void World::addLocation(const std::string& name, const std::string& description,
 	Location* loc = new Location(name, description, displayName, displayDescription);
 	
 	locations.push_back(std::shared_ptr<Location>(loc));
-	/*
-		LOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOL
 
-		apaguei o meu codigo 1000000000000000000000000000000000000 VEZES
-
-		porque faltava isto aqui! quero Matarte!
-
-		XD
-		XD
-		XD
-		XD
-		XD
-		XD
-		XD
-		XD
-		KIDDIN OR NOT! BRAH!
-		:3
-	*/
 	if (locations.size() == 1){
 		currentLocation = locations[0].get();
 	}
@@ -124,4 +107,31 @@ std::map<int, World::Location*> World::getConnections()
 		i++;
 	}
 	return path__locations;
+}
+
+bool World::circuitExists(Location* location)
+{
+	bool circuitExists = false;
+
+	for (size_t i = 0; i < location->connections.size(); i++) {
+		circuitExists = pathExists(location->connections[i].location, location);
+		if (circuitExists) { return circuitExists; }
+	}
+
+	return circuitExists;
+}
+
+bool World::pathExists(Location* start, Location* end)
+{
+	bool exists = false;
+
+	for (size_t i = 0; i < start->connections.size(); i++) {
+		if (start->connections[i].location == end) {
+			return true;
+		}
+
+		exists = true * pathExists(start->connections[i].location, end);
+	}
+
+	return exists;
 }

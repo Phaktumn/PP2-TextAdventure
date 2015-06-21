@@ -18,6 +18,8 @@ public:
 	void draw(sf::RenderWindow* window);
 	void moveTo(const std::string& name);
 
+	bool pathExists(Location* start, Location* end);
+	bool circuitExists(Location* location);
 	void addLocation(const std::string& name, const std::string& description);
 	void addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription);
 	void connect(const std::string& start, const std::string& dest, int distance, bool twoWay = false);
@@ -28,6 +30,10 @@ public:
 	std::map<int, Location*> path__locations;
 
 private:
+	// ==================================================
+	// =                   LOCATION	                    =
+	// ==================================================
+
 	class Location
 	{
 	public:
@@ -40,6 +46,8 @@ private:
 		{ }
 
 		~Location() { }
+
+		std::vector<Path> connections;
 
 		bool hasPath(Location* location)
 		{
@@ -58,6 +66,7 @@ private:
 		sfe::RichText getDisplayDescription(){ return _displayDescription; }
 
 		void addConnection(Path path) { connections.push_back(path); }
+
 		void debugPrintConnections()
 		{
 			for (size_t i = 0; i < connections.size(); i++) {
@@ -76,8 +85,11 @@ private:
 		sfe::RichText _displayDescription;
 
 		bool hasDisplay;
-		std::vector<Path> connections;
 	};
+
+	// ==================================================
+
+
 	struct Path
 	{
 		int distance;

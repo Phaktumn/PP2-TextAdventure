@@ -17,27 +17,19 @@ void GameState::processCommands(const std::string& command)
 
 void GameState::load() {
 	//inputBox.addListener(&GameState::processCommands);
-	
-	/*
-		its working now bitchas!!!
-	*/
 	LocationsManager locationsManager(&world, font);
-
 	locationsManager.load();
 }
 
 void GameState::update() {
-
-
 	menu->update(inputBox, &world);
-	/*
-		world.getConnections functions
+	/*  world.getConnections functions
 			->gives all possible pathes from the position the player is
 
 		world.getConnections()[0]
 			->the first location connected
 		world.getConnections()[1]
-			->the second location connected
+			->the second location connected	
 			...
 
 		world.getConnections()[1]->getName()
