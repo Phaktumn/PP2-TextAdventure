@@ -50,7 +50,10 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	if (auxPaths == true) {
 		for (size_t i = 0; i < world->getConnections().size(); i++)
 		{
-			if (command == world->getConnections()[i]->getName()) {
+			std::string nome = world->getConnections()[i]->getName();
+			std::transform(nome.begin(),nome.end(),nome.end(), ::tolower);
+
+			if (command == nome) {
 				world->moveTo(world->getConnections()[i]->getName());
 			}
 		}

@@ -19,6 +19,7 @@ public:
 	bool auxPaths;
 	bool auxInv;
 
+
 private:
 	sf::Font font;
 
