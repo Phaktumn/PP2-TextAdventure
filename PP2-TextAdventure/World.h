@@ -24,6 +24,7 @@ public:
 	void addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription);
 	void connect(const std::string& start, const std::string& dest, int distance, bool twoWay = false);
 	Location* getLocation(const std::string& name);
+	std::vector<std::string> getCurrentConnections() { return connections;  }
 	void debugPrintConnections(const std::string& name);
 	std::map<int, Location*> getConnections();
 
@@ -98,5 +99,6 @@ private:
 
 	Location* currentLocation;
 	std::vector<std::shared_ptr<Location>> locations;
+	std::vector<std::string> connections;
 };
 

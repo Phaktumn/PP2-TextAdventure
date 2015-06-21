@@ -1,4 +1,5 @@
 #include "LocationsManager.h" 
+#include "RichText.hpp"
 
 LocationsManager::LocationsManager(World* _world, sf::Font& _font)
 :world(_world), font(_font)
@@ -18,7 +19,8 @@ void LocationsManager::AddLocations(){
 		<< sf::Color::White << " as you get to sleep!!!");*/    
 
 	for (size_t i = 0; i < GameManager::locationDatabase.size(); i++){
-		world->addLocation(GameManager::getLocationName(i), GameManager::getLocationDescription(i));
+		world->addLocation(GameManager::getLocationName(i), GameManager::getLocationDescription(i), 
+			titleFont << GameManager::getLocationName(i), descriptionFont << GameManager::getLocationDescription(i));
 	}
 }
 

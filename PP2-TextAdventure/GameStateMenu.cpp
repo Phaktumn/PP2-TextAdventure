@@ -35,7 +35,6 @@ void GameStateMenu::update(InputBox& inputBox, World* world)
 		auxOptions = false;
 	if (inputBox.lastCommand() == "> Back")
 		auxOptions = true;
-
 }
 
 
@@ -46,13 +45,15 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		drawText(15, 325, "> Paths", font, 24, window);
 		drawText(15, 350, "> Inventory", font, 24, window);
 		drawText(15, 375, "> Quit", font, 24, window);
-	}
-	if (auxOptions == false)
+	} 
+	else
 	{
 		for (int i = 0; i < world->getConnections().size(); i++)
 		{
-			drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(i + 1) << ") " << world->getConnections()[i]->getName(), 24, window);
+			int j = i + 1;
+			drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(j) << ") " << world->getConnections()[i]->getName(), 24, window);
 		}
+
 		drawText(15, 400, "> Back", font, 24, window);
 	}
 }

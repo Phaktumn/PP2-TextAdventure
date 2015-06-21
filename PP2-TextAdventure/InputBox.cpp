@@ -61,8 +61,10 @@ void InputBox::display(sf::RenderWindow* window) {
 }
 
 std::string InputBox::lastCommand() {
-	if (!log.empty())
+	if (!log.empty()) {
+		log.push_back("-1");
 		return log.back();
+	}
 	else
 		return "-1";
 }

@@ -3,7 +3,6 @@
 
 void World::draw(sf::RenderWindow* window)
 {
-	std::cout << currentLocation->getName();
 	currentLocation->draw(window);
 }
 
@@ -19,6 +18,11 @@ void World::moveTo(const std::string& name)
 
 	currentLocation = loc;
 	std::cout << "Moved to " << loc->getName() << "." << std::endl;
+
+	connections.clear();
+	for (size_t i = 0; i < currentLocation->connections.size(); i++) {
+		connections.push_back(currentLocation->connections[i].location->getName());
+	}
 }
 
 void World::addLocation(const std::string& name, const std::string& description)
