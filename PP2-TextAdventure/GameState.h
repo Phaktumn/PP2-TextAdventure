@@ -1,15 +1,13 @@
 #pragma once
 
 #include "State.h"
-#include "game.h"
+#include "StateManager.h"
 #include <string>
 #include "Globals.h"
+#include "GameStateMenu.h"
 #include "InputBox.h"
 #include "World.h"
 #include "LocationsManager.h"
-#include "GameStateMenu.h"
-
-class GameStateMenu;
 
 class GameState : public State
 {
@@ -34,6 +32,7 @@ protected:
 	void processCommands(const std::string& command);
 
 	World world;
+
 private:
 
 };

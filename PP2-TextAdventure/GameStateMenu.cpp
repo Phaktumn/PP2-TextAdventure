@@ -1,18 +1,17 @@
 #include "GameStateMenu.h"
 
-
-GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox)
+GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox) : font(font)
 {
 	auxPaths = false;
 	auxInv = false;
 }
 
-
 GameStateMenu::~GameStateMenu()
 {
 }
 
-void GameStateMenu::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window) {
+void GameStateMenu::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window) 
+{
 	sf::Text _text;
 	_text.setPosition(x, y);
 	_text.setString(text);
@@ -38,14 +37,11 @@ void GameStateMenu::update(InputBox& inputBox, World* world)
 		//fechar o jogo
 	if (inputBox.lastCommand() == "> Paths")
 		auxPaths = true;
-	if (inputBox.lastCommand() == "> Back")
-<<<<<<< HEAD
-		auxOptions = true;
-=======
-	{
+	if (inputBox.lastCommand() == "> Back") {
 		auxInv = false;
 		auxPaths = false;
 	}
+
 	if (auxPaths == true ){
 		for (size_t i = 0; i < world->getConnections().size(); i++)
 		{
@@ -54,7 +50,6 @@ void GameStateMenu::update(InputBox& inputBox, World* world)
 			}
 		}
 	}
->>>>>>> 9078d1531b9e03991d1a892a695a4b9017bd0fd8
 }
 
 
@@ -65,13 +60,11 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		drawText(15, 325, "> Paths", font, 24, window);
 		drawText(15, 350, "> Inventory", font, 24, window);
 		drawText(15, 375, "> Quit", font, 24, window);
-<<<<<<< HEAD
-	} 
-	else
-=======
+
 	}
+
 	if (auxPaths)
->>>>>>> 9078d1531b9e03991d1a892a695a4b9017bd0fd8
+
 	{
 		for (int i = 0; i < world->getConnections().size(); i++)
 		{
