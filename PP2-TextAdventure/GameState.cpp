@@ -22,7 +22,6 @@ void GameState::load() {
 }
 
 void GameState::update() {
-	menu->update(inputBox, &world);
 	/*  world.getConnections functions
 			->gives all possible pathes from the position the player is
 
@@ -45,13 +44,16 @@ void GameState::update() {
 		world.moveTo(world.getConnections()[1]->getName());*/
 	
 	std::string lastCommand = inputBox.lastCommand();
-	std::vector<std::string> connections = world.getCurrentConnections();
-	for (size_t i = 0; i < connections.size(); i++) {
-		if (lastCommand == connections[i]) {
-			world.moveTo(connections[i]);
-			break;
-		}
-	}
+
+	menu->update(inputBox, &world, lastCommand);
+	
+	//std::vector<std::string> connections = world.getCurrentConnections();
+	//for (size_t i = 0; i < connections.size(); i++) {
+	//	if (lastCommand == connections[i]) {
+	//		world.moveTo(connections[i]);
+	//		break;
+	//	}
+	//}
 }
 
 void GameState::draw(sf::RenderWindow* window)

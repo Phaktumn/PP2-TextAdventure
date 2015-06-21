@@ -20,7 +20,7 @@ private:
 	std::vector<std::string> log;
 	sf::Font font;
 	sf::Text text;
-	sf::String string;
+	std::string string;
 	float x, y;
 	bool modified, sent;
 

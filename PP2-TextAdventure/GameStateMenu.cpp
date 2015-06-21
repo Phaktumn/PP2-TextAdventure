@@ -29,23 +29,26 @@ void GameStateMenu::drawText(float x, float y, sfe::RichText text, int size, sf:
 	window->draw(text);
 }
 
-void GameStateMenu::update(InputBox& inputBox, World* world)
+void GameStateMenu::update(InputBox& inputBox, World* world, std::string command)
 {
-	if (inputBox.lastCommand() == "> Inventory")
+	if (command == "inventory") {
 		auxInv = true;
-	if (inputBox.lastCommand() == "> Quit")
+	}
+	if (command == "quit") {
 		//fechar o jogo
-	if (inputBox.lastCommand() == "> Paths")
+	}
+	if (command == "paths") {
 		auxPaths = true;
-	if (inputBox.lastCommand() == "> Back") {
+	}
+	if (command == "back") {
 		auxInv = false;
 		auxPaths = false;
 	}
 
-	if (auxPaths == true ){
+	if (auxPaths == true) {
 		for (size_t i = 0; i < world->getConnections().size(); i++)
 		{
-			if (inputBox.lastCommand() == world->getConnections()[i]->getName()){
+			if (command == world->getConnections()[i]->getName()) {
 				world->moveTo(world->getConnections()[i]->getName());
 			}
 		}
