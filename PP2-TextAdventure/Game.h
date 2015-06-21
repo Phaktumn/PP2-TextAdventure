@@ -6,6 +6,7 @@
 #include "Globals.h"
 #include "GameManager.h"
 #include "LocationsManager.h"
+#include "Player.h"
 
 class Game
 {

@@ -1,12 +1,16 @@
 #include "GameManager.h"
 #include "Globals.h"
 
+
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
 std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
 
 std::map<int, std::string> GameManager::locationDatabase;
 std::map<int, std::string> GameManager::locationsDescriptions;
+
+LinkedList<Attribute*> GameManager::attribute;
+LinkedList<Ability*> GameManager::abilities;
 
 GameManager::GameManager()
 {
@@ -19,6 +23,17 @@ GameManager::~GameManager()
 
 void GameManager::loadGlobals() {
 	Item::loadProperties();
+
+	attribute.add(GameManager::getAttribute(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_1));
+	attribute.add(GameManager::getAttribute(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2));
+	attribute.add(GameManager::getAttribute(ATTRIBUTES_DATABASE__WARRIOR_ASSET2_1)); 
+	attribute.add(GameManager::getAttribute(ATTRIBUTES_DATABASE__WARRIOR_ASSET2_2)); 
+	attribute.add(GameManager::getAttribute(ATTRIBUTES_DATABASE__WARRIOR_ASSET3_1));
+	attribute.add(GameManager::getAttribute(ATTRIBUTES_DATABASE__WARRIOR_ASSET3_2));
+
+	abilities.add(new DamageAbility("ola", Ability::MANA, 15, 150, DamageAbility::strength));
+	abilities.add(new DamageAbility("chau", Ability::MANA, 15, 150, DamageAbility::strength));
+	abilities.add(new DamageAbility("lel", Ability::MANA, 15, 150, DamageAbility::strength));
 }
 
 void GameManager::loadItems(const std::string &filePath)
@@ -123,9 +138,9 @@ void GameManager::initializeAttributes(){
 	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_1, std::shared_ptr<Attribute>(new Attribute(STRENGTH, WARRIOR_BASE_STRENGTH)));
 	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_STRENGTH, WARRIOR_BONUS_STRENGTH)));
 	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET2_1, std::shared_ptr<Attribute>(new Attribute(INTELLECT, WARRIOR_BASE_INTELLECT)));
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_INTELLECT, WARRIOR_BONUS_INTELLECT)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET2_2, std::shared_ptr<Attribute>(new Attribute(BONUS_INTELLECT, WARRIOR_BONUS_INTELLECT)));
 	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET3_1, std::shared_ptr<Attribute>(new Attribute(ARMOR, WARRIOR_BASE_ARMOR)));
-	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_ARMOR, WARRIOR_BONUS_ARMOR)));
+	attributesDatabase.emplace(ATTRIBUTES_DATABASE__WARRIOR_ASSET3_2, std::shared_ptr<Attribute>(new Attribute(BONUS_ARMOR, WARRIOR_BONUS_ARMOR)));
 
 	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET1_1, std::shared_ptr<Attribute>(new Attribute(STRENGTH, MAGE_BASE_STRENGTH)));
 	attributesDatabase.emplace(ATTRIBUTES_DATABASE__MAGE_ASSET1_2, std::shared_ptr<Attribute>(new Attribute(BONUS_STRENGTH, MAGE_BONUS_STRENGTH)));

@@ -3,11 +3,12 @@
 #include <string>
 #include "InputBox.h"
 #include "World.h"
+#include "StateManager.h"
 
 class GameStateMenu
 {
 public:
-	GameStateMenu(sf::Font& font, InputBox& inputBox);
+	GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager);
 	~GameStateMenu();
 
 	void update(InputBox& inputBox, World* world, std::string command);
@@ -20,4 +21,6 @@ public:
 
 private:
 	sf::Font font;
+
+	StateManager& state;
 };

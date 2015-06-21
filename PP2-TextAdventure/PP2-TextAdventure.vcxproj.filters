@@ -109,6 +109,9 @@
     <ClCompile Include="GameStateMenu.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="BattleStateMenu.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -193,6 +196,9 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="GameStateMenu.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleStateMenu.h">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>

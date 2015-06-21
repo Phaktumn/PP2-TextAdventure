@@ -1,6 +1,6 @@
 #include "GameStateMenu.h"
 
-GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox) : font(font)
+GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager) : font(font), state(stateManager)
 {
 	auxPaths = false;
 	auxInv = false;
@@ -31,6 +31,8 @@ void GameStateMenu::drawText(float x, float y, sfe::RichText text, int size, sf:
 
 void GameStateMenu::update(InputBox& inputBox, World* world, std::string command)
 {
+	if (command == "1")
+		state.changeState("BattleState");
 	if (command == "inventory") {
 		auxInv = true;
 	}

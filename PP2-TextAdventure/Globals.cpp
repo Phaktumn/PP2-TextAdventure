@@ -1,6 +1,4 @@
 #include "Globals.h"
-#include "LinkedList.h"
-#include "Item.h"
 
 sf::String SEPARATOR("+ ----------------------------------------------------------------------------------------------------- +");
 bool activeInput = false;

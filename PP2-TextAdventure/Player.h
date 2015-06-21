@@ -7,7 +7,7 @@ class Player : public Actor
 private:
 	//inventory here! tho
 public:
-	Player(std::string name, Attribute attributes[], Ability abilities[], int hp, int mana);
+	Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana);
 	~Player();
 
 	void addBonusArmor(int Bonus_Armor);

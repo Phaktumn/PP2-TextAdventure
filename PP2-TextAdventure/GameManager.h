@@ -12,6 +12,7 @@
 #include "Ability.h"
 #include "DamageAbility.h"
 #include "World.h"
+#include "Player.h"
 
 class GameManager
 {
@@ -27,6 +28,7 @@ public:
 	static Item* getItem(const std::string &name);
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
+	static Attribute getAttribute_(const std::string &name);
 
 	static std::string getLocationName(unsigned int location);
 	static std::string getLocationDescription(unsigned int location);
@@ -35,6 +37,9 @@ public:
 	static void initializeAttributes();
 
 	static std::map<int, std::string> locationDatabase;
+
+	static LinkedList<Attribute*> attribute;
+	static LinkedList<Ability*> abilities;
 
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;

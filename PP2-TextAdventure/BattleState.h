@@ -1,9 +1,11 @@
 #pragma once
 #include "StateManager.h"
 #include "Globals.h"
-#include "Player.h"
 #include "Actor.h"
 #include "InputBox.h"
+#include "BattleStateMenu.h"
+#include "GameManager.h"
+#include "Actor.h"
 
 class BattleState : public State
 {
@@ -16,10 +18,11 @@ public:
 	void draw(sf::RenderWindow *window) override;
 
 private:
-	Actor* player;
-
 	InputBox& inputBox;
-
 	sf::Font font;
+	BattleStateMenu* battleMenu;
+
+	Actor* player;
+	Actor* shit;
 };
 

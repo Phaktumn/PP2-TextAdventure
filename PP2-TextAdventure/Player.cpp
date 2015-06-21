@@ -1,7 +1,7 @@
 #include "Player.h"
 
-Player::Player(std::string name, Attribute attributes[], Ability abilities[], int hp, int mana) 
-	: Actor(name, attributes, abilities, hp, mana)
+Player::Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana)
+	: Actor(name, _attributes, _abilities, hp, mana)
 {
 	
 }
@@ -21,24 +21,24 @@ Player::~Player()
 	Decrease bonusIntellect
 */
 void Player::addBonusArmor(int Bonus_Armor){
-	Actor::getAttribute(BONUS_ARMOR).changeValue(Bonus_Armor);
+	Actor::getAttribute(BONUS_ARMOR)->changeValue(Bonus_Armor);
 }
 void Player::removeBonusArmor(int value){
-	Actor::getAttribute(BONUS_ARMOR).changeValue(-value);
+	Actor::getAttribute(BONUS_ARMOR)->changeValue(-value);
 }
 
 
 void Player::addBonusDamage(int Bonus_Strength){
-	Actor::getAttribute(BONUS_STRENGTH).changeValue(Bonus_Strength);
+	Actor::getAttribute(BONUS_STRENGTH)->changeValue(Bonus_Strength);
 }
 void Player::removeBonusDamage(int value){
-	Actor::getAttribute(BONUS_STRENGTH).changeValue(-value);
+	Actor::getAttribute(BONUS_STRENGTH)->changeValue(-value);
 }
 
 
 void Player::addBonusIntellect(int Bonus_Intellect){
-	Actor::getAttribute(BONUS_ARMOR).changeValue(Bonus_Intellect);
+	Actor::getAttribute(BONUS_ARMOR)->changeValue(Bonus_Intellect);
 }
 void Player::removeBonusIntellect(int value){
-	Actor::getAttribute(BONUS_INTELLECT).changeValue(-value);
+	Actor::getAttribute(BONUS_INTELLECT)->changeValue(-value);
 }

@@ -2,7 +2,7 @@
 
 GameState::GameState(sf::Font& font, InputBox& inputBox, StateManager& stateManager) : font(font), inputBox(inputBox), stateManager(stateManager)
 {
-	menu = new GameStateMenu(font, inputBox);
+	menu = new GameStateMenu(font, inputBox, stateManager);
 }
 
 GameState::~GameState() {
@@ -44,7 +44,6 @@ void GameState::update() {
 		world.moveTo(world.getConnections()[1]->getName());*/
 	
 	std::string lastCommand = inputBox.lastCommand();
-
 	menu->update(inputBox, &world, lastCommand);
 	
 	//std::vector<std::string> connections = world.getCurrentConnections();

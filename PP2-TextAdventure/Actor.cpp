@@ -1,20 +1,20 @@
 #include "Actor.h"
 #include <SFML/Graphics.hpp>
 
-Actor::Actor(std::string name, Attribute _attributes[], Ability _abilities[], int hp, int mana)
+Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana)
+: name(_name), attributes(_attributes), abilities(_abilities), hp(hp), mana(mana)
 {
-	int length = sizeof(_attributes)/sizeof(*_attributes);
-	for (int i = 0; i < length; i++){
-		attributes.add(_attributes[i]);
-	}
-	
-	if (_abilities != nullptr) {
-		length = sizeof(_abilities) / sizeof(*_abilities);
-		for (int i = 0; i < length; i++){
-			abilities.add(_abilities[i]);
-		}
-	}
-
+	//int length = sizeof(_attributes)/sizeof(*_attributes);
+	//for (int i = 0; i < length; i++){
+	//	attributes.add(_attributes[i]);
+	//}
+	//
+	//if (_abilities != nullptr) {
+	//	length = sizeof(_abilities) / sizeof(*_abilities);
+	//	for (int i = 0; i < length; i++){
+	//		abilities.add(_abilities[i]);
+	//	}
+	//}
 	alive = true;
 	stunned = false;
 }
@@ -46,11 +46,6 @@ void Actor::draw()
 
 }
 
-std::string Actor::getActorName()
-{
-	return name;
-}
-
 void Actor::setState()
 {
 	if (!stunned) stunned = true;
@@ -64,9 +59,17 @@ bool Actor::takeDamage(int damage) {
 	return hp <= 0;
 }
 
-Attribute Actor::getAttribute(sf::String name){
-	for (int i = 0; i < attributes.getLength(); i++){
-		if (attributes.get(i).getName() == name)
+Ability* Actor::getAbility(sf::String name)
+{
+	for (int i = 0; i <= abilities.getLength(); i++){
+		if (attributes.get(i)->getName() == name)
+			return abilities.get(i);
+	}
+}
+
+Attribute* Actor::getAttribute(sf::String name){
+	for (int i = 0; i <= attributes.getLength(); i++){
+		if (attributes.get(i)->getName() == name)
 			return attributes.get(i);
 	}
 }

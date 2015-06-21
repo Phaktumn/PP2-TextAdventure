@@ -6,7 +6,7 @@
 class Attribute
 {
 public:
-	Attribute(sf::String name, int value);
+	Attribute(sf::String &name, int value);
 	~Attribute();
 
 	sf::String getName(){ return name; }

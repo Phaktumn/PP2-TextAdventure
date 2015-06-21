@@ -8,6 +8,15 @@
 #pragma once
 class Inventory
 {
+public:
+	Inventory();
+	~Inventory();
+
+	void equipWeapon(Weapon* weapon, Player* player);
+	void equipArmor(Armor* armor, Item::Type type, Player* player);
+
+	void draw(sf::RenderWindow* window);
+
 private:
 	LinkedList<Item> bag;
 	Item* chest;
@@ -16,12 +25,5 @@ private:
 	Item* weapon;
 	Item* legs;
 	Item* feet;
-
-public:
-	Inventory();
-	~Inventory();
-
-	void equipWeapon(Weapon* weapon, Player* player);
-	void equipArmor(Armor* armor, Item::Type type, Player* player); 
 };
 

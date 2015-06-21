@@ -22,6 +22,7 @@ int Game::run() {
 		return 0;
 	}
 
+	GameManager::initializeAttributes();
 	GameManager::loadItems("data");
 	GameManager::loadLocations("data");
 	GameManager::loadGlobals();
