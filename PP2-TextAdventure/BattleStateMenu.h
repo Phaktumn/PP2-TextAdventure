@@ -33,6 +33,9 @@ private:
 	//
 	//aux helpers aux helpers aux helpers
 
+	bool inv;
+
+	Player* playerPtr;
 	Actor* player;
 	Actor* enemy;
 };
