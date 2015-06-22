@@ -1,7 +1,8 @@
+#pragma once
 #include "Actor.h"
 #include "Globals.h"
+#include "Inventory.h"
 
-#pragma once
 class Player : public Actor
 {
 private:

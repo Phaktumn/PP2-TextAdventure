@@ -1,7 +1,6 @@
 #include "Inventory.h"
 
-
-Inventory::Inventory()
+Inventory::Inventory(Player* player) : player(player)
 {
 
 }
@@ -12,7 +11,7 @@ Inventory::~Inventory()
 
 }
 
-void Inventory::equipWeapon(Weapon* _weapon, Player* player)
+void Inventory::equipWeapon(Weapon* _weapon)
 {
 	if (weapon != nullptr){
 		player->removeBonusIntellect(_weapon->getBonusIntellevt());
@@ -25,7 +24,7 @@ void Inventory::equipWeapon(Weapon* _weapon, Player* player)
 	player->addBonusIntellect(_weapon->getBonusIntellevt());
 }
 
-void Inventory::equipArmor(Armor* armor, Item::Type type, Player* player)
+void Inventory::equipArmor(Armor* armor, Item::Type type)
 {
 	switch (type)
 	{
