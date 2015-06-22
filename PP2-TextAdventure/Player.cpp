@@ -3,7 +3,7 @@
 Player::Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana)
 	: Actor(name, _attributes, _abilities, hp, mana)
 {
-	
+
 }
 
 Player::~Player()

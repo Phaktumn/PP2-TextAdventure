@@ -4,13 +4,13 @@
 //state
 //linked list atributos
 //linked list abilities
+#pragma once
 #include <SFML/Graphics.hpp>
 #include "Attribute.h"
 #include "LinkedList.h"
 #include "Ability.h"
 #include "UtilityAbility.h"
 
-#pragma once
 class Actor
 {
 private:

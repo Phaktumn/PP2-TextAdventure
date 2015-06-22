@@ -1,19 +1,21 @@
+#pragma once
+
 #include "LinkedList.h"
 #include "Item.h"
 #include "Weapon.h"
 #include "Armor.h" 
-#include "Actor.h"
 #include "Player.h"
 
-#pragma once
+class Player;
+
 class Inventory
 {
 public:
-	Inventory();
+	Inventory(Player* player);
 	~Inventory();
 
-	void equipWeapon(Weapon* weapon, Player* player);
-	void equipArmor(Armor* armor, Item::Type type, Player* player);
+	void equipWeapon(Weapon* weapon);
+	void equipArmor(Armor* armor, Item::Type type);
 
 	void draw(sf::RenderWindow* window);
 
@@ -25,5 +27,7 @@ private:
 	Item* weapon;
 	Item* legs;
 	Item* feet;
+
+	Player* player;
 };
 

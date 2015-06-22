@@ -1,11 +1,11 @@
+#pragma once
 #include "Actor.h"
 #include "Globals.h"
 
-#pragma once
 class Player : public Actor
 {
 private:
-	//inventory here! tho
+
 public:
 	Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana);
 	~Player();
