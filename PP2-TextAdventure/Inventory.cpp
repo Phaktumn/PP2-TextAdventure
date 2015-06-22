@@ -110,6 +110,44 @@ void Inventory::draw(sf::RenderWindow* window, sf::Font &font){
 	else drawText(20, 120, "Feet: No Item", font, 24, window);
 }
 
+void Inventory::drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y){
+	if (head != nullptr){
+		drawText(x, y, "Head: ", font, 24, window);
+		head->draw(window, &font, 100, 20);
+	}
+	else drawText(x, y, "Head: No Item", font, 24, window);
+
+	if (chest != nullptr){
+		drawText(x, y + 20, "Chest: ", font, 24, window);
+		chest->draw(window, &font, 100, 40);
+	}
+	else drawText(x, y + 20, "Chest: No Item", font, 24, window);
+
+	if (hands != nullptr){
+		drawText(x, y + 40, "Hands: ", font, 24, window);
+		hands->draw(window, &font, 100, 60);
+	}
+	else drawText(x, y + 40, "Hands: No Item", font, 24, window);
+
+	if (weapon != nullptr){
+		drawText(x, y + 60, "Weapon: ", font, 24, window);
+		weapon->draw(window, &font, 110, 83);
+	}
+	else drawText(x, y + 60, "Weapon: No Item", font, 24, window);
+
+	if (legs != nullptr){
+		drawText(x, y + 80, "Legs: ", font, 24, window);
+		legs->draw(window, &font, 100, 100);
+	}
+	else drawText(x, y + 80, "Legs: No Item", font, 24, window);
+
+	if (feet != nullptr){
+		drawText(x, y + 100, "Feet: ", font, 24, window);
+		feet->draw(window, &font, 100, 120);
+	}
+	else drawText(x, y + 100, "Feet: No Item", font, 24, window);
+}
+
 
 void Inventory::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window){
 	sf::Text _text;

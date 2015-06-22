@@ -1,6 +1,6 @@
 #include "GameStateMenu.h"
 
-GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager, Player* _Player) : font(font), state(stateManager), playerPtr(_Player)
+GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager, Player* _Player) : font(font), state(stateManager)
 {
 	auxPaths = false;
 	auxInv = false;
@@ -31,10 +31,10 @@ void GameStateMenu::drawText(float x, float y, sfe::RichText text, int size, sf:
 
 void GameStateMenu::update(InputBox& inputBox, World* world, std::string command)
 {
-	_player.HP = playerPtr->getHp();
-	_player.ARMOR = playerPtr->getAttribute(ARMOR)->getValue() + playerPtr->getAttribute(BONUS_ARMOR)->getValue();
-	_player.STRENGTH = playerPtr->getAttribute(STRENGTH)->getValue() + playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
-	_player.INTELLECT = playerPtr->getAttribute(INTELLECT)->getValue() + playerPtr->getAttribute(BONUS_INTELLECT)->getValue();
+	_player.HP =  GameManager::playerPtr->getHp();
+	_player.ARMOR = GameManager::playerPtr->getAttribute(ARMOR)->getValue() + GameManager::playerPtr->getAttribute(BONUS_ARMOR)->getValue();
+	_player.STRENGTH = GameManager::playerPtr->getAttribute(STRENGTH)->getValue() + GameManager::playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
+	_player.INTELLECT = GameManager::playerPtr->getAttribute(INTELLECT)->getValue() + GameManager::playerPtr->getAttribute(BONUS_INTELLECT)->getValue();
 
 	if (command == "1")
 		state.changeState("BattleState");
@@ -42,7 +42,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		auxInv = true;
 	}
 	if (command == "quit") {
-		//fechar o jogo
+		// window->close(); passar a window pelos update todos xD
 	}
 	if (command == "paths") {
 		auxPaths = true;
@@ -91,22 +91,20 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 	}
 	if (auxInv)
 	{
-		playerPtr->getInventory()->draw(window, font);
+		drawText(30, 70 + 250, "ITEMS", font, CHARACTER_SIZE, window);
 
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 25, "ATRIBUTES", font, CHARACTER_SIZE, window);
+		GameManager::playerPtr->getInventory()->drawPos(window, font, 30, 345);
 
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 50,
-			sfe::RichText(font) << "Unleash the " << STRENGTH << ": " << sf::Color::Red << std::to_string(_player.STRENGTH), CHARACTER_SIZE, window);
+		drawText(425, 70 + 250, "ATRIBUTES", font, CHARACTER_SIZE, window);
 
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 75,
-			sfe::RichText(font) << "Unleash the " << INTELLECT << ": " << sf::Color::Red << std::to_string(_player.INTELLECT), CHARACTER_SIZE, window);
+		drawText(425, 70 + 275, sfe::RichText(font) << "Unleash the " << STRENGTH << ": " << sf::Color::Red << std::to_string(_player.STRENGTH), CHARACTER_SIZE, window);
 
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 100,
-			sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
+		drawText(425, 70 + 300, sfe::RichText(font) << "Unleash the " << INTELLECT << ": " << sf::Color::Red << std::to_string(_player.INTELLECT), CHARACTER_SIZE, window);
 
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 125,
-			sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
+		drawText(425, 70 + 325, sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
 
-		drawText(15, 400, "> Back", font, 24, window);
+		drawText(425, 70 + 350, sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
+
+		drawText(15, 475, "> Back", font, 24, window);
 	}
 }

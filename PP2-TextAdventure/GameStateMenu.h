@@ -6,6 +6,7 @@
 #include "StateManager.h"
 #include "Actor.h"
 #include "Player.h"
+#include "GameManager.h"
 
 
 class GameStateMenu
@@ -22,7 +23,6 @@ public:
 	bool auxPaths;
 	bool auxInv;
 
-	Player* playerPtr;
 
 	struct HELPERS
 	{
