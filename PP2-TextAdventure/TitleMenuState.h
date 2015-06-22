@@ -32,9 +32,13 @@ private:
 
 	int selectedOption = 0;
 	bool up = false;
+	bool up2 = false;
 	bool down = false;
+	bool down2 = false;
 	bool previousDown = false;
 	bool previousUp = false;
+	bool previousDown2 = false;
+	bool previousUp2 = false;
 
 	sf::Text gameTitle;
 

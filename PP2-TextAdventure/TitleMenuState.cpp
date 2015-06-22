@@ -52,14 +52,18 @@ void TitleMenuState::update()
 {
 	previousDown = down;
 	previousUp = up;
+	previousDown2 = down2;
+	previousUp2 = up2;
 	down = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S);
+	down2 = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down);
 	up = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W);
+	up2 = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up);
 
-	if (down && !previousDown) {
+	if ((down || down2) && !previousDown && !previousDown2 ) {
 		selectedOption++;
 	}
 
-	if (up && !previousUp)
+	if ((up || up2) && !previousUp && !previousUp2)
 	{
 		selectedOption--;
 	}

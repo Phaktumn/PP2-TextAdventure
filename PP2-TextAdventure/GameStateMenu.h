@@ -7,6 +7,7 @@
 #include "Actor.h"
 #include "Player.h"
 #include "GameManager.h"
+#include "Globals.h"
 
 
 class GameStateMenu

@@ -39,7 +39,8 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		auxInv = true;
 	}
 	if (command == "quit") {
-		//stateManager.changeState("TitleMenuState"); transformar em subclasse de state?
+		state.changeState("TitleMenuState");
+		activeInput = false;
 	}
 	if (command == "paths") {
 		auxPaths = true;
