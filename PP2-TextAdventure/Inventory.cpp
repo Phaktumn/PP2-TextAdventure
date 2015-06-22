@@ -1,9 +1,5 @@
 #include "Inventory.h"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 Inventory::Inventory(Player* player) : player(player)
 {
 
@@ -28,7 +24,7 @@ void Inventory::equipWeapon(Weapon* _weapon)
 	player->addBonusIntellect(_weapon->getBonusIntellevt());
 }
 
-void Inventory::equipArmor(Armor* armor, Item::Type type)
+void Inventory::equipArmor(Armor* armor, Armor::Type type)
 {
 	switch (type)
 	{

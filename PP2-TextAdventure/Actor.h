@@ -43,5 +43,7 @@ public:
 
 	void setState();
 	bool takeDamage(int damage);
+
+
 };
 

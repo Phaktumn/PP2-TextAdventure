@@ -1,18 +1,11 @@
 #pragma once
-<<<<<<< HEAD
 
-=======
 #include "Player.h"
->>>>>>> origin/master
 #include "LinkedList.h"
 #include "Item.h"
 #include "Weapon.h"
 #include "Armor.h" 
-<<<<<<< HEAD
-#include "Player.h"
-=======
 #include "Actor.h"
->>>>>>> origin/master
 
 class Player;
 
@@ -28,14 +21,13 @@ public:
 	void draw(sf::RenderWindow* window);
 
 private:
-	Player* player;
 	LinkedList<Item> bag;
-	Item* chest;
-	Item* head;
-	Item* hands;
+	Armor* chest;
+	Armor* head;
+	Armor* hands;
 	Item* weapon;
-	Item* legs;
-	Item* feet;
+	Armor* legs;
+	Armor* feet;
 
 	Player* player;
 };

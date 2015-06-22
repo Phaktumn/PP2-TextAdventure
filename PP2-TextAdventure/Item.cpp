@@ -6,9 +6,10 @@ Item::Item(sf::String _quality, sf::String _name, Type _type, int _bonusStrength
 {
 	Quality = _quality;
 	name = _name;
+
 	bonusStrength = _bonusStrength;
 	bonusIntelect = _bonusIntelect;
-	type = type;
+	type = _type;
 }
 
 Item::~Item()

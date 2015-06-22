@@ -23,6 +23,7 @@ private:
 	BattleStateMenu* battleMenu;
 
 	Actor* player;
+	Player* playerPtr;
 	Actor* shit;
 };
 

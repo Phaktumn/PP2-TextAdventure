@@ -50,13 +50,13 @@ void GameManager::loadItems(const std::string &filePath)
 			std::string description = armorObj["Description"].as<std::string>();
 			std::string qualityString = armorObj["Quality"].as<std::string>();
 			int typeInt = armorObj["Type"].as<int>();
-			int baseStr = armorObj["BaseStrength"].as<int>();
-			int baseInt = armorObj["BaseIntellect"].as<int>();
-			int baseArmor = armorObj["BaseArmor"].as<int>();
+			int bonusStr = armorObj["BaseStrength"].as<int>();
+			int bonusInt = armorObj["BaseIntellect"].as<int>();
+			int bonusArmor = armorObj["BaseArmor"].as<int>();
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
 
-			itemDatabase.emplace(name, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, baseStr, baseInt, baseArmor)));
+			itemDatabase.emplace(name, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
 		}
 		
 		catch (const jsoncons::json_exception& e) {

@@ -8,5 +8,7 @@ private:
 public:
 	Weapon(sf::String quality, sf::String name, Type weaponType, int bonusStrength, int bonusIntelect, int weaponDamage);
 	~Weapon();
+
+	int getWeaponDamage(){ return weaponDamage; }
 };
 

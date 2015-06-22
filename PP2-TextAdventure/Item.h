@@ -5,8 +5,6 @@ class Item
 {
 private:
 	sf::String name;
-	int bonusArmor;
-	int weaponDamage;
 	int bonusStrength;
 	int bonusIntelect;
 	sf::Text text;
@@ -33,7 +31,6 @@ public:
 	void draw(sf::RenderWindow* window, sf::Font* font, int x, int y);
 
 	std::string getName() { return name.toAnsiString(); }
-	int getBonusArmor() { return bonusArmor; }
 	int getBonusStrenght() { return bonusStrength; }
 	int getBonusIntellevt() { return bonusIntelect; }
 };

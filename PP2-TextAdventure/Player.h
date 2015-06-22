@@ -3,10 +3,12 @@
 #include "Globals.h"
 #include "Inventory.h"
 
+class Inventory;
+
 class Player : public Actor
 {
 private:
-
+	Inventory* inventory;
 public:
 	Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana);
 	~Player();
@@ -19,5 +21,7 @@ public:
 
 	void addBonusIntellect(int Bonus_Intellect);
 	void removeBonusIntellect(int value);
+
+	Inventory* getInventory(){ return inventory; }
 };
 
