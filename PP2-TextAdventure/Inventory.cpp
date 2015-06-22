@@ -1,6 +1,9 @@
 #include "Inventory.h"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 Inventory::Inventory(Player* player) : player(player)
 {
 

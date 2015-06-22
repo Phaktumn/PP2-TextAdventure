@@ -1,6 +1,7 @@
 #pragma once
 #include "Actor.h"
 #include "Globals.h"
+#include "Inventory.h"
 
 class Player : public Actor
 {
