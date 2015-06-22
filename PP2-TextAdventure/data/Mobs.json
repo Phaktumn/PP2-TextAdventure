@@ -1,6 +1,101 @@
 [
   {
-  	"Name": "Mob teste Incompleto",
+  	"Name": "NoMeatBehind",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+    {
+  	"Name": "SylanS",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "PhaktUmnL0rd",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "GeT_KliPPeD",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Forgotten Madman",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Huntsman's Minion",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Large Huntsman",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Maneater Boar",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Eye Collector",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Cleric Beast",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Brainsucker",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Blood-starved Beast",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Nightmare Apostle",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Rom, the Vacuous Spider",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Shadow of Yharnam",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "The Witch of Hemwick",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "The One Reborn",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Watchdog of the Old Lords",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Watcher's Gravedigger",
+	"Hp": 1000,
+	"Mana" : 500
+  },
+  {
+  	"Name": "Yurie, the Last Scholar",
 	"Hp": 1000,
 	"Mana" : 500
   }
