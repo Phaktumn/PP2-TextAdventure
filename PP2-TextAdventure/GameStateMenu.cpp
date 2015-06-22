@@ -47,14 +47,16 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		auxPaths = false;
 	}
 
-	if (auxPaths == true) {
+	if (auxPaths == true && command != "paths") {
 		for (size_t i = 0; i < world->getConnections().size(); i++)
 		{
 			std::string nome = world->getConnections()[i]->getName();
-			std::transform(nome.begin(),nome.end(),nome.end(), ::tolower);
+			std::transform(nome.begin(), nome.end(), nome.begin(), ::tolower);
 
 			if (command == nome) {
 				world->moveTo(world->getConnections()[i]->getName());
+				auxInv = false;
+				auxPaths = false;
 			}
 		}
 	}
