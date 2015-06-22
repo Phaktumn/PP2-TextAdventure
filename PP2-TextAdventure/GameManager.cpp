@@ -12,6 +12,9 @@ std::map<int, std::string> GameManager::locationsDescriptions;
 LinkedList<Attribute*> GameManager::attribute;
 LinkedList<Ability*> GameManager::abilities;
 
+Actor* GameManager::player;
+Player* GameManager::playerPtr;
+
 GameManager::GameManager()
 {
 	
@@ -34,6 +37,9 @@ void GameManager::loadGlobals() {
 	abilities.add(new DamageAbility("ola", Ability::MANA, 15, 150, DamageAbility::strength));
 	abilities.add(new DamageAbility("chau", Ability::MANA, 15, 150, DamageAbility::strength));
 	abilities.add(new DamageAbility("lel", Ability::MANA, 15, 150, DamageAbility::strength));
+
+	player = new Player("jorge", GameManager::attribute, GameManager::abilities, 1000, 250);
+	playerPtr = (Player*)player;
 }
 
 void GameManager::loadItems(const std::string &filePath)

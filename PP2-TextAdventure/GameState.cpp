@@ -2,7 +2,7 @@
 
 GameState::GameState(sf::Font& font, InputBox& inputBox, StateManager& stateManager) : font(font), inputBox(inputBox), stateManager(stateManager)
 {
-	menu = new GameStateMenu(font, inputBox, stateManager);
+	menu = new GameStateMenu(font, inputBox, stateManager, GameManager::playerPtr);
 }
 
 GameState::~GameState() {

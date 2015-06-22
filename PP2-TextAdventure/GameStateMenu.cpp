@@ -1,10 +1,9 @@
 #include "GameStateMenu.h"
 
-GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager) : font(font), state(stateManager)
+GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager, Player* _Player) : font(font), state(stateManager), playerPtr(_Player)
 {
 	auxPaths = false;
 	auxInv = false;
-	playerPtr = (Player*)player;
 }
 
 GameStateMenu::~GameStateMenu()
@@ -32,10 +31,10 @@ void GameStateMenu::drawText(float x, float y, sfe::RichText text, int size, sf:
 
 void GameStateMenu::update(InputBox& inputBox, World* world, std::string command)
 {
-	_player.HP = player->getHp();
-	_player.ARMOR = player->getAttribute(ARMOR)->getValue() + player->getAttribute(BONUS_ARMOR)->getValue();
-	_player.STRENGTH = player->getAttribute(STRENGTH)->getValue() + player->getAttribute(BONUS_STRENGTH)->getValue();
-	_player.INTELLECT = player->getAttribute(INTELLECT)->getValue() + player->getAttribute(BONUS_INTELLECT)->getValue();
+	_player.HP = playerPtr->getHp();
+	_player.ARMOR = playerPtr->getAttribute(ARMOR)->getValue() + playerPtr->getAttribute(BONUS_ARMOR)->getValue();
+	_player.STRENGTH = playerPtr->getAttribute(STRENGTH)->getValue() + playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
+	_player.INTELLECT = playerPtr->getAttribute(INTELLECT)->getValue() + playerPtr->getAttribute(BONUS_INTELLECT)->getValue();
 
 	if (command == "1")
 		state.changeState("BattleState");

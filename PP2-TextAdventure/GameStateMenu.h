@@ -7,10 +7,11 @@
 #include "Actor.h"
 #include "Player.h"
 
+
 class GameStateMenu
 {
 public:
-	GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager);
+	GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager, Player* playerPtr);
 	~GameStateMenu();
 
 	void update(InputBox& inputBox, World* world, std::string command);
@@ -22,7 +23,6 @@ public:
 	bool auxInv;
 
 	Player* playerPtr;
-	Actor* player;
 
 	struct HELPERS
 	{

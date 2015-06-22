@@ -3,9 +3,7 @@
 
 BattleState::BattleState(sf::Font& font, InputBox& inputBox) : font(font), inputBox(inputBox)
 {
-	player = new Player("jorge", GameManager::attribute, GameManager::abilities, 1000, 250);
-	shit = new Actor("well", GameManager::attribute, GameManager::abilities, 1000, 250);
-	battleMenu = new BattleStateMenu(player, shit);
+	battleMenu = new BattleStateMenu(GameManager::playerPtr, shit);
 }
 
 
@@ -16,7 +14,7 @@ BattleState::~BattleState()
 
 void BattleState::load()
 {
-	playerPtr = (Player*)player;
+	playerPtr = GameManager::playerPtr;
 }
 
 void BattleState::update()

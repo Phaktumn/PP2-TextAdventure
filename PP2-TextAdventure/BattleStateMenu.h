@@ -6,11 +6,12 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "RichText.hpp"
+#include "GameManager.h"
 
 class BattleStateMenu
 {
 public:
-	BattleStateMenu(Actor* player, Actor* enemy);
+	BattleStateMenu(Player* player, Actor* enemy);
 	~BattleStateMenu();
 
 	void update(InputBox* input);
@@ -36,7 +37,6 @@ private:
 	bool inv;
 
 	Player* playerPtr;
-	Actor* player;
 	Actor* enemy;
 };
 

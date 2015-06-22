@@ -1,10 +1,9 @@
 #include "BattleStateMenu.h"
 
 
-BattleStateMenu::BattleStateMenu(Actor* _player, Actor* _enemy) : player(_player), enemy(_enemy)
+BattleStateMenu::BattleStateMenu(Player* _player, Actor* _enemy) : playerPtr(_player), enemy(_enemy)
 {
 	inv = false;
-	playerPtr = (Player*)player;
 }
 
 
@@ -13,44 +12,46 @@ BattleStateMenu::~BattleStateMenu()
 }
 
 void BattleStateMenu::update(InputBox* input){
-	_player.HP = player->getHp();
-	_player.ARMOR = player->getAttribute(ARMOR)->getValue() + player->getAttribute(BONUS_ARMOR)->getValue();
-	_player.STRENGTH = player->getAttribute(STRENGTH)->getValue() + player->getAttribute(BONUS_STRENGTH)->getValue();
+	_player.HP = playerPtr->getHp();
+	_player.ARMOR = playerPtr->getAttribute(ARMOR)->getValue() + playerPtr->getAttribute(BONUS_ARMOR)->getValue();
+	_player.STRENGTH = playerPtr->getAttribute(STRENGTH)->getValue() + playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
 
-	_enemy.HP = enemy->getHp();
-	_enemy.ARMOR = enemy->getAttribute(ARMOR)->getValue() + enemy->getAttribute(BONUS_ARMOR)->getValue();
-	_enemy.STRENGTH = enemy->getAttribute(STRENGTH)->getValue() + enemy->getAttribute(BONUS_STRENGTH)->getValue();
+	/*_enemy.HP = playerPtr->getHp();
+	_enemy.ARMOR = playerPtr->getAttribute(ARMOR)->getValue() + playerPtr->getAttribute(BONUS_ARMOR)->getValue();
+	_enemy.STRENGTH = playerPtr->getAttribute(STRENGTH)->getValue() + playerPtr->getAttribute(BONUS_STRENGTH)->getValue();*/
 
-	if (input->lastCommand() == "1"){
-		unsigned int _input = atoi(input->lastCommand().c_str());
-		player->useAbility(_input);
-	}
-	if (input->lastCommand() == "2"){
-		unsigned int _input = atoi(input->lastCommand().c_str());
-		player->useAbility(_input);
-	}
-	if (input->lastCommand() == "3"){
-		unsigned int _input = atoi(input->lastCommand().c_str());
-		player->useAbility(_input);
-	}
-	if (input->lastCommand() == "4"){
-		unsigned int _input = atoi(input->lastCommand().c_str());
-		player->useAbility(_input);
-	}
+	//if (input->lastCommand() == "1"){
+	//	unsigned int _input = atoi(input->lastCommand().c_str());
+	//	player->useAbility(_input);
+	//}
+	//if (input->lastCommand() == "2"){
+	//	unsigned int _input = atoi(input->lastCommand().c_str());
+	//	player->useAbility(_input);
+	//}
+	//if (input->lastCommand() == "3"){
+	//	unsigned int _input = atoi(input->lastCommand().c_str());
+	//	player->useAbility(_input);
+	//}
+	//if (input->lastCommand() == "4"){
+	//	unsigned int _input = atoi(input->lastCommand().c_str());
+	//	player->useAbility(_input);
+	//}
 	if (input->lastCommand() == "5"){
 		inv = true;
 	}
+	if (input->lastCommand() == "1")
+		playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Goswhit"), GameManager::getItem("Goswhit")->type);
 }
 
 void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 
 	if (!inv)
 	{
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y, sfe::RichText(font) << player->getActorName(), CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << enemy->getActorName(), CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y, sfe::RichText(font) << playerPtr->getActorName(), CHARACTER_SIZE, window);
+		/*drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << enemy->getActorName(), CHARACTER_SIZE, window);*/
 
-		for (size_t i = 0; i < player->getAbilities().getLength(); i++){
-			drawText(15, 315 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << player->getAbilities().get(i)->getName(), CHARACTER_SIZE, window);
+		for (size_t i = 0; i < playerPtr->getAbilities().getLength(); i++){
+			drawText(15, 315 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName(), CHARACTER_SIZE, window);
 		}
 	}
 	else

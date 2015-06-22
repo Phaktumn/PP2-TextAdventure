@@ -41,10 +41,13 @@ public:
 	static LinkedList<Attribute*> attribute;
 	static LinkedList<Ability*> abilities;
 
+	static Player* playerPtr;
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
 	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
 	static std::map<int, std::string> locationsDescriptions;
+
+	static Actor* player;
 };
 
