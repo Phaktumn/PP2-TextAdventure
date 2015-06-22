@@ -18,6 +18,7 @@ private:
 	bool alive;
 	int hp;
 	int mana;
+	int Damage;
 	LinkedList<Attribute*> attributes;
 	LinkedList<Ability*> abilities;
 	LinkedList<UtilityAbility*> buffs;
@@ -40,6 +41,8 @@ public:
 
 	Ability* getAbility(sf::String name);
 	Attribute* getAttribute(sf::String name);
+	int getDamage() { return Damage; }
+	int setDamage(int value){ return Damage += value; }
 
 	void setState();
 	bool takeDamage(int damage);

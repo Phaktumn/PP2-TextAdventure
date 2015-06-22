@@ -22,6 +22,8 @@ public:
 	void draw(sf::RenderWindow* window, sf::Font &font);
 	void drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y);
 
+	Weapon* getEquipedWeapon();
+
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 
@@ -30,7 +32,7 @@ private:
 	Armor* chest;
 	Armor* head;
 	Armor* hands;
-	Item* weapon;
+	Weapon* weapon;
 	Armor* legs;
 	Armor* feet;
 

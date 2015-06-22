@@ -22,6 +22,9 @@ public:
 	void addBonusIntellect(int Bonus_Intellect);
 	void removeBonusIntellect(int value);
 
+	void addDamage(int DAMAGE);
+	void removeDamage(int value);
+
 	Inventory* getInventory(){ return inventory; }
 };
 
