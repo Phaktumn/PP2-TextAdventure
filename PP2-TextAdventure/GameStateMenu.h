@@ -4,6 +4,8 @@
 #include "InputBox.h"
 #include "World.h"
 #include "StateManager.h"
+#include "Actor.h"
+#include "Player.h"
 
 class GameStateMenu
 {
@@ -18,6 +20,17 @@ public:
 
 	bool auxPaths;
 	bool auxInv;
+
+	Player* playerPtr;
+	Actor* player;
+
+	struct HELPERS
+	{
+		int HP;
+		int STRENGTH;
+		int ARMOR;
+		int INTELLECT;
+	}_player;
 
 
 private:
