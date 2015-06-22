@@ -19,8 +19,6 @@ void BattleState::load()
 
 void BattleState::update()
 {
-	playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::getItem("Shiva's Parashu"));
-	playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Titan's Outlook"), GameManager::getItem("Titan's Outlook")->type);
 	battleMenu->update(&inputBox);
 }
 

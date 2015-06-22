@@ -35,9 +35,6 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	_player.ARMOR = GameManager::playerPtr->getAttribute(ARMOR)->getValue() + GameManager::playerPtr->getAttribute(BONUS_ARMOR)->getValue();
 	_player.STRENGTH = GameManager::playerPtr->getAttribute(STRENGTH)->getValue() + GameManager::playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
 	_player.INTELLECT = GameManager::playerPtr->getAttribute(INTELLECT)->getValue() + GameManager::playerPtr->getAttribute(BONUS_INTELLECT)->getValue();
-
-	if (command == "1")
-		state.changeState("BattleState");
 	if (command == "inventory") {
 		auxInv = true;
 	}
@@ -51,7 +48,11 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		auxInv = false;
 		auxPaths = false;
 	}
-
+	if (command == "equip")
+	{
+		GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::getItem("Rusted Sword"));
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("GreatHelm"), GameManager::getItem("GreatHelm")->type);
+	}
 	if (auxPaths == true && command != "paths") {
 		for (size_t i = 0; i < world->getConnections().size(); i++)
 		{
@@ -104,6 +105,10 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		drawText(425, 70 + 325, sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
 
 		drawText(425, 70 + 350, sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
+
+		sf::String aux;
+		aux = std::to_string(GameManager::playerPtr->getDamage());
+		drawText(425, 70 + 375, sfe::RichText(font) << "Weapon Damage" << ": " << sf::Color::Red << aux, CHARACTER_SIZE, window);
 
 		drawText(15, 475, "> Back", font, 24, window);
 	}

@@ -16,12 +16,14 @@ void Inventory::equipWeapon(Weapon* _weapon)
 	if (weapon != nullptr){
 		player->removeBonusIntellect(_weapon->getBonusIntellevt());
 		player->removeBonusDamage(_weapon->getBonusStrenght());
+		player->removeDamage(_weapon->getWeaponDamage());
 	}
 
 	weapon = _weapon;
 
 	player->addBonusDamage(_weapon->getBonusStrenght());
 	player->addBonusIntellect(_weapon->getBonusIntellevt());
+	player->setDamage(_weapon->getWeaponDamage());
 }
 
 void Inventory::equipArmor(Armor* armor, Armor::Type type)
@@ -119,31 +121,31 @@ void Inventory::drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y){
 
 	if (chest != nullptr){
 		drawText(x, y + 20, "Chest: ", font, 24, window);
-		chest->draw(window, &font, 100, 40);
+		chest->draw(window, &font, 100, y + 20);
 	}
 	else drawText(x, y + 20, "Chest: No Item", font, 24, window);
 
 	if (hands != nullptr){
 		drawText(x, y + 40, "Hands: ", font, 24, window);
-		hands->draw(window, &font, 100, 60);
+		hands->draw(window, &font, 100, y + 40);
 	}
 	else drawText(x, y + 40, "Hands: No Item", font, 24, window);
 
 	if (weapon != nullptr){
 		drawText(x, y + 60, "Weapon: ", font, 24, window);
-		weapon->draw(window, &font, 110, 83);
+		weapon->draw(window, &font, 110, y + 63);
 	}
 	else drawText(x, y + 60, "Weapon: No Item", font, 24, window);
 
 	if (legs != nullptr){
 		drawText(x, y + 80, "Legs: ", font, 24, window);
-		legs->draw(window, &font, 100, 100);
+		legs->draw(window, &font, 100, y + 80);
 	}
 	else drawText(x, y + 80, "Legs: No Item", font, 24, window);
 
 	if (feet != nullptr){
 		drawText(x, y + 100, "Feet: ", font, 24, window);
-		feet->draw(window, &font, 100, 120);
+		feet->draw(window, &font, 100, y + 100);
 	}
 	else drawText(x, y + 100, "Feet: No Item", font, 24, window);
 }
@@ -163,4 +165,13 @@ void Inventory::drawText(float x, float y, sfe::RichText text, int size, sf::Ren
 	text.setCharacterSize(size);
 
 	window->draw(text);
+}
+
+Weapon* Inventory::getEquipedWeapon()
+{
+	if (weapon!=nullptr)
+		return weapon;
+	else{
+		return nullptr;
+	}
 }
