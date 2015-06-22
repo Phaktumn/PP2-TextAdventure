@@ -6,6 +6,7 @@
 #include "Weapon.h"
 #include "Armor.h" 
 #include "Actor.h"
+#include "RichText.hpp"
 
 class Player;
 
@@ -18,7 +19,10 @@ public:
 	void equipWeapon(Weapon* weapon);
 	void equipArmor(Armor* armor, Item::Type type);
 
-	void draw(sf::RenderWindow* window);
+	void draw(sf::RenderWindow* window, sf::Font &font);
+
+	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
+	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 
 private:
 	LinkedList<Item> bag;
