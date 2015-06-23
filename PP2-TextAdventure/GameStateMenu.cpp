@@ -69,6 +69,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 				world->moveTo(world->getConnections()[i]->getName());
 				auxInv = false;
 				auxPaths = false;
+				if (GameStateMenu::randomEncounter()) state.changeState("BattleState");
 			}
 		}
 	}
@@ -120,4 +121,13 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 	}
 	if (!auxInv && !auxBag && !auxPaths)
 		world->draw(window);
+}
+
+bool GameStateMenu::randomEncounter()
+{
+	int aux;
+	aux = rand() % 100;
+
+	if (aux > 50) return true;
+	else return false;
 }
