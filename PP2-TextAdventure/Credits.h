@@ -6,7 +6,7 @@
 class Credits : public State
 {
 public:
-	Credits();
+	Credits(sf::Font& font, InputBox& inputBox, StateManager& state);
 	~Credits();
 
 	void load() override;
@@ -16,6 +16,8 @@ public:
 	StateManager& state;
 	sf::Font font;
 	InputBox& inputBox;
+
+	sf::Clock clock;
 
 	int auxpos;
 };
