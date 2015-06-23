@@ -29,6 +29,7 @@ public:
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
 	static Attribute getAttribute_(const std::string &name);
+	static Actor* getMob(const std::string &name);
 
 	static std::string getLocationName(unsigned int location);
 	static std::string getLocationDescription(unsigned int location);
@@ -47,6 +48,8 @@ private:
 	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
 	static std::map<int, std::string> locationsDescriptions;
+
+	static void addMobs();
 
 	static Actor* player;
 };

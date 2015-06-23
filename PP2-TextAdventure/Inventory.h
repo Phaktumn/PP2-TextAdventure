@@ -22,13 +22,18 @@ public:
 	void draw(sf::RenderWindow* window, sf::Font &font);
 	void drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y);
 
+	void drawBag(sf::RenderWindow* window, sf::Font &font);
+
 	Weapon* getEquipedWeapon();
+
+	LinkedList<Item*> getBag(){ return bag; }
+
+private:
 
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 
-private:
-	LinkedList<Item> bag;
+	LinkedList<Item*> bag;
 	Armor* chest;
 	Armor* head;
 	Armor* hands;

@@ -151,6 +151,43 @@ void Inventory::drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y){
 }
 
 
+void Inventory::drawBag(sf::RenderWindow* window, sf::Font &font){
+
+	int positionY = 20;
+	int positionX = 20;
+	int count_AUX = 0;
+
+	for (size_t i = 0; i <= _BAG_MAX_SLOTS; i++)
+	{
+		sf::String item_num = std::to_string(i);
+		if (bag.get(i) == nullptr) {
+			count_AUX++;
+			positionY = (count_AUX * 40);
+			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") No Item", CHARACTER_SIZE, window);
+			if (positionY >= 250){
+				positionX = 250;
+				positionY = 20;
+				count_AUX = 0;
+			}
+		}
+		else
+		{
+			sf::String item_type = std::to_string(bag.get(i)->type);
+			count_AUX++;
+			positionY = (count_AUX * 40);
+			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") " << item_type, CHARACTER_SIZE, window);
+			bag.get(i)->draw(window, &font, 100, 20 + (i * 20));
+			if (positionY >= 325){
+				positionX = 250;
+				positionY = 20;
+				count_AUX = 0;
+			}
+		}
+	}
+}
+
+
+
 void Inventory::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window){
 	sf::Text _text;
 	_text.setPosition(x, y);

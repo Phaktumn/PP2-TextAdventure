@@ -1,9 +1,10 @@
 #include "BattleState.h"
 
 
-BattleState::BattleState(sf::Font& font, InputBox& inputBox) : font(font), inputBox(inputBox)
+BattleState::BattleState(sf::Font& font, InputBox& inputBox, StateManager& state) 
+: font(font), inputBox(inputBox), state(state)
 {
-	battleMenu = new BattleStateMenu(GameManager::playerPtr, shit);
+	battleMenu = new BattleStateMenu(GameManager::playerPtr, GameManager::getMob("mob1"), state);
 }
 
 
@@ -14,7 +15,7 @@ BattleState::~BattleState()
 
 void BattleState::load()
 {
-	playerPtr = GameManager::playerPtr;
+
 }
 
 void BattleState::update()

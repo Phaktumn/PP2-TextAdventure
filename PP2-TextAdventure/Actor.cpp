@@ -74,9 +74,5 @@ Attribute* Actor::getAttribute(sf::String name){
 	}
 }
 
-void Actor::useAbility(unsigned int input){
-
-}
-
 
 

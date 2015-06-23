@@ -89,6 +89,7 @@ type LinkedList<type>::get(int index)
 		}
 		return ptr->value;
 	}
+	return nullptr;
 }
 
 template <class type>

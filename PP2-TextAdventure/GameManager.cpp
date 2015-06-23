@@ -5,6 +5,7 @@
 std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
 std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
+std::map<std::string, std::shared_ptr<Actor>> GameManager::mobsDatabase;
 
 std::map<int, std::string> GameManager::locationDatabase;
 std::map<int, std::string> GameManager::locationsDescriptions;
@@ -40,6 +41,19 @@ void GameManager::loadGlobals() {
 
 	player = new Player("jorge", GameManager::attribute, GameManager::abilities, 1000, 250);
 	playerPtr = (Player*)player;
+
+	addMobs();
+}
+
+void GameManager::addMobs()
+{
+	mobsDatabase.emplace("mob1", std::shared_ptr<Actor>(new Actor("mob1", GameManager::attribute, GameManager::abilities, 50, 10)));
+	mobsDatabase.emplace("mob2", std::shared_ptr<Actor>(new Actor("mob2", GameManager::attribute, GameManager::abilities, 65, 25)));
+}
+
+Actor* GameManager::getMob(const std::string &name)
+{
+	return mobsDatabase[name].get();
 }
 
 void GameManager::loadItems(const std::string &filePath)

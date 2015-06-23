@@ -35,8 +35,6 @@ public:
 	std::string getActorName(){ return name; }
 	int getHp(){ return hp; }
 
-	void useAbility(unsigned int input);
-
 	LinkedList<Ability*> getAbilities(){ return abilities; }
 
 	Ability* getAbility(sf::String name);

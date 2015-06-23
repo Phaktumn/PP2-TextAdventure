@@ -10,7 +10,7 @@
 class BattleState : public State
 {
 public:
-	BattleState(sf::Font& font, InputBox& inputBox);
+	BattleState(sf::Font& font, InputBox& inputBox, StateManager& state);
 	~BattleState();
 
 	void load() override;
@@ -22,8 +22,10 @@ private:
 	sf::Font font;
 	BattleStateMenu* battleMenu;
 
+	StateManager& state;
+
 	Actor* player;
 	Player* playerPtr;
-	Actor* shit;
+	Actor* enemy;
 };
 

@@ -31,7 +31,7 @@ int Game::run() {
 
 	GameState gameState(font, inputBox, stateManager);
 	TitleMenuState titleMenuState(font, stateManager);
-	BattleState battleState(font, inputBox);
+	BattleState battleState(font, inputBox, stateManager);
 
 	stateManager.addState("GameState", &gameState);
 	stateManager.addState("TitleMenuState", &titleMenuState);

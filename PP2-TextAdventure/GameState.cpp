@@ -59,7 +59,6 @@ void GameState::update() {
 void GameState::draw(sf::RenderWindow* window)
 {
 	State::draw(window);
-	world.draw(window);
 
 	drawText(0, 0, SEPARATOR, font, 24, window);
 	drawText(0, 300, SEPARATOR, font, 24, window);

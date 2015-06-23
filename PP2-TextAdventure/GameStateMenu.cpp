@@ -4,6 +4,7 @@ GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& s
 {
 	auxPaths = false;
 	auxInv = false;
+	auxBag = false;
 }
 
 GameStateMenu::~GameStateMenu()
@@ -45,9 +46,13 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	if (command == "paths") {
 		auxPaths = true;
 	}
+	if (command == "bag"){
+		auxBag = true;
+	}
 	if (command == "back") {
 		auxInv = false;
 		auxPaths = false;
+		auxBag = false;
 	}
 	if (command == "equip")
 	{
@@ -67,30 +72,34 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 			}
 		}
 	}
+	if (command == "battle")
+		state.changeState("BattleState");
 }
 
 
 void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 {
-	if (auxPaths == false && auxInv == false)
+	if (auxPaths == false && auxInv == false && !auxBag)
 	{
 		drawText(15, 325, "> Paths", font, 24, window);
 		drawText(15, 350, "> Inventory", font, 24, window);
-		drawText(15, 375, "> Quit", font, 24, window);
+		drawText(15, 375, "> Bags", font, 24, window);
+		drawText(15, 400, "> Quit", font, 24, window);
 
+	}
+	if (auxBag){
+		GameManager::playerPtr->getInventory()->drawBag(window, font);
 	}
 
 	if (auxPaths)
-
 	{
-		for (int i = 0; i < world->getConnections().size(); i++)
-		{
+		for (int i = 0; i < world->getConnections().size(); i++){
 			int j = i + 1;
 			drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(j) << ") " << world->getConnections()[i]->getName(), 24, window);
 		}
-
 		drawText(15, 400, "> Back", font, 24, window);
 	}
+
 	if (auxInv)
 	{
 		drawText(30, 70 + 250, "ITEMS", font, CHARACTER_SIZE, window);
@@ -98,13 +107,9 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		GameManager::playerPtr->getInventory()->drawPos(window, font, 30, 345);
 
 		drawText(425, 70 + 250, "ATRIBUTES", font, CHARACTER_SIZE, window);
-
 		drawText(425, 70 + 275, sfe::RichText(font) << "Unleash the " << STRENGTH << ": " << sf::Color::Red << std::to_string(_player.STRENGTH), CHARACTER_SIZE, window);
-
 		drawText(425, 70 + 300, sfe::RichText(font) << "Unleash the " << INTELLECT << ": " << sf::Color::Red << std::to_string(_player.INTELLECT), CHARACTER_SIZE, window);
-
 		drawText(425, 70 + 325, sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
-
 		drawText(425, 70 + 350, sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
 
 		sf::String aux;
@@ -113,4 +118,6 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 
 		drawText(15, 475, "> Back", font, 24, window);
 	}
+	if (!auxInv && !auxBag && !auxPaths)
+		world->draw(window);
 }

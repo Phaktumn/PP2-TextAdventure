@@ -23,6 +23,7 @@ public:
 
 	bool auxPaths;
 	bool auxInv;
+	bool auxBag;
 
 
 	struct HELPERS
