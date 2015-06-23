@@ -107,18 +107,7 @@
   	"BaseIntellect": 0,
   	"BaseArmor": 95
   },
-
-
-
-
-  //Feet
-
-
-
-
-
-
-    {
+  {
   	"Name": "Warlock Slippers",
 	  "Quality": "Common",
   	"Description": "Best for fighting in hot weather.",
@@ -226,17 +215,11 @@
   	"BaseIntellect": 0,
   	"BaseArmor": 95
   },
-
-
-
-
-  //Hands
-
-      {
+  {
   	"Name": "Hands of Consequences",
 	  "Quality": "Common",
   	"Description": "Everything you do has a consequence, think before you act.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 1,
   	"BaseIntellect": 0,
   	"BaseArmor": 10
@@ -245,7 +228,7 @@
   	"Name": "Gloves of Compassion",
 	  "Quality": "Common",
   	"Description": "You might feel the need to help everyone around you.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 2,
   	"BaseIntellect": 0,
   	"BaseArmor": 11
@@ -254,7 +237,7 @@
   	"Name": "Red Hands of the Thunderlord",
 	  "Quality": "Uncommon",
   	"Description": "Sometimes, the highest position needs to demonstrate power.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 10,
   	"BaseIntellect": 0,
   	"BaseArmor": 25
@@ -263,7 +246,7 @@
   	"Name": "Lava Burn Gloves",
 	  "Quality": "Uncommon",
   	"Description": "Can withstand every flame attack.(only protects the hands)",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 14,
   	"BaseIntellect": 0,
   	"BaseArmor": 28
@@ -272,7 +255,7 @@
   	"Name": "Light Blessed Mittens",
 	  "Quality": "Uncommon",
   	"Description": "Embodied with the souls of great warriors.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 20,
   	"BaseIntellect": 0,
   	"BaseArmor": 34
@@ -281,7 +264,7 @@
   	"Name": "Looming Shadow Wraps",
 	  "Quality": "Rare",
   	"Description": "It might be hard to keep track of these gloves.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 40,
   	"BaseIntellect": 0,
   	"BaseArmor": 45
@@ -290,7 +273,7 @@
   	"Name": "God-Grinding Grips",
 	  "Quality": "Rare",
   	"Description": "Even the gods can be beaten if you have patience",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 42,
   	"BaseIntellect": 5,
   	"BaseArmor": 50
@@ -299,7 +282,7 @@
   	"Name": "Shadowflame Handwraps",
 	  "Quality": "Rare",
   	"Description": "Not every flame has to emit light, some just burn if touched.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 48,
   	"BaseIntellect": 0,
   	"BaseArmor": 55
@@ -308,7 +291,7 @@
   	"Name": "Fusespark Gloves",
 	  "Quality": "Epic",
   	"Description": "When clashed together they can flash everything around them including yourself.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 60,
   	"BaseIntellect": 0,
   	"BaseArmor": 70
@@ -317,7 +300,7 @@
   	"Name": "Lifedrainer's Sordid Grip",
 	  "Quality": "Epic",
   	"Description": "Can drain life from every lifeform.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 62,
   	"BaseIntellect": -5,
   	"BaseArmor": 80
@@ -326,7 +309,7 @@
   	"Name": "Power Glove",
 	  "Quality": "Legendary",
   	"Description": "Created by nintendo it´s used like a controller to your victim.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 90,
   	"BaseIntellect": 20,
   	"BaseArmor": 95
@@ -335,17 +318,12 @@
   	"Name": "Muhammad Ali",
 	  "Quality": "Legendary",
   	"Description": "Containing the power from an ancient hero, powering up in both attack and armor.",
-	  "Type": 3,
+	  "Type": 4,
   	"BaseStrength": 100,
   	"BaseIntellect": 0,
   	"BaseArmor": 95
   },
-
-  //Chest:
-
-
-
-         {
+  {
   	"Name": "Shock Pulse Lightning Robes",
 	  "Quality": "Common",
   	"Description": "Be carefull, this might sound as a shock.",
@@ -452,16 +430,8 @@
   	"BaseStrength": 100,
   	"BaseIntellect": 0,
   	"BaseArmor": 95
-  },
-
-
-
-  //legs
-
-
-
-    
-         {
+  }, 
+  {
   	"Name": "Kilt of the Atal'ai Prophet",
 	  "Quality": "Common",
   	"Description": "Pretty expensive for a prophet.",
@@ -569,6 +539,4 @@
   	"BaseIntellect": 0,
   	"BaseArmor": 95
   }
-
-
 ]

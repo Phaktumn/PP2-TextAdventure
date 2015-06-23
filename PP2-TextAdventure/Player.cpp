@@ -37,7 +37,7 @@ void Player::removeBonusDamage(int value){
 
 
 void Player::addBonusIntellect(int Bonus_Intellect){
-	Actor::getAttribute(BONUS_ARMOR)->changeValue(Bonus_Intellect);
+	Actor::getAttribute(BONUS_INTELLECT)->changeValue(Bonus_Intellect);
 }
 void Player::removeBonusIntellect(int value){
 	Actor::getAttribute(BONUS_INTELLECT)->changeValue(-(value));

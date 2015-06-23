@@ -24,7 +24,7 @@ public:
 	bool auxPaths;
 	bool auxInv;
 	bool auxBag;
-
+	bool eqp;
 
 	struct HELPERS
 	{

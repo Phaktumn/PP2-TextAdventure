@@ -19,7 +19,7 @@ public:
 	BattleStateMenu(Player* player, Actor* enemy, StateManager& state);
 	~BattleStateMenu();
 
-	void update(InputBox* input);
+	void update(InputBox* input, sf::Font &font);
 	void draw(sf::RenderWindow* window, sf::Font &font);
 
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
@@ -31,7 +31,7 @@ public:
 
 private:
 	///////////////////////////////////////////////////
-	///////////////////////////////////////////////////               //
+	///////////////////////////////////////////////////               
 	////////////////////LOG////////////////////////////
 	///////////////////////////////////////////////////  
 	///////////////////////////////////////////////////
@@ -41,11 +41,17 @@ private:
 		LOG();
 		~LOG();
 		
-		void update();
-		void draw(sf::RenderWindow* window);
+		void load();
+		void update(Ability* ability, sf::Font &font);
+		void draw(sf::RenderWindow* window, sf::Font &font);
 
 	private:
+		int vector_count;
+		void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
+		void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 		
+		std::vector<sfe::RichText>::iterator iteLog;
+		std::vector<sfe::RichText> log;
 	};
 
 	//aux helpers aux helpers aux helpers
@@ -64,6 +70,7 @@ private:
 	bool inv;
 	bool abilitiesScreen;
 	bool BattleMenu;
+	bool isAtacking;
 
 	LOG* log;
 

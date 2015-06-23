@@ -115,7 +115,7 @@ void Inventory::draw(sf::RenderWindow* window, sf::Font &font){
 void Inventory::drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y){
 	if (head != nullptr){
 		drawText(x, y, "Head: ", font, 24, window);
-		head->draw(window, &font, 100, 20);
+		head->draw(window, &font, 100, y);
 	}
 	else drawText(x, y, "Head: No Item", font, 24, window);
 

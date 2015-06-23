@@ -5,6 +5,7 @@ GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& s
 	auxPaths = false;
 	auxInv = false;
 	auxBag = false;
+	eqp = false;
 }
 
 GameStateMenu::~GameStateMenu()
@@ -54,10 +55,15 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		auxPaths = false;
 		auxBag = false;
 	}
-	if (command == "equip")
+	if (command == "equip" && !eqp)
 	{
 		GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::getItem("Rusted Sword"));
 		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("GreatHelm"), GameManager::getItem("GreatHelm")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Tyrant's Greaves"), GameManager::getItem("Tyrant's Greaves")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Amberplate Grips"), GameManager::getItem("Amberplate Grips")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Ravager's Armor"), GameManager::getItem("Ravager's Armor")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Plate Legguards"), GameManager::getItem("Plate Legguards")->type);
+		eqp = true;
 	}
 	if (auxPaths == true && command != "paths") {
 		for (size_t i = 0; i < world->getConnections().size(); i++)

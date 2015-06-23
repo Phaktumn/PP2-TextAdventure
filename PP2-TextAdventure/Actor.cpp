@@ -31,14 +31,7 @@ void Actor::load()
 
 void Actor::update()
 {
-	if (stunned == true)
-	{
 
-	}
-	else
-	{
-
-	}
 }
 
 void Actor::draw()
@@ -62,7 +55,7 @@ bool Actor::takeDamage(int damage) {
 Ability* Actor::getAbility(sf::String name)
 {
 	for (int i = 0; i <= abilities.getLength(); i++){
-		if (attributes.get(i)->getName() == name)
+		if (abilities.get(i)->getName() == name)
 			return abilities.get(i);
 	}
 }
