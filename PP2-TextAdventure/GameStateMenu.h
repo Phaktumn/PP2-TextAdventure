@@ -20,6 +20,7 @@ public:
 	void draw(sf::RenderWindow* window, World* world);
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
+	bool randomEncounter();
 
 	bool auxPaths;
 	bool auxInv;
