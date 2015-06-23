@@ -92,6 +92,7 @@
     <ClCompile Include="BattleManager.cpp" />
     <ClCompile Include="BattleState.cpp" />
     <ClCompile Include="BattleStateMenu.cpp" />
+    <ClCompile Include="Credits.cpp" />
     <ClCompile Include="DamageAbility.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="BattleManager.h" />
     <ClInclude Include="BattleState.h" />
     <ClInclude Include="BattleStateMenu.h" />
+    <ClInclude Include="Credits.h" />
     <ClInclude Include="DamageAbility.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />

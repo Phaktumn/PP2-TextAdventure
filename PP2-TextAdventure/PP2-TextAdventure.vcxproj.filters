@@ -112,6 +112,7 @@
     <ClCompile Include="BattleStateMenu.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Credits.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -201,6 +202,7 @@
     <ClInclude Include="BattleStateMenu.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Credits.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
