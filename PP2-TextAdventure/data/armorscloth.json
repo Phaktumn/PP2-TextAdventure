@@ -4,8 +4,8 @@
 	  "Quality": "Common",
   	"Description": "It´s from a festival so it has to be good right?",
 	  "Type": 1,
-  	"BaseStrength": 1,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
   	"BaseArmor": 10
   },
   {
@@ -13,8 +13,8 @@
 	  "Quality": "Common",
   	"Description": "From the shadow comes the punishment.",
 	  "Type": 1,
-  	"BaseStrength": 2,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
   	"BaseArmor": 11
   },
   {
@@ -22,8 +22,8 @@
 	  "Quality": "Uncommon",
   	"Description": "You are the Master Chief, but this time you fight spirits.",
 	  "Type": 1,
-  	"BaseStrength": 10,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
   	"BaseArmor": 25
   },
   {
@@ -31,8 +31,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Strong against other spells and also capable of protecting you from the rain.",
 	  "Type": 1,
-  	"BaseStrength": 14,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
   	"BaseArmor": 28
   },
   {
@@ -40,8 +40,8 @@
 	  "Quality": "Uncommon",
   	"Description": "They will never know what hit them.",
 	  "Type": 1,
-  	"BaseStrength": 20,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
   	"BaseArmor": 34
   },
   {
@@ -49,8 +49,8 @@
 	  "Quality": "Rare",
   	"Description": "Don´t even ask where this come from.",
 	  "Type": 1,
-  	"BaseStrength": 40,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
   	"BaseArmor": 45
   },
   {
@@ -58,8 +58,8 @@
 	  "Quality": "Rare",
   	"Description": "You don´t only have to talk about conquest, you must demonstrate it.",
 	  "Type": 1,
-  	"BaseStrength": 42,
-  	"BaseIntellect": 5,
+  	"BaseStrength": 7,
+  	"BaseIntellect": 42,
   	"BaseArmor": 50
   },
   {
@@ -67,8 +67,8 @@
 	  "Quality": "Rare",
   	"Description": "Some try to catch sharks, only a few come back.",
 	  "Type": 1,
-  	"BaseStrength": 48,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
   	"BaseArmor": 55
   },
   {
@@ -76,8 +76,8 @@
 	  "Quality": "Epic",
   	"Description": "When you are feeling defeated, believe in the hood for it´s blessing.",
 	  "Type": 1,
-  	"BaseStrength": 60,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
   	"BaseArmor": 70
   },
   {
@@ -85,8 +85,8 @@
 	  "Quality": "Epic",
   	"Description": "Don´t be discouraged by what they say, everything unpure shall be negated.",
 	  "Type": 1,
-  	"BaseStrength": 62,
-  	"BaseIntellect": -5,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
   	"BaseArmor": 80
   },
   {
@@ -94,8 +94,8 @@
 	  "Quality": "Legendary",
   	"Description": "Straight from the messenger of the gods, probably the last message they try to send.",
 	  "Type": 1,
-  	"BaseStrength": 90,
-  	"BaseIntellect": 20,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
   	"BaseArmor": 95
   },
   {
@@ -103,8 +103,8 @@
 	  "Quality": "Legendary",
   	"Description": "It´s shruud like shrimp.",
 	  "Type": 1,
-  	"BaseStrength": 100,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
   	"BaseArmor": 95
   },
 
@@ -123,8 +123,8 @@
 	  "Quality": "Common",
   	"Description": "Best for fighting in hot weather.",
 	  "Type": 2,
-  	"BaseStrength": 1,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
   	"BaseArmor": 10
   },
   {
@@ -132,8 +132,8 @@
 	  "Quality": "Common",
   	"Description": "Can actually guess what´s going to happen, as long it is death.",
 	  "Type": 2,
-  	"BaseStrength": 2,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
   	"BaseArmor": 11
   },
   {
@@ -141,8 +141,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Wonder what happend to the priestess-",
 	  "Type": 2,
-  	"BaseStrength": 10,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
   	"BaseArmor": 25
   },
   {
@@ -150,8 +150,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Answer me creatures from the dark, and obey my wishes.",
 	  "Type": 2,
-  	"BaseStrength": 14,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
   	"BaseArmor": 28
   },
   {
@@ -159,8 +159,8 @@
 	  "Quality": "Uncommon",
   	"Description": "They don´t give enought time to see their face before they kill you.",
 	  "Type": 2,
-  	"BaseStrength": 20,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
   	"BaseArmor": 34
   },
   {
@@ -168,8 +168,8 @@
 	  "Quality": "Rare",
   	"Description": "Is this the real life? Is this just fantasy? Caught in a landslide, No escape from reality.",
 	  "Type": 2,
-  	"BaseStrength": 40,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
   	"BaseArmor": 45
   },
   {
@@ -177,8 +177,8 @@
 	  "Quality": "Rare",
   	"Description": "I´ll kill you before the wind catches your figure.",
 	  "Type": 2,
-  	"BaseStrength": 42,
-  	"BaseIntellect": 5,
+  	"BaseStrength": 2,
+  	"BaseIntellect": 42,
   	"BaseArmor": 50
   },
   {
@@ -186,8 +186,8 @@
 	  "Quality": "Rare",
   	"Description": "There is no place where I can´t find you.",
 	  "Type": 2,
-  	"BaseStrength": 48,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
   	"BaseArmor": 55
   },
   {
@@ -195,8 +195,8 @@
 	  "Quality": "Epic",
   	"Description": "Swifter than the gods themselves.",
 	  "Type": 2,
-  	"BaseStrength": 60,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
   	"BaseArmor": 70
   },
   {
@@ -204,8 +204,8 @@
 	  "Quality": "Epic",
   	"Description": "The things that are more silent are the deadliest.",
 	  "Type": 2,
-  	"BaseStrength": 62,
-  	"BaseIntellect": -5,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
   	"BaseArmor": 80
   },
   {
@@ -213,8 +213,8 @@
 	  "Quality": "Legendary",
   	"Description": "Who said the only method of traveling was walking.",
 	  "Type": 2,
-  	"BaseStrength": 90,
-  	"BaseIntellect": 20,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
   	"BaseArmor": 95
   },
   {
@@ -222,8 +222,8 @@
 	  "Quality": "Legendary",
   	"Description": "From the great armies of Roman legionary soldiers.",
 	  "Type": 2,
-  	"BaseStrength": 100,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
   	"BaseArmor": 95
   },
 
@@ -237,8 +237,8 @@
 	  "Quality": "Common",
   	"Description": "Everything you do has a consequence, think before you act.",
 	  "Type": 3,
-  	"BaseStrength": 1,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
   	"BaseArmor": 10
   },
   {
@@ -246,8 +246,8 @@
 	  "Quality": "Common",
   	"Description": "You might feel the need to help everyone around you.",
 	  "Type": 3,
-  	"BaseStrength": 2,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
   	"BaseArmor": 11
   },
   {
@@ -255,8 +255,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Sometimes, the highest position needs to demonstrate power.",
 	  "Type": 3,
-  	"BaseStrength": 10,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
   	"BaseArmor": 25
   },
   {
@@ -264,8 +264,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Can withstand every flame attack.(only protects the hands)",
 	  "Type": 3,
-  	"BaseStrength": 14,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
   	"BaseArmor": 28
   },
   {
@@ -273,8 +273,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Embodied with the souls of great warriors.",
 	  "Type": 3,
-  	"BaseStrength": 20,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
   	"BaseArmor": 34
   },
   {
@@ -282,8 +282,8 @@
 	  "Quality": "Rare",
   	"Description": "It might be hard to keep track of these gloves.",
 	  "Type": 3,
-  	"BaseStrength": 40,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
   	"BaseArmor": 45
   },
   {
@@ -291,8 +291,8 @@
 	  "Quality": "Rare",
   	"Description": "Even the gods can be beaten if you have patience",
 	  "Type": 3,
-  	"BaseStrength": 42,
-  	"BaseIntellect": 5,
+  	"BaseStrength": 5,
+  	"BaseIntellect": 42,
   	"BaseArmor": 50
   },
   {
@@ -300,8 +300,8 @@
 	  "Quality": "Rare",
   	"Description": "Not every flame has to emit light, some just burn if touched.",
 	  "Type": 3,
-  	"BaseStrength": 48,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
   	"BaseArmor": 55
   },
   {
@@ -309,8 +309,8 @@
 	  "Quality": "Epic",
   	"Description": "When clashed together they can flash everything around them including yourself.",
 	  "Type": 3,
-  	"BaseStrength": 60,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
   	"BaseArmor": 70
   },
   {
@@ -318,8 +318,8 @@
 	  "Quality": "Epic",
   	"Description": "Can drain life from every lifeform.",
 	  "Type": 3,
-  	"BaseStrength": 62,
-  	"BaseIntellect": -5,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
   	"BaseArmor": 80
   },
   {
@@ -327,8 +327,8 @@
 	  "Quality": "Legendary",
   	"Description": "Created by nintendo it´s used like a controller to your victim.",
 	  "Type": 3,
-  	"BaseStrength": 90,
-  	"BaseIntellect": 20,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
   	"BaseArmor": 95
   },
   {
@@ -336,8 +336,8 @@
 	  "Quality": "Legendary",
   	"Description": "Containing the power from an ancient hero, powering up in both attack and armor.",
 	  "Type": 3,
-  	"BaseStrength": 100,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 100,
   	"BaseArmor": 95
   },
 
@@ -350,8 +350,8 @@
 	  "Quality": "Common",
   	"Description": "Be carefull, this might sound as a shock.",
 	  "Type": 5,
-  	"BaseStrength": 1,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
   	"BaseArmor": 10
   },
   {
@@ -359,8 +359,8 @@
 	  "Quality": "Common",
   	"Description": "Never fall in an acid pool, or the only thing that´s left is your robe.",
 	  "Type": 5,
-  	"BaseStrength": 2,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
   	"BaseArmor": 11
   },
   {
@@ -368,8 +368,8 @@
 	  "Quality": "Uncommon",
   	"Description": "There are powerfull power, but this may be the most powerfull ever.",
 	  "Type": 5,
-  	"BaseStrength": 10,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
   	"BaseArmor": 25
   },
   {
@@ -377,8 +377,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Belonged to a rich warrior that disappeared one night leaving nothing but it´s robe.",
 	  "Type": 5,
-  	"BaseStrength": 14,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
   	"BaseArmor": 28
   },
   {
@@ -386,8 +386,8 @@
 	  "Quality": "Uncommon",
   	"Description": "It´s one wish is to free every single slave, weird the owner is missing.",
 	  "Type": 5,
-  	"BaseStrength": 20,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
   	"BaseArmor": 34
   },
   {
@@ -395,8 +395,8 @@
 	  "Quality": "Rare",
   	"Description": "Robe infused with mana exactly at midnight to give great protection to it´s owner.",
 	  "Type": 5,
-  	"BaseStrength": 40,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
   	"BaseArmor": 45
   },
   {
@@ -404,8 +404,8 @@
 	  "Quality": "Rare",
   	"Description": "Might look like a normal piece of armour but the one´s that touch it, perish soon later.",
 	  "Type": 5,
-  	"BaseStrength": 42,
-  	"BaseIntellect": 5,
+  	"BaseStrength": 5,
+  	"BaseIntellect": 42,
   	"BaseArmor": 50
   },
   {
@@ -413,8 +413,8 @@
 	  "Quality": "Rare",
   	"Description": "Yours is a robe that will pierce the heavens.",
 	  "Type": 5,
-  	"BaseStrength": 48,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
   	"BaseArmor": 55
   },
   {
@@ -422,8 +422,8 @@
 	  "Quality": "Epic",
   	"Description": "You shall be granted this robe to adquire everything you wish for.",
 	  "Type": 5,
-  	"BaseStrength": 60,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
   	"BaseArmor": 70
   },
   {
@@ -431,8 +431,8 @@
 	  "Quality": "Epic",
   	"Description": "No one knows best, than your mother.",
 	  "Type": 5,
-  	"BaseStrength": 62,
-  	"BaseIntellect": -5,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
   	"BaseArmor": 80
   },
   {
@@ -440,8 +440,8 @@
 	  "Quality": "Legendary",
   	"Description": "Belonged to an Assasin from an ancient cult trying to change the world.",
 	  "Type": 5,
-  	"BaseStrength": 90,
-  	"BaseIntellect": 20,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
   	"BaseArmor": 95
   },
   {
@@ -449,8 +449,8 @@
 	  "Quality": "Legendary",
   	"Description": "Worn by Arthur, cherished by all.",
 	  "Type": 5,
-  	"BaseStrength": 100,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
   	"BaseArmor": 95
   },
 
@@ -466,8 +466,8 @@
 	  "Quality": "Common",
   	"Description": "Pretty expensive for a prophet.",
 	  "Type": 6,
-  	"BaseStrength": 1,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
   	"BaseArmor": 10
   },
   {
@@ -475,8 +475,8 @@
 	  "Quality": "Common",
   	"Description": "Most of the top warrior´s wear this leggings.",
 	  "Type": 6,
-  	"BaseStrength": 2,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
   	"BaseArmor": 11
   },
   {
@@ -484,8 +484,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Get away if your enemy wear one of these.",
 	  "Type": 6,
-  	"BaseStrength": 10,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
   	"BaseArmor": 25
   },
   {
@@ -493,8 +493,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Infamous warrior from the North. Legends say he killed an army once.",
 	  "Type": 6,
-  	"BaseStrength": 14,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
   	"BaseArmor": 28
   },
   {
@@ -502,8 +502,8 @@
 	  "Quality": "Uncommon",
   	"Description": "Very practical if you move a lot.",
 	  "Type": 6,
-  	"BaseStrength": 20,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
   	"BaseArmor": 34
   },
   {
@@ -511,8 +511,8 @@
 	  "Quality": "Rare",
   	"Description": "Might get lost in the void while touching this pants.",
 	  "Type": 6,
-  	"BaseStrength": 40,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
   	"BaseArmor": 45
   },
   {
@@ -520,8 +520,8 @@
 	  "Quality": "Rare",
   	"Description": "Certain death for the carrier of thy armor.",
 	  "Type": 6,
-  	"BaseStrength": 42,
-  	"BaseIntellect": 5,
+  	"BaseStrength": 5,
+  	"BaseIntellect": 42,
   	"BaseArmor": 50
   },
   {
@@ -529,8 +529,8 @@
 	  "Quality": "Rare",
   	"Description": "A little too hot for a mere console peasant.",
 	  "Type": 6,
-  	"BaseStrength": 48,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
   	"BaseArmor": 55
   },
   {
@@ -538,8 +538,8 @@
 	  "Quality": "Epic",
   	"Description": "The Legends say it came from a dragon, looks more like lizzard.",
 	  "Type": 6,
-  	"BaseStrength": 60,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
   	"BaseArmor": 70
   },
   {
@@ -547,8 +547,8 @@
 	  "Quality": "Epic",
   	"Description": "Summons spirits that may help on your most difficult choices.",
 	  "Type": 6,
-  	"BaseStrength": 62,
-  	"BaseIntellect": -5,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
   	"BaseArmor": 80
   },
   {
@@ -556,8 +556,8 @@
 	  "Quality": "Legendary",
   	"Description": "You know what you gotta do Marty!!",
 	  "Type": 6,
-  	"BaseStrength": 90,
-  	"BaseIntellect": 20,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
   	"BaseArmor": 95
   },
   {
@@ -565,8 +565,8 @@
 	  "Quality": "Legendary",
   	"Description": "Okeanos is waiting for me, I can hear it!",
 	  "Type": 6,
-  	"BaseStrength": 100,
-  	"BaseIntellect": 0,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
   	"BaseArmor": 95
   }
 
