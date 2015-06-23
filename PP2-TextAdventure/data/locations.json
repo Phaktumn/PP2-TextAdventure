@@ -4,32 +4,49 @@
 	"Description": "A small city as the name says, the people are kind, but a hidden power is ready to appear.\nGet ready to defeat him!!"
   },
   {
-  	"Name": "Ashran",
-	"Description": "The island of Ashran was once home to a mighty ogre empire, apparently ruled at some point by Kor'lok.\nWhile apparently now in ruin, the island features signs of a once great settlement,\n including towers, arenas and extensive mines.\nIn the aftermath of the Second War, Deathwing built a lair on the island, but this was later razed, \nforcing the dragon to return to Azeroth."
+  	"Name": "Horseman rest stop",
+	"Description": "Highly classified rest shop, for its gourmet services. Preferably choose by knights and high priests when on trips around the kingdom.",
+    "Active": "The first thing you do is check for the services this rest stop delivers. Strangely someone wants to have a conversation with you."
+  },
+  {
+  	"Name": "Cannibal Johnsons cave",
+	"Description": "The son of this family messed with one of the king?s daughter making them. Rumors say they ended up cornered in this cave, and when found the king ordered to close the cave with the family inside, dooming them to die from starvation.",
+    "Active": "Soon after you entered the cave you see a strange little light, making you chase it until you reached at the end of the cave?"
 
   },
   {
-  	"Name": "larilolandia",
-	"Description": "WELELELLELELELELELELEL"
+  	"Name": "Abandoned windmill",
+	"Description": "Windmill filled with stories and rumors about ghost murders and even satanic rituals to open the gate to the demon world.",
+    "Active": ""
   },
   {
-  	"Name": "A tua Mae",
-	"Description": "WELELELLELELELELELELEL"
+  	"Name": "Carriage wreckage",
+	"Description": "Known for being a trading route, you discover a carriage forgotten by time and by the people riding it.",
+    "Active": "You approach the carriage hoping to salvage some goods. After being some time searching you hear a noise coming from the woods, making you reach for your weapon."
   },
   {
-  	"Name": "rabos",
-	"Description": "WELELELLELELELELELELEL"
+  	"Name": "Kings bodyguard corpse",
+	"Description": "Not a very common thing to leave behind the corpse of the kings bodyguards, must be something they can?t explain. The people are even scared of touching the body because it might bring them bad fortune.",
+    "Active": "As you walk up to the corpse you notice it was brutally murdered, maybe thieves or maybe a creature."
   },
   {
-  	"Name": "RABOS 2",
-	"Description": "WELELELLELELELELELELEL"
+  	"Name": "Dragon knights safehouse",
+	"Description": "Protected with metal walls, capable of withstanding the force of a fully grown dragon. It?s used for knights to take a break from all the dangerous of the outside world.",
+        "Active": "The place was empty when you walked in. You quickly started to make yourself comfortable and ready to take a break. When you woke up you heard something and decided to leave."
   },
   {
-  	"Name": "RAMBOS 3",
-	"Description": "WELELELLELELELELELELEL"
+  	"Name": "Deserted cave",
+	"Description": "Just one of the many caves existing in this world, this one being housed by dangerous creatures that might not be the ideal place for you to take a look.",
+        "Active": "You crafted a torch from the remaining?s you found on your pack. Going forth maybe wasn?t the best of the ideas but you adventure on until you get to what seems an exit."
   },
   {
-  	"Name": "tetas!",
-	"Description": "WELELELLELELELELELELEL"
+  	"Name": "Mercenaries? outpost",
+	"Description": "Used by warrior?s capable of making the most dangerous jobs and risking everything for a bit of coin. Usually is filled with dangerous gangs of people and weapon craftsman?s always working to deliver the most deadly weapons.",
+    "Active": "Everyone looks at you with a weird grin probably because they don?t like foreigners to mess with their business. After talking with some people you start to notice something is not right, so try to get out from the back door."
+  },
+   {
+  	"Name": "Camp Arrow",
+	"Description": "This is a well-known camp for future soldiers and bodyguards. One of the big differences is that the best archers are all trained in this camp making them pass through unrelenting physical and philologically training.",
+    "Active": "When you enter a man approaches and asks for you to leave. Maybe it?s not a good idea for you to stay and should move out."
   }
 ]
