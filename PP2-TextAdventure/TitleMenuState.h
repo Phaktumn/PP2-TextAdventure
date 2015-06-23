@@ -32,7 +32,7 @@ private:
 
 	int selectedOption = 0;
 	bool up = false;
-	bool up2 = false;
+	bool up2 = false;	
 	bool down = false;
 	bool down2 = false;
 	bool previousDown = false;
