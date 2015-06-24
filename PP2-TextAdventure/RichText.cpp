@@ -232,7 +232,7 @@ void RichText::wrapText()
 	for (size_t i = 0; i < m_lines.size(); i++) {
 		Line* _line = &m_lines[i];
 		
-		std::cout << _line[0];
+		/*std::cout << _line[0];*/
 
 		if (_line->getGlobalBounds().width > WINDOW_WRAP_WIDTH) {
 			

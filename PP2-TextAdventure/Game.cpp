@@ -51,10 +51,10 @@ int Game::run() {
 
 	stateManager.changeState("TitleMenuState");
 
-	sfe::RichText text(font);
+	//sfe::RichText text(font);
 
-	text << "Hello my frienddddddddddddddddddddd dddddddddddddd dddd ddddddddddd dddd ddddddddddd dd!";
-	text.wrapText();
+	//text << "Hello my frienddddddddddddddddddddd dddddddddddddd dddd ddddddddddd dddd ddddddddddd dd!";
+	//text.wrapText();
 
 	while (window->isOpen()) {
 		sf::Event event;
@@ -68,10 +68,10 @@ int Game::run() {
 
 		window->clear(sf::Color(0, 0, 0));
 
-		//update();
-		//draw();
+		update();
+		draw();
 
-		window->draw(text);
+		/*window->draw(text);*/
 
 		if(activeInput) inputBox.display(window);
 		window->display();
