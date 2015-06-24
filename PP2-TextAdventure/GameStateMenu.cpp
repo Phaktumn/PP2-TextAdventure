@@ -43,6 +43,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 
 	if (command == "inventory") {
 		auxInv = true;
+		GameManager::playerPtr->update();
 	}
 	if (command == "quit") {
 		state.changeState("TitleMenuState");
@@ -68,6 +69,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Hide of Nemean Lion"), GameManager::getItem("Hide of Nemean Lion")->type);
 		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Thor's Legplates"), GameManager::getItem("Thor's Legplates")->type);
 		eqp = true;
+		GameManager::playerPtr->update();
 	}
 	if (auxPaths == true && command != "paths") {
 		for (size_t i = 0; i < world->getConnections().size(); i++)

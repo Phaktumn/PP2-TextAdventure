@@ -33,8 +33,8 @@ void Actor::load()
 void Actor::update()
 {
 	if (this->getAttribute(BONUS_ARMOR)->getValue() > 10000 || this->getAttribute(BONUS_ARMOR)->getValue() < 0)
-		MaxHp = WARRIOR_BASE_HP + (this->getAttribute(STRENGTH)->getValue() * 0.20f);
-	else MaxHp = WARRIOR_BASE_HP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 0.20f);
+		MaxHp = WARRIOR_BASE_HP + (this->getAttribute(STRENGTH)->getValue() * 0.50f);
+	else MaxHp = WARRIOR_BASE_HP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 0.50f);
 
 	if (hp < MaxHp){
 		hp = MaxHp;

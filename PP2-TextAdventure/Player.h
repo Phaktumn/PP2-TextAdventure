@@ -15,6 +15,10 @@ public:
 	~Player();
 
 	int Experience, TotalExperience;
+	bool leveled = false;
+
+
+	void update()override;
 
 	int getXp(){ return Experience;}
 	int getTXp(){ return TotalExperience; }

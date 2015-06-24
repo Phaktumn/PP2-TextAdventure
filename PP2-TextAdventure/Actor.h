@@ -31,7 +31,7 @@ public:
 	~Actor();
 
 	void load();
-	void update();
+	void virtual update();
 	void draw();
 
 	std::string getActorName(){ return name; }

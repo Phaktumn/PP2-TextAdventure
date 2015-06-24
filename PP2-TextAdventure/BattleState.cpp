@@ -24,7 +24,7 @@ void BattleState::update()
 {
 	if (!enemy->isAlive()){
 		LAST_ENEMY_LEVEL = enemy->getLevel();
-		playerPtr->afterBattle(enemy->getLevel() * 100);
+		playerPtr->afterBattle(enemy->getLevel() * 1000);
 		state.changeState("PostBattleState");
 	}
 	else battleMenu->update(&inputBox, font);
