@@ -17,10 +17,10 @@ void PostBattleState::update(){
 
 	if (firstTime)
 	{
-		auxloot = getloot();
+		auxloot = getLoot();
 		firstTime = false;
 	}
-	if (inputBox.lastCommand() == "Continue")
+	if (inputBox.lastCommand() == "continue")
 	{
 		state.changeState("GameState");
 		auxloot = false;
@@ -41,7 +41,7 @@ void PostBattleState::draw(sf::RenderWindow *window){
 	drawText(15, 475, "> Continue", font, 24, window);
 }
 
-bool getloot(){
+bool PostBattleState::getLoot(){
 	int aux;
 	aux = rand() % 100;
 	if (aux > 70) return true;

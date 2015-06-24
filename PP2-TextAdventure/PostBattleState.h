@@ -16,6 +16,8 @@ public:
 
 	bool auxloot, firstTime;
 
+	bool getLoot();
+
 	StateManager& state;
 	sf::Font font;
 	InputBox& inputBox;

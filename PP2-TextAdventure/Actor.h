@@ -46,6 +46,8 @@ public:
 	int setDamage(int value){ return Damage += value; }
 	int getLevel(){ return level;}
 
+	bool isAlive(){ return alive; }
+
 	void setState();
 	bool takeDamage(int damage);
 
