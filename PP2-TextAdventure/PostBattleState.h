@@ -4,6 +4,7 @@
 #include "InputBox.h"
 #include "Globals.h"
 
+
 class PostBattleState : public State
 {
 public:	
@@ -17,6 +18,14 @@ public:
 	bool auxloot, firstTime;
 	
 	bool getloot();
+	struct HELPERS
+	{
+		int LEVEL;
+		int XP;
+		int TXP;
+	}_player;
+
+	sf::Clock clock;
 
 	StateManager& state;
 	sf::Font font;

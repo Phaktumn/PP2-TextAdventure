@@ -79,6 +79,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 				world->moveTo(world->getConnections()[i]->getName());
 				auxInv = false;
 				auxPaths = false;
+				srand(time(NULL));
 				if (GameStateMenu::randomEncounter()) state.changeState("BattleState");
 			}
 		}

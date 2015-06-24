@@ -50,6 +50,7 @@ int Game::run() {
 	stateManager.loadState("PostBattleState");
 
 	stateManager.changeState("TitleMenuState");
+	//stateManager.changeState("PostBattleState");
 
 	//sfe::RichText text(font);
 
