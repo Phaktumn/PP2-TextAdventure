@@ -53,7 +53,11 @@ void GameManager::loadGlobals() {
 	//==============================================================================================
 
 	//PLAYER=========================================================================================
+<<<<<<< HEAD
 	player = new Player("jorge", GameManager::attribute, GameManager::abilities, WARRIOR_BASE_HP, 250);
+=======
+	player = new Player("jorge", GameManager::attribute, GameManager::abilities, 1000, 250, 1);
+>>>>>>> origin/master
 	playerPtr = (Player*)player;
 	//===============================================================================================
 
@@ -77,8 +81,8 @@ void GameManager::addMobs()
 	//Attributes MOB3
 
 	//
-	mobsDatabase.emplace("mob1", std::shared_ptr<Actor>(new Actor("mob1", GameManager::mob_1_Attributes, GameManager::abilities, 50, 10)));
-	mobsDatabase.emplace("mob2", std::shared_ptr<Actor>(new Actor("mob2", GameManager::mob_2_Attributes, GameManager::abilities, 65, 25)));
+	mobsDatabase.emplace("mob1", std::shared_ptr<Actor>(new Actor("mob1", GameManager::mob_1_Attributes, GameManager::abilities, 50, 10,1)));
+	mobsDatabase.emplace("mob2", std::shared_ptr<Actor>(new Actor("mob2", GameManager::mob_2_Attributes, GameManager::abilities, 65, 25,1)));
 }
 
 Actor* GameManager::getMob(const std::string &name)

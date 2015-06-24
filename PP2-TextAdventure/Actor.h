@@ -27,7 +27,7 @@ private:
 	bool stunned;
 
 public:
-	Actor(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana);
+	Actor(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level);
 	~Actor();
 
 	void load();
@@ -44,11 +44,16 @@ public:
 	Attribute* getAttribute(sf::String name);
 	int getDamage() { return Damage; }
 	int setDamage(int value){ return Damage += value; }
+	int getLevel(){ return level;}
 
 	void setState();
 	bool takeDamage(int damage);
 
 protected:
 	int level;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 };
 
