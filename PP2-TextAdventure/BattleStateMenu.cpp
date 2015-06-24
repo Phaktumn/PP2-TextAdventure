@@ -44,7 +44,6 @@ BattleStateMenu::LOG::LOG(){
 }
 
 BattleStateMenu::LOG::~LOG(){}
-
 void BattleStateMenu::update(InputBox* input, sf::Font &font){
 	_player.HP = playerPtr->getHp();
 	_player.ARMOR = playerPtr->getAttribute(ARMOR)->getValue() + playerPtr->getAttribute(BONUS_ARMOR)->getValue();
@@ -104,9 +103,8 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 	}
 }
 
-int BattleStateMenu::auxCalc(Actor* actor){
+double BattleStateMenu::auxCalc(Actor* actor){
 	int maxHP = actor->getMaxHP();
-
 	return ((actor->getHp() * 9) / maxHP);
 }
 
@@ -135,14 +133,14 @@ void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 		sf::String auxHP = std::to_string(_player.HP);
 		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Green << "------" << playerPtr->getActorName() << "------", CHARACTER_SIZE, window);
 		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << auxHP, CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 75, sfe::RichText(font) << sf::Color::Green << Hp[auxCalc(playerPtr)], CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 75, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(playerPtr)))], CHARACTER_SIZE, window);
 		
 		log->draw(window, font);
 
 		sf::String targetAxuHP = std::to_string(_enemy.HP);
 		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
 		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 75, sfe::RichText(font) << sf::Color::Green << Hp[auxCalc(enemy)], CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 75, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(enemy)))] , CHARACTER_SIZE, window);
 
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++){
 			drawText(15, 320 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName(), CHARACTER_SIZE, window);

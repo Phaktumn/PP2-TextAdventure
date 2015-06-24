@@ -69,7 +69,7 @@ private:
 	//
 	//aux helpers aux helpers aux helpers
 
-	int auxCalc(Actor* actor);
+	double auxCalc(Actor* actor);
 
 	sf::String Resource[10];
 	sf::String Hp[10];

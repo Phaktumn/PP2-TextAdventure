@@ -61,12 +61,12 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	}
 	if (command == "equip" && !eqp)
 	{
-		GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::getItem("Rusted Sword"));
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("GreatHelm"), GameManager::getItem("GreatHelm")->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Tyrant's Greaves"), GameManager::getItem("Tyrant's Greaves")->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Amberplate Grips"), GameManager::getItem("Amberplate Grips")->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Ravager's Armor"), GameManager::getItem("Ravager's Armor")->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Plate Legguards"), GameManager::getItem("Plate Legguards")->type);
+		GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::getItem("Shiva's Parashu"));
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Helmet of Darkness"), GameManager::getItem("Helmet of Darkness")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Shoes of Vidar (Norse)"), GameManager::getItem("Shoes of Vidar (Norse)")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Midas Touch"), GameManager::getItem("Midas Touch")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Hide of Nemean Lion"), GameManager::getItem("Hide of Nemean Lion")->type);
+		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem("Thor's Legplates"), GameManager::getItem("Thor's Legplates")->type);
 		eqp = true;
 	}
 	if (auxPaths == true && command != "paths") {

@@ -34,41 +34,69 @@ void Inventory::equipArmor(Armor* armor, Armor::Type type)
 	{
 						 //removes the armor of the last equiped head
 						 if (head != nullptr)
+						 {
 							 player->removeBonusArmor(head->getBonusArmor());
+							 player->removeBonusDamage(head->getBonusStrenght());
+							 player->removeBonusIntellect(head->getBonusIntellevt());
+						 }
 
 						 //replaces de head item for a new one
 						 head = armor;
 
 						 //add's the new stats to the player
 						 player->addBonusArmor(head->getBonusArmor());
+						 player->addBonusDamage(head->getBonusStrenght());
+						 player->addBonusIntellect(head->getBonusIntellevt());
 	}
 		break;
 	case Item::chest:{
 						 if (chest != nullptr)
+						 {
 							 player->removeBonusArmor(chest->getBonusArmor());
+							 player->removeBonusDamage(chest->getBonusStrenght());
+							 player->removeBonusIntellect(chest->getBonusIntellevt());
+						 }
 						 chest = armor;
 						 player->addBonusArmor(chest->getBonusArmor());
+						 player->addBonusDamage(chest->getBonusStrenght());
+						 player->addBonusIntellect(chest->getBonusIntellevt());
 	}
 		break;
 	case Item::hands:{
-						 if (hands != nullptr)
-							 player->removeBonusArmor(chest->getBonusArmor());
+						 if (hands != nullptr){
+							 player->removeBonusArmor(hands->getBonusArmor());
+							 player->removeBonusDamage(hands->getBonusStrenght());
+							 player->removeBonusIntellect(hands->getBonusIntellevt());
+						 }
 						 hands = armor;
 						 player->addBonusArmor(hands->getBonusArmor());
+						 player->addBonusDamage(hands->getBonusStrenght());
+						 player->addBonusIntellect(hands->getBonusIntellevt());
 	}
 		break;
 	case Item::legs:{
 						if (legs != nullptr)
+						{
 							player->removeBonusArmor(legs->getBonusArmor());
+							player->removeBonusArmor(legs->getBonusIntellevt());
+							player->removeBonusIntellect(legs->getBonusIntellevt());
+						}
 						legs = armor;
 						player->addBonusArmor(legs->getBonusArmor());
+						player->addBonusDamage(legs->getBonusStrenght());
+						player->addBonusIntellect(legs->getBonusIntellevt());
 	}
 		break;
 	case Item::feet:{
-						if (feet != nullptr)
+						if (feet != nullptr){
 							player->removeBonusArmor(feet->getBonusArmor());
+							player->removeBonusDamage(feet->getBonusStrenght());
+							player->removeBonusIntellect(feet->getBonusIntellevt());
+						}
 						feet = armor;
 						player->addBonusArmor(feet->getBonusArmor());
+						player->addBonusDamage(feet->getBonusStrenght());
+						player->addBonusIntellect(feet->getBonusIntellevt());
 	}
 		break;
 	}
