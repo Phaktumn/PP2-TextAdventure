@@ -31,7 +31,7 @@ public:
 	~Actor();
 
 	void load();
-	void update();
+	void virtual update();
 	void draw();
 
 	std::string getActorName(){ return name; }
@@ -45,6 +45,8 @@ public:
 	int getDamage() { return Damage; }
 	int setDamage(int value){ return Damage += value; }
 	int getLevel(){ return level;}
+
+	bool isAlive(){ return alive; }
 
 	void setState();
 	bool takeDamage(int damage);

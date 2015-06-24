@@ -77,8 +77,21 @@ void GameManager::addMobs()
 	//Attributes MOB3
 
 	//
+
+
+
+
+	//MOBS LV1
 	mobsDatabase.emplace("mob1", std::shared_ptr<Actor>(new Actor("mob1", GameManager::mob_1_Attributes, GameManager::abilities, 50, 10,1)));
-	mobsDatabase.emplace("mob2", std::shared_ptr<Actor>(new Actor("mob2", GameManager::mob_2_Attributes, GameManager::abilities, 65, 25,1)));
+	
+	
+
+	//MOBS LV2
+	mobsDatabase.emplace("mob2", std::shared_ptr<Actor>(new Actor("mob2", GameManager::mob_2_Attributes, GameManager::abilities, 65, 25, 2)));
+	mobsDatabase["mob2"].get()->update();
+
+
+	//MOBS LV3
 }
 
 Actor* GameManager::getMob(const std::string &name)

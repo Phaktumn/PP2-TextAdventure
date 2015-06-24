@@ -57,8 +57,11 @@ private:
 	static LinkedList<Attribute*> mob_2_Attributes;
 	//
 	//MOB3
-
+	static LinkedList<Attribute*> mob_3_Attributes;
 	//
+	//MOB4
+	static LinkedList<Attribute*> mob_4_Attributes;
+
 
 	static void addMobs();
 

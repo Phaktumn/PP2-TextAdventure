@@ -11,6 +11,16 @@ Player::~Player()
 {
 
 }
+
+void Player::update(){
+	if (leveled){
+		this->getAttribute(STRENGTH)->changeValue(level * 3);
+		this->getAttribute(INTELLECT)->changeValue(level * 2);
+		leveled = false;
+	}
+	Actor::update();
+}
+
 /*
 	Increase bonusArmor
 	Decrease bonusArmor
@@ -54,6 +64,7 @@ void Player::removeDamage(int value){
 void Player::afterBattle(int xp){
 	Experience += xp;
 	if (Experience >= TotalExperience){
+		leveled = true;
 		level++;
 		Experience = Experience - TotalExperience;
 		TotalExperience = TotalExperience * 1.5;

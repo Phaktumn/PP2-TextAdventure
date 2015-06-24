@@ -4,7 +4,9 @@
 BattleState::BattleState(sf::Font& font, InputBox& inputBox, StateManager& state) 
 : font(font), inputBox(inputBox), state(state)
 {
-	battleMenu = new BattleStateMenu(GameManager::playerPtr, GameManager::getMob("mob1"), state);
+	enemy = GameManager::getMob("mob1");
+	playerPtr = GameManager::playerPtr;
+	battleMenu = new BattleStateMenu(playerPtr, GameManager::getMob("mob1"), state);
 }
 
 
@@ -20,7 +22,12 @@ void BattleState::load()
 
 void BattleState::update()
 {
-	battleMenu->update(&inputBox, font);
+	if (!enemy->isAlive()){
+		LAST_ENEMY_LEVEL = enemy->getLevel();
+		playerPtr->afterBattle(enemy->getLevel() * 1000);
+		state.changeState("PostBattleState");
+	}
+	else battleMenu->update(&inputBox, font);
 }
 
 void BattleState::draw(sf::RenderWindow* window)
