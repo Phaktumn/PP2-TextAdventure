@@ -33,6 +33,9 @@ public:
 		int STRENGTH;
 		int ARMOR;
 		int INTELLECT;
+		int LEVEL;
+		int XP;
+		int TXP;
 	}_player;
 
 

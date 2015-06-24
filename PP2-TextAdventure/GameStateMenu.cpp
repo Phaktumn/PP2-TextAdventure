@@ -37,6 +37,10 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	_player.ARMOR = GameManager::playerPtr->getAttribute(ARMOR)->getValue() + GameManager::playerPtr->getAttribute(BONUS_ARMOR)->getValue();
 	_player.STRENGTH = GameManager::playerPtr->getAttribute(STRENGTH)->getValue() + GameManager::playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
 	_player.INTELLECT = GameManager::playerPtr->getAttribute(INTELLECT)->getValue() + GameManager::playerPtr->getAttribute(BONUS_INTELLECT)->getValue();
+	_player.LEVEL = GameManager::playerPtr->getLevel();
+	_player.XP = GameManager::playerPtr->getXp();
+	_player.TXP = GameManager::playerPtr->getTXp();
+
 	if (command == "inventory") {
 		auxInv = true;
 	}
@@ -114,14 +118,17 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		GameManager::playerPtr->getInventory()->drawPos(window, font, 30, 345);
 
 		drawText(425, 70 + 250, "ATRIBUTES", font, CHARACTER_SIZE, window);
-		drawText(425, 70 + 275, sfe::RichText(font) << "Unleash the " << STRENGTH << ": " << sf::Color::Red << std::to_string(_player.STRENGTH), CHARACTER_SIZE, window);
-		drawText(425, 70 + 300, sfe::RichText(font) << "Unleash the " << INTELLECT << ": " << sf::Color::Red << std::to_string(_player.INTELLECT), CHARACTER_SIZE, window);
-		drawText(425, 70 + 325, sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
-		drawText(425, 70 + 350, sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
+		drawText(425, 70 + 275, sfe::RichText(font) << "Level: " << sf::Color::Red << std::to_string(_player.LEVEL), CHARACTER_SIZE, window);
+		drawText(425, 70 + 300, sfe::RichText(font)  << STRENGTH << ": " << sf::Color::Red << std::to_string(_player.STRENGTH), CHARACTER_SIZE, window);
+		drawText(425, 70 + 325, sfe::RichText(font)  << INTELLECT << ": " << sf::Color::Red << std::to_string(_player.INTELLECT), CHARACTER_SIZE, window);
+		drawText(425, 70 + 350, sfe::RichText(font)  << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
+		drawText(425, 70 + 375, sfe::RichText(font) << "HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
+
+		drawText(700, 70 + 275, sfe::RichText(font) << "XP:  " << sf::Color::Red << std::to_string(_player.XP) << " (" << std::to_string(_player.TXP)<< ")", CHARACTER_SIZE, window);
 
 		sf::String aux;
 		aux = std::to_string(GameManager::playerPtr->getDamage());
-		drawText(425, 70 + 375, sfe::RichText(font) << "Weapon Damage" << ": " << sf::Color::Red << aux, CHARACTER_SIZE, window);
+		drawText(425, 70 + 400, sfe::RichText(font) << "Weapon Damage" << ": " << sf::Color::Red << aux, CHARACTER_SIZE, window);
 
 		drawText(15, 475, "> Back", font, 24, window);
 	}

@@ -1,8 +1,8 @@
 #include "Actor.h"
 #include <SFML/Graphics.hpp>
 
-Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana)
-: name(_name), attributes(_attributes), abilities(_abilities), hp(hp), mana(mana)
+Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana,int level)
+	: name(_name), attributes(_attributes), abilities(_abilities), hp(hp), mana(mana), level(level)
 {
 	//int length = sizeof(_attributes)/sizeof(*_attributes);
 	//for (int i = 0; i < length; i++){

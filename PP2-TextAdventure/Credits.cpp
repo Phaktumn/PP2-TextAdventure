@@ -16,7 +16,6 @@ void Credits::load(){}
 
 void Credits::update()
 {
-
 	sf::Time elapsed1 = clock.getElapsedTime();
 
 	if (elapsed1.asSeconds() > 0.01f && auxpos > 170){
@@ -29,7 +28,6 @@ void Credits::update()
 		activeInput = false;
 		state.changeState("TitleMenuState");
 	}
-
 }
 
 void Credits::draw(sf::RenderWindow *window) {
