@@ -51,9 +51,5 @@ public:
 
 protected:
 	int level;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 };
 

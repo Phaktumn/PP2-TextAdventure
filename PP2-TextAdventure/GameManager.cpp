@@ -53,11 +53,7 @@ void GameManager::loadGlobals() {
 	//==============================================================================================
 
 	//PLAYER=========================================================================================
-<<<<<<< HEAD
-	player = new Player("jorge", GameManager::attribute, GameManager::abilities, WARRIOR_BASE_HP, 250);
-=======
-	player = new Player("jorge", GameManager::attribute, GameManager::abilities, 1000, 250, 1);
->>>>>>> origin/master
+	player = new Player("jorge", GameManager::attribute, GameManager::abilities, WARRIOR_BASE_HP, 250, 1);
 	playerPtr = (Player*)player;
 	//===============================================================================================
 
