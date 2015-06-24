@@ -9,6 +9,9 @@
 
 #include <SFML/System/String.hpp>
 
+#include "Globals.h"
+#include <iostream>
+
 namespace sfe
 {
 
@@ -137,16 +140,16 @@ std::vector<sf::String> explode(const sf::String &string, sf::Uint32 delimiter) 
     // For each character in the string
     std::vector<sf::String> result;
     sf::String buffer;
-    for (sf::Uint32 character : string) {
+
+	for (sf::Uint32 character : string) {
         // If we've hit the delimiter character
         if (character == delimiter) {
-            // Add them to the result vector
-            result.push_back(buffer);
-            buffer.clear();
-        } else {
-            // Accumulate the next character into the sequence
+			result.push_back(buffer);
+			buffer.clear();
+        } else {			
+			// Accumulate the next character into the sequence
             buffer += character;
-        }
+		}
     }
 
     // Add to the result if buffer still has contents or if the last character is a delimiter
@@ -156,6 +159,86 @@ std::vector<sf::String> explode(const sf::String &string, sf::Uint32 delimiter) 
     return result;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+std::vector<sf::String> explodeAndTrim(const sf::String &string, sf::Uint32 delimiter)
+{
+	if (string.isEmpty())
+		return std::vector<sf::String>();
+
+	//for (size_t i = 0; i < subStrings.size(); i++) {
+	//	if (subStrings[i].getSize() * NORMAL_CHARACTER_SIZE > WINDOW_WIDTH - 20) {
+	//		for (size_t j = subStrings[i].getSize() - 1; i > 0; i++) {
+	//			if (subStrings[i][j] == ' ') {
+	//				int count = 0;
+	//				sf::String line;
+
+	//			}
+	//		}
+	//	}
+	//}
+
+	// For each character in the string
+	std::vector<sf::String> result;
+	sf::String buffer;
+
+	bool wrap = false;
+	sf::String wrappedWord;
+
+	for (sf::Uint32 character : string) {
+		// If we've hit the delimiter character
+		if (character == delimiter) {
+			result.push_back(buffer);
+			buffer.clear();
+
+			if (wrap) {
+				buffer += wrappedWord;
+				wrap = false;
+			}
+		}
+		else {
+			// Accumulate the next character into the sequence
+			buffer += character;
+
+			std::cout << "Buffer: " << buffer.getSize() * NORMAL_CHARACTER_SIZE << std::endl;
+
+			if (buffer.getSize() * NORMAL_CHARACTER_SIZE > 250) {
+				for (size_t i = buffer.getSize() - 1; i < 0 && !wrap; i++) {
+					if (buffer[i] == ' ') {
+						wrap = true;
+						wrappedWord.clear();
+
+						for (size_t j = i; j < buffer.getSize(); j++) {
+							wrappedWord += buffer[j];
+						}
+
+						buffer.erase(i, buffer.getSize() - i);
+					}
+				}
+			}
+		}
+	}
+
+	// Add to the result if buffer still has contents or if the last character is a delimiter
+	if (!buffer.isEmpty() || string[string.getSize() - 1] == delimiter)
+		result.push_back(buffer);
+
+	return result;
+}
+
+void RichText::wrapText()
+{
+	std::vector<Line> new_lines;
+
+	for (size_t i = 0; i < m_lines.size(); i++) {
+		Line* _line = &m_lines[i];
+		
+		/*std::cout << _line[0];*/
+
+		if (_line->getGlobalBounds().width > WINDOW_WRAP_WIDTH) {
+			
+		}
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 RichText & RichText::operator << (const sf::String &string)
@@ -184,7 +267,7 @@ RichText & RichText::operator << (const sf::String &string)
         // Update bounds
         m_bounds.height += line.getGlobalBounds().height;
         m_bounds.width = std::max(m_bounds.width, line.getGlobalBounds().width);
-    }
+	}
 
     // Append the rest of substrings as new lines
     while (++it != subStrings.end()) {

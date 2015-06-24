@@ -6,6 +6,8 @@
 #define WINDOW_WIDTH 960
 #define WINDOW_HEIGHT 540
 
+#define WINDOW_WRAP_WIDTH 910
+
 #define CHARACTER_SIZE 24
 
 extern int LAST_ENEMY_LEVEL;

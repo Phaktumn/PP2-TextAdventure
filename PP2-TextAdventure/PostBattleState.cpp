@@ -41,7 +41,11 @@ void PostBattleState::draw(sf::RenderWindow *window){
 	drawText(15, 475, "> Continue", font, 24, window);
 }
 
+<<<<<<< HEAD
 bool PostBattleState::getLoot(){
+=======
+bool PostBattleState::getloot() {
+>>>>>>> origin/master
 	int aux;
 	aux = rand() % 100;
 	if (aux > 70) return true;

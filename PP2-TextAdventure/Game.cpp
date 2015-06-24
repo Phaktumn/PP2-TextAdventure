@@ -51,6 +51,11 @@ int Game::run() {
 
 	stateManager.changeState("TitleMenuState");
 
+	//sfe::RichText text(font);
+
+	//text << "Hello my frienddddddddddddddddddddd dddddddddddddd dddd ddddddddddd dddd ddddddddddd dd!";
+	//text.wrapText();
+
 	while (window->isOpen()) {
 		sf::Event event;
 		while (window->pollEvent(event)) {
@@ -65,6 +70,8 @@ int Game::run() {
 
 		update();
 		draw();
+
+		/*window->draw(text);*/
 
 		if(activeInput) inputBox.display(window);
 		window->display();

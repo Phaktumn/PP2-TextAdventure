@@ -6,7 +6,7 @@
 
 class PostBattleState : public State
 {
-public:
+public:	
 	PostBattleState(sf::Font& font, InputBox& inputBox, StateManager& state);
 	~PostBattleState();
 
@@ -15,6 +15,8 @@ public:
 	void draw(sf::RenderWindow *window) override;
 
 	bool auxloot, firstTime;
+	
+	bool getloot();
 
 	bool getLoot();
 
