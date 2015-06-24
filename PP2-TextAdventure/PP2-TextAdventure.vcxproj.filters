@@ -112,7 +112,12 @@
     <ClCompile Include="BattleStateMenu.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Credits.cpp" />
+    <ClCompile Include="Credits.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="PostBattleState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoAtack.h">
@@ -202,7 +207,12 @@
     <ClInclude Include="BattleStateMenu.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Credits.h" />
+    <ClInclude Include="Credits.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="PostBattleState.h">
+      <Filter>States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -4,6 +4,7 @@
 #include "TitleMenuState.h"
 #include "BattleState.h"
 #include "Credits.h"
+#include "PostBattleState.h"
 
 Game::Game() {
 
@@ -34,16 +35,19 @@ int Game::run() {
 	TitleMenuState titleMenuState(font, stateManager);
 	BattleState battleState(font, inputBox, stateManager);
 	Credits credits(font, inputBox, stateManager);
+	PostBattleState postbattlestate(font, inputBox, stateManager);
 
 	stateManager.addState("GameState", &gameState);
 	stateManager.addState("TitleMenuState", &titleMenuState);
 	stateManager.addState("BattleState", &battleState);
 	stateManager.addState("Credits", &credits);
+	stateManager.addState("PostBattleState", &postbattlestate);
 
 	stateManager.loadState("TitleMenuState");
 	stateManager.loadState("GameState");
 	stateManager.loadState("BattleState");
 	stateManager.loadState("Credits");
+	stateManager.loadState("PostBattleState");
 
 	stateManager.changeState("TitleMenuState");
 
