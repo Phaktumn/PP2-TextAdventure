@@ -105,6 +105,7 @@
     <ClCompile Include="LocationsManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PostBattleState.cpp" />
     <ClCompile Include="RichText.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateManager.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="Location.h" />
     <ClInclude Include="LocationsManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PostBattleState.h" />
     <ClInclude Include="RichText.hpp" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />

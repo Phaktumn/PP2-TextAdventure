@@ -49,6 +49,17 @@ private:
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
 	static std::map<int, std::string> locationsDescriptions;
 
+	//MOBS ATTRIBUTES!
+	//MOB1
+	static LinkedList<Attribute*> mob_1_Attributes;
+	//
+	//MOB2
+	static LinkedList<Attribute*> mob_2_Attributes;
+	//
+	//MOB3
+
+	//
+
 	static void addMobs();
 
 	static Actor* player;

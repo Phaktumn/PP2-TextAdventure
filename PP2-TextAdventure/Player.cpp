@@ -1,9 +1,10 @@
 #include "Player.h"
 
-Player::Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana)
-	: Actor(name, _attributes, _abilities, hp, mana)
+Player::Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level)
+	: Actor(name, _attributes, _abilities, hp, mana, level)
 {
 	inventory = new Inventory(this);
+	TotalExperience = 500;
 }
 
 Player::~Player()
@@ -37,7 +38,7 @@ void Player::removeBonusDamage(int value){
 
 
 void Player::addBonusIntellect(int Bonus_Intellect){
-	Actor::getAttribute(BONUS_ARMOR)->changeValue(Bonus_Intellect);
+	Actor::getAttribute(BONUS_INTELLECT)->changeValue(Bonus_Intellect);
 }
 void Player::removeBonusIntellect(int value){
 	Actor::getAttribute(BONUS_INTELLECT)->changeValue(-(value));
@@ -48,4 +49,13 @@ void Player::addDamage(int Damage){
 }
 void Player::removeDamage(int value){
 	Actor::setDamage(-(value));
+}
+
+void Player::afterBattle(int xp){
+	Experience += xp;
+	if (Experience >= TotalExperience){
+		level++;
+		Experience = Experience - TotalExperience;
+		TotalExperience = TotalExperience * 1.5;
+	}
 }

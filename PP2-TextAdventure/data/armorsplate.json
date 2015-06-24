@@ -1,9 +1,9 @@
 [
   {
   	"Name": "GreatHelm",
-	  "Quality": "Common",
+	"Quality": "Common",
   	"Description": "Actually, is not that great.",
-	  "Type": 1,
+	"Type": 0,
   	"BaseStrength": 1,
   	"BaseIntellect": 0,
   	"BaseArmor": 10
@@ -12,7 +12,7 @@
   	"Name": "Iron-Helm",
 	  "Quality": "Common",
   	"Description": "Of high quality, but lacking style.",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 2,
   	"BaseIntellect": 0,
   	"BaseArmor": 11
@@ -21,7 +21,7 @@
   	"Name": "Spiritforged Helmet",
 	  "Quality": "Uncommon",
   	"Description": "Blessed by spirits of the forest. So they say...",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 10,
   	"BaseIntellect": 0,
   	"BaseArmor": 25
@@ -30,7 +30,7 @@
   	"Name": "Necropolis Helm",
 	  "Quality": "Uncommon",
   	"Description": "Minions, servants, soldiers of the cold dark, obey my call!",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 14,
   	"BaseIntellect": 0,
   	"BaseArmor": 28
@@ -39,7 +39,7 @@
   	"Name": "Crown of Forgotten Kings",
 	  "Quality": "Uncommon",
   	"Description": "The roar of a thousand drums, echo through this land!",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 20,
   	"BaseIntellect": 0,
   	"BaseArmor": 34
@@ -48,7 +48,7 @@
   	"Name": "Titan's Outlook",
 	  "Quality": "Rare",
   	"Description": "Oh Lord Prometheus, it's a fire!",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 40,
   	"BaseIntellect": 0,
   	"BaseArmor": 45
@@ -57,7 +57,7 @@
   	"Name": "Helm of purified Thoughts",
 	  "Quality": "Rare",
   	"Description": "The real ornament of woman is her character, her purity.",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 42,
   	"BaseIntellect": 5,
   	"BaseArmor": 50
@@ -66,7 +66,7 @@
   	"Name": "Skeleton Lord's Cranium",
 	  "Quality": "Rare",
   	"Description": "I am the bone of my sword!",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 48,
   	"BaseIntellect": 0,
   	"BaseArmor": 55
@@ -75,7 +75,7 @@
   	"Name": "Aegis Faceguard",
 	  "Quality": "Epic",
   	"Description": "It is not possible either to trick or escape the mind of Zeus.",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 60,
   	"BaseIntellect": 0,
   	"BaseArmor": 70
@@ -84,7 +84,7 @@
   	"Name": "Greathelm of Wrath",
 	  "Quality": "Epic",
   	"Description": "Throw away thy rod, throw away thy wrath; O my God, take the gentle path.",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 62,
   	"BaseIntellect": -5,
   	"BaseArmor": 80
@@ -93,7 +93,7 @@
   	"Name": "Goswhit",
 	  "Quality": "Legendary",
   	"Description": "One day, a King will come, and the Sword will rise... again.",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 90,
   	"BaseIntellect": 20,
   	"BaseArmor": 95
@@ -102,27 +102,16 @@
   	"Name": "Helmet of Darkness",
 	  "Quality": "Legendary",
   	"Description": "Now i know there is beauty in Darkness.",
-	  "Type": 1,
+	  "Type": 0,
   	"BaseStrength": 100,
   	"BaseIntellect": 0,
   	"BaseArmor": 95
   },
-
-
-
-
-  //Feet
-
-
-
-
-
-
-    {
+  {
   	"Name": "Tyrant's Greaves",
 	  "Quality": "Common",
   	"Description": "Forged under a strict discipline.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 1,
   	"BaseIntellect": 0,
   	"BaseArmor": 10
@@ -131,7 +120,7 @@
   	"Name": "Stonestep Boots",
 	  "Quality": "Common",
   	"Description": "Perfect mobility for combat.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 2,
   	"BaseIntellect": 0,
   	"BaseArmor": 11
@@ -140,7 +129,7 @@
   	"Name": "Lucidity Shoes",
 	  "Quality": "Uncommon",
   	"Description": "Nothing can make you fall in reality.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 10,
   	"BaseIntellect": 0,
   	"BaseArmor": 25
@@ -149,7 +138,7 @@
   	"Name": "Wraithplate Treads",
 	  "Quality": "Uncommon",
   	"Description": "From the deep of the lake, from the strongest wraith.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 14,
   	"BaseIntellect": 0,
   	"BaseArmor": 28
@@ -159,7 +148,7 @@
   	"Name": "Blackrock Greaves",
 	  "Quality": "Rare",
   	"Description": "Greaves made from a rare mineral that only exists in a hidden cave.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 40,
   	"BaseIntellect": 0,
   	"BaseArmor": 45
@@ -168,7 +157,7 @@
   	"Name": "Mosscrusher Sabatons",
 	  "Quality": "Rare",
   	"Description": "Made it to last, until death.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 42,
   	"BaseIntellect": 5,
   	"BaseArmor": 50
@@ -178,7 +167,7 @@
   	"Name": "Warboots of Cruelty",
 	  "Quality": "Epic",
   	"Description": "From the most brutal warchief in a while.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 60,
   	"BaseIntellect": 0,
   	"BaseArmor": 70
@@ -187,7 +176,7 @@
   	"Name": "Treads of the Defiler",
 	  "Quality": "Epic",
   	"Description": "He would kill them in the most brutal ways possible.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 62,
   	"BaseIntellect": -5,
   	"BaseArmor": 80
@@ -196,23 +185,16 @@
   	"Name": "Shoes of Vidar (Norse)",
 	  "Quality": "Legendary",
   	"Description": "Shoes that vidar wore or whatever.",
-	  "Type": 2,
+	  "Type": 1,
   	"BaseStrength": 90,
   	"BaseIntellect": 20,
   	"BaseArmor": 95
   },
- 
-
-
-
-
-  //Hands
-
-      {
+  {
   	"Name": "Steel Gaunlets",
 	  "Quality": "Common",
   	"Description": "Imitation of Wonderwoman Gauntles.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 1,
   	"BaseIntellect": 0,
   	"BaseArmor": 10
@@ -221,7 +203,7 @@
   	"Name": "Amberplate Grips",
 	  "Quality": "Common",
   	"Description": "If you want armor and some fashion sense.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 2,
   	"BaseIntellect": 0,
   	"BaseArmor": 11
@@ -230,7 +212,7 @@
   	"Name": "Bonefist Gaunlets",
 	  "Quality": "Uncommon",
   	"Description": "Fist decorated with bones from every creature the master kills.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 10,
   	"BaseIntellect": 0,
   	"BaseArmor": 25
@@ -239,7 +221,7 @@
   	"Name": "Demolisher's Grips",
 	  "Quality": "Uncommon",
   	"Description": "Great equipment for melee attacks.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 14,
   	"BaseIntellect": 0,
   	"BaseArmor": 28
@@ -248,7 +230,7 @@
   	"Name": "Necropolis Gloves",
 	  "Quality": "Uncommon",
   	"Description": "Forged in the underworld, they have the powers to command the undead.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 20,
   	"BaseIntellect": 0,
   	"BaseArmor": 34
@@ -257,7 +239,7 @@
   	"Name": "Plate Claws of the Dragon",
 	  "Quality": "Rare",
   	"Description": "Reward from killing the dragon of the mountain.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 40,
   	"BaseIntellect": 0,
   	"BaseArmor": 45
@@ -266,17 +248,16 @@
   	"Name": "Destroyer Gaunlets",
 	  "Quality": "Rare",
   	"Description": "From one of the greatest warrior, known as destroyer of worlds.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 42,
   	"BaseIntellect": 5,
   	"BaseArmor": 50
   },
-
   {
   	"Name": "Ice-Encrusted Gloves",
 	  "Quality": "Epic",
   	"Description": "From the icy regions of the planet, delivered by a penguin.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 60,
   	"BaseIntellect": 0,
   	"BaseArmor": 70
@@ -285,7 +266,7 @@
   	"Name": "Onslaught Gauntlets",
 	  "Quality": "Epic",
   	"Description": "When it smells blood nothing can stop it.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 62,
   	"BaseIntellect": -5,
   	"BaseArmor": 80
@@ -294,22 +275,16 @@
   	"Name": "Midas Touch",
 	  "Quality": "Legendary",
   	"Description": "Everything turns to gold, just like that yeah.",
-	  "Type": 3,
+	  "Type": 2,
   	"BaseStrength": 90,
   	"BaseIntellect": 20,
   	"BaseArmor": 95
   },
-  
-
-  //Chest:
-
-
-
-         {
+  {
   	"Name": "Ravager's Armor",
 	  "Quality": "Common",
   	"Description": "This armor is to be worn all the time so it can become adjusted to the person.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 1,
   	"BaseIntellect": 0,
   	"BaseArmor": 10
@@ -318,7 +293,7 @@
   	"Name": "Steel Chestplate",
 	  "Quality": "Common",
   	"Description": "Nothing beats steel.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 2,
   	"BaseIntellect": 0,
   	"BaseArmor": 11
@@ -327,7 +302,7 @@
   	"Name": "Cobalt Chespiece",
 	  "Quality": "Uncommon",
   	"Description": "Decorated with cobalt making it durable and awesome.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 10,
   	"BaseIntellect": 0,
   	"BaseArmor": 25
@@ -336,7 +311,7 @@
   	"Name": "Ornamented Chestguard",
 	  "Quality": "Uncommon",
   	"Description": "One of the smoothest plate around.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 14,
   	"BaseIntellect": 0,
   	"BaseArmor": 28
@@ -345,7 +320,7 @@
   	"Name": "Sunblessed Battleplate",
 	  "Quality": "Uncommon",
   	"Description": "Created in a ritual to harness the power of the sun.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 20,
   	"BaseIntellect": 0,
   	"BaseArmor": 34
@@ -354,7 +329,7 @@
   	"Name": "Battlechest of the Twilight",
 	  "Quality": "Rare",
   	"Description": "It powers up in nights of full moon.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 40,
   	"BaseIntellect": 0,
   	"BaseArmor": 45
@@ -363,7 +338,7 @@
   	"Name": "Dragonstorm Breastplate",
 	  "Quality": "Rare",
   	"Description": "Summon a storm making the ideal weather for this armor.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 42,
   	"BaseIntellect": 5,
   	"BaseArmor": 50
@@ -373,7 +348,7 @@
   	"Name": "Frost Wyrm Ribcage",
 	  "Quality": "Epic",
   	"Description": "Ribcage type of armor capable of freezing your weapon.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 60,
   	"BaseIntellect": 0,
   	"BaseArmor": 70
@@ -382,7 +357,7 @@
   	"Name": "Gladiator's Plate Chestpiece",
 	  "Quality": "Epic",
   	"Description": "Nothin can withstand more damage than a gladiator´s armor.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 62,
   	"BaseIntellect": -5,
   	"BaseArmor": 80
@@ -391,24 +366,16 @@
   	"Name": "Hide of Nemean Lion",
 	  "Quality": "Legendary",
   	"Description": "Taken from a giant lion, this armor was worn by Hercules.",
-	  "Type": 5,
+	  "Type": 4,
   	"BaseStrength": 90,
   	"BaseIntellect": 20,
   	"BaseArmor": 95
-  },
- 
-
-
-  //legs
-
-
-
-    
-         {
+  },  
+  {
   	"Name": "Plate Legguards",
 	  "Quality": "Common",
   	"Description": "Perfect against arrows.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 1,
   	"BaseIntellect": 0,
   	"BaseArmor": 10
@@ -417,7 +384,7 @@
   	"Name": "Steel Leggings",
 	  "Quality": "Common",
   	"Description": "One of the most common armours.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 2,
   	"BaseIntellect": 0,
   	"BaseArmor": 11
@@ -426,7 +393,7 @@
   	"Name": "Tempered Leggings",
 	  "Quality": "Uncommon",
   	"Description": "This is tempered steel making it stronger.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 10,
   	"BaseIntellect": 0,
   	"BaseArmor": 25
@@ -435,17 +402,16 @@
   	"Name": "Ornamented Leggings",
 	  "Quality": "Uncommon",
   	"Description": "Decorated to make an impact when you arrive.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 14,
   	"BaseIntellect": 0,
   	"BaseArmor": 28
   },
-
   {
   	"Name": "JUsticar Greaves",
 	  "Quality": "Rare",
   	"Description": "Used by officials of justice.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 40,
   	"BaseIntellect": 0,
   	"BaseArmor": 45
@@ -454,7 +420,7 @@
   	"Name": "Warlord's Iron-Legplates",
 	  "Quality": "Rare",
   	"Description": "From one of the strongest warlords, rumors say this armour belonged to him.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 42,
   	"BaseIntellect": 5,
   	"BaseArmor": 50
@@ -464,7 +430,7 @@
   	"Name": "Legguards of Endless Rage",
 	  "Quality": "Epic",
   	"Description": "No matter how hard the situation is this armour will never fail.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 60,
   	"BaseIntellect": 0,
   	"BaseArmor": 70
@@ -473,16 +439,16 @@
   	"Name": "Gladiator's Legguards",
 	  "Quality": "Epic",
   	"Description": "With some marks of usage, this armour can make you use your legs as weapons.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 62,
-  	"BaseIntellect": -5,
+  	"BaseIntellect": 0,
   	"BaseArmor": 80
   },
   {
   	"Name": "Thor's Legplates",
 	  "Quality": "Legendary",
   	"Description": "They shoot lightning too.",
-	  "Type": 6,
+	  "Type": 5,
   	"BaseStrength": 90,
   	"BaseIntellect": 20,
   	"BaseArmor": 95

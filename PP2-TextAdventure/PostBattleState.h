@@ -2,23 +2,22 @@
 #include "StateManager.h"
 #include "GameManager.h"
 #include "InputBox.h"
+#include "Globals.h"
 
-class Credits : public State
+class PostBattleState : public State
 {
 public:
-	Credits(sf::Font& font, InputBox& inputBox, StateManager& state);
-	~Credits();
+	PostBattleState(sf::Font& font, InputBox& inputBox, StateManager& state);
+	~PostBattleState();
 
 	void load() override;
 	void update() override;
 	void draw(sf::RenderWindow *window) override;
 
+	bool auxloot, firstTime;
+
 	StateManager& state;
 	sf::Font font;
 	InputBox& inputBox;
-
-	sf::Clock clock;
-
-	int auxpos;
 };
 

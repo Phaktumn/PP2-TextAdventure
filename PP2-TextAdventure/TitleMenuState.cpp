@@ -79,7 +79,10 @@ void TitleMenuState::update()
 			activeInput = true;
             stateManager.changeState("GameState"); 
 				break;
-
+		case 3:
+			activeInput = true;
+			stateManager.changeState("Credits");
+				break;
 			default:
 				break;
 		}

@@ -20,7 +20,7 @@ void BattleState::load()
 
 void BattleState::update()
 {
-	battleMenu->update(&inputBox);
+	battleMenu->update(&inputBox, font);
 }
 
 void BattleState::draw(sf::RenderWindow* window)

@@ -36,7 +36,6 @@ void InputBox::handleInput()
 		for (size_t i = 0; i < listeners.size(); i++) {
 			listeners[i](string);
 		}	
-
 		string.clear();
 		string += "> ";
 	}

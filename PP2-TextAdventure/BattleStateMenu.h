@@ -19,7 +19,7 @@ public:
 	BattleStateMenu(Player* player, Actor* enemy, StateManager& state);
 	~BattleStateMenu();
 
-	void update(InputBox* input);
+	void update(InputBox* input, sf::Font &font);
 	void draw(sf::RenderWindow* window, sf::Font &font);
 
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
@@ -31,7 +31,7 @@ public:
 
 private:
 	///////////////////////////////////////////////////
-	///////////////////////////////////////////////////               //
+	///////////////////////////////////////////////////               
 	////////////////////LOG////////////////////////////
 	///////////////////////////////////////////////////  
 	///////////////////////////////////////////////////
@@ -41,11 +41,19 @@ private:
 		LOG();
 		~LOG();
 		
-		void update();
-		void draw(sf::RenderWindow* window);
+		void load();
+		void update(Ability* ability, sf::Font &font, Actor* enemy);
+		void draw(sf::RenderWindow* window, sf::Font &font);
+
+		int lastSeenHP;
 
 	private:
+		int vector_count;
+		void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
+		void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 		
+		std::vector<sfe::RichText>::iterator iteLog;
+		std::vector<sfe::RichText> log;
 	};
 
 	//aux helpers aux helpers aux helpers
@@ -61,9 +69,15 @@ private:
 	//
 	//aux helpers aux helpers aux helpers
 
+	double auxCalc(Actor* actor);
+
+	sf::String Resource[10];
+	sf::String Hp[10];
+
 	bool inv;
-	bool abilitiesScreen;
+	bool inBattle;
 	bool BattleMenu;
+	bool isAtacking;
 
 	LOG* log;
 
