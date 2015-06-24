@@ -225,21 +225,6 @@ std::vector<sf::String> explodeAndTrim(const sf::String &string, sf::Uint32 deli
 	return result;
 }
 
-void RichText::wrapText()
-{
-	std::vector<Line> new_lines;
-
-	for (size_t i = 0; i < m_lines.size(); i++) {
-		Line* _line = &m_lines[i];
-		
-		/*std::cout << _line[0];*/
-
-		if (_line->getGlobalBounds().width > WINDOW_WRAP_WIDTH) {
-			
-		}
-	}
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 RichText & RichText::operator << (const sf::String &string)
 {
@@ -252,13 +237,15 @@ RichText & RichText::operator << (const sf::String &string)
 
     // Append first substring using the last line
     auto it = subStrings.begin();
+
     if (it != subStrings.end()) {
         // If there isn't any line, just create it
         if (m_lines.empty())
             m_lines.resize(1);
 
         // Remove last line's height
-        Line &line = m_lines.back();
+		Line &line = m_lines.back();
+		
         m_bounds.height -= line.getGlobalBounds().height;
 
         // Append text
