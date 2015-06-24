@@ -18,8 +18,6 @@ public:
 	
 	bool getloot();
 
-	bool getLoot();
-
 	StateManager& state;
 	sf::Font font;
 	InputBox& inputBox;
