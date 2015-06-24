@@ -46,6 +46,9 @@ MAGE
 	base strength
 	base intellect
 */
+#define WARRIOR_BASE_HP 1000
+#define MAGE_BASE_HP 1000
+
 #define WARRIOR_BASE_STRENGTH 15
 #define WARRIOR_BONUS_STRENGTH 0
 #define WARRIOR_BASE_INTELLECT 5

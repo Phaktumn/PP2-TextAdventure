@@ -10,6 +10,7 @@
 #include "LinkedList.h"
 #include "Ability.h"
 #include "UtilityAbility.h"
+#include "Globals.h"
 
 class Actor
 {
@@ -19,6 +20,7 @@ private:
 	int hp;
 	int mana;
 	int Damage;
+	int MaxHp;
 	LinkedList<Attribute*> attributes;
 	LinkedList<Ability*> abilities;
 	LinkedList<UtilityAbility*> buffs;
@@ -34,6 +36,7 @@ public:
 
 	std::string getActorName(){ return name; }
 	int getHp(){ return hp; }
+	int getMaxHP(){ return MaxHp; }
 
 	LinkedList<Ability*> getAbilities(){ return abilities; }
 
@@ -45,6 +48,7 @@ public:
 	void setState();
 	bool takeDamage(int damage);
 
-
+protected:
+	int level;
 };
 

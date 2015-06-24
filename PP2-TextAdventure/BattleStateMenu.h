@@ -42,8 +42,10 @@ private:
 		~LOG();
 		
 		void load();
-		void update(Ability* ability, sf::Font &font);
+		void update(Ability* ability, sf::Font &font, Actor* enemy);
 		void draw(sf::RenderWindow* window, sf::Font &font);
+
+		int lastSeenHP;
 
 	private:
 		int vector_count;
@@ -67,8 +69,13 @@ private:
 	//
 	//aux helpers aux helpers aux helpers
 
+	int auxCalc(Actor* actor);
+
+	sf::String Resource[10];
+	sf::String Hp[10];
+
 	bool inv;
-	bool abilitiesScreen;
+	bool inBattle;
 	bool BattleMenu;
 	bool isAtacking;
 

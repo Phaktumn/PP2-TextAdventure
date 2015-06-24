@@ -15,6 +15,7 @@ Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<A
 	//		abilities.add(_abilities[i]);
 	//	}
 	//}
+	MaxHp = hp;
 	alive = true;
 	stunned = false;
 }
@@ -31,7 +32,16 @@ void Actor::load()
 
 void Actor::update()
 {
+	if (this->getAttribute(BONUS_ARMOR)->getValue() > 10000 || this->getAttribute(BONUS_ARMOR)->getValue() < 10000)
+		MaxHp = WARRIOR_BASE_HP + (this->getAttribute(STRENGTH)->getValue() * 0.20f);
+	else MaxHp = WARRIOR_BASE_HP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 0.20f);
 
+	if (hp < MaxHp){
+		hp += 10;
+		if (hp > MaxHp){
+			hp = MaxHp;
+		}
+	}
 }
 
 void Actor::draw()

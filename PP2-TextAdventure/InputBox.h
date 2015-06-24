@@ -16,8 +16,9 @@ public:
 	std::string lastCommand();
 	void handleInput();
 
-private:
 	std::vector<std::string> log;
+
+private:
 	sf::Font font;
 	sf::Text text;
 	std::string string;
