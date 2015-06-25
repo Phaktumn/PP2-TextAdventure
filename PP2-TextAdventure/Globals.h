@@ -12,6 +12,9 @@
 
 extern int LAST_ENEMY_LEVEL;
 
+//variavel global intermedia
+extern int ZONE_LEVEL;
+
 #define BATTLE_PLAYER_NAME_POSITION_X 15
 #define BATTLE_PLAYER_NAME_POSITION_Y 50
 #define BATTLE_ENEMY_NAME_POSITION_X 550

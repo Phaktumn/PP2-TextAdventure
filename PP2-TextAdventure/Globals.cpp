@@ -6,6 +6,8 @@ int MAX_ARMOR = 100;
 
 int LAST_ENEMY_LEVEL = 0;
 
+int ZONE_LEVEL = 0;
+
 sf::String STRENGTH("Strength");
 sf::String BONUS_STRENGTH("Bonus Strength");
 

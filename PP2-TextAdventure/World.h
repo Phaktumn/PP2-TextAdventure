@@ -20,8 +20,8 @@ public:
 
 	bool pathExists(Location* start, Location* end);
 	bool circuitExists(Location* location);
-	void addLocation(const std::string& name, const std::string& description);
-	void addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription);
+	void addLocation(const std::string& name, const std::string& description, int locationLevel);
+	void addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription, int locationLevel);
 	void connect(const std::string& start, const std::string& dest, int distance, bool twoWay = false);
 	Location* getLocation(const std::string& name);
 	std::vector<std::string> getCurrentConnections() { return connections;  }
@@ -38,12 +38,12 @@ private:
 	class Location
 	{
 	public:
-		Location(const std::string& name, const std::string& description) :
-			_name(name), _description(description), hasDisplay(false)
+		Location(const std::string& name, const std::string& description, int zoneLevel) :
+			_name(name), _description(description), zoneLevel(zoneLevel), hasDisplay(false)
 		{ }
 
-		Location(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription) :
-			_name(name), _description(description), _displayName(displayName), _displayDescription(displayDescription), hasDisplay(true)
+		Location(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription, int zoneLevel) :
+			_name(name), _description(description), _displayName(displayName), _displayDescription(displayDescription), zoneLevel(zoneLevel), hasDisplay(true)
 		{ }
 
 		~Location() { }
@@ -75,6 +75,7 @@ private:
 					<< connections[i].distance << std::endl;
 			}
 		}
+		int getLocationLevel(){ return zoneLevel; }
 
 		void draw(sf::RenderWindow* window);
 
@@ -84,6 +85,8 @@ private:
 
 		sfe::RichText _displayName;
 		sfe::RichText _displayDescription;
+
+		int zoneLevel;
 
 		bool hasDisplay;
 	};

@@ -18,25 +18,33 @@ private:
 	std::string name;
 	bool alive;
 	int hp;
-	int mana;
+	int resource;
 	int Damage;
 	int MaxHp;
+	const int baseHP;
+	int MaxResource;
 	LinkedList<Attribute*> attributes;
 	LinkedList<Ability*> abilities;
 	LinkedList<UtilityAbility*> buffs;
 	bool stunned;
 
 public:
-	Actor(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level);
+	Actor(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level, int baseMaxHP, int baseMaxResource, const int baseHP);
 	~Actor();
 
 	void load();
 	void virtual update();
 	void draw();
 
+	void goFullUpdate();
+
 	std::string getActorName(){ return name; }
 	int getHp(){ return hp; }
 	int getMaxHP(){ return MaxHp; }
+
+	int getResource(){ return resource; }
+	int getMaxResource(){ return MaxResource; }
+	void changeMaxResource(int value){ MaxResource += value; }
 
 	LinkedList<Ability*> getAbilities(){ return abilities; }
 

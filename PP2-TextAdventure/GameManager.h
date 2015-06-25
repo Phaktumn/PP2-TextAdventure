@@ -13,6 +13,9 @@
 #include "DamageAbility.h"
 #include "World.h"
 #include "Player.h"
+#include "BattleStateMenu.h"
+
+class BattleStateMenu;
 
 class GameManager
 {
@@ -29,10 +32,10 @@ public:
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
 	static Attribute getAttribute_(const std::string &name);
-	static Actor* getMob(const std::string &name);
 
 	static std::string getLocationName(unsigned int location);
 	static std::string getLocationDescription(unsigned int location);
+	static int getLocationLevel(unsigned int location);
 
 	static void loadAbility(Ability* ability);
 	static void initializeAttributes();
@@ -43,11 +46,25 @@ public:
 	static LinkedList<Ability*> abilities;
 
 	static Player* playerPtr;
+
+	//gets and appropriate mob to battle with!
+	static Actor* getRandMob(const int level);
+
+	static Actor* getMob(const int code);
+	//resets the mobs stats!
+	static void reloadMOBS();
+
+	static BattleStateMenu* battleMenu;
+
 private:
 	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
-	static std::map<std::string, std::shared_ptr<Actor>> mobsDatabase;
+	static std::map<int, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
+	
 	static std::map<int, std::string> locationsDescriptions;
+	static std::map<int, int> locationsLevels;
+
+	static std::map<int, std::string> auxMobNAMES;
 
 	//MOBS ATTRIBUTES!
 	//MOB1

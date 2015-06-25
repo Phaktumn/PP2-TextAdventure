@@ -25,19 +25,19 @@ void World::moveTo(const std::string& name)
 	}
 }
 
-void World::addLocation(const std::string& name, const std::string& description)
+void World::addLocation(const std::string& name, const std::string& description, int locationLevel)
 {
-	locations.push_back(std::shared_ptr<Location>(new Location(name, description)));
+	locations.push_back(std::shared_ptr<Location>(new Location(name, description, locationLevel)));
 	if (locations.size() == 1) {
 		currentLocation = locations[0].get();
 	}
 }
 
-void World::addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription)
+void World::addLocation(const std::string& name, const std::string& description, sfe::RichText displayName, sfe::RichText displayDescription, int locationLevel)
 {
 	displayName.setPosition(LOCATION_NAME_POSITION_X, LOCATION_NAME_POSITION_Y);
 	displayDescription.setPosition(LOCATION_DESCRIPTION_POSITION_X, LOCATION_DESCRIPTION_POSITION_Y);
-	Location* loc = new Location(name, description, displayName, displayDescription);
+	Location* loc = new Location(name, description, displayName, displayDescription, locationLevel);
 	
 	locations.push_back(std::shared_ptr<Location>(loc));
 

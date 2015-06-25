@@ -6,10 +6,12 @@ std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
 std::map<std::string, sf::Text> drawnText;
 std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
 
-std::map<std::string, std::shared_ptr<Actor>> GameManager::mobsDatabase;
+std::map<int, std::shared_ptr<Actor>> GameManager::mobsDatabase;
+std::map<int, std::string> GameManager::auxMobNAMES;
 
 std::map<int, std::string> GameManager::locationDatabase;
 std::map<int, std::string> GameManager::locationsDescriptions;
+std::map<int, int> GameManager::locationsLevels;
 
 LinkedList<Attribute*> GameManager::attribute;
 LinkedList<Ability*> GameManager::abilities;
@@ -19,6 +21,7 @@ LinkedList<Attribute*> GameManager::mob_2_Attributes;
 
 Actor* GameManager::player;
 Player* GameManager::playerPtr;
+BattleStateMenu* GameManager::battleMenu;
 
 GameManager::GameManager()
 {
@@ -42,10 +45,10 @@ void GameManager::loadGlobals() {
 	//==============================================================================
 
 	//ABILITIES WARRIOR================================================================================
-	abilities.add(new DamageAbility("Alpha Strike", Ability::MANA, 15, 5, DamageAbility::strength));
-	abilities.add(new DamageAbility("Death Strike", Ability::MANA, 15, 10, DamageAbility::strength));
-	abilities.add(new DamageAbility("Master Plan", Ability::MANA, 15, 15, DamageAbility::strength));
-	abilities.add(new DamageAbility("Darkness", Ability::MANA, 50, 15, DamageAbility::strength));
+	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 25, 20, DamageAbility::strength, 2.0f));
+	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 35, 25, DamageAbility::strength, 1.2f));
+	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 85, 85, DamageAbility::strength, 1.5f));
+	abilities.add(new DamageAbility("Darkness", Ability::RAGE, 100, 100, DamageAbility::strength, 2.5f));
 	//=================================================================================================
 	
 	//ABILITIES MAGE================================================================================
@@ -53,7 +56,7 @@ void GameManager::loadGlobals() {
 	//==============================================================================================
 
 	//PLAYER=========================================================================================
-	player = new Player("jorge", GameManager::attribute, GameManager::abilities, WARRIOR_BASE_HP, 250, 1);
+	player = new Player("jorge", GameManager::attribute, GameManager::abilities, WARRIOR_BASE_HP, 500, 1, 1000, 500, WARRIOR_BASE_HP);
 	playerPtr = (Player*)player;
 	//===============================================================================================
 
@@ -64,39 +67,73 @@ void GameManager::loadGlobals() {
 
 void GameManager::addMobs()
 {
-	//Attributes MOB1
+	//Attributes MOBLv1
 	mob_1_Attributes.add(GameManager::getAttribute("mobStrength1"));
 	mob_1_Attributes.add(GameManager::getAttribute("mobIntellect1"));
 	mob_1_Attributes.add(GameManager::getAttribute("mobArmor1"));
 	//
-	//Attributes MOB2
+	//Attributes MOBLv2
 	mob_2_Attributes.add(GameManager::getAttribute("mobStrength2"));
 	mob_2_Attributes.add(GameManager::getAttribute("mobIntellect2"));
 	mob_2_Attributes.add(GameManager::getAttribute("mobArmor2"));
 	//
-	//Attributes MOB3
+	//Attributes MOBLv3
+
+	//
+	//Attributes MOBLv4
 
 	//
 
 
 
-
 	//MOBS LV1
-	mobsDatabase.emplace("mob1", std::shared_ptr<Actor>(new Actor("mob1", GameManager::mob_1_Attributes, GameManager::abilities, 50, 10,1)));
-	
-	
+	mobsDatabase.emplace(0, std::shared_ptr<Actor>(new Actor("::Genesis::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
+	mobsDatabase.emplace(1, std::shared_ptr<Actor>(new Actor("::Dark Bulb::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
+	mobsDatabase.emplace(2, std::shared_ptr<Actor>(new Actor("::Mutation::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
+	mobsDatabase.emplace(3, std::shared_ptr<Actor>(new Actor("::Forest Ogre::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
+	mobsDatabase.emplace(4, std::shared_ptr<Actor>(new Actor("::Mummy::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
 
 	//MOBS LV2
-	mobsDatabase.emplace("mob2", std::shared_ptr<Actor>(new Actor("mob2", GameManager::mob_2_Attributes, GameManager::abilities, 65, 25, 2)));
-	mobsDatabase["mob2"].get()->update();
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Soul eater<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 525, 2, 525, 525, 525)));
 
 
 	//MOBS LV3
+
+	for (size_t i = 0; i < mobsDatabase.size(); i++){
+		mobsDatabase[i].get()->goFullUpdate();
+	}
 }
 
-Actor* GameManager::getMob(const std::string &name)
-{
-	return mobsDatabase[name].get();
+void GameManager::reloadMOBS(){
+	for (size_t i = 0; i < mobsDatabase.size(); i++){
+		mobsDatabase[i].get()->goFullUpdate();
+	}
+}
+
+Actor* GameManager::getRandMob(const int level){
+	srand(time(NULL));
+	auxMobNAMES.clear();
+	int aux;
+	int AUX_CONT = 0;
+
+	for (int i = 0; i < mobsDatabase.size(); i++)
+	{
+		if (mobsDatabase[i].get()->getLevel() == level){
+			auxMobNAMES.emplace(AUX_CONT, getMob(i)->getActorName());
+			AUX_CONT++;
+		}
+	}
+	if (auxMobNAMES.size() != 0)
+		aux = rand() % auxMobNAMES.size();
+	for (int i = 0; i < mobsDatabase.size(); i++)
+	{
+		if (mobsDatabase[i].get()->getActorName() == auxMobNAMES[aux])
+			return mobsDatabase[i].get();
+	}
+}
+
+Actor* GameManager::getMob(const int code){
+	return mobsDatabase[code].get();
 }
 
 void GameManager::loadItems(const std::string &filePath)
@@ -212,9 +249,11 @@ void GameManager::loadLocations(const std::string &filePath)
 
 			std::string name = locationObj["Name"].as<std::string>();
 			std::string description = locationObj["Description"].as<std::string>();
+			int zoneLevel = locationObj["Level"].as<int>();
 
 			locationDatabase.emplace(i, name);
 			locationsDescriptions.emplace(i, description);
+			locationsLevels.emplace(i, zoneLevel);
 		}
 		catch(const jsoncons::json_exception& e){
 			std::cerr << e.what() << std::endl;
@@ -243,9 +282,9 @@ void GameManager::initializeAttributes(){
 	attributesDatabase.emplace("mobArmor1", std::shared_ptr<Attribute>(new Attribute(ARMOR, 5)));
 
 	//mob Lv2
-	attributesDatabase.emplace("mobStrength2", std::shared_ptr<Attribute>(new Attribute(STRENGTH, 7)));
-	attributesDatabase.emplace("mobIntellect2", std::shared_ptr<Attribute>(new Attribute(INTELLECT, 7)));
-	attributesDatabase.emplace("mobArmor2", std::shared_ptr<Attribute>(new Attribute(ARMOR, 10)));
+	attributesDatabase.emplace("mobStrength2", std::shared_ptr<Attribute>(new Attribute(STRENGTH, 10)));
+	attributesDatabase.emplace("mobIntellect2", std::shared_ptr<Attribute>(new Attribute(INTELLECT, 10)));
+	attributesDatabase.emplace("mobArmor2", std::shared_ptr<Attribute>(new Attribute(ARMOR, 25)));
 }
 
 Item* GameManager::getItem(const std::string &itemName){
@@ -272,5 +311,9 @@ std::string GameManager::getLocationName(unsigned int location){
 std::string GameManager::getLocationDescription(unsigned int location){
 	if (location >= locationsDescriptions.size()) return "out of range";
 	return locationsDescriptions[location];
+}
+
+int GameManager::getLocationLevel(unsigned int location){
+	return locationsLevels[location];
 }
 

@@ -1,8 +1,8 @@
 #include "Actor.h"
 #include <SFML/Graphics.hpp>
 
-Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana,int level)
-	: name(_name), attributes(_attributes), abilities(_abilities), hp(hp), mana(mana), level(level)
+Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana,int level, int baseMaxHP, int baseMaxResource, const int _baseHP)
+: name(_name), attributes(_attributes), abilities(_abilities), hp(hp), resource(mana), level(level), baseHP(_baseHP)
 {
 	//int length = sizeof(_attributes)/sizeof(*_attributes);
 	//for (int i = 0; i < length; i++){
@@ -15,7 +15,8 @@ Actor::Actor(std::string _name, LinkedList<Attribute*> _attributes, LinkedList<A
 	//		abilities.add(_abilities[i]);
 	//	}
 	//}
-	MaxHp = hp;
+	MaxHp = baseMaxHP;
+	MaxResource = baseMaxResource;
 	alive = true;
 	stunned = false;
 }
@@ -33,15 +34,21 @@ void Actor::load()
 void Actor::update()
 {
 	if (this->getAttribute(BONUS_ARMOR)->getValue() > 10000 || this->getAttribute(BONUS_ARMOR)->getValue() < 0)
-		MaxHp = WARRIOR_BASE_HP + (this->getAttribute(STRENGTH)->getValue() * 0.50f);
-	else MaxHp = WARRIOR_BASE_HP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 0.50f);
-
+		MaxHp = baseHP + (this->getAttribute(STRENGTH)->getValue() * 7.50f);
+	else MaxHp = baseHP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 7.50f);
+	if (hp < 0) alive = false;
 	if (hp < MaxHp){
-		hp = MaxHp;
-		/*if (hp > MaxHp){
+		hp += 150;
+		if (hp > MaxHp){
 			hp = MaxHp;
-		}*/
+		}
 	}
+}
+
+void Actor::goFullUpdate()
+{
+	hp = MaxHp;
+	resource = MaxResource;
 }
 
 void Actor::draw()

@@ -20,7 +20,7 @@ void LocationsManager::AddLocations(){
 
 	for (size_t i = 0; i < GameManager::locationDatabase.size(); i++){
 		world->addLocation(GameManager::getLocationName(i), GameManager::getLocationDescription(i), 
-			titleFont << GameManager::getLocationName(i), descriptionFont << GameManager::getLocationDescription(i));
+			titleFont << GameManager::getLocationName(i), descriptionFont << GameManager::getLocationDescription(i), GameManager::getLocationLevel(i));
 
 		titleFont.clear();
 		descriptionFont.clear();

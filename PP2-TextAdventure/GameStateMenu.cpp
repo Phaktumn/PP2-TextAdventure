@@ -75,14 +75,19 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		for (size_t i = 0; i < world->getConnections().size(); i++)
 		{
 			std::string nome = world->getConnections()[i]->getName();
-			std::transform(nome.begin(), nome.end(), nome.begin(), ::tolower);
+			std::string transfomed = nome;
+			std::transform(transfomed.begin(), transfomed.end(), transfomed.begin(), ::tolower);
 
-			if (command == nome) {
+			if (command == transfomed) {
 				world->moveTo(world->getConnections()[i]->getName());
 				auxInv = false;
 				auxPaths = false;
 				srand(time(NULL));
-				if (GameStateMenu::randomEncounter()) state.changeState("BattleState");
+				if (GameStateMenu::randomEncounter()){ 
+					state.changeState("BattleState");
+					ZONE_LEVEL = world->getLocation(nome)->getLocationLevel();
+					GameManager::battleMenu = new BattleStateMenu(GameManager::playerPtr, GameManager::getRandMob(ZONE_LEVEL), state);
+				}
 			}
 		}
 	}

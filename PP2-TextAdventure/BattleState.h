@@ -20,7 +20,6 @@ public:
 private:
 	InputBox& inputBox;
 	sf::Font font;
-	BattleStateMenu* battleMenu;
 
 	StateManager& state;
 

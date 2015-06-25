@@ -1,7 +1,7 @@
 #include "Player.h"
 
-Player::Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level)
-	: Actor(name, _attributes, _abilities, hp, mana, level)
+Player::Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level, int _baseMaxHP, int baseMaxResource, int baseHP)
+	: Actor(name, _attributes, _abilities, hp, mana, level, _baseMaxHP, baseMaxResource, baseHP)
 {
 	inventory = new Inventory(this);
 	TotalExperience = 500;
@@ -14,8 +14,9 @@ Player::~Player()
 
 void Player::update(){
 	if (leveled){
-		this->getAttribute(STRENGTH)->changeValue(level * 3);
-		this->getAttribute(INTELLECT)->changeValue(level * 2);
+		this->getAttribute(STRENGTH)->changeValue(level * 5);
+		this->getAttribute(INTELLECT)->changeValue(level * 3);
+		this->changeMaxResource(level * 50);
 		leveled = false;
 	}
 	Actor::update();

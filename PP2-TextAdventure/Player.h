@@ -11,7 +11,7 @@ private:
 	Inventory* inventory;
 
 public:
-	Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level);
+	Player(std::string name, LinkedList<Attribute*> _attributes, LinkedList<Ability*> _abilities, int hp, int mana, int level, int _baseMaxHP, int baseMaxResource, const int baseHP);
 	~Player();
 
 	int Experience, TotalExperience;
