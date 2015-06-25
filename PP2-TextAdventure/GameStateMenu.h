@@ -8,6 +8,8 @@
 #include "Player.h"
 #include "GameManager.h"
 #include "Globals.h"
+#include "Inventory.h"
+#include <SFML/Audio.hpp>
 
 
 class GameStateMenu
@@ -15,6 +17,10 @@ class GameStateMenu
 public:
 	GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager, Player* playerPtr);
 	~GameStateMenu();
+
+	sf::Music music;
+
+	bool auxMusic = true;
 
 	void update(InputBox& inputBox, World* world, std::string command);
 	void draw(sf::RenderWindow* window, World* world);

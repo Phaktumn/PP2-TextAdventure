@@ -60,6 +60,12 @@ void BattleStateMenu::updateVars()
 }
 
 void BattleStateMenu::update(InputBox* input, sf::Font &font){
+	if (auxMusic)
+	{
+		if (!music.openFromFile("songs/inBattle.ogg")){ std::cout << "ERROR" << std::endl; } // error
+		auxMusic = false;
+		music.play();
+	}
 	if (input->lastCommand() == "attack"){
 		inBattle = true;
 		BattleMenu = false;
@@ -69,6 +75,8 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 		updateVars();
 	}
 	if (input->lastCommand() == "run away"){
+		music.stop();
+		auxMusic = true;
 		state.changeState("GameState");
 		input->log.push_back("-1");
 		playerPtr->update();
@@ -109,6 +117,21 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 				updateVars();
 			}
 		}
+	}
+	if (!GameManager::battleMenu->getEnemyInBattle()->isAlive()){
+		GameManager::reloadMOBS();
+		LAST_ENEMY_LEVEL = GameManager::battleMenu->getEnemyInBattle()->getLevel();
+		GameManager::playerPtr->afterBattle(GameManager::battleMenu->getEnemyInBattle()->getLevel() * 100);
+		music.stop();
+		auxMusic = true;
+		state.changeState("PostBattleState");
+	}
+	if (!GameManager::battleMenu->getPlayerInBattle()->isAlive()){
+		GameManager::reloadMOBS();
+		GameManager::battleMenu->getPlayerInBattle()->goFullUpdate();
+		music.stop();
+		auxMusic = true;
+		state.changeState("GameState");
 	}
 }
 

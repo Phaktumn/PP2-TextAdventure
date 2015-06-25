@@ -8,6 +8,7 @@
 #include "InputBox.h"
 #include "World.h"
 #include "LocationsManager.h"
+#include <SFML/Audio.hpp>
 
 
 class GameState : public State
@@ -19,6 +20,7 @@ public:
 	virtual void load() override;
 	virtual void update() override;
 	virtual void draw(sf::RenderWindow* window) override;
+	
 
 protected:
 	sf::Font font;

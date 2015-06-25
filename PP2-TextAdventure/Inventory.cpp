@@ -1,10 +1,12 @@
 #include "Inventory.h"
 
+LinkedList<Item*> Inventory::bag;
+LinkedList<Item*> Inventory::getBag(){ return bag; }
+
 Inventory::Inventory(Player* player) : player(player)
 {
 
 }
-
 
 Inventory::~Inventory()
 {
@@ -204,8 +206,8 @@ void Inventory::drawBag(sf::RenderWindow* window, sf::Font &font){
 			sf::String item_type = std::to_string(bag.get(i)->type);
 			count_AUX++;
 			positionY = (count_AUX * 40);
-			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") " << item_type, CHARACTER_SIZE, window);
-			bag.get(i)->draw(window, &font, 100, 20 + (i * 20));
+			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") " , CHARACTER_SIZE, window);
+			bag.get(i)->draw(window, &font, positionX + 25, positionY + (i * 20));
 			if (positionY >= 325){
 				positionX = 450;
 				positionY = 20;

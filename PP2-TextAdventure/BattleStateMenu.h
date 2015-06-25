@@ -10,6 +10,7 @@
 #include "StateManager.h"
 #include "Ability.h"
 #include "BattleManager.h"
+#include <SFML/Audio.hpp>
 
 class BattleStateMenu
 {
@@ -18,6 +19,10 @@ public:
 
 	BattleStateMenu(Player* player, Actor* enemy, StateManager& state);
 	~BattleStateMenu();
+
+	sf::Music music;
+
+	bool auxMusic = true;
 
 	void update(InputBox* input, sf::Font &font);
 	void draw(sf::RenderWindow* window, sf::Font &font);

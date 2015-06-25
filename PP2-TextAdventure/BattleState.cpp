@@ -20,18 +20,7 @@ void BattleState::load()
 
 void BattleState::update()
 {
-	if (!GameManager::battleMenu->getEnemyInBattle()->isAlive()){
-		GameManager::reloadMOBS();
-		LAST_ENEMY_LEVEL = GameManager::battleMenu->getEnemyInBattle()->getLevel();
-		GameManager::playerPtr->afterBattle(GameManager::battleMenu->getEnemyInBattle()->getLevel() * 100);
-		state.changeState("PostBattleState");
-	}
-	if (!GameManager::battleMenu->getPlayerInBattle()->isAlive()){
-		GameManager::reloadMOBS();
-		GameManager::battleMenu->getPlayerInBattle()->goFullUpdate();
-		state.changeState("GameState");
-	}
-	else GameManager::battleMenu->update(&inputBox, font);
+	GameManager::battleMenu->update(&inputBox, font);
 }
 
 void BattleState::draw(sf::RenderWindow* window)

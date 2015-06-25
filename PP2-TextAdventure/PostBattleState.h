@@ -3,6 +3,7 @@
 #include "GameManager.h"
 #include "InputBox.h"
 #include "Globals.h"
+#include <SFML/Audio.hpp>
 
 class PostBattleState : public State
 {
@@ -15,6 +16,10 @@ public:
 	void draw(sf::RenderWindow *window) override;
 
 	bool auxloot, firstTime;
+
+	sf::Music music;
+
+	bool auxMusic = true;
 	
 	struct HELPERS
 	{

@@ -16,6 +16,12 @@ PostBattleState::~PostBattleState()
 void PostBattleState::load(){}
 
 void PostBattleState::update(){
+	if (auxMusic)
+	{
+		if (!music.openFromFile("songs/WinCheer.ogg")){ std::cout << "ERROR" << std::endl; } // error
+		auxMusic = false;
+		music.play();
+	}
 	_player.LEVEL = GameManager::playerPtr->getLevel();
 	_player.XP = GameManager::playerPtr->getXp();
 	_player.TXP = GameManager::playerPtr->getTXp();
@@ -28,6 +34,8 @@ void PostBattleState::update(){
 	}
 	if (inputBox.lastCommand() == "continue")
 	{
+		music.stop();
+		auxMusic = true;
 		state.changeState("GameState");
 		auxloot = false;
 		firstTime = true;

@@ -1,4 +1,5 @@
 #include "GameStateMenu.h"
+#include <typeinfo>
 
 GameStateMenu::GameStateMenu(sf::Font& font, InputBox& inputBox, StateManager& stateManager, Player* _Player) : font(font), state(stateManager)
 {
@@ -33,6 +34,12 @@ void GameStateMenu::drawText(float x, float y, sfe::RichText text, int size, sf:
 
 void GameStateMenu::update(InputBox& inputBox, World* world, std::string command)
 {
+	if (auxMusic)
+	{
+		if (!music.openFromFile("songs/inGame.ogg")){ std::cout << "ERROR" << std::endl; } // error
+		auxMusic = false;
+		music.play();
+	}
 	_player.HP =  GameManager::playerPtr->getHp();
 	_player.ARMOR = GameManager::playerPtr->getAttribute(ARMOR)->getValue() + GameManager::playerPtr->getAttribute(BONUS_ARMOR)->getValue();
 	_player.STRENGTH = GameManager::playerPtr->getAttribute(STRENGTH)->getValue() + GameManager::playerPtr->getAttribute(BONUS_STRENGTH)->getValue();
@@ -46,6 +53,8 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		GameManager::playerPtr->update();
 	}
 	if (command == "quit") {
+		music.stop();
+		auxMusic = true;
 		state.changeState("TitleMenuState");
 		activeInput = false;
 	}
@@ -74,12 +83,38 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 				srand(time(NULL));
 				if (GameStateMenu::randomEncounter()){ 
 					GameManager::playerPtr->goFullUpdate();
+					music.stop();
+					auxMusic = true;
 					state.changeState("BattleState");
 					ZONE_LEVEL = world->getLocation(nome)->getLocationLevel();
 					GameManager::battleMenu = new BattleStateMenu(GameManager::playerPtr, GameManager::getRandMob(ZONE_LEVEL), state);
 				}
 			}
 		}
+	}
+	if (auxBag)
+	{
+		/*for (size_t i = 0; i < _BAG_MAX_SLOTS; i++)
+		{
+				std::string nome = Inventory::getBag().get(i)->getName();
+				std::string transfomed = nome;
+				std::transform(transfomed.begin(), transfomed.end(), transfomed.begin(), ::tolower);
+
+				if (command == transfomed)
+				{
+					if (Inventory::getBag().get(i)->weapon)
+					{
+						Inventory::equipWeapon((Weapon*)Inventory::getBag().get(i));
+					}
+					else
+					{
+						Inventory::equipWeapon((Armor*)Inventory::getBag().get(i));
+					}
+					
+				}
+			
+
+		}*/
 	}
 	if (command == "battle")
 		state.changeState("BattleState");
@@ -92,12 +127,14 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 	{
 		drawText(15, 325, "> Paths", font, 24, window);
 		drawText(15, 350, "> Inventory", font, 24, window);
-		drawText(15, 375, "> Bags", font, 24, window);
+		drawText(15, 375, "> Bag", font, 24, window);
 		drawText(15, 400, "> Quit", font, 24, window);
 
 	}
 	if (auxBag){
 		GameManager::playerPtr->getInventory()->drawBag(window, font);
+		drawText(15, 325, "-> Write down the name of the item you want to equip.", font, 24, window);
+		drawText(15, 475, "> Back", font, 24, window);
 	}
 
 	if (auxPaths)

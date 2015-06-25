@@ -3,6 +3,7 @@
 #include "StateManager.h"
 #include "GameManager.h"
 #include <memory>
+#include <SFML/Audio.hpp>
 
 class TitleMenuState : public State
 {
@@ -13,6 +14,9 @@ public:
 	void load() override;
 	void update() override;
 	void draw(sf::RenderWindow* window) override;
+	sf::Music music;
+
+	bool auxMusic = true;
 
 private:
 	const unsigned int MENU_OPTIONS_COUNT = 4;

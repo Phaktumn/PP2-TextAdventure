@@ -50,6 +50,12 @@ void TitleMenuState::load()
 
 void TitleMenuState::update()
 {
+	if (auxMusic)
+	{
+		if (!music.openFromFile("songs/inMenu.wav")){ std::cout << "ERROR" << std::endl; } // error
+		auxMusic = false;
+		music.play();
+	}
 	previousDown = down;
 	previousUp = up;
 	previousDown2 = down2;
@@ -77,6 +83,8 @@ void TitleMenuState::update()
 		{
 		case 0:  
 			activeInput = true;
+			music.stop();
+			auxMusic = true;
             stateManager.changeState("GameState"); 
 				break;
 		case 3:
