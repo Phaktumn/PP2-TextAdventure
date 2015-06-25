@@ -70,6 +70,7 @@ private:
 	struct HELPERS
 	{
 		int HP;
+		int RESOURCE;
 		int STRENGTH;
 		int ARMOR;
 	}_player, _enemy;
@@ -79,6 +80,8 @@ private:
 
 	double auxCalc(Actor* actor);
 	double auxCalcResource(Actor* actor);
+
+	void updateVars();
 
 	sf::String Resource[10];
 	sf::String Hp[10];

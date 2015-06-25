@@ -38,6 +38,7 @@ void BattleManager::applyDamage(Actor* caster, DamageAbility* damageAbility, Act
 		caster->changeResource(-(damageAbility->getCost()));
 
 		target->takeDamage(calculateDamage(targetArmor, abilityDamage));
+		caster->update();
 	}
 }
 

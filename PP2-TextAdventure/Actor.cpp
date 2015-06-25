@@ -43,8 +43,11 @@ void Actor::update()
 			resource = MaxResource;
 		}
 	}
+	//health regen XD
 	if (hp < MaxHp){
-		hp += 150;
+		if (this->getAttribute(BONUS_INTELLECT) == nullptr)
+			hp += ceil(0.8f * this->getAttribute(INTELLECT)->getValue());
+		else hp += ceil(0.8f * this->getAttribute(INTELLECT)->getValue() + this->getAttribute(BONUS_INTELLECT)->getValue());
 		if (hp > MaxHp){
 			hp = MaxHp;
 		}
