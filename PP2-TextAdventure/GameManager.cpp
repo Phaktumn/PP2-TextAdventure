@@ -45,7 +45,7 @@ void GameManager::loadGlobals() {
 	//==============================================================================
 
 	//ABILITIES WARRIOR================================================================================
-	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 100, 20, DamageAbility::strength, 2.0f));
+	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 100, 20, DamageAbility::strength, 3.0f));
 	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 175, 25, DamageAbility::strength, 1.2f));
 	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 200, 85, DamageAbility::strength, 1.5f));
 	abilities.add(new DamageAbility("Darkness", Ability::RAGE, 300, 100, DamageAbility::strength, 2.5f));
@@ -71,6 +71,8 @@ void GameManager::addMobs()
 	mob_1_Attributes.add(GameManager::getAttribute("mobStrength1"));
 	mob_1_Attributes.add(GameManager::getAttribute("mobIntellect1"));
 	mob_1_Attributes.add(GameManager::getAttribute("mobArmor1"));
+	//ABILITIES MOBLv1
+
 	//
 	//Attributes MOBLv2
 	mob_2_Attributes.add(GameManager::getAttribute("mobStrength2"));
@@ -78,7 +80,9 @@ void GameManager::addMobs()
 	mob_2_Attributes.add(GameManager::getAttribute("mobArmor2"));
 	//
 	//Attributes MOBLv3
-
+	mob_2_Attributes.add(GameManager::getAttribute("mobStrength3"));
+	mob_2_Attributes.add(GameManager::getAttribute("mobIntellect3"));
+	mob_2_Attributes.add(GameManager::getAttribute("mobArmor3"));
 	//
 	//Attributes MOBLv4
 
@@ -94,8 +98,12 @@ void GameManager::addMobs()
 	mobsDatabase.emplace(4, std::shared_ptr<Actor>(new Actor("::Mummy::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
 
 	//MOBS LV2
-	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Soul eater<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 525, 2, 525, 525, 525)));
-
+	//                                                                                                                             hp, mana, level, basemaxhp, maResource, )));
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Soul eater<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 525, 600, 525)));
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Tirion Fordring<<", GameManager::mob_2_Attributes, GameManager::abilities, 600, 600, 2, 525, 600, 600)));
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Muradin Bronzebeard<<", GameManager::mob_2_Attributes, GameManager::abilities, 500, 600, 2, 600, 525, 525)));
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Kil'jaeden<<", GameManager::mob_2_Attributes, GameManager::abilities, 550, 600, 2, 525, 600, 525)));
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>The Land Rusher<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 600, 525, 525)));
 
 	//MOBS LV3
 
@@ -285,6 +293,11 @@ void GameManager::initializeAttributes(){
 	attributesDatabase.emplace("mobStrength2", std::shared_ptr<Attribute>(new Attribute(STRENGTH, 10)));
 	attributesDatabase.emplace("mobIntellect2", std::shared_ptr<Attribute>(new Attribute(INTELLECT, 10)));
 	attributesDatabase.emplace("mobArmor2", std::shared_ptr<Attribute>(new Attribute(ARMOR, 25)));
+
+	//mob lv3
+	attributesDatabase.emplace("mobStrength2", std::shared_ptr<Attribute>(new Attribute(STRENGTH, 25)));
+	attributesDatabase.emplace("mobIntellect2", std::shared_ptr<Attribute>(new Attribute(INTELLECT, 20)));
+	attributesDatabase.emplace("mobArmor2", std::shared_ptr<Attribute>(new Attribute(ARMOR, 50)));
 }
 
 Item* GameManager::getItem(const std::string &itemName){

@@ -25,7 +25,9 @@ public:
 
 	sf::Clock clock;
 
-	bool getloot();
+	Item* drop();
+	bool CALCgetloot();
+	int genRand();
 
 	StateManager& state;
 	sf::Font font;

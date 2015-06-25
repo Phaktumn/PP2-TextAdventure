@@ -33,6 +33,8 @@ public:
 	static Attribute* getAttribute(const std::string &name);
 	static Attribute getAttribute_(const std::string &name);
 
+	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
+
 	static std::string getLocationName(unsigned int location);
 	static std::string getLocationDescription(unsigned int location);
 	static int getLocationLevel(unsigned int location);
@@ -57,7 +59,6 @@ public:
 	static BattleStateMenu* battleMenu;
 
 private:
-	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
 	static std::map<int, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
 	

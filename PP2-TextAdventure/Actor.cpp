@@ -55,8 +55,7 @@ void Actor::goFullUpdate()
 {
 	hp = MaxHp;
 	resource = MaxResource;
-	if (hp < 0) alive = false;
-	else alive = true;
+	alive = true;
 }
 
 void Actor::draw()
