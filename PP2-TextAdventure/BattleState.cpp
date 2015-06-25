@@ -26,6 +26,11 @@ void BattleState::update()
 		GameManager::playerPtr->afterBattle(GameManager::battleMenu->getEnemyInBattle()->getLevel() * 100);
 		state.changeState("PostBattleState");
 	}
+	if (!GameManager::battleMenu->getPlayerInBattle()->isAlive()){
+		GameManager::reloadMOBS();
+		GameManager::battleMenu->getPlayerInBattle()->goFullUpdate();
+		state.changeState("GameState");
+	}
 	else GameManager::battleMenu->update(&inputBox, font);
 }
 
