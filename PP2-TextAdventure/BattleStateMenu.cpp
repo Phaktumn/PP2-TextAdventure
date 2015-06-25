@@ -11,16 +11,16 @@ BattleStateMenu::BattleStateMenu(Player* _player, Actor* _enemy, StateManager& _
 	isAtacking = false;
 	log = new LOG();
 
-	Resource[9] = "[+ + + + + + + + + +]";
-	Resource[8] = "[+ + + + + + + + +  ]";
-	Resource[7] = "[+ + + + + + + +    ]";
-	Resource[6] = "[+ + + + + + +      ]";
-	Resource[5] = "[+ + + + + +        ]";
-	Resource[4] = "[+ + + + +          ]";
-	Resource[3] = "[+ + + +            ]";
-	Resource[2] = "[+ + +              ]";
-	Resource[1] = "[+ +                ]";
-	Resource[0] = "[+                  ]";
+	Resource[9] = "[: : : : : : : : : :]";
+	Resource[8] = "[: : : : : : : : :  ]";
+	Resource[7] = "[: : : : : : : :    ]";
+	Resource[6] = "[: : : : : : :      ]";
+	Resource[5] = "[: : : : : :        ]";
+	Resource[4] = "[: : : : :          ]";
+	Resource[3] = "[: : : :            ]";
+	Resource[2] = "[: : :              ]";
+	Resource[1] = "[: :                ]";
+	Resource[0] = "[:                  ]";
 
 	Hp[9] = "[: : : : : : : : : :]";
 	Hp[8] = "[: : : : : : : : :  ]";
@@ -93,6 +93,7 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 	if (inBattle)
 	{
 		log->lastSeenHP = enemy->getHp();
+		log->lastSeenResource = playerPtr->getResource();
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++)
 		{
 			sf::String _ability = playerPtr->getAbilities().get(i)->getName();
@@ -100,9 +101,9 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 			std::transform(ability_transform.begin(), ability_transform.end(), ability_transform.begin(), ::tolower);
 			if (input->lastCommand() == ability_transform){
 				BattleManager::applyDamage(playerPtr,(DamageAbility*)playerPtr->getAbility(_ability),enemy);
+				log->update((DamageAbility*)playerPtr->getAbility(_ability), font, enemy, playerPtr);
 				inBattle = true;
 				BattleMenu = false;
-				log->update((DamageAbility*)playerPtr->getAbility(_ability), font, enemy, playerPtr);
 				input->log.push_back("-1");
 				playerPtr->update();
 			}
@@ -157,7 +158,7 @@ void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Red << Resource[(int)round(abs(auxCalcResource(enemy)))], CHARACTER_SIZE, window);
 
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++){
-			drawText(15, 320 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName(), CHARACTER_SIZE, window);
+			drawText(15, 320 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName() << "  (" << std::to_string(playerPtr->getAbilities().get(i)->getCost()) << ")", CHARACTER_SIZE, window);
 		}
 		drawText(15, WINDOW_HEIGHT - 100, "> Pass Turn", font, 24, window);
 		drawText(15, WINDOW_HEIGHT - 75, "> Back", font, 24, window);
@@ -218,7 +219,7 @@ void BattleStateMenu::LOG::load(){
 void BattleStateMenu::LOG::update(Ability* ability, sf::Font &font, Actor* enemy, Actor* player){
 
 	sfe::RichText text(font);
-	if (ability->getCost() > player->getResource())
+	if (ability->getCost() > lastSeenResource)
 		text << sf::Color::Red << "====!ABILITY NOT READY YET!====";
 	else text << "Used Ability-> " << sf::Color::Red << ability->getName() << "  ::Damage Dealt: " << sf::Color::Blue << std::to_string(lastSeenHP - enemy->getHp());
 	vector_count++;

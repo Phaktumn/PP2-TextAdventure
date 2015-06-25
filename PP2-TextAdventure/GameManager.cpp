@@ -45,10 +45,10 @@ void GameManager::loadGlobals() {
 	//==============================================================================
 
 	//ABILITIES WARRIOR================================================================================
-	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 25, 20, DamageAbility::strength, 2.0f));
-	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 35, 25, DamageAbility::strength, 1.2f));
-	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 85, 85, DamageAbility::strength, 1.5f));
-	abilities.add(new DamageAbility("Darkness", Ability::RAGE, 100, 100, DamageAbility::strength, 2.5f));
+	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 100, 20, DamageAbility::strength, 2.0f));
+	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 175, 25, DamageAbility::strength, 1.2f));
+	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 200, 85, DamageAbility::strength, 1.5f));
+	abilities.add(new DamageAbility("Darkness", Ability::RAGE, 300, 100, DamageAbility::strength, 2.5f));
 	//=================================================================================================
 	
 	//ABILITIES MAGE================================================================================

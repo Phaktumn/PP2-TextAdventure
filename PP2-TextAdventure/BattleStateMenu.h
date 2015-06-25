@@ -49,6 +49,7 @@ private:
 		void draw(sf::RenderWindow* window, sf::Font &font);
 
 		int lastSeenHP;
+		int lastSeenResource;
 
 	private:
 		int vector_count;
