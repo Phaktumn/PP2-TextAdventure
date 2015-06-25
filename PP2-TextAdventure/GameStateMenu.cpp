@@ -115,6 +115,7 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		for (int i = 0; i < world->getConnections().size(); i++){
 			int j = i + 1;
 			drawText(15, 325 + i * 25, sfe::RichText(font) << std::to_string(j) << ") " << world->getConnections()[i]->getName(), 24, window);
+			drawText(300, 325 + i * 25, sfe::RichText(font) <<  sf::Color::Red  << " Level " << std::to_string(world->getConnections()[i]->getLocationLevel()), CHARACTER_SIZE, window);
 		}
 		drawText(15, 400, "> Back", font, 24, window);
 	}

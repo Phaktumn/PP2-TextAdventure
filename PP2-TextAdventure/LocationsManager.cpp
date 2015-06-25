@@ -31,10 +31,25 @@ void LocationsManager::AddLocations(){
 void LocationsManager::AddConnections(){
 	world->connect(GameManager::getLocationName(0), GameManager::getLocationName(1), 10, false);
 	world->connect(GameManager::getLocationName(0), GameManager::getLocationName(2), 43, false);
-	world->connect(GameManager::getLocationName(0), GameManager::getLocationName(3), 14, false);
+	world->connect(GameManager::getLocationName(0), GameManager::getLocationName(3), 14, true);
 
-	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(2), 43, false);
-	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(3), 11, true);
+	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(5), 10, false);
+	world->connect(GameManager::getLocationName(1), GameManager::getLocationName(6), 43, false);
+	
+	world->connect(GameManager::getLocationName(2), GameManager::getLocationName(6), 10, false);
+	
+	world->connect(GameManager::getLocationName(3), GameManager::getLocationName(4), 10, true);
+
+	world->connect(GameManager::getLocationName(4), GameManager::getLocationName(8), 10, true);
+	world->connect(GameManager::getLocationName(4), GameManager::getLocationName(9), 43, false);
+
+	world->connect(GameManager::getLocationName(5), GameManager::getLocationName(4), 10, false);
+
+	world->connect(GameManager::getLocationName(6), GameManager::getLocationName(7), 10, false);
+	
+	world->connect(GameManager::getLocationName(7), GameManager::getLocationName(5), 10, false);
+	
+
 }
 
 void LocationsManager::load(){
