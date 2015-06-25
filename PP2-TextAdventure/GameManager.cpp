@@ -2,8 +2,7 @@
 #include "Globals.h"
 
 
-std::map<std::string, std::shared_ptr<Item>> GameManager::itemDatabase;
-std::map<int, std::string> GameManager::itemNames;
+std::map<int, std::shared_ptr<Item>> GameManager::itemDatabase;
 
 std::map<std::string, sf::Text> drawnText;
 std::map<std::string, std::shared_ptr<Attribute>> GameManager::attributesDatabase;
@@ -188,8 +187,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
 
-			itemDatabase.emplace(name, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
-			itemNames.emplace(i, name);
+			itemDatabase.emplace(i, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
 		}
 		
 		catch (const jsoncons::json_exception& e) {
@@ -211,8 +209,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
 
-			itemDatabase.emplace(name, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
-			itemNames.emplace(i, name);
+			itemDatabase.emplace(i, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
 		}
 
 		catch (const jsoncons::json_exception& e) {
@@ -238,8 +235,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 			Item::Type type = static_cast<Item::Type>(Type);
 
-			itemDatabase.emplace(name, std::shared_ptr<Item>(new Weapon(sf::String(qualityString), sf::String(name), type, baseStr, baseInt, damage)));
-			itemNames.emplace(i, name);
+			itemDatabase.emplace(i, std::shared_ptr<Item>(new Weapon(sf::String(qualityString), sf::String(name), type, baseStr, baseInt, damage)));
 		}
 		catch (const jsoncons::json_exception& e) {
 			std::cerr << e.what() << std::endl;
@@ -326,18 +322,8 @@ void GameManager::initializeAttributes(){
 	attributesDatabase.emplace("mobArmor3", std::shared_ptr<Attribute>(new Attribute(ARMOR, 50)));
 }
 
-Item* GameManager::getItem(const std::string &itemName){
-	return itemDatabase[itemName].get();
-}
-
 Item* GameManager::getItem(const int key){
-	int Aux_Counter = 0;
-	for (size_t Iteration_Count = 0; Iteration_Count < itemDatabase.size(); Iteration_Count++)
-	{
-		if (Iteration_Count == key){
-			return itemDatabase[itemNames[Iteration_Count]].get();
-		}
-	}
+	return itemDatabase[key].get();
 }
 
 Attribute* GameManager::getAttribute(const std::string &attributeName){

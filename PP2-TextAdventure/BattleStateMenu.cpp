@@ -91,14 +91,6 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 	}
 	if (inBattle)
 	{
-		if (input->lastCommand() == "pass turn"){
-			input->log.push_back("-1");
-			playerPtr->update();
-			updateVars();
-		}
-	}
-	if (inBattle)
-	{
 		log->lastSeenHP = enemy->getHp();
 		log->playerLastSeenHP = playerPtr->getHp();
 		log->lastSeenResource = playerPtr->getResource();
@@ -173,7 +165,6 @@ void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++){
 			drawText(15, 320 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName() << "  (" << std::to_string(playerPtr->getAbilities().get(i)->getCost()) << ")", CHARACTER_SIZE, window);
 		}
-		drawText(15, WINDOW_HEIGHT - 100, "> Pass Turn", font, 24, window);
 		drawText(15, WINDOW_HEIGHT - 75, "> Back", font, 24, window);
 	}
 	if (inv)

@@ -28,13 +28,12 @@ public:
 	static void loadMobs(const std::string &filePath);
 	static void loadLocations(const std::string &filePath);
 
-	static Item* getItem(const std::string &name);
 	static Item* getItem(const int key);
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
 	static Attribute getAttribute_(const std::string &name);
 
-	static std::map<std::string, std::shared_ptr<Item>> itemDatabase;
+	static std::map<int, std::shared_ptr<Item>> itemDatabase;
 
 	static std::string getLocationName(unsigned int location);
 	static std::string getLocationDescription(unsigned int location);
@@ -67,8 +66,6 @@ private:
 	static std::map<int, int> locationsLevels;
 
 	static std::map<int, std::string> auxMobNAMES;
-
-	static std::map<int, std::string> itemNames;
 
 	//MOBS ATTRIBUTES!
 	//MOB1

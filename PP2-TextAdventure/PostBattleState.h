@@ -26,11 +26,14 @@ public:
 	sf::Clock clock;
 
 	//gets the drop
-	Item* getDrop();
+	void getDrop();
 	//generate a random number to drop
 	int genRand();
 	//calculate if get drop or not!
 	bool CALCgetloot();
+	bool droped;
+
+	Item* dropedItem;
 
 	StateManager& state;
 	sf::Font font;

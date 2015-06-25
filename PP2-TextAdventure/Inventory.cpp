@@ -193,20 +193,21 @@ void Inventory::drawBag(sf::RenderWindow* window, sf::Font &font){
 			positionY = (count_AUX * 40);
 			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") No Item", CHARACTER_SIZE, window);
 			if (positionY >= 250){
-				positionX = 250;
+				positionX = 450;
 				positionY = 20;
 				count_AUX = 0;
 			}
 		}
 		else
 		{
+			//
 			sf::String item_type = std::to_string(bag.get(i)->type);
 			count_AUX++;
 			positionY = (count_AUX * 40);
 			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") " << item_type, CHARACTER_SIZE, window);
 			bag.get(i)->draw(window, &font, 100, 20 + (i * 20));
 			if (positionY >= 325){
-				positionX = 250;
+				positionX = 450;
 				positionY = 20;
 				count_AUX = 0;
 			}
@@ -242,9 +243,12 @@ Weapon* Inventory::getEquipedWeapon()
 }
 
 bool Inventory::addToBags(Item* _item){
+	if (_item == nullptr) return false;
+
 	if (bag.getLength() + 1 > _BAG_MAX_SLOTS){
 		return false;
 	}
+
 	bag.add(_item);
 	return true;
 }

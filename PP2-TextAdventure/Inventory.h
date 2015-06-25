@@ -26,7 +26,8 @@ public:
 
 	Weapon* getEquipedWeapon();
 
-	LinkedList<Item*> getBag(){ return bag; }
+	LinkedList<Item*> bag;
+
 	bool addToBags(Item* _item);
 
 private:
@@ -34,7 +35,6 @@ private:
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 
-	LinkedList<Item*> bag;
 	Armor* chest;
 	Armor* head;
 	Armor* hands;

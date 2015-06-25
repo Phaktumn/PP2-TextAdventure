@@ -84,6 +84,7 @@ type LinkedList<type>::get(int index)
 	if (ptr != nullptr){
 		while (i < index) {
 			ptr = ptr->next;
+			if (ptr == nullptr) return nullptr;
 			i++;
 		}
 		return ptr->value;

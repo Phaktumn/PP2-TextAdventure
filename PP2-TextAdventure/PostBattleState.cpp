@@ -4,6 +4,8 @@
 PostBattleState::PostBattleState(sf::Font& font, InputBox& inputBox, StateManager& state) : font(font), state(state), inputBox(inputBox)
 {
 	auxloot = false;
+	droped = false;
+	firstTime = true;
 }
 
 
@@ -41,36 +43,33 @@ void PostBattleState::draw(sf::RenderWindow *window){
 
 	if (auxloot)
 	{
-		
 		drawText(10, 350, sfe::RichText(font) << "AND you've got some loot too!!!", CHARACTER_SIZE, window);
-		getDrop()->draw(window, &font, 10, 380);
+		dropedItem->draw(window, &font, 10, 380);
 	}
-	else 
-		drawText(10, 350, "And nothing more...", font,CHARACTER_SIZE, window);
-
+	else drawText(10, 350, "And nothing more...", font,CHARACTER_SIZE, window);
 
 	drawText(15, 475, "> Continue", font, 24, window);
 }
 
-Item* PostBattleState::getDrop()
+void PostBattleState::getDrop()
 {
 	int auxRand = genRand();
-	if (auxloot){
-		for (size_t i = 0; i < GameManager::itemDatabase.size(); i++)
-		{
-			if (i == auxloot){
-				if (GameManager::playerPtr->getInventory()->addToBags(GameManager::getItem(genRand())))
-					return GameManager::playerPtr->getInventory()->getBag().get(GameManager::playerPtr->getInventory()->getBag().getLength() - 1);
-				else return nullptr;
-			}
-		}
+	dropedItem = GameManager::getItem(auxRand);
+	if (GameManager::playerPtr->getInventory()->addToBags(dropedItem)){
+		return;
+	}
+	else{
+		auxloot = false;
 	}
 }
 
 bool PostBattleState::CALCgetloot(){
 	int aux;
 	aux = rand() % 100;
-	if (aux > 70) return true;
+	if (aux > 0) {
+		getDrop();
+		return true;
+	}
 	else return false;
 }
 
