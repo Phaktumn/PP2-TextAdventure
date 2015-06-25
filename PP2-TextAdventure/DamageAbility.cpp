@@ -19,9 +19,18 @@ DamageAbility::~DamageAbility()
 int DamageAbility::getFullDamage(Actor* caster){
 
 	int multiplierDMG = 0;
-	int casterPower = caster->getAttribute(STRENGTH)->getValue() + caster->getAttribute(BONUS_STRENGTH)->getValue();
-	int casterIntellect = caster->getAttribute(INTELLECT)->getValue() + caster->getAttribute(BONUS_INTELLECT)->getValue();
-
+	int casterPower;
+	int casterIntellect;
+	if (caster->getAttribute(BONUS_STRENGTH) == nullptr && caster->getAttribute(BONUS_INTELLECT) == nullptr)
+	{
+		casterPower = caster->getAttribute(STRENGTH)->getValue();
+		casterIntellect = caster->getAttribute(INTELLECT)->getValue();
+	}
+	else
+	{
+		casterPower = caster->getAttribute(STRENGTH)->getValue() + caster->getAttribute(BONUS_STRENGTH)->getValue();
+		casterIntellect = caster->getAttribute(INTELLECT)->getValue() + caster->getAttribute(BONUS_INTELLECT)->getValue();
+	}
 	switch (attributeMultiplyer)
 	{
 	case DamageAbility::strength:

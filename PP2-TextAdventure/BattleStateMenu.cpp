@@ -93,6 +93,7 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 	if (inBattle)
 	{
 		log->lastSeenHP = enemy->getHp();
+		log->playerLastSeenHP = playerPtr->getHp();
 		log->lastSeenResource = playerPtr->getResource();
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++)
 		{
@@ -106,6 +107,7 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 				BattleMenu = false;
 				input->log.push_back("-1");
 				playerPtr->update();
+				if (enemy->getHp() > 0) BattleStateMenu::EnemyAI(enemy, font);
 			}
 		}
 	}
@@ -217,8 +219,8 @@ void BattleStateMenu::LOG::update(Ability* ability, sf::Font &font, Actor* enemy
 
 	sfe::RichText text(font);
 	if (ability->getCost() > lastSeenResource)
-		text << sf::Color::Red << "====!ABILITY NOT READY YET!====";
-	else text << "Used Ability-> " << sf::Color::Red << ability->getName() << "  ::Damage Dealt: " << sf::Color::Blue << std::to_string(lastSeenHP - enemy->getHp());
+		text << sf::Color::Red << "====!NOT ENOUGH RESOURCES!====";
+	else text << "Player Used Ability-> " << sf::Color::Red << ability->getName() << "  ::Damage Dealt: " << sf::Color::Blue << std::to_string(lastSeenHP - enemy->getHp());
 	vector_count++;
 	iteLog = log.begin();
 	iteLog = log.insert(iteLog, text);
@@ -236,9 +238,22 @@ void BattleStateMenu::LOG::draw(sf::RenderWindow* window, sf::Font &font){
 	}
 }
 
-void BattleStateMenu::EnemyAI(Actor* enemy)
+void BattleStateMenu::LOG::updateEnemy(Ability* ability, sf::Font &font, Actor* enemy, Actor* player)
+{
+	sfe::RichText text(font);
+	text << "Enemy Used Ability-> " << sf::Color::Red << ability->getName() << "  ::Damage Dealt: " << sf::Color::Blue << std::to_string(playerLastSeenHP - player->getHp());
+	vector_count++;
+	iteLog = log.begin();
+	iteLog = log.insert(iteLog, text);
+	if (vector_count > 3){
+		log.pop_back();
+	}
+}
+
+void BattleStateMenu::EnemyAI(Actor* enemy, sf::Font &font)
 {
 	float aux = (100 * enemy->getHp()) / enemy->getMaxHP();
+	sf::String _ability = playerPtr->getAbilities().get(0)->getName();
 
 	//if (aux >= 70) //ABILITY ONE
 	//if (aux >= 40 && aux < 70) //ABILITY TWO
@@ -246,6 +261,8 @@ void BattleStateMenu::EnemyAI(Actor* enemy)
 
 	//PARA SIMPLIFICAR O ENEMY APENAS USA BASIC ATTACKS
 
-	BattleManager::applyDamage(enemy, (DamageAbility*)enemy->getAbility(), playerPtr);
+	BattleManager::applyDamage(enemy, (DamageAbility*)playerPtr->getAbility(_ability), playerPtr);
+	log->updateEnemy((DamageAbility*)playerPtr->getAbility(_ability), font, enemy, playerPtr);
+
 
 }

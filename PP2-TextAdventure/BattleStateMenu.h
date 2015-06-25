@@ -25,7 +25,7 @@ public:
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 	
-	void BattleStateMenu::EnemyAI(Actor* enemy);
+	void BattleStateMenu::EnemyAI(Actor* enemy, sf::Font &font);
 
 	Actor* getPlayerInBattle(){ return playerPtr; }
 	Actor* getEnemyInBattle(){ return enemy; }
@@ -48,9 +48,11 @@ private:
 		
 		void load();
 		void update(Ability* ability, sf::Font &font, Actor* enemy, Actor* player);
+		void updateEnemy(Ability* ability, sf::Font &font, Actor* enemy, Actor* player);
 		void draw(sf::RenderWindow* window, sf::Font &font);
 
 		int lastSeenHP;
+		int playerLastSeenHP;
 		int lastSeenResource;
 
 	private:

@@ -48,7 +48,7 @@ void GameManager::loadGlobals() {
 	//==============================================================================
 
 	//ABILITIES WARRIOR================================================================================
-	abilities.add(new DamageAbility("Auto Atack", Ability::NORESOURCE, 0, 30, DamageAbility::strength, 1.0f));
+	abilities.add(new DamageAbility("Auto Attack", Ability::NORESOURCE, 0, 30, DamageAbility::strength, 1.0f));
 	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 100, 50, DamageAbility::strength, 3.0f));
 	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 175, 75, DamageAbility::strength, 1.2f));
 	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 200, 100, DamageAbility::strength, 1.5f));
@@ -104,10 +104,10 @@ void GameManager::addMobs()
 	//MOBS LV2
 	//                                                                                                                             hp, mana, level, basemaxhp, maResource, )));
 	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Soul eater<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 525, 600, 525)));
-	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Tirion Fordring<<", GameManager::mob_2_Attributes, GameManager::abilities, 600, 600, 2, 525, 600, 600)));
-	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Muradin Bronzebeard<<", GameManager::mob_2_Attributes, GameManager::abilities, 500, 600, 2, 600, 525, 525)));
-	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Kil'jaeden<<", GameManager::mob_2_Attributes, GameManager::abilities, 550, 600, 2, 525, 600, 525)));
-	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>The Land Rusher<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 600, 525, 525)));
+	mobsDatabase.emplace(6, std::shared_ptr<Actor>(new Actor(">>Tirion Fordring<<", GameManager::mob_2_Attributes, GameManager::abilities, 600, 600, 2, 525, 600, 600)));
+	mobsDatabase.emplace(7, std::shared_ptr<Actor>(new Actor(">>Muradin Bronzebeard<<", GameManager::mob_2_Attributes, GameManager::abilities, 500, 600, 2, 600, 525, 525)));
+	mobsDatabase.emplace(8, std::shared_ptr<Actor>(new Actor(">>Kil'jaeden<<", GameManager::mob_2_Attributes, GameManager::abilities, 550, 600, 2, 525, 600, 525)));
+	mobsDatabase.emplace(9, std::shared_ptr<Actor>(new Actor(">>The Land Rusher<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 600, 525, 525)));
 
 	//MOBS LV3
 
