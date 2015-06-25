@@ -97,19 +97,38 @@ void GameManager::addMobs()
 	//MOBS LV1
 	mobsDatabase.emplace(0, std::shared_ptr<Actor>(new Actor("::Genesis::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
 	mobsDatabase.emplace(1, std::shared_ptr<Actor>(new Actor("::Dark Bulb::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
-	mobsDatabase.emplace(2, std::shared_ptr<Actor>(new Actor("::Mutation::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
+	mobsDatabase.emplace(2, std::shared_ptr<Actor>(new Actor("::Dark Worshipper::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
 	mobsDatabase.emplace(3, std::shared_ptr<Actor>(new Actor("::Forest Ogre::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
 	mobsDatabase.emplace(4, std::shared_ptr<Actor>(new Actor("::Mummy::", GameManager::mob_1_Attributes, GameManager::abilities, 350, 150, 1, 350, 150, 350)));
 
 	//MOBS LV2
 	//                                                                                                                             hp, mana, level, basemaxhp, maResource, )));
-	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor(">>Soul eater<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 525, 600, 525)));
-	mobsDatabase.emplace(6, std::shared_ptr<Actor>(new Actor(">>Tirion Fordring<<", GameManager::mob_2_Attributes, GameManager::abilities, 600, 600, 2, 525, 600, 600)));
-	mobsDatabase.emplace(7, std::shared_ptr<Actor>(new Actor(">>Muradin Bronzebeard<<", GameManager::mob_2_Attributes, GameManager::abilities, 500, 600, 2, 600, 525, 525)));
-	mobsDatabase.emplace(8, std::shared_ptr<Actor>(new Actor(">>Kil'jaeden<<", GameManager::mob_2_Attributes, GameManager::abilities, 550, 600, 2, 525, 600, 525)));
-	mobsDatabase.emplace(9, std::shared_ptr<Actor>(new Actor(">>The Land Rusher<<", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 600, 525, 525)));
+	mobsDatabase.emplace(5, std::shared_ptr<Actor>(new Actor("||Soul eater||", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 525, 600, 525)));
+	mobsDatabase.emplace(6, std::shared_ptr<Actor>(new Actor("||Mutated Grub||", GameManager::mob_2_Attributes, GameManager::abilities, 600, 600, 2, 525, 600, 600)));
+	mobsDatabase.emplace(7, std::shared_ptr<Actor>(new Actor("||Mad Scientist||", GameManager::mob_2_Attributes, GameManager::abilities, 500, 600, 2, 600, 525, 525)));
+	mobsDatabase.emplace(8, std::shared_ptr<Actor>(new Actor("||Tomb Horror||", GameManager::mob_2_Attributes, GameManager::abilities, 550, 600, 2, 525, 600, 525)));
+	mobsDatabase.emplace(9, std::shared_ptr<Actor>(new Actor("||Necro Knight||", GameManager::mob_2_Attributes, GameManager::abilities, 525, 600, 2, 600, 525, 525)));
 
 	//MOBS LV3
+	mobsDatabase.emplace(10, std::shared_ptr<Actor>(new Actor("@Ghostwing@", GameManager::mob_3_Attributes, GameManager::abilities, 730, 600, 3, 750, 600, 730)));
+	mobsDatabase.emplace(11, std::shared_ptr<Actor>(new Actor("@Bone Giant@", GameManager::mob_3_Attributes, GameManager::abilities, 730, 600, 3, 750, 600, 730)));
+	mobsDatabase.emplace(12, std::shared_ptr<Actor>(new Actor("@Carnage@", GameManager::mob_3_Attributes, GameManager::abilities, 730, 600, 3, 750, 600, 730)));
+	mobsDatabase.emplace(13, std::shared_ptr<Actor>(new Actor("@Animated Laborer@", GameManager::mob_3_Attributes, GameManager::abilities, 730, 600, 3, 750, 600, 730)));
+	mobsDatabase.emplace(14, std::shared_ptr<Actor>(new Actor("@Boneguard Scout@", GameManager::mob_3_Attributes, GameManager::abilities, 730, 600, 3, 750, 600, 730)));
+
+	//MOBS LV4
+	mobsDatabase.emplace(15, std::shared_ptr<Actor>(new Actor("*High Warlord*", GameManager::mob_3_Attributes, GameManager::abilities, 1000, 800, 4, 1100, 800, 1000)));
+	mobsDatabase.emplace(16, std::shared_ptr<Actor>(new Actor("*Shadow Demon*", GameManager::mob_3_Attributes, GameManager::abilities, 1000, 800, 4, 1100, 800, 1000)));
+	mobsDatabase.emplace(17, std::shared_ptr<Actor>(new Actor("*Sister of Pain*", GameManager::mob_3_Attributes, GameManager::abilities, 1000, 800, 4, 1100, 800, 1000)));
+	mobsDatabase.emplace(18, std::shared_ptr<Actor>(new Actor("*Sister of pleasure*", GameManager::mob_3_Attributes, GameManager::abilities, 1000, 800, 4, 1100, 800, 1000)));
+	mobsDatabase.emplace(19, std::shared_ptr<Actor>(new Actor("*Aqueous Lord*", GameManager::mob_3_Attributes, GameManager::abilities, 1000, 800, 4, 1100, 800, 1000)));
+
+	//MOBS LV5
+	mobsDatabase.emplace(20, std::shared_ptr<Actor>(new Actor(">>Illidan Stormrage<<", GameManager::mob_3_Attributes, GameManager::abilities, 1200, 900, 5, 1300, 950, 1200)));
+	mobsDatabase.emplace(21, std::shared_ptr<Actor>(new Actor(">>Tirion Fordring<<", GameManager::mob_3_Attributes, GameManager::abilities, 1200, 900, 5, 1300, 950, 1200)));
+	mobsDatabase.emplace(22, std::shared_ptr<Actor>(new Actor(">>Muradin Bronzebeard<<", GameManager::mob_3_Attributes, GameManager::abilities, 1200, 900, 5, 1300, 950, 1200)));
+	mobsDatabase.emplace(23, std::shared_ptr<Actor>(new Actor(">>Kil'jaeden<<", GameManager::mob_3_Attributes, GameManager::abilities, 1200, 900, 5, 1300, 950, 1200)));
+	mobsDatabase.emplace(24, std::shared_ptr<Actor>(new Actor(">>Lady Vash<<", GameManager::mob_3_Attributes, GameManager::abilities, 1200, 900, 5, 1300, 950, 1200)));
 
 	for (size_t i = 0; i < mobsDatabase.size(); i++){
 		mobsDatabase[i].get()->goFullUpdate();
@@ -302,9 +321,9 @@ void GameManager::initializeAttributes(){
 	attributesDatabase.emplace("mobArmor2", std::shared_ptr<Attribute>(new Attribute(ARMOR, 25)));
 
 	//mob lv3
-	attributesDatabase.emplace("mobStrength2", std::shared_ptr<Attribute>(new Attribute(STRENGTH, 25)));
-	attributesDatabase.emplace("mobIntellect2", std::shared_ptr<Attribute>(new Attribute(INTELLECT, 20)));
-	attributesDatabase.emplace("mobArmor2", std::shared_ptr<Attribute>(new Attribute(ARMOR, 50)));
+	attributesDatabase.emplace("mobStrength3", std::shared_ptr<Attribute>(new Attribute(STRENGTH, 25)));
+	attributesDatabase.emplace("mobIntellect3", std::shared_ptr<Attribute>(new Attribute(INTELLECT, 20)));
+	attributesDatabase.emplace("mobArmor3", std::shared_ptr<Attribute>(new Attribute(ARMOR, 50)));
 }
 
 Item* GameManager::getItem(const std::string &itemName){
