@@ -37,6 +37,12 @@ void Actor::update()
 		MaxHp = baseHP + (this->getAttribute(STRENGTH)->getValue() * 7.50f);
 	else MaxHp = baseHP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 7.50f);
 	if (hp < 0) alive = false;
+	if (resource < MaxResource){
+		resource += 50;
+		if (resource > MaxResource){
+			resource = MaxResource;
+		}
+	}
 	if (hp < MaxHp){
 		hp += 150;
 		if (hp > MaxHp){
@@ -49,6 +55,8 @@ void Actor::goFullUpdate()
 {
 	hp = MaxHp;
 	resource = MaxResource;
+	if (hp < 0) alive = false;
+	else alive = true;
 }
 
 void Actor::draw()

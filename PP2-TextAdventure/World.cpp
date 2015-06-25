@@ -1,9 +1,9 @@
 #include "World.h"
 #include "Globals.h"
 
-void World::draw(sf::RenderWindow* window)
+void World::draw(sf::RenderWindow* window, sf::Font& font)
 {
-	currentLocation->draw(window);
+	currentLocation->draw(window, font);
 }
 
 void World::moveTo(const std::string& name)
@@ -88,9 +88,10 @@ void World::debugPrintConnections(const std::string& name)
 	loc->debugPrintConnections();
 }
 
-void World::Location::draw(sf::RenderWindow* window)
+void World::Location::draw(sf::RenderWindow* window, sf::Font& font)
 {
  	if (!hasDisplay) return;
+	drawText(LOCATION_NAME_POSITION_X + 300, LOCATION_NAME_POSITION_Y, sfe::RichText(font) << "Location NPC LvL: " << sf::Color::Red << std::to_string(zoneLevel), CHARACTER_SIZE, window);
 	window->draw(_displayName);
 	window->draw(_displayDescription);
 }
@@ -138,4 +139,21 @@ bool World::pathExists(Location* start, Location* end)
 	}
 
 	return exists;
+}
+
+
+void World::Location::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window){
+	sf::Text _text;
+	_text.setPosition(x, y);
+	_text.setString(text);
+	_text.setFont(font);
+	_text.setCharacterSize(size);
+
+	window->draw(_text);
+}
+void World::Location::drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window){
+	text.setPosition(x, y);
+	text.setCharacterSize(size);
+
+	window->draw(text);
 }

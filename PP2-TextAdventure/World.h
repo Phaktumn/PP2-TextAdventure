@@ -15,7 +15,7 @@ public:
 	struct Path;
 	static const struct Path EmptyPath;
 
-	void draw(sf::RenderWindow* window);
+	void draw(sf::RenderWindow* window, sf::Font& font);
 	void moveTo(const std::string& name);
 
 	bool pathExists(Location* start, Location* end);
@@ -77,9 +77,12 @@ private:
 		}
 		int getLocationLevel(){ return zoneLevel; }
 
-		void draw(sf::RenderWindow* window);
+		void draw(sf::RenderWindow* window, sf::Font& font);
 
 	private:
+		void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
+		void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
+
 		std::string _name;
 		std::string _description;
 

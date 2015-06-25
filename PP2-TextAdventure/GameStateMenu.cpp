@@ -141,7 +141,9 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		drawText(15, 475, "> Back", font, 24, window);
 	}
 	if (!auxInv && !auxBag && !auxPaths)
-		world->draw(window);
+	{
+		world->draw(window, font);
+	}
 }
 
 bool GameStateMenu::randomEncounter()

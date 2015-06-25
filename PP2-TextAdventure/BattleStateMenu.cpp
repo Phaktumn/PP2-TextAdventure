@@ -11,27 +11,27 @@ BattleStateMenu::BattleStateMenu(Player* _player, Actor* _enemy, StateManager& _
 	isAtacking = false;
 	log = new LOG();
 
-	Resource[9] = "[: : : : : : : : : :]";
-	Resource[8] = "[: : : : : : : : :  ]";
-	Resource[7] = "[: : : : : : : :    ]";
-	Resource[6] = "[: : : : : : :     ]";
-	Resource[5] = "[: : : : : :      ]";
-	Resource[4] = "[: : : : :       ]";
-	Resource[3] = "[: : : :        ]";
-	Resource[2] = "[: : :         ]";
-	Resource[1] = "[: :          ]";
-	Resource[0] = "[:           ]";
+	Resource[9] = "[+ + + + + + + + + +]";
+	Resource[8] = "[+ + + + + + + + +  ]";
+	Resource[7] = "[+ + + + + + + +    ]";
+	Resource[6] = "[+ + + + + + +      ]";
+	Resource[5] = "[+ + + + + +        ]";
+	Resource[4] = "[+ + + + +          ]";
+	Resource[3] = "[+ + + +            ]";
+	Resource[2] = "[+ + +              ]";
+	Resource[1] = "[+ +                ]";
+	Resource[0] = "[+                  ]";
 
 	Hp[9] = "[: : : : : : : : : :]";
 	Hp[8] = "[: : : : : : : : :  ]";
 	Hp[7] = "[: : : : : : : :    ]";
-	Hp[6] = "[: : : : : : :     ]";
-	Hp[5] = "[: : : : : :      ]";
-	Hp[4] = "[: : : : :       ]";
-	Hp[3] = "[: : : :        ]";
-	Hp[2] = "[: : :         ]";
-	Hp[1] = "[: :          ]";
-	Hp[0] = "[:		      ]";
+	Hp[6] = "[: : : : : : :      ]";
+	Hp[5] = "[: : : : : :        ]";
+	Hp[4] = "[: : : : :          ]";
+	Hp[3] = "[: : : :            ]";
+	Hp[2] = "[: : :              ]";
+	Hp[1] = "[: :                ]";
+	Hp[0] = "[:                  ]";
 }
 
 
@@ -85,6 +85,13 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 	}
 	if (inBattle)
 	{
+		if (input->lastCommand() == "pass turn"){
+			input->log.push_back("-1");
+			playerPtr->update();
+		}
+	}
+	if (inBattle)
+	{
 		log->lastSeenHP = enemy->getHp();
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++)
 		{
@@ -95,7 +102,7 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 				BattleManager::applyDamage(playerPtr,(DamageAbility*)playerPtr->getAbility(_ability),enemy);
 				inBattle = true;
 				BattleMenu = false;
-				log->update((DamageAbility*)playerPtr->getAbility(_ability), font, enemy);
+				log->update((DamageAbility*)playerPtr->getAbility(_ability), font, enemy, playerPtr);
 				input->log.push_back("-1");
 				playerPtr->update();
 			}
@@ -108,12 +115,17 @@ double BattleStateMenu::auxCalc(Actor* actor){
 	return ((actor->getHp() * 9) / maxHP);
 }
 
+double BattleStateMenu::auxCalcResource(Actor* actor){
+	int maxResource = actor->getMaxResource();
+	return ((actor->getResource() * 9) / maxResource);
+}
+
 void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 	if (BattleMenu)
 	{
 		sf::String targetAxuHP = std::to_string(_enemy.HP);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X-150, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X-150, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
 
 		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 75, "ATRIBUTES", font, CHARACTER_SIZE, window);
 		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 100,
@@ -134,17 +146,20 @@ void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Green << "------" << playerPtr->getActorName() << "------", CHARACTER_SIZE, window);
 		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << auxHP, CHARACTER_SIZE, window);
 		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 75, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(playerPtr)))], CHARACTER_SIZE, window);
-		
+		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Red << Resource[(int)round(abs(auxCalcResource(playerPtr)))], CHARACTER_SIZE, window);
+
 		log->draw(window, font);
 
 		sf::String targetAxuHP = std::to_string(_enemy.HP);
 		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
 		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
 		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 75, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(enemy)))] , CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Red << Resource[(int)round(abs(auxCalcResource(enemy)))], CHARACTER_SIZE, window);
 
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++){
 			drawText(15, 320 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName(), CHARACTER_SIZE, window);
 		}
+		drawText(15, WINDOW_HEIGHT - 100, "> Pass Turn", font, 24, window);
 		drawText(15, WINDOW_HEIGHT - 75, "> Back", font, 24, window);
 	}
 	if (inv)
@@ -200,10 +215,12 @@ void BattleStateMenu::LOG::load(){
 
 }
 
-void BattleStateMenu::LOG::update(Ability* ability, sf::Font &font, Actor* enemy){
+void BattleStateMenu::LOG::update(Ability* ability, sf::Font &font, Actor* enemy, Actor* player){
 
 	sfe::RichText text(font);
-	text << "Used Ability-> " << sf::Color::Red << ability->getName() << "  ::Damage Dealt: " << sf::Color::Blue << std::to_string(lastSeenHP - enemy->getHp());
+	if (ability->getCost() > player->getResource())
+		text << sf::Color::Red << "====!ABILITY NOT READY YET!====";
+	else text << "Used Ability-> " << sf::Color::Red << ability->getName() << "  ::Damage Dealt: " << sf::Color::Blue << std::to_string(lastSeenHP - enemy->getHp());
 	vector_count++;
 	iteLog = log.begin();
 	iteLog = log.insert(iteLog, text);

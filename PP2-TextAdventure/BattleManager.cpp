@@ -27,13 +27,13 @@ void BattleManager::applyDamage(Actor* caster, DamageAbility* damageAbility, Act
 	int targetArmor;
 	if (target->getAttribute(BONUS_ARMOR)->getValue() < 0 && target->getAttribute(BONUS_ARMOR)->getValue() > 1000)
 		targetArmor = target->getAttribute(ARMOR)->getValue();
-	else
-	{
+	else{
 		targetArmor = target->getAttribute(ARMOR)->getValue();
 	}
 
 	//full damage da ability tendo em conta as stats do player
 	int abilityDamage = damageAbility->getFullDamage(caster);
+	caster->changeResource(-(damageAbility->getCost()));
 
 	target->takeDamage(calculateDamage(targetArmor, abilityDamage));
 }

@@ -43,6 +43,7 @@ public:
 	int getMaxHP(){ return MaxHp; }
 
 	int getResource(){ return resource; }
+	void changeResource(int value){ resource += value; }
 	int getMaxResource(){ return MaxResource; }
 	void changeMaxResource(int value){ MaxResource += value; }
 

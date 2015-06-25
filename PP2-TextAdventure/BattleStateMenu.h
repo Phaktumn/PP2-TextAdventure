@@ -45,7 +45,7 @@ private:
 		~LOG();
 		
 		void load();
-		void update(Ability* ability, sf::Font &font, Actor* enemy);
+		void update(Ability* ability, sf::Font &font, Actor* enemy, Actor* player);
 		void draw(sf::RenderWindow* window, sf::Font &font);
 
 		int lastSeenHP;
@@ -73,6 +73,7 @@ private:
 	//aux helpers aux helpers aux helpers
 
 	double auxCalc(Actor* actor);
+	double auxCalcResource(Actor* actor);
 
 	sf::String Resource[10];
 	sf::String Hp[10];
