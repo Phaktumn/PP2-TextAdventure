@@ -29,6 +29,7 @@ public:
 	static void loadLocations(const std::string &filePath);
 
 	static Item* getItem(const std::string &name);
+	static Item* getItem(const int key);
 	static Ability* getAbility(const std::string &name);
 	static Attribute* getAttribute(const std::string &name);
 	static Attribute getAttribute_(const std::string &name);
@@ -66,6 +67,8 @@ private:
 	static std::map<int, int> locationsLevels;
 
 	static std::map<int, std::string> auxMobNAMES;
+
+	static std::map<int, std::string> itemNames;
 
 	//MOBS ATTRIBUTES!
 	//MOB1

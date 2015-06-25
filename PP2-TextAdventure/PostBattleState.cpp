@@ -39,8 +39,12 @@ void PostBattleState::draw(sf::RenderWindow *window){
 	drawText(25, 275 , sfe::RichText(font) << "Level: " << sf::Color::Red << std::to_string(_player.LEVEL), CHARACTER_SIZE, window);
 	drawText(25, 300 , sfe::RichText(font) << "XP:  " << sf::Color::Red << std::to_string(_player.XP) << " (" << std::to_string(_player.TXP)<< ")", CHARACTER_SIZE, window);
 
-	if (drop)
-		drawText(10, 350,  "AND you've got some loot too!!!",font, CHARACTER_SIZE, window);
+	if (auxloot)
+	{
+		
+		drawText(10, 350, sfe::RichText(font) << "AND you've got some loot too!!!", CHARACTER_SIZE, window);
+		getDrop()->draw(window, &font, 10, 380);
+	}
 	else 
 		drawText(10, 350, "And nothing more...", font,CHARACTER_SIZE, window);
 
@@ -48,14 +52,16 @@ void PostBattleState::draw(sf::RenderWindow *window){
 	drawText(15, 475, "> Continue", font, 24, window);
 }
 
-Item* PostBattleState::drop()
+Item* PostBattleState::getDrop()
 {
 	int auxRand = genRand();
 	if (auxloot){
 		for (size_t i = 0; i < GameManager::itemDatabase.size(); i++)
 		{
 			if (i == auxloot){
-				return GameManager::getItem()
+				if (GameManager::playerPtr->getInventory()->addToBags(GameManager::getItem(genRand())))
+					return GameManager::playerPtr->getInventory()->getBag().get(GameManager::playerPtr->getInventory()->getBag().getLength() - 1);
+				else return nullptr;
 			}
 		}
 	}

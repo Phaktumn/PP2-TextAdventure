@@ -240,3 +240,11 @@ Weapon* Inventory::getEquipedWeapon()
 		return nullptr;
 	}
 }
+
+bool Inventory::addToBags(Item* _item){
+	if (bag.getLength() + 1 > _BAG_MAX_SLOTS){
+		return false;
+	}
+	bag.add(_item);
+	return true;
+}

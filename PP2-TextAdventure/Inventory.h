@@ -27,6 +27,7 @@ public:
 	Weapon* getEquipedWeapon();
 
 	LinkedList<Item*> getBag(){ return bag; }
+	bool addToBags(Item* _item);
 
 private:
 
