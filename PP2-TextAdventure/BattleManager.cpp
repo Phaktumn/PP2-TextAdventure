@@ -27,7 +27,7 @@ void BattleManager::applyDamage(Actor* caster, DamageAbility* damageAbility, Act
 	if (caster->getAbility(damageAbility->getName())->getCost() <= caster->getResource())
 	{
 		int targetArmor;
-		if (target->getAttribute(BONUS_ARMOR)->getValue() < 0 && target->getAttribute(BONUS_ARMOR)->getValue() > 1000)
+		if (target->getAttribute(BONUS_ARMOR) == nullptr && target->getAttribute(BONUS_ARMOR) == nullptr)
 			targetArmor = target->getAttribute(ARMOR)->getValue();
 		else{
 			targetArmor = target->getAttribute(ARMOR)->getValue();

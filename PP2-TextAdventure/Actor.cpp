@@ -33,7 +33,7 @@ void Actor::load()
 
 void Actor::update()
 {
-	if (this->getAttribute(BONUS_ARMOR)->getValue() > 10000 || this->getAttribute(BONUS_ARMOR)->getValue() < 0)
+	if (this->getAttribute(BONUS_ARMOR) == nullptr)
 		MaxHp = baseHP + (this->getAttribute(STRENGTH)->getValue() * 7.50f);
 	else MaxHp = baseHP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 7.50f);
 	if (hp < 0) alive = false;
@@ -89,6 +89,7 @@ Attribute* Actor::getAttribute(sf::String name){
 		if (attributes.get(i)->getName() == name)
 			return attributes.get(i);
 	}
+	return nullptr;
 }
 
 

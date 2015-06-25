@@ -100,7 +100,7 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 			sf::String ability_transform = playerPtr->getAbilities().get(i)->getName();
 			std::transform(ability_transform.begin(), ability_transform.end(), ability_transform.begin(), ::tolower);
 			if (input->lastCommand() == ability_transform){
-				BattleManager::applyDamage(playerPtr,(DamageAbility*)playerPtr->getAbility(_ability),enemy);
+				BattleManager::applyDamage(playerPtr,(DamageAbility*)playerPtr->getAbility(_ability), enemy);
 				log->update((DamageAbility*)playerPtr->getAbility(_ability), font, enemy, playerPtr);
 				inBattle = true;
 				BattleMenu = false;

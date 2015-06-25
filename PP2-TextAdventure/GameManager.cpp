@@ -20,6 +20,7 @@ LinkedList<Ability*> GameManager::abilities;
 
 LinkedList<Attribute*> GameManager::mob_1_Attributes;
 LinkedList<Attribute*> GameManager::mob_2_Attributes;
+LinkedList<Attribute*> GameManager::mob_3_Attributes;
 
 Actor* GameManager::player;
 Player* GameManager::playerPtr;
@@ -47,10 +48,11 @@ void GameManager::loadGlobals() {
 	//==============================================================================
 
 	//ABILITIES WARRIOR================================================================================
-	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 100, 20, DamageAbility::strength, 3.0f));
-	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 175, 25, DamageAbility::strength, 1.2f));
-	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 200, 85, DamageAbility::strength, 1.5f));
-	abilities.add(new DamageAbility("Darkness", Ability::RAGE, 300, 100, DamageAbility::strength, 2.5f));
+	abilities.add(new DamageAbility("Auto Atack", Ability::NORESOURCE, 0, 30, DamageAbility::strength, 1.0f));
+	abilities.add(new DamageAbility("Alpha Strike", Ability::RAGE, 100, 50, DamageAbility::strength, 3.0f));
+	abilities.add(new DamageAbility("Death Strike", Ability::RAGE, 175, 75, DamageAbility::strength, 1.2f));
+	abilities.add(new DamageAbility("Master Plan", Ability::RAGE, 200, 100, DamageAbility::strength, 1.5f));
+	abilities.add(new DamageAbility("Darkness", Ability::RAGE, 300, 150, DamageAbility::strength, 2.5f));
 	//=================================================================================================
 	
 	//ABILITIES MAGE================================================================================
@@ -74,17 +76,17 @@ void GameManager::addMobs()
 	mob_1_Attributes.add(GameManager::getAttribute("mobIntellect1"));
 	mob_1_Attributes.add(GameManager::getAttribute("mobArmor1"));
 	//ABILITIES MOBLv1
-
 	//
+
 	//Attributes MOBLv2
 	mob_2_Attributes.add(GameManager::getAttribute("mobStrength2"));
 	mob_2_Attributes.add(GameManager::getAttribute("mobIntellect2"));
 	mob_2_Attributes.add(GameManager::getAttribute("mobArmor2"));
 	//
 	//Attributes MOBLv3
-	mob_2_Attributes.add(GameManager::getAttribute("mobStrength3"));
-	mob_2_Attributes.add(GameManager::getAttribute("mobIntellect3"));
-	mob_2_Attributes.add(GameManager::getAttribute("mobArmor3"));
+	mob_3_Attributes.add(GameManager::getAttribute("mobStrength3"));
+	mob_3_Attributes.add(GameManager::getAttribute("mobIntellect3"));
+	mob_3_Attributes.add(GameManager::getAttribute("mobArmor3"));
 	//
 	//Attributes MOBLv4
 
