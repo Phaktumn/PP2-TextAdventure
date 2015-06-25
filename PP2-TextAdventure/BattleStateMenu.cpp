@@ -193,9 +193,6 @@ void BattleStateMenu::drawText(float x, float y, sfe::RichText text, int size, s
 	window->draw(text);
 }
 
-
-
-
 void BattleStateMenu::LOG::drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window){
 	sf::Text _text;
 	_text.setPosition(x, y);
@@ -237,4 +234,18 @@ void BattleStateMenu::LOG::draw(sf::RenderWindow* window, sf::Font &font){
 		text = log[i];
 		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 175 + (i * 25), text, CHARACTER_SIZE, window);
 	}
+}
+
+void BattleStateMenu::EnemyAI(Actor* enemy)
+{
+	float aux = (100 * enemy->getHp()) / enemy->getMaxHP();
+
+	//if (aux >= 70) //ABILITY ONE
+	//if (aux >= 40 && aux < 70) //ABILITY TWO
+	//if (aux < 40) //ABILITY THREE
+
+	//PARA SIMPLIFICAR O ENEMY APENAS USA BASIC ATTACKS
+
+	BattleManager::applyDamage(enemy, (DamageAbility*)enemy->getAbility(), playerPtr);
+
 }

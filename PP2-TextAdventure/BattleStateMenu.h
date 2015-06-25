@@ -25,6 +25,8 @@ public:
 	void drawText(float x, float y, const std::string& text, sf::Font& font, int size, sf::RenderWindow* window);
 	void drawText(float x, float y, sfe::RichText text, int size, sf::RenderWindow* window);
 	
+	void BattleStateMenu::EnemyAI(Actor* enemy);
+
 	Actor* getPlayerInBattle(){ return playerPtr; }
 	Actor* getEnemyInBattle(){ return enemy; }
 
