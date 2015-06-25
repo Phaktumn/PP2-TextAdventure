@@ -134,15 +134,15 @@ void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 	if (BattleMenu)
 	{
 		sf::String targetAxuHP = std::to_string(_enemy.HP);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 220, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 220, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
 
-		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 75, "ATRIBUTES", font, CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 100,
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 220, BATTLE_ENEMY_NAME_POSITION_Y + 75, "ATRIBUTES", font, CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 220, BATTLE_ENEMY_NAME_POSITION_Y + 100,
 			sfe::RichText(font) << "Unleash the " << STRENGTH << ": " << sf::Color::Red << std::to_string(_enemy.STRENGTH), CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 125,
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 220, BATTLE_ENEMY_NAME_POSITION_Y + 125,
 			sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_enemy.ARMOR), CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X - 150, BATTLE_ENEMY_NAME_POSITION_Y + 150,
+		drawText(BATTLE_ENEMY_NAME_POSITION_X - 220, BATTLE_ENEMY_NAME_POSITION_Y + 150,
 			sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_enemy.HP), CHARACTER_SIZE, window);
 
 
@@ -154,39 +154,41 @@ void BattleStateMenu::draw(sf::RenderWindow* window, sf::Font &font){
 	{
 		sf::String auxHP = std::to_string(_player.HP);
 		sf::String auxResource = std::to_string(_player.RESOURCE);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Green << "------" << playerPtr->getActorName() << "------", CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << auxHP, CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 75, sfe::RichText(font) << "Resource: " << sf::Color::Cyan << auxResource, CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(playerPtr)))], CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 125, sfe::RichText(font) << sf::Color::Cyan << Resource[(int)round(abs(auxCalcResource(playerPtr)))], CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 100, BATTLE_PLAYER_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Green << "------" << playerPtr->getActorName() << "------", CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 100, BATTLE_PLAYER_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << auxHP, CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 100, BATTLE_PLAYER_NAME_POSITION_Y + 75, sfe::RichText(font) << "Resource: " << sf::Color::Cyan << auxResource, CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 100, BATTLE_PLAYER_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(playerPtr)))], CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 100, BATTLE_PLAYER_NAME_POSITION_Y + 125, sfe::RichText(font) << sf::Color::Cyan << Resource[(int)round(abs(auxCalcResource(playerPtr)))], CHARACTER_SIZE, window);
 
 		log->draw(window, font);
 
 		sf::String targetAxuHP = std::to_string(_enemy.HP);
 		sf::String targetAuxResource = std::to_string(_enemy.RESOURCE);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 75, sfe::RichText(font) << "Resource: " << sf::Color::Cyan << targetAuxResource, CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(enemy)))] , CHARACTER_SIZE, window);
-		drawText(BATTLE_ENEMY_NAME_POSITION_X, BATTLE_ENEMY_NAME_POSITION_Y + 125, sfe::RichText(font) << sf::Color::Cyan << Resource[(int)round(abs(auxCalcResource(enemy)))], CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X , BATTLE_ENEMY_NAME_POSITION_Y, sfe::RichText(font) << sf::Color::Red << "------:: " << enemy->getActorName() << " ::------", CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X + 45, BATTLE_ENEMY_NAME_POSITION_Y + 50, sfe::RichText(font) << "Hit Points: " << sf::Color::Red << targetAxuHP, CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X + 45, BATTLE_ENEMY_NAME_POSITION_Y + 75, sfe::RichText(font) << "Resource: " << sf::Color::Cyan << targetAuxResource, CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X + 45, BATTLE_ENEMY_NAME_POSITION_Y + 100, sfe::RichText(font) << sf::Color::Green << Hp[(int)round(abs(auxCalc(enemy)))], CHARACTER_SIZE, window);
+		drawText(BATTLE_ENEMY_NAME_POSITION_X + 45, BATTLE_ENEMY_NAME_POSITION_Y + 125, sfe::RichText(font) << sf::Color::Cyan << Resource[(int)round(abs(auxCalcResource(enemy)))], CHARACTER_SIZE, window);
 
 		for (size_t i = 0; i <= playerPtr->getAbilities().getLength(); i++){
 			drawText(15, 320 + i * 25, sfe::RichText(font) << std::to_string(i) << ") " << playerPtr->getAbilities().get(i)->getName() << "  (" << std::to_string(playerPtr->getAbilities().get(i)->getCost()) << ")", CHARACTER_SIZE, window);
 		}
-		drawText(15, WINDOW_HEIGHT - 100, "> Pass Turn", font, 24, window);
+		drawText(200, WINDOW_HEIGHT - 75, "> Pass Turn", font, 24, window);
 		drawText(15, WINDOW_HEIGHT - 75, "> Back", font, 24, window);
 	}
 	if (inv)
 	{
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 25, "ATRIBUTES", font, CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 50,
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 400, BATTLE_PLAYER_NAME_POSITION_Y + 25, "ATRIBUTES", font, CHARACTER_SIZE, window);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 400, BATTLE_PLAYER_NAME_POSITION_Y + 50,
 			sfe::RichText(font) << "Unleash the " << STRENGTH << ": " << sf::Color::Red << std::to_string(_player.STRENGTH), CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 75,
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 400, BATTLE_PLAYER_NAME_POSITION_Y + 75,
 			sfe::RichText(font) << "Unleash the " << ARMOR << ": " << sf::Color::Red << std::to_string(_player.ARMOR), CHARACTER_SIZE, window);
-		drawText(BATTLE_PLAYER_NAME_POSITION_X + 300, BATTLE_PLAYER_NAME_POSITION_Y + 100,
+		drawText(BATTLE_PLAYER_NAME_POSITION_X + 400, BATTLE_PLAYER_NAME_POSITION_Y + 100,
 			sfe::RichText(font) << "Unleash the HitPoints" << ": " << sf::Color::Red << std::to_string(_player.HP), CHARACTER_SIZE, window);
+		drawText(15, WINDOW_HEIGHT - 75, "> Back", font, 24, window);
 
-		playerPtr->getInventory()->draw(window, font);
+		drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 25, "ITEMS", font, CHARACTER_SIZE, window);
+		playerPtr->getInventory()->drawPos(window, font, BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 50);
 	}
 }
 
@@ -241,7 +243,7 @@ void BattleStateMenu::LOG::update(Ability* ability, sf::Font &font, Actor* enemy
 }
 
 void BattleStateMenu::LOG::draw(sf::RenderWindow* window, sf::Font &font){
-	drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 150, sfe::RichText(font) << sf::Color::Blue << "----------------------------------------LOG----------------------------------------", CHARACTER_SIZE, window);
+	drawText(BATTLE_PLAYER_NAME_POSITION_X, BATTLE_PLAYER_NAME_POSITION_Y + 150, sfe::RichText(font) << sf::Color::Blue << "------------------------------------------------LOG---------------------------------------------------", CHARACTER_SIZE, window);
 	sfe::RichText text(font);
 	for (size_t i = 0; i < log.size(); i++){
 		text = log[i];
