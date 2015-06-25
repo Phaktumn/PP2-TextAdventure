@@ -142,6 +142,6 @@ bool GameStateMenu::randomEncounter()
 	int aux;
 	aux = rand() % 100;
 
-	if (aux > 50) return true;
+	if (aux > 1) return true;
 	else return false;
 }
