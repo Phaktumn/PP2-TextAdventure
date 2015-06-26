@@ -37,8 +37,11 @@ void Actor::update()
 		MaxHp = baseHP + (this->getAttribute(STRENGTH)->getValue() * 7.50f);
 	else MaxHp = baseHP + ((this->getAttribute(STRENGTH)->getValue() + this->getAttribute(BONUS_STRENGTH)->getValue()) * 7.50f);
 	if (hp < 0) alive = false;
+	//resource regen XD
 	if (resource < MaxResource){
-		resource += 50;
+		if (this->getAttribute(BONUS_INTELLECT) == nullptr)
+			resource += ceil(0.7f * this->getAttribute(INTELLECT)->getValue());
+		else resource += ceil(0.7f * this->getAttribute(INTELLECT)->getValue() + this->getAttribute(BONUS_INTELLECT)->getValue());
 		if (resource > MaxResource){
 			resource = MaxResource;
 		}

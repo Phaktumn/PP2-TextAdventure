@@ -59,6 +59,8 @@ public:
 	static BattleStateMenu* battleMenu;
 
 private:
+	static int global_Counter;
+
 	static std::map<int, std::shared_ptr<Actor>> mobsDatabase;
 	static std::map<std::string, std::shared_ptr<Attribute>> attributesDatabase;
 	

@@ -16,9 +16,9 @@ Inventory::~Inventory()
 void Inventory::equipWeapon(Weapon* _weapon)
 {
 	if (weapon != nullptr){
-		player->removeBonusIntellect(_weapon->getBonusIntellevt());
-		player->removeBonusDamage(_weapon->getBonusStrenght());
-		player->removeDamage(_weapon->getWeaponDamage());
+		player->removeBonusIntellect(weapon->getBonusIntellevt());
+		player->removeBonusDamage(weapon->getBonusStrenght());
+		player->removeDamage(weapon->getWeaponDamage());
 	}
 
 	weapon = _weapon;
@@ -207,7 +207,7 @@ void Inventory::drawBag(sf::RenderWindow* window, sf::Font &font){
 			count_AUX++;
 			positionY = (count_AUX * 40);
 			drawText(positionX, positionY, sfe::RichText(font) << item_num << ") " , CHARACTER_SIZE, window);
-			bag.get(i)->draw(window, &font, positionX + 25, positionY + (i * 20));
+			bag.get(i)->draw(window, &font, positionX + 25, positionY);
 			if (positionY >= 325){
 				positionX = 450;
 				positionY = 20;

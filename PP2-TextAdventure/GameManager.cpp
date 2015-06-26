@@ -25,6 +25,8 @@ Actor* GameManager::player;
 Player* GameManager::playerPtr;
 BattleStateMenu* GameManager::battleMenu;
 
+int GameManager::global_Counter = 0;
+
 GameManager::GameManager()
 {
 	
@@ -186,8 +188,8 @@ void GameManager::loadItems(const std::string &filePath)
 			int bonusArmor = armorObj["BaseArmor"].as<int>();
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
-
-			itemDatabase.emplace(i, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
+			global_Counter++;
+			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
 		}
 		
 		catch (const jsoncons::json_exception& e) {
@@ -208,8 +210,8 @@ void GameManager::loadItems(const std::string &filePath)
 			int bonusArmor = armorObj["BaseArmor"].as<int>();
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
-
-			itemDatabase.emplace(i, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
+			global_Counter++;
+			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
 		}
 
 		catch (const jsoncons::json_exception& e) {
@@ -234,8 +236,8 @@ void GameManager::loadItems(const std::string &filePath)
 			int baseInt = weaponObj["BaseIntellect"].as<int>();
 
 			Item::Type type = static_cast<Item::Type>(Type);
-
-			itemDatabase.emplace(i, std::shared_ptr<Item>(new Weapon(sf::String(qualityString), sf::String(name), type, baseStr, baseInt, damage)));
+			global_Counter++;
+			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Weapon(sf::String(qualityString), sf::String(name), type, baseStr, baseInt, damage)));
 		}
 		catch (const jsoncons::json_exception& e) {
 			std::cerr << e.what() << std::endl;

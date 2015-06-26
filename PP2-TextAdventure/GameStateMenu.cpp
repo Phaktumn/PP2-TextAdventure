@@ -94,27 +94,27 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	}
 	if (auxBag)
 	{
-		/*for (size_t i = 0; i < _BAG_MAX_SLOTS; i++)
+		for (size_t i = 0; i < _BAG_MAX_SLOTS; i++)
 		{
+			if (Inventory::getBag().get(i) != nullptr)
+			{
 				std::string nome = Inventory::getBag().get(i)->getName();
 				std::string transfomed = nome;
 				std::transform(transfomed.begin(), transfomed.end(), transfomed.begin(), ::tolower);
-
 				if (command == transfomed)
-				{
-					if (Inventory::getBag().get(i)->weapon)
+				{					
+					if (Inventory::getBag().get(i)->weapon == Inventory::getBag().get(i)->type)
 					{
-						Inventory::equipWeapon((Weapon*)Inventory::getBag().get(i));
+						GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)Inventory::getBag().get(i));
 					}
 					else
 					{
-						Inventory::equipWeapon((Armor*)Inventory::getBag().get(i));
+						GameManager::playerPtr->getInventory()->equipArmor((Armor*)Inventory::getBag().get(i), Inventory::getBag().get(i)->type);
 					}
-					
 				}
-			
+			}
 
-		}*/
+		}
 	}
 	if (command == "battle")
 		state.changeState("BattleState");
