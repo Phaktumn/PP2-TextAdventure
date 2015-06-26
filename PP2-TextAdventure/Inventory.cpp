@@ -254,3 +254,12 @@ bool Inventory::addToBags(Item* _item){
 	bag.add(_item);
 	return true;
 }
+void Inventory::removeFromBags(Item* item)
+{
+	if (item == nullptr)
+	{
+		return;
+	}
+
+	bag.remove(item);
+}

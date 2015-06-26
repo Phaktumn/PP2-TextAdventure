@@ -23,6 +23,7 @@ public:
 	void drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y);
 
 	void drawBag(sf::RenderWindow* window, sf::Font &font);
+	void removeFromBags(Item* item);
 
 	Weapon* getEquipedWeapon();
 

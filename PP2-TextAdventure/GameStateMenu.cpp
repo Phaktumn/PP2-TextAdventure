@@ -111,6 +111,8 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 					{
 						GameManager::playerPtr->getInventory()->equipArmor((Armor*)Inventory::getBag().get(i), Inventory::getBag().get(i)->type);
 					}
+
+					Inventory::getBag().removeAt(i);
 				}
 			}
 
