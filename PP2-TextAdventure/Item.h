@@ -16,11 +16,11 @@ public:
 	enum Type
 	{
 		helmet,
-		chest,
+		feet,
 		hands,
 		weapon,
+		chest,
 		legs,
-		feet,
 	};
 
 	Type type;

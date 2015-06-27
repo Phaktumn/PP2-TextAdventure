@@ -133,7 +133,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		item3 = false;
 		item5 = false;
 		}
-		if (command == "6"){ item5 = true;
+		if (command == "2"){ item5 = true;
 		item0 = false;
 		item1 = false;
 		item2 = false;
@@ -263,7 +263,7 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		}
 
 		drawText(15, 300 - 50, sfe::RichText(font) << sf::Color::Red << "!HELP! PRESS NUMBERS TO GET ITEM SPECIFICATIONS", CHARACTER_SIZE, window);
-		drawText(15, 300 - 25, sfe::RichText(font) << "1) head || 2)chest || 3) hands || 4) weapon || 5) legs || 6) feet", CHARACTER_SIZE, window);
+		drawText(15, 300 - 25, sfe::RichText(font) << "1) head || 2) feet || 3) hands || 4) weapon || 5) chest || 6) legs", CHARACTER_SIZE, window);
 
 		drawText(30, 70 + 250, "ITEMS", font, CHARACTER_SIZE, window);
 
