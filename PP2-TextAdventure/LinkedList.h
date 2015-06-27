@@ -98,15 +98,23 @@ void LinkedList<type>::removeAt(int index)
 	int i = 0;
 	Node* ptr = head;
 
-	while (i < index - 1)
+	if (index == count)
+	{
+		Node* removed = ptr;
+		delete (removed);
+		return;
+	}
+
+	while (i < index)
 	{
 		ptr = ptr->next;
 		i++;
 	}
+
 	ptr->next = ptr->next->next;
 	Node* removed = ptr->next;
 	count--;
-	delete(removed)
+	delete(removed);
 }
 
 template <class type>

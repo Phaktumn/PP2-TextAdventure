@@ -254,6 +254,7 @@ bool Inventory::addToBags(Item* _item){
 	bag.add(_item);
 	return true;
 }
+<<<<<<< HEAD
 
 void Inventory::drawEquipedItem(int itemType, sf::RenderWindow* window, sf::Font &font){
 
@@ -353,3 +354,14 @@ void Inventory::drawEquipedItem(int itemType, sf::RenderWindow* window, sf::Font
 		break;
 	}
 }
+=======
+void Inventory::removeFromBags(Item* item)
+{
+	if (item == nullptr)
+	{
+		return;
+	}
+
+	bag.remove(item);
+}
+>>>>>>> origin/master

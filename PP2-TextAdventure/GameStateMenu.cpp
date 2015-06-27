@@ -194,6 +194,8 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 						aux = GameManager::playerPtr->getInventory()->getBag()[i];
 						GameManager::playerPtr->getInventory()->getBag().erase(i);
 					}
+
+					Inventory::getBag().removeAt(i);
 				}
 			}
 		}
