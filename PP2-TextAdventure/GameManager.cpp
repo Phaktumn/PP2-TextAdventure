@@ -189,7 +189,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
 			global_Counter++;
-			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
+			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), sf::String(description), type, bonusStr, bonusInt, bonusArmor)));
 		}
 		
 		catch (const jsoncons::json_exception& e) {
@@ -211,7 +211,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 			Item::Type type = static_cast<Item::Type>(typeInt);
 			global_Counter++;
-			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), type, bonusStr, bonusInt, bonusArmor)));
+			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Armor(sf::String(qualityString), sf::String(name), sf::String(description), type, bonusStr, bonusInt, bonusArmor)));
 		}
 
 		catch (const jsoncons::json_exception& e) {
@@ -222,6 +222,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 
 	int _i = 0;
+
 	// Load weapons
 	for (size_t i = 0; i < weaponFile.size(); i++) {
 		try {
@@ -237,7 +238,7 @@ void GameManager::loadItems(const std::string &filePath)
 
 			Item::Type type = static_cast<Item::Type>(Type);
 			global_Counter++;
-			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Weapon(sf::String(qualityString), sf::String(name), type, baseStr, baseInt, damage)));
+			itemDatabase.emplace(global_Counter, std::shared_ptr<Item>(new Weapon(sf::String(qualityString), sf::String(name), sf::String(description), type, baseStr, baseInt, damage)));
 		}
 		catch (const jsoncons::json_exception& e) {
 			std::cerr << e.what() << std::endl;

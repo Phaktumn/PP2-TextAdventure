@@ -58,13 +58,6 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	if (command == "inventory") {
 		auxInv = true;
 		GameManager::playerPtr->update();
-		GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::getItem(144));
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem(12), GameManager::getItem(12)->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem(100), GameManager::getItem(100)->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem(80), GameManager::getItem(80)->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem(71), GameManager::getItem(71)->type);
-		GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::getItem(119), GameManager::getItem(119)->type);
-
 	}
 	if (command == "quit") {
 		music.stop();
@@ -103,7 +96,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 		item5 = false;
 	}
 	if (auxInv){
-		if (command == "0"){ 
+		if (command == "1"){ 
 			item0 = true;
 			item1 = false;
 			item2 = false;
@@ -111,7 +104,7 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 			item4 = false;
 			item5 = false;
 		}
-		if (command == "1"){ 
+		if (command == "2"){ 
 			item1 = true; 
 			item0 = false;
 			item2 = false;
@@ -119,28 +112,28 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 			item4 = false;
 			item5 = false;
 		}
-		if (command == "2"){ item2 = true;
+		if (command == "3"){ item2 = true;
 		item0 = false;
 		item1 = false;
 		item3 = false;
 		item4 = false;
 		item5 = false;
 		}
-		if (command == "3"){ item3 = true;
+		if (command == "4"){ item3 = true;
 		item0 = false;
 		item1 = false;
 		item2 = false;
 		item4 = false;
 		item5 = false;
 		}
-		if (command == "4"){ item4 = true;
+		if (command == "5"){ item4 = true;
 		item0 = false;
 		item1 = false;
 		item2 = false;
 		item3 = false;
 		item5 = false;
 		}
-		if (command == "5"){ item5 = true;
+		if (command == "6"){ item5 = true;
 		item0 = false;
 		item1 = false;
 		item2 = false;
@@ -175,27 +168,26 @@ void GameStateMenu::update(InputBox& inputBox, World* world, std::string command
 	{
 		for (size_t i = 0; i < _BAG_MAX_SLOTS; i++)
 		{
-			if (GameManager::playerPtr->getInventory()->getBag()[i] != nullptr)
+			if (GameManager::playerPtr->getInventory()->getBag().get(i) != nullptr)
 			{
-				std::string nome = GameManager::playerPtr->getInventory()->getBag()[i]->getName();
+				std::string nome = GameManager::playerPtr->getInventory()->getBag().get(i)->getName();
 				std::string transfomed = nome;
 				std::transform(transfomed.begin(), transfomed.end(), transfomed.begin(), ::tolower);
 				if (command == transfomed)
 				{		
-					if (GameManager::playerPtr->getInventory()->getBag()[i]->weapon == GameManager::playerPtr->getInventory()->getBag()[i]->type){
+					if (GameManager::playerPtr->getInventory()->getBag().get(i)->weapon == GameManager::playerPtr->getInventory()->getBag().get(i)->type){
 						displayItem = true;
-						GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::playerPtr->getInventory()->getBag()[i]);
-						aux = GameManager::playerPtr->getInventory()->getBag()[i];
-						GameManager::playerPtr->getInventory()->getBag().erase(i);
+						GameManager::playerPtr->getInventory()->equipWeapon((Weapon*)GameManager::playerPtr->getInventory()->getBag().get(i));
+						aux = GameManager::playerPtr->getInventory()->getBag().get(i);
 					}
 					else{
 						displayItem = true;
-						GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::playerPtr->getInventory()->getBag()[i], GameManager::playerPtr->getInventory()->getBag()[i]->type);
-						aux = GameManager::playerPtr->getInventory()->getBag()[i];
-						GameManager::playerPtr->getInventory()->getBag().erase(i);
+						GameManager::playerPtr->getInventory()->equipArmor((Armor*)GameManager::playerPtr->getInventory()->getBag().get(i), GameManager::playerPtr->getInventory()->getBag().get(i)->type);
+						aux = GameManager::playerPtr->getInventory()->getBag().get(i);
+						GameManager::playerPtr->getInventory()->getBag().get(i);
 					}
 
-					Inventory::getBag().removeAt(i);
+					GameManager::playerPtr->getInventory()->removeFromBags(GameManager::playerPtr->getInventory()->getBag().get(i));
 				}
 			}
 		}
@@ -269,6 +261,10 @@ void GameStateMenu::draw(sf::RenderWindow* window, World* world)
 		if (item5){
 			GameManager::playerPtr->getInventory()->drawEquipedItem(5, window, font);
 		}
+
+		drawText(15, 300 - 50, sfe::RichText(font) << sf::Color::Red << "!HELP! PRESS NUMBERS TO GET ITEM SPECIFICATIONS", CHARACTER_SIZE, window);
+		drawText(15, 300 - 25, sfe::RichText(font) << "1) head || 2)chest || 3) hands || 4) weapon || 5) legs || 6) feet", CHARACTER_SIZE, window);
+
 		drawText(30, 70 + 250, "ITEMS", font, CHARACTER_SIZE, window);
 
 		GameManager::playerPtr->getInventory()->drawPos(window, font, 30, 345);

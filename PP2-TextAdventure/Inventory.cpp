@@ -1,8 +1,5 @@
 #include "Inventory.h"
 
-LinkedList<Item*> Inventory::bag;
-LinkedList<Item*> Inventory::getBag(){ return bag; }
-
 Inventory::Inventory(Player* player) : player(player)
 {
 
@@ -254,7 +251,6 @@ bool Inventory::addToBags(Item* _item){
 	bag.add(_item);
 	return true;
 }
-<<<<<<< HEAD
 
 void Inventory::drawEquipedItem(int itemType, sf::RenderWindow* window, sf::Font &font){
 
@@ -354,7 +350,7 @@ void Inventory::drawEquipedItem(int itemType, sf::RenderWindow* window, sf::Font
 		break;
 	}
 }
-=======
+
 void Inventory::removeFromBags(Item* item)
 {
 	if (item == nullptr)
@@ -364,4 +360,3 @@ void Inventory::removeFromBags(Item* item)
 
 	bag.remove(item);
 }
->>>>>>> origin/master

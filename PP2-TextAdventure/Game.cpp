@@ -14,6 +14,11 @@ Game::~Game() {
 	
 }
 
+
+//aqui esta a logica do jogo
+//sao carregadas todas as informacoes
+//depois dentro de um ciclo while 
+//existe um upload e um draw do state em que estamos!
 int Game::run() {
 	window = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Text Adventure", sf::Style::Titlebar);
 	window->setFramerateLimit(120);

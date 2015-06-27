@@ -21,14 +21,15 @@ public:
 
 	void draw(sf::RenderWindow* window, sf::Font &font);
 	void drawPos(sf::RenderWindow* window, sf::Font &font, int x, int y);
+	void drawEquipedItem(int itemType, sf::RenderWindow* window, sf::Font &font);
 
 	void drawBag(sf::RenderWindow* window, sf::Font &font);
 	void removeFromBags(Item* item);
 
 	Weapon* getEquipedWeapon();
 
-	static LinkedList<Item*> bag;
-	static LinkedList<Item*> getBag();
+	LinkedList<Item*> bag;
+	LinkedList<Item*> Inventory::getBag(){ return bag; }
 
 	bool addToBags(Item* _item);
 

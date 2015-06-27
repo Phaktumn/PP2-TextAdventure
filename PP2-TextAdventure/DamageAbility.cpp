@@ -17,7 +17,6 @@ DamageAbility::~DamageAbility()
 /// </summary>
 /// <param name="target">Pointer to the target actor.</param>
 int DamageAbility::getFullDamage(Actor* caster){
-
 	int multiplierDMG = 0;
 	int casterPower;
 	int casterIntellect;
@@ -34,10 +33,10 @@ int DamageAbility::getFullDamage(Actor* caster){
 	switch (attributeMultiplyer)
 	{
 	case DamageAbility::strength:
-		multiplierDMG = casterIntellect * multiplier;
+		multiplierDMG = casterPower * multiplier;
 		break;
 	case DamageAbility::intellect:
-		multiplierDMG = casterPower * multiplier;
+		multiplierDMG = casterIntellect * multiplier;
 		break;
 	default: 
 		break;

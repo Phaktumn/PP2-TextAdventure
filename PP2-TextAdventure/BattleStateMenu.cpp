@@ -86,8 +86,7 @@ void BattleStateMenu::update(InputBox* input, sf::Font &font){
 		BattleMenu = true;
 		inv = false;
 		input->log.push_back("-1"); 
-		updateVars();
-		
+		updateVars();	
 	}
 	if (input->lastCommand() == "inventory"){
 		inv = true;
