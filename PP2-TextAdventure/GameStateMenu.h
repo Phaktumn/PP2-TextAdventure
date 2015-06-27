@@ -33,6 +33,15 @@ public:
 	bool auxBag;
 	bool eqp;
 
+	bool item0;
+	bool item1;
+	bool item2;
+	bool item3;
+	bool item4;
+	bool item5;
+
+	bool displayItem;
+
 	struct HELPERS
 	{
 		int HP;
@@ -49,4 +58,9 @@ private:
 	sf::Font font;
 
 	StateManager& state;
+
+	//Aux variable to display item
+	Item* aux;
+	Weapon* AuxWep;
+	Armor* AuxArmor;
 };

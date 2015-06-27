@@ -113,6 +113,13 @@ template <class type>
 void LinkedList<type>::remove(type object)
 {
 	Node* ptr = head;
+	if (ptr != nullptr){
+		if (object == ptr->value){
+			head = nullptr;
+			delete(ptr);
+			return;
+		}
+	}
 	while (ptr->next != nullptr)
 	{
 		if (object == ptr->next->value)
@@ -121,7 +128,6 @@ void LinkedList<type>::remove(type object)
 			ptr->next = ptr->next->next;
 			delete(toRemove);
 			count--;
-			delete(toRemove);
 		}
 	}
 }

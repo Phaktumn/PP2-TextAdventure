@@ -254,3 +254,102 @@ bool Inventory::addToBags(Item* _item){
 	bag.add(_item);
 	return true;
 }
+
+void Inventory::drawEquipedItem(int itemType, sf::RenderWindow* window, sf::Font &font){
+
+	Item::Type type = static_cast<Item::Type>(itemType);
+	switch (type)
+	{
+	case Item::helmet:
+	{
+						 if (head == nullptr){
+							 drawText(15, 25, sfe::RichText(font) << "No Item Equiped", CHARACTER_SIZE, window);
+							 break;
+						 }
+						 sf::String auxInt = std::to_string(head->getBonusIntellevt());
+						 sf::String auxStr = std::to_string(head->getBonusStrenght());
+						 sf::String auxArmor = std::to_string(head->getBonusArmor());
+						 head->draw(window, &font, 15, 25);
+						 drawText(15, 50, sfe::RichText(font) << head->Description(), CHARACTER_SIZE, window);
+						 drawText(15, 75, sfe::RichText(font) << "Bonus Strength: " << sf::Color::Red << auxStr, CHARACTER_SIZE, window);
+						 drawText(15, 100, sfe::RichText(font) << "Bonus Intellect: " << sf::Color::Red << auxInt, CHARACTER_SIZE, window);						
+						 drawText(15, 125, sfe::RichText(font) << "Armor: " << sf::Color::Red << auxArmor, CHARACTER_SIZE, window);
+	}
+		break;
+	case Item::chest:{
+						 if (chest == nullptr){
+							 drawText(15, 25, sfe::RichText(font) << "No Item Equiped", CHARACTER_SIZE, window);
+							 break;
+						 }
+						 sf::String auxInt = std::to_string(chest->getBonusIntellevt());
+						 sf::String auxStr = std::to_string(chest->getBonusStrenght());
+						 sf::String auxArmor = std::to_string(chest->getBonusArmor());
+						 chest->draw(window, &font, 15, 25);
+						 drawText(15, 50, sfe::RichText(font) << chest->Description(), CHARACTER_SIZE, window);
+						 drawText(15, 75, sfe::RichText(font) << "Bonus Strength: " << sf::Color::Red << auxStr, CHARACTER_SIZE, window);
+						 drawText(15, 100, sfe::RichText(font) << "Bonus Intellect: " << sf::Color::Red << auxInt, CHARACTER_SIZE, window);
+						 drawText(15, 125, sfe::RichText(font) << "Armor: " << sf::Color::Red << auxArmor, CHARACTER_SIZE, window);
+	}
+		break;
+	case Item::hands:{
+						 if (hands == nullptr){
+							 drawText(15, 25, sfe::RichText(font) << "No Item Equiped", CHARACTER_SIZE, window);
+							 break;
+						 }
+						 sf::String auxInt = std::to_string(hands->getBonusIntellevt());
+						 sf::String auxStr = std::to_string(hands->getBonusStrenght());
+						 sf::String auxArmor = std::to_string(hands->getBonusArmor());
+						 hands->draw(window, &font, 15, 25);
+						 drawText(15, 50, sfe::RichText(font) << hands->Description(), CHARACTER_SIZE, window);
+						 drawText(15, 75, sfe::RichText(font) << "Bonus Strength: " << sf::Color::Red << auxStr, CHARACTER_SIZE, window);
+						 drawText(15, 100, sfe::RichText(font) << "Bonus Intellect: " << sf::Color::Red << auxInt, CHARACTER_SIZE, window);
+						 drawText(15, 125, sfe::RichText(font) << "Armor: " << sf::Color::Red << auxArmor, CHARACTER_SIZE, window);
+	}
+		break;
+	case Item::weapon:{
+						  if (weapon == nullptr){
+							  drawText(15, 25, sfe::RichText(font) << "No Item Equiped", CHARACTER_SIZE, window);
+							  break;
+						  }
+						  sf::String auxInt = std::to_string(weapon->getBonusIntellevt());
+						  sf::String auxStr = std::to_string(weapon->getBonusStrenght());
+						  sf::String auxDmg = std::to_string(weapon->getWeaponDamage());
+						  weapon->draw(window, &font, 15, 25);
+						  drawText(15, 50, sfe::RichText(font) << weapon->Description(), CHARACTER_SIZE, window);
+						  drawText(15, 75, sfe::RichText(font) << "Bonus Strength: " << sf::Color::Red << auxStr, CHARACTER_SIZE, window);
+						  drawText(15, 100, sfe::RichText(font) << "Bonus Intellect: " << sf::Color::Red << auxInt, CHARACTER_SIZE, window);
+						  drawText(15, 125, sfe::RichText(font) << "Damage: " << sf::Color::Red << auxDmg, CHARACTER_SIZE, window);
+	}
+		break;
+	case Item::legs:{
+						if (legs == nullptr){
+							drawText(15, 25, sfe::RichText(font) << "No Item Equiped", CHARACTER_SIZE, window);
+							break;
+						}
+						sf::String auxInt = std::to_string(legs->getBonusIntellevt());
+						sf::String auxStr = std::to_string(legs->getBonusStrenght());
+						sf::String auxArmor = std::to_string(legs->getBonusArmor());
+						legs->draw(window, &font, 15, 25);
+						drawText(15, 50, sfe::RichText(font) << legs->Description(), CHARACTER_SIZE, window);
+						drawText(15, 75, sfe::RichText(font) << "Bonus Strength: " << sf::Color::Red << auxStr, CHARACTER_SIZE, window);
+						drawText(15, 100, sfe::RichText(font) << "Bonus Intellect: " << sf::Color::Red << auxInt, CHARACTER_SIZE, window);
+						drawText(15, 125, sfe::RichText(font) << "Armor: " << sf::Color::Red << auxArmor, CHARACTER_SIZE, window);
+	}
+		break;
+	case Item::feet:{
+						if (feet == nullptr){
+							drawText(15, 25, sfe::RichText(font) << "No Item Equiped", CHARACTER_SIZE, window);
+							break;
+						}
+						sf::String auxInt = std::to_string(feet->getBonusIntellevt());
+						sf::String auxStr = std::to_string(feet->getBonusStrenght());
+						sf::String auxArmor = std::to_string(feet->getBonusArmor());
+						feet->draw(window, &font, 15, 25);
+						drawText(15, 50, sfe::RichText(font) << feet->Description(), CHARACTER_SIZE, window);
+						drawText(15, 75, sfe::RichText(font) << "Bonus Strength: " << sf::Color::Red << auxStr, CHARACTER_SIZE, window);
+						drawText(15, 100, sfe::RichText(font) << "Bonus Intellect: " << sf::Color::Red << auxInt, CHARACTER_SIZE, window);
+						drawText(15, 125, sfe::RichText(font) << "Armor: " << sf::Color::Red << auxArmor, CHARACTER_SIZE, window);
+	}
+		break;
+	}
+}
