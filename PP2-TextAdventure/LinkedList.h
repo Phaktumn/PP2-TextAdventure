@@ -1,4 +1,5 @@
 #pragma once
+
 template <class type> 
 class LinkedList
 {
@@ -7,7 +8,7 @@ private:
 	{
 		type value;
 		Node* next;
-	} Node;
+	};
 
 	Node* head;
 	int count;
@@ -19,16 +20,33 @@ public:
 	void add(type value);
 	type get(int index);
 	void removeAt(int index);
+	void remove(type object);
+	int getLength();
+	bool checkIfEmpty();
 };
 
 template <class type>
 LinkedList<type>::LinkedList() : head(nullptr), count(0)
 {
+
 }
 
 template <class type>
 LinkedList<type>::~LinkedList()
 {
+}
+
+template <class type>
+int LinkedList<type>::getLength(){
+	return count;
+}
+
+template <class type>
+bool LinkedList<type>::checkIfEmpty()
+{
+	Node* ptr = head;
+	if (ptr != nullptr) return false;
+	else return true;
 }
 
 template <class type>
@@ -63,16 +81,61 @@ type LinkedList<type>::get(int index)
 	int i = 0;
 	Node* ptr = head;
 
-	while (i < index) {
-		ptr = ptr->next;
-		i++;
+	if (ptr != nullptr){
+		while (i < index) {
+			ptr = ptr->next;
+			if (ptr == nullptr) return nullptr;
+			i++;
+		}
+		return ptr->value;
 	}
-
-	return ptr->value;
+	return nullptr;
 }
 
 template <class type>
 void LinkedList<type>::removeAt(int index)
 {
+	int i = 0;
+	Node* ptr = head;
 
+	if (index == count)
+	{
+		Node* removed = ptr;
+		delete (removed);
+		return;
+	}
+
+	while (i < index)
+	{
+		ptr = ptr->next;
+		i++;
+	}
+
+	ptr->next = ptr->next->next;
+	Node* removed = ptr->next;
+	count--;
+	delete(removed);
+}
+
+template <class type>
+void LinkedList<type>::remove(type object)
+{
+	Node* ptr = head;
+	if (ptr != nullptr){
+		if (object == ptr->value){
+			head = nullptr;
+			delete(ptr);
+			return;
+		}
+	}
+	while (ptr->next != nullptr)
+	{
+		if (object == ptr->next->value)
+		{
+			Node* toRemove = ptr->next;
+			ptr->next = ptr->next->next;
+			delete(toRemove);
+			count--;
+		}
+	}
 }

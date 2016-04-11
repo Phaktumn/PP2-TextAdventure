@@ -59,7 +59,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system.lib;sfml-system-d.lib;sfml-main.lib;sfml-main-d.lib;sfml-window.lib;sfml-window-d.lib;sfml-graphics.lib;sfml-graphics-d.lib;sfml-audio.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-window-d.lib;sfml-main-d.lib;sfml-network-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,22 +80,77 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system.lib;sfml-system-d.lib;sfml-main.lib;sfml-main-d.lib;sfml-window.lib;sfml-window-d.lib;sfml-graphics.lib;sfml-graphics-d.lib;sfml-audio.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-audio.lib;sfml-window.lib;sfml-main.lib;sfml-network.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DialogueTree.cpp" />
+    <ClCompile Include="Ability.cpp" />
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="Attribute.cpp" />
+    <ClCompile Include="AutoAtack.cpp" />
+    <ClCompile Include="BattleManager.cpp" />
+    <ClCompile Include="BattleState.cpp" />
+    <ClCompile Include="BattleStateMenu.cpp" />
+    <ClCompile Include="Credits.cpp" />
+    <ClCompile Include="DamageAbility.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateMenu.cpp" />
+    <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="InputBox.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Location.cpp" />
+    <ClCompile Include="LocationsManager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PostBattleState.cpp" />
+    <ClCompile Include="RichText.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateManager.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="StunAbility.cpp" />
+    <ClCompile Include="TitleMenuState.cpp" />
+    <ClCompile Include="UtilityAbility.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DialogueTree.h" />
+    <ClInclude Include="Ability.h" />
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="Armor.h" />
+    <ClInclude Include="Attribute.h" />
+    <ClInclude Include="AutoAtack.h" />
+    <ClInclude Include="BattleManager.h" />
+    <ClInclude Include="BattleState.h" />
+    <ClInclude Include="BattleStateMenu.h" />
+    <ClInclude Include="Credits.h" />
+    <ClInclude Include="DamageAbility.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateMenu.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="InputBox.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Log.h" />
-    <ClInclude Include="Screen.h" />
+    <ClInclude Include="Location.h" />
+    <ClInclude Include="LocationsManager.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PostBattleState.h" />
+    <ClInclude Include="RichText.hpp" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateManager.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="StunAbility.h" />
+    <ClInclude Include="TitleMenuState.h" />
+    <ClInclude Include="UtilityAbility.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

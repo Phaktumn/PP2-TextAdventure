@@ -1,0 +1,62 @@
+[
+  {
+  	"Name": "A Small City",
+	"Description": "A small city as the name says, the people are kind, but a hidden power is ready to appear.\nGet ready to defeat him!!",
+	"Level": 1
+  },
+  {
+  	"Name": "Horsemen's Inn",
+	"Description": 
+	"Found on the side of a wide merchant's street towards the kingdom, this inn is a popular rest stop\namong drifting knights, scholars and novelty, perhaps as an escape from royal duties?\n\nThe structure, from the outside, looks mundane, with its' faded marble walls, wooden endings and an\naged rooftop. Above the entrance is displayed, engraved in a hanging fortified wooden sign, a coat\nof arms: a horse over a cross of long swords, composed with tones of blue, gold and white, the \nheraldic design of the great Kingdom of Tiriane, notorious for its' mastery of cavalry.\n\nMuffled voices and laughter can be heard through the walls, vividly hinting life on the inside.",
+    "Active": "The first thing you do is check for the services this rest stop delivers. Strangely someone wants to have a conversation with you.",
+	"Level": 1
+  },
+  {
+  	"Name": "Cannibal Johnsons Cave",
+	"Description": "The son of this family messed with one of the king?s daughter making them. Rumors say they ended up \ncornered in this cave, and when found the king ordered to close the cave with the family inside,\ndooming them to die from starvation.",
+    "Active": "Soon after you entered the cave you see a strange little light, making you chase it until you reached at the end of the cave?",
+	"Level": 2
+  },
+  {
+  	"Name": "Abandoned Windmill",
+	"Description": "Windmill filled with stories and rumors about ghost murders and even satanic rituals to open the gate\nto the demon world.",
+    "Active": "",
+	"Level": 2
+  },
+  {
+  	"Name": "Carriage Wreckage",
+	"Description": "Known for being a trading route, you discover a carriage forgotten by time and by the people riding it.",
+    "Active": "You approach the carriage hoping to salvage some goods. After being some time searching you hear a noise coming from the woods, making you reach for your weapon.",
+	"Level": 2
+  },
+  {
+  	"Name": "Kings Bodyguard Corpse",
+	"Description": "Not a very common thing to leave behind the corpse of the kings bodyguards, must be something\nthey cant explain.\nThe people are even scared of touching the body because it might bring them bad fortune.",
+    "Active": "As you walk up to the corpse you notice it was brutally murdered, maybe thieves or maybe a creature.",
+	"Level": 2
+  },
+  {
+  	"Name": "Dragon Knights Safehouse",
+	"Description": "Protected with metal walls, capable of withstanding the force of a fully grown dragon.\nIt?s used for knights to take a break from all the dangerous of the outside world.",
+        "Active": "The place was empty when you walked in. You quickly started to make yourself comfortable and ready to take a break. When you woke up you heard something and decided to leave.",
+	"Level": 3
+  },
+  {
+  	"Name": "Deserted Cave",
+	"Description": "Just one of the many caves existing in this world, this one being housed by dangerous creatures that might\nnot be the ideal place for you to take a look.",
+        "Active": "You crafted a torch from the remaining?s you found on your pack. Going forth maybe wasn?t the best of the ideas but you adventure on until you get to what seems an exit.",
+	"Level": 4
+  },
+  {
+  	"Name": "Mercenaries Outpost",
+	"Description": "Used by warriors capable of making the most dangerous jobs and risking everything for a bit of coin.\nUsually is filled with dangerous gangs of people and weapon craftsman?s always working to deliver the most deadly weapons.",
+    "Active": "Everyone looks at you with a weird grin probably because they don?t like foreigners to mess with their business. After talking with some people you start to notice something is not right, so try to get out from the back door.",
+	"Level": 4
+  },
+   {
+  	"Name": "Camp Arrow",
+	"Description": "This is a well-known camp for future soldiers and bodyguards. One of the big differences is that the best\narchers are all trained in this camp making them pass through unrelenting physical and philologically training.",
+    "Active": "When you enter a man approaches and asks for you to leave. Maybe it?s not a good idea for you to stay and should move out.",
+	"Level": 5
+  }
+]

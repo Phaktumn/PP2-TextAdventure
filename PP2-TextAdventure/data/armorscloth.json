@@ -1,0 +1,574 @@
+[
+  {
+  	"Name": "Crown of the Fire Festival",
+	  "Quality": "Common",
+  	"Description": "It´s from a festival so it has to be good right?",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
+  	"BaseArmor": 10
+  },
+  {
+  	"Name": "Demon Prince's Crown",
+	  "Quality": "Common",
+  	"Description": "From the shadow comes the punishment.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
+  	"BaseArmor": 11
+  },
+  {
+  	"Name": "Soulcatcher Halo",
+	  "Quality": "Uncommon",
+  	"Description": "You are the Master Chief, but this time you fight spirits.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
+  	"BaseArmor": 25
+  },
+  {
+  	"Name": "Spellweaver's Turban",
+	  "Quality": "Uncommon",
+  	"Description": "Strong against other spells and also capable of protecting you from the rain.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
+  	"BaseArmor": 28
+  },
+  {
+  	"Name": "Deathmist Mask",
+	  "Quality": "Uncommon",
+  	"Description": "They will never know what hit them.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
+  	"BaseArmor": 34
+  },
+  {
+  	"Name": "Hood of the Third Eye",
+	  "Quality": "Rare",
+  	"Description": "Don´t even ask where this come from.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
+  	"BaseArmor": 45
+  },
+  {
+  	"Name": "Gul'dan's Hood of Conquest",
+	  "Quality": "Rare",
+  	"Description": "You don´t only have to talk about conquest, you must demonstrate it.",
+	  "Type": 0,
+  	"BaseStrength": 7,
+  	"BaseIntellect": 42,
+  	"BaseArmor": 50
+  },
+  {
+  	"Name": "Sharkshield Cover",
+	  "Quality": "Rare",
+  	"Description": "Some try to catch sharks, only a few come back.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
+  	"BaseArmor": 55
+  },
+  {
+  	"Name": "Power Generator Hood",
+	  "Quality": "Epic",
+  	"Description": "When you are feeling defeated, believe in the hood for it´s blessing.",
+	  "Type": 0,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
+  	"BaseArmor": 70
+  },
+  {
+  	"Name": "Fallout Filter",
+	  "Quality": "Epic",
+  	"Description": "Don´t be discouraged by what they say, everything unpure shall be negated.",
+	  "Type": 0,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
+  	"BaseArmor": 80
+  },
+  {
+  	"Name": "Winged helmet of hermes",
+	  "Quality": "Legendary",
+  	"Description": "Straight from the messenger of the gods, probably the last message they try to send.",
+	  "Type": 0,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
+  	"BaseArmor": 95
+  },
+  {
+  	"Name": "Hood of the Faceless Shroud",
+	  "Quality": "Legendary",
+  	"Description": "It´s shruud like shrimp.",
+	  "Type": 0,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
+  	"BaseArmor": 95
+  },
+
+
+
+
+  //Feet
+
+
+
+
+
+
+    {
+  	"Name": "Warlock Slippers",
+	  "Quality": "Common",
+  	"Description": "Best for fighting in hot weather.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
+  	"BaseArmor": 10
+  },
+  {
+  	"Name": "Boots of Foretelling",
+	  "Quality": "Common",
+  	"Description": "Can actually guess what´s going to happen, as long it is death.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
+  	"BaseArmor": 11
+  },
+  {
+  	"Name": "Slippers of the High Priestess",
+	  "Quality": "Uncommon",
+  	"Description": "Wonder what happend to the priestess-",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
+  	"BaseArmor": 25
+  },
+  {
+  	"Name": "Boots of the Malefic",
+	  "Quality": "Uncommon",
+  	"Description": "Answer me creatures from the dark, and obey my wishes.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
+  	"BaseArmor": 28
+  },
+  {
+  	"Name": "Sandals of Hooded Nightmares",
+	  "Quality": "Uncommon",
+  	"Description": "They don´t give enought time to see their face before they kill you.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
+  	"BaseArmor": 34
+  },
+  {
+  	"Name": "Mindbender Treads",
+	  "Quality": "Rare",
+  	"Description": "Is this the real life? Is this just fantasy? Caught in a landslide, No escape from reality.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
+  	"BaseArmor": 45
+  },
+  {
+  	"Name": "Boots of the Blowing Wind",
+	  "Quality": "Rare",
+  	"Description": "I´ll kill you before the wind catches your figure.",
+	  "Type": 1,
+  	"BaseStrength": 2,
+  	"BaseIntellect": 42,
+  	"BaseArmor": 50
+  },
+  {
+  	"Name": "Frostwolf Wind-Talker Treads",
+	  "Quality": "Rare",
+  	"Description": "There is no place where I can´t find you.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
+  	"BaseArmor": 55
+  },
+  {
+  	"Name": "Skydancer Boots",
+	  "Quality": "Epic",
+  	"Description": "Swifter than the gods themselves.",
+	  "Type": 1,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
+  	"BaseArmor": 70
+  },
+  {
+  	"Name": "Silentflame Sandals",
+	  "Quality": "Epic",
+  	"Description": "The things that are more silent are the deadliest.",
+	  "Type": 1,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
+  	"BaseArmor": 80
+  },
+  {
+  	"Name": "winged sandals of Hermes",
+	  "Quality": "Legendary",
+  	"Description": "Who said the only method of traveling was walking.",
+	  "Type": 1,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
+  	"BaseArmor": 95
+  },
+  {
+  	"Name": "Caligae",
+	  "Quality": "Legendary",
+  	"Description": "From the great armies of Roman legionary soldiers.",
+	  "Type": 1,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
+  	"BaseArmor": 95
+  },
+
+
+
+
+  //Hands
+
+      {
+  	"Name": "Hands of Consequences",
+	  "Quality": "Common",
+  	"Description": "Everything you do has a consequence, think before you act.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
+  	"BaseArmor": 10
+  },
+  {
+  	"Name": "Gloves of Compassion",
+	  "Quality": "Common",
+  	"Description": "You might feel the need to help everyone around you.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
+  	"BaseArmor": 11
+  },
+  {
+  	"Name": "Red Hands of the Thunderlord",
+	  "Quality": "Uncommon",
+  	"Description": "Sometimes, the highest position needs to demonstrate power.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
+  	"BaseArmor": 25
+  },
+  {
+  	"Name": "Lava Burn Gloves",
+	  "Quality": "Uncommon",
+  	"Description": "Can withstand every flame attack.(only protects the hands)",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
+  	"BaseArmor": 28
+  },
+  {
+  	"Name": "Light Blessed Mittens",
+	  "Quality": "Uncommon",
+  	"Description": "Embodied with the souls of great warriors.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
+  	"BaseArmor": 34
+  },
+  {
+  	"Name": "Looming Shadow Wraps",
+	  "Quality": "Rare",
+  	"Description": "It might be hard to keep track of these gloves.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
+  	"BaseArmor": 45
+  },
+  {
+  	"Name": "God-Grinding Grips",
+	  "Quality": "Rare",
+  	"Description": "Even the gods can be beaten if you have patience",
+	  "Type": 2,
+  	"BaseStrength": 5,
+  	"BaseIntellect": 42,
+  	"BaseArmor": 50
+  },
+  {
+  	"Name": "Shadowflame Handwraps",
+	  "Quality": "Rare",
+  	"Description": "Not every flame has to emit light, some just burn if touched.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
+  	"BaseArmor": 55
+  },
+  {
+  	"Name": "Fusespark Gloves",
+	  "Quality": "Epic",
+  	"Description": "When clashed together they can flash everything around them including yourself.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
+  	"BaseArmor": 70
+  },
+  {
+  	"Name": "Lifedrainer's Sordid Grip",
+	  "Quality": "Epic",
+  	"Description": "Can drain life from every lifeform.",
+	  "Type": 2,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
+  	"BaseArmor": 80
+  },
+  {
+  	"Name": "Power Glove",
+	  "Quality": "Legendary",
+  	"Description": "Created by nintendo it´s used like a controller to your victim.",
+	  "Type": 2,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
+  	"BaseArmor": 95
+  },
+  {
+  	"Name": "Muhammad Ali",
+	  "Quality": "Legendary",
+  	"Description": "Containing the power from an ancient hero, powering up in both attack and armor.",
+	  "Type": 2,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 100,
+  	"BaseArmor": 95
+  },
+
+  //Chest:
+
+
+
+         {
+  	"Name": "Shock Pulse Lightning Robes",
+	  "Quality": "Common",
+  	"Description": "Be carefull, this might sound as a shock.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
+  	"BaseArmor": 10
+  },
+  {
+  	"Name": "Akolik's Acid-Soaked Robes",
+	  "Quality": "Common",
+  	"Description": "Never fall in an acid pool, or the only thing that´s left is your robe.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
+  	"BaseArmor": 11
+  },
+  {
+  	"Name": "Robes of Nova Power",
+	  "Quality": "Uncommon",
+  	"Description": "There are powerfull power, but this may be the most powerfull ever.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
+  	"BaseArmor": 25
+  },
+  {
+  	"Name": "Heartlander's Robe",
+	  "Quality": "Uncommon",
+  	"Description": "Belonged to a rich warrior that disappeared one night leaving nothing but it´s robe.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
+  	"BaseArmor": 28
+  },
+  {
+  	"Name": "Slavebreaker Robes",
+	  "Quality": "Uncommon",
+  	"Description": "It´s one wish is to free every single slave, weird the owner is missing.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
+  	"BaseArmor": 34
+  },
+  {
+  	"Name": "Robes of the Final Rite",
+	  "Quality": "Rare",
+  	"Description": "Robe infused with mana exactly at midnight to give great protection to it´s owner.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
+  	"BaseArmor": 45
+  },
+  {
+  	"Name": "Guardian Serpent Robe",
+	  "Quality": "Rare",
+  	"Description": "Might look like a normal piece of armour but the one´s that touch it, perish soon later.",
+	  "Type": 4,
+  	"BaseStrength": 5,
+  	"BaseIntellect": 42,
+  	"BaseArmor": 50
+  },
+  {
+  	"Name": "Cloudscorcher Robe",
+	  "Quality": "Rare",
+  	"Description": "Yours is a robe that will pierce the heavens.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
+  	"BaseArmor": 55
+  },
+  {
+  	"Name": "Heroic Burning Robes of the Golden Lotus",
+	  "Quality": "Epic",
+  	"Description": "You shall be granted this robe to adquire everything you wish for.",
+	  "Type": 4,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
+  	"BaseArmor": 70
+  },
+  {
+  	"Name": "Motherseed Robe",
+	  "Quality": "Epic",
+  	"Description": "No one knows best, than your mother.",
+	  "Type": 4,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
+  	"BaseArmor": 80
+  },
+  {
+  	"Name": "Altair's Robes of swiftness",
+	  "Quality": "Legendary",
+  	"Description": "Belonged to an Assasin from an ancient cult trying to change the world.",
+	  "Type": 4,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
+  	"BaseArmor": 95
+  },
+  {
+  	"Name": "Mantle of Arthur",
+	  "Quality": "Legendary",
+  	"Description": "Worn by Arthur, cherished by all.",
+	  "Type": 4,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
+  	"BaseArmor": 95
+  },
+
+
+
+  //legs
+
+
+
+    
+         {
+  	"Name": "Kilt of the Atal'ai Prophet",
+	  "Quality": "Common",
+  	"Description": "Pretty expensive for a prophet.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 1,
+  	"BaseArmor": 10
+  },
+  {
+  	"Name": "Nemesis Leggings",
+	  "Quality": "Common",
+  	"Description": "Most of the top warrior´s wear this leggings.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 2,
+  	"BaseArmor": 11
+  },
+  {
+  	"Name": "Doomcaller's Trousers",
+	  "Quality": "Uncommon",
+  	"Description": "Get away if your enemy wear one of these.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 10,
+  	"BaseArmor": 25
+  },
+  {
+  	"Name": "Trousers of the Arakkoa",
+	  "Quality": "Uncommon",
+  	"Description": "Infamous warrior from the North. Legends say he killed an army once.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 14,
+  	"BaseArmor": 28
+  },
+  {
+  	"Name": "Skirt of the Old Kingdom",
+	  "Quality": "Uncommon",
+  	"Description": "Very practical if you move a lot.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 20,
+  	"BaseArmor": 34
+  },
+  {
+  	"Name": "Pants of the Soothing Touch",
+	  "Quality": "Rare",
+  	"Description": "Might get lost in the void while touching this pants.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 40,
+  	"BaseArmor": 45
+  },
+  {
+  	"Name": "Leggings of Woven Death",
+	  "Quality": "Rare",
+  	"Description": "Certain death for the carrier of thy armor.",
+	  "Type": 5,
+  	"BaseStrength": 5,
+  	"BaseIntellect": 42,
+  	"BaseArmor": 50
+  },
+  {
+  	"Name": "Flamesear Leggings",
+	  "Quality": "Rare",
+  	"Description": "A little too hot for a mere console peasant.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 48,
+  	"BaseArmor": 55
+  },
+  {
+  	"Name": "Dragonwing Leggings",
+	  "Quality": "Epic",
+  	"Description": "The Legends say it came from a dragon, looks more like lizzard.",
+	  "Type": 5,
+  	"BaseStrength": 0,
+  	"BaseIntellect": 60,
+  	"BaseArmor": 70
+  },
+  {
+  	"Name": "Soul Breath Leggings",
+	  "Quality": "Epic",
+  	"Description": "Summons spirits that may help on your most difficult choices.",
+	  "Type": 5,
+  	"BaseStrength": 1,
+  	"BaseIntellect": 62,
+  	"BaseArmor": 80
+  },
+  {
+  	"Name": "Time Traveler's Leggings",
+	  "Quality": "Legendary",
+  	"Description": "You know what you gotta do Marty!!",
+	  "Type": 5,
+  	"BaseStrength": 20,
+  	"BaseIntellect": 90,
+  	"BaseArmor": 95
+  },
+  {
+  	"Name": "Iskandar Pants of Conquer",
+	  "Quality": "Legendary",
+  	"Description": "Okeanos is waiting for me, I can hear it!",
+	  "Type": 5,
+  	"BaseStrength": 10,
+  	"BaseIntellect": 100,
+  	"BaseArmor": 95
+  }
+
+
+]

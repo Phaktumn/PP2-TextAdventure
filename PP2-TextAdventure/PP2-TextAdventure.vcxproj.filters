@@ -1,51 +1,220 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Abilities">
+      <UniqueIdentifier>{bbdd92e2-6cc3-42fd-8d50-b5f29e1a01e7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="Actors">
+      <UniqueIdentifier>{b0033bf7-e448-476c-ab91-89423f4b615c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Core">
+      <UniqueIdentifier>{06e044f1-2ca1-45eb-b7a4-03ed7feb31b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{88161e2e-bf9d-46c5-8379-b3bbdb43a168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay">
+      <UniqueIdentifier>{598366bd-6eb6-4a4a-aed5-b316f5266eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Items">
+      <UniqueIdentifier>{2299c0a1-c860-4dc7-b101-e085fe65369b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{4d186efb-f335-4694-a25f-2d0d6977779e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Locations">
+      <UniqueIdentifier>{7dbd1c6b-728b-474a-88eb-0853c2869fb4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Ability.cpp">
+      <Filter>Abilities</Filter>
     </ClCompile>
-    <ClCompile Include="DialogueTree.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AutoAtack.cpp">
+      <Filter>Abilities</Filter>
     </ClCompile>
-    <ClCompile Include="Screen.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="DamageAbility.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="StunAbility.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilityAbility.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="InputBox.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Attribute.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleMenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RichText.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="LocationsManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMenu.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleStateMenu.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Credits.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="PostBattleState.cpp">
+      <Filter>States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DialogueTree.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AutoAtack.h">
+      <Filter>Abilities</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TitleMenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Items</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GameManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageAbility.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="InputBox.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Attribute.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>States</Filter>
     </ClInclude>
     <ClInclude Include="LinkedList.h">
-      <Filter>Header Files</Filter>
+      <Filter>Data</Filter>
     </ClInclude>
+    <ClInclude Include="BattleState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityAbility.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="StunAbility.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="RichText.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
+      <Filter>Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="LocationsManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMenu.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleStateMenu.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Credits.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="PostBattleState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

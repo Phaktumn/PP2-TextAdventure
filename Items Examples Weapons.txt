@@ -1,0 +1,47 @@
+SWORDS:
+Rusted Sword *
+Steel Sword *
+Longsword **
+Bloodrazor **
+Dragon's Call ***
+Nightmare Blade ****
+Excalibur *****
+Kusanagi *****
+
+
+STAVES:
+Apprentice's Staff *
+Quarterstaff *
+Bling Cane **
+Staff of Noble **
+Moses Walking Stick ***
+Thyrsus ***
+Soulseeker ****
+Caduceus *****
+Rod of Asclepius *****
+
+WANDS:
+Voodoo Wand *
+Lightspark **
+Moon Shard **
+Wand of Infectious Dementia ***
+Lilith's Wand ***
+Rod of the Fallen ****
+Doomfinger *****
+
+
+HAMMERS:
+Mjolnir *****
+
+
+AXES:
+Night Reaver **
+Bloodspiller **
+War Axe **
+Brain Hacker ***
+Nightfall ***
+Legacy ***
+Devastation ****
+Justice Caller ****
+Shadow Bourne ****
+Shiva's Parashu *****
